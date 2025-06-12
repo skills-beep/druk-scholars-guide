@@ -1,45 +1,12 @@
 
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
-import { inDemandJobs } from '@/data/colleges';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-slate-900 text-white">
-      {/* In-Demand Jobs Section */}
-      <div className="bg-slate-800 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold font-sora text-white mb-4">
-              In-Demand Careers in Bhutan
-            </h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
-              Explore high-demand career opportunities across various sectors in Bhutan's growing economy
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {inDemandJobs.map((category, index) => (
-              <div key={index} className="bg-slate-700/50 rounded-lg p-6 hover:bg-slate-700/70 transition-colors">
-                <h3 className="text-xl font-semibold text-yellow-300 mb-4">
-                  {category.category}
-                </h3>
-                <ul className="space-y-2">
-                  {category.jobs.map((job, jobIndex) => (
-                    <li key={jobIndex} className="text-slate-300 flex items-start">
-                      <span className="w-2 h-2 bg-blue-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span className="text-sm">{job}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Main Footer */}
       <div className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

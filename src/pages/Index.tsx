@@ -1,14 +1,17 @@
-
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FilterSidebar from '@/components/FilterSidebar';
 import CollegeGrid from '@/components/CollegeGrid';
+import CareersSection from '@/components/CareersSection';
+import DeveloperSection from '@/components/DeveloperSection';
 import Footer from '@/components/Footer';
+import LoadingAnimation from '@/components/LoadingAnimation';
 import { colleges } from '@/data/colleges';
 import { College, CollegeFilters } from '@/types/college';
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const [filterSidebarOpen, setFilterSidebarOpen] = useState(false);
   const [compareList, setCompareList] = useState<College[]>([]);
@@ -28,6 +31,15 @@ const Index = () => {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2500);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -53,6 +65,10 @@ const Index = () => {
   const handleRemoveFromCompare = (collegeId: string) => {
     setCompareList(compareList.filter(c => c.id !== collegeId));
   };
+
+  if (isLoading) {
+    return <LoadingAnimation />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -97,6 +113,8 @@ const Index = () => {
         </div>
       </main>
 
+      <CareersSection />
+      <DeveloperSection />
       <Footer />
     </div>
   );
