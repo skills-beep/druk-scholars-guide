@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -33,10 +34,10 @@ const Index = () => {
   }, [darkMode]);
 
   useEffect(() => {
-    // Simulate loading time
+    // Simulate realistic loading time
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2500);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);

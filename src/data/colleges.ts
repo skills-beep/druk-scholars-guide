@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -6,183 +5,310 @@ export const colleges: College[] = [
     id: '1',
     name: 'Royal University of Bhutan',
     location: 'Thimphu',
-    type: 'University',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=250&fit=crop',
-    rating: 4.8,
-    fees: { min: 150000, max: 300000, currency: 'BTN' },
-    courses: ['Engineering', 'Business', 'Medicine', 'Arts', 'Science', 'Law', 'Education'],
-    tags: ['Top Rated', 'Research Excellence', 'Government University'],
-    description: 'The premier university of Bhutan offering world-class education across multiple disciplines with strong research focus and international collaborations.',
     established: 2003,
-    admissionDeadline: '2024-03-15',
-    eligibility: ['12th Grade Completion', 'Entrance Exam', 'Interview', 'Medical Fitness'],
-    contact: {
-      phone: '+975-2-323123',
-      email: 'admissions@rub.edu.bt',
-      website: 'www.rub.edu.bt'
+    type: 'Public University',
+    rating: 4.8,
+    image: 'https://www.rub.edu.bt/images/gallery/campus1.jpg',
+    description: 'The Royal University of Bhutan is the national university system of Bhutan, established to provide quality higher education and foster research and innovation.',
+    courses: [
+      'Bachelor of Engineering',
+      'Bachelor of Science',
+      'Master of Business Administration',
+      'Master of Arts',
+      'Bachelor of Medicine',
+      'Bachelor of Education',
+      'Bachelor of Arts',
+      'Diploma in Engineering'
+    ],
+    fees: {
+      min: 25000,
+      max: 85000,
+      currency: 'BTN'
     },
+    tags: ['Public', 'Research University', 'Engineering'],
     scholarships: [
-      { name: 'Royal Government Scholarship', amount: 'Full tuition + stipend', criteria: 'Top 5% national rank holders' },
-      { name: 'Merit Scholarship', amount: '75% tuition fee', criteria: 'Top 10% academic performance' },
-      { name: 'Rural Development Scholarship', amount: 'Full coverage', criteria: 'Students from remote areas with teaching commitment' }
+      {
+        name: 'RUB Merit Scholarship',
+        amount: 'Full Tuition',
+        criteria: 'Academic excellence and financial need'
+      },
+      {
+        name: 'Research Excellence Grant',
+        amount: 'BTN 50,000',
+        criteria: 'Outstanding research proposal'
+      }
+    ],
+    admissionDeadline: 'June 30, 2024',
+    eligibility: [
+      'Class XII completion with minimum 60% marks',
+      'Entrance examination or merit-based selection',
+      'Medical fitness certificate',
+      'Character certificate from previous institution'
     ],
     careerOpportunities: [
-      'Civil Engineer - Infrastructure Development',
-      'Software Engineer - Digital Bhutan Initiative', 
-      'Doctor - Healthcare System',
-      'Business Analyst - Tourism Industry',
-      'Research Scientist - Environmental Conservation'
-    ]
+      'Government Civil Service',
+      'Engineering Consultant',
+      'Research Scientist',
+      'Healthcare Professional',
+      'Education Sector',
+      'Private Industry'
+    ],
+    contact: {
+      phone: '+975-2-336-209',
+      email: 'info@rub.edu.bt',
+      website: 'www.rub.edu.bt'
+    }
   },
   {
     id: '2',
     name: 'College of Science and Technology',
-    location: 'Phuntsholing',
-    type: 'College',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=250&fit=crop',
-    rating: 4.6,
-    fees: { min: 120000, max: 250000, currency: 'BTN' },
-    courses: ['Computer Science', 'Information Technology', 'Electronics', 'Mechanical Engineering', 'Civil Engineering'],
-    tags: ['Technology Focus', 'Industry Partnerships', 'RUB Constituent'],
-    description: 'Leading technology education institution with strong industry connections and modern laboratories for practical learning.',
+    location: 'Rinchending, Phuentsholing',
     established: 2001,
-    admissionDeadline: '2024-03-20',
-    eligibility: ['12th Grade Science', 'Mathematics Background', 'Aptitude Test', 'English Proficiency'],
-    contact: {
-      phone: '+975-5-252123',
-      email: 'info@cst.edu.bt',
-      website: 'www.cst.edu.bt'
+    type: 'Engineering College',
+    rating: 4.7,
+    image: 'https://www.cst.edu.bt/images/campus/main-building.jpg',
+    description: 'Premier engineering institution under RUB, offering cutting-edge programs in science and technology.',
+    courses: [
+      'Civil Engineering',
+      'Electrical Engineering',
+      'Mechanical Engineering',
+      'Electronics & Communication',
+      'Computer Science Engineering',
+      'Information Technology',
+      'Environmental Engineering'
+    ],
+    fees: {
+      min: 35000,
+      max: 75000,
+      currency: 'BTN'
     },
+    tags: ['Engineering', 'Technology', 'STEM'],
     scholarships: [
-      { name: 'STEM Excellence Scholarship', amount: 'BTN 100,000 annually', criteria: 'Outstanding performance in STEM subjects' },
-      { name: 'Industry Partnership Grant', amount: '50% tuition fee', criteria: 'Internship completion with partner companies' }
+      {
+        name: 'CST Engineering Scholarship',
+        amount: 'BTN 40,000',
+        criteria: 'Top 10% in entrance examination'
+      }
+    ],
+    admissionDeadline: 'July 15, 2024',
+    eligibility: [
+      'Class XII Science with minimum 65% marks',
+      'Mathematics and Physics mandatory',
+      'Entrance examination required'
     ],
     careerOpportunities: [
-      'Software Developer - E-governance Projects',
-      'IT Specialist - Banking & Finance',
-      'Electronics Engineer - Renewable Energy',
-      'Network Administrator - Telecommunications'
-    ]
+      'Software Engineer',
+      'Civil Engineer',
+      'Electrical Engineer',
+      'Project Manager',
+      'Technical Consultant'
+    ],
+    contact: {
+      phone: '+975-5-252-423',
+      email: 'info@cst.edu.bt',
+      website: 'www.cst.edu.bt'
+    }
   },
   {
     id: '3',
-    name: 'Paro College of Education',
-    location: 'Paro',
-    type: 'College',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400&h=250&fit=crop',
-    rating: 4.4,
-    fees: { min: 80000, max: 150000, currency: 'BTN' },
-    courses: ['Primary Education', 'Secondary Education', 'Special Education', 'Educational Psychology', 'Curriculum Studies'],
-    tags: ['Teacher Training', 'Affordable', 'Government Supported'],
-    description: 'Dedicated to preparing qualified educators for Bhutan with focus on child-centered learning and inclusive education.',
-    established: 1968,
-    admissionDeadline: '2024-04-01',
-    eligibility: ['12th Grade', 'Teaching Aptitude Test', 'Communication Skills', 'Character Certificate'],
-    contact: {
-      phone: '+975-8-271123',
-      email: 'admissions@pce.edu.bt',
-      website: 'www.pce.edu.bt'
+    name: 'College of Natural Resources',
+    location: 'Lobesa, Punakha',
+    established: 2001,
+    type: 'Agricultural College',
+    rating: 4.6,
+    image: 'https://www.cnr.edu.bt/images/campus-view.jpg',
+    description: 'Leading institution for natural resources, agriculture, and environmental studies in Bhutan.',
+    courses: [
+      'Bachelor of Science in Agriculture',
+      'Forestry Science',
+      'Animal Science',
+      'Environmental Management',
+      'Horticulture',
+      'Agricultural Engineering',
+      'Food Technology'
+    ],
+    fees: {
+      min: 20000,
+      max: 55000,
+      currency: 'BTN'
     },
+    tags: ['Agriculture', 'Environment', 'Sustainability'],
     scholarships: [
-      { name: 'Teacher Training Scholarship', amount: 'Full tuition + monthly allowance', criteria: '5-year rural teaching commitment' },
-      { name: 'Special Education Grant', amount: 'Complete fee waiver', criteria: 'Specialization in special needs education' }
+      {
+        name: 'Sustainable Agriculture Scholarship',
+        amount: 'BTN 30,000',
+        criteria: 'Rural background students with good academics'
+      }
+    ],
+    admissionDeadline: 'June 25, 2024',
+    eligibility: [
+      'Class XII with minimum 55% marks',
+      'Science background preferred',
+      'Interest in agriculture and environment'
     ],
     careerOpportunities: [
-      'School Principal - Educational Leadership',
-      'Primary Teacher - Community Schools',
-      'Special Education Coordinator - Inclusive Education',
-      'Educational Consultant - Ministry of Education'
-    ]
+      'Agricultural Officer',
+      'Forest Officer',
+      'Environmental Consultant',
+      'Research Scientist',
+      'Extension Officer'
+    ],
+    contact: {
+      phone: '+975-2-584-207',
+      email: 'info@cnr.edu.bt',
+      website: 'www.cnr.edu.bt'
+    }
   },
   {
     id: '4',
-    name: 'Jigme Namgyel Engineering College',
-    location: 'Dewathang',
-    type: 'College',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop',
-    rating: 4.7,
-    fees: { min: 180000, max: 320000, currency: 'BTN' },
-    courses: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Architecture', 'Environmental Engineering'],
-    tags: ['Engineering Excellence', 'Modern Facilities', 'Research Focus'],
-    description: 'Premier engineering institution with state-of-the-art facilities, excellent placement records, and strong industry partnerships.',
-    established: 2014,
-    admissionDeadline: '2024-02-28',
-    eligibility: ['12th Grade Science', 'JEE Qualification', 'English Proficiency', 'Technical Aptitude'],
-    contact: {
-      phone: '+975-7-365123',
-      email: 'admissions@jnec.edu.bt',
-      website: 'www.jnec.edu.bt'
+    name: 'Sherubtse College',
+    location: 'Kanglung, Trashigang',
+    established: 1983,
+    type: 'Liberal Arts College',
+    rating: 4.5,
+    image: 'https://www.sherubtse.edu.bt/images/college-campus.jpg',
+    description: 'Oldest and most prestigious degree-granting institution in Bhutan, known for liberal arts education.',
+    courses: [
+      'Bachelor of Arts',
+      'Bachelor of Science',
+      'Bachelor of Commerce',
+      'English Literature',
+      'Economics',
+      'Political Science',
+      'Mathematics',
+      'Physics',
+      'Chemistry',
+      'Biology'
+    ],
+    fees: {
+      min: 18000,
+      max: 45000,
+      currency: 'BTN'
     },
+    tags: ['Liberal Arts', 'Historic', 'Research'],
     scholarships: [
-      { name: 'Engineering Excellence Award', amount: 'BTN 150,000 per year', criteria: 'Top 5% in entrance exam' },
-      { name: 'Hydropower Development Scholarship', amount: 'Full sponsorship', criteria: 'Commitment to hydropower sector' }
+      {
+        name: 'Sherubtse Excellence Award',
+        amount: 'BTN 25,000',
+        criteria: 'Academic merit and leadership qualities'
+      }
+    ],
+    admissionDeadline: 'July 10, 2024',
+    eligibility: [
+      'Class XII completion with minimum 50% marks',
+      'English proficiency required',
+      'Personal interview may be conducted'
     ],
     careerOpportunities: [
-      'Civil Engineer - Hydroelectric Projects',
-      'Electrical Engineer - Power Grid Development',
-      'Architect - Sustainable Building Design',
-      'Environmental Engineer - Climate Projects'
-    ]
+      'Civil Service',
+      'Teaching Profession',
+      'Banking & Finance',
+      'Media & Journalism',
+      'Research & Academia'
+    ],
+    contact: {
+      phone: '+975-4-541-247',
+      email: 'info@sherubtse.edu.bt',
+      website: 'www.sherubtse.edu.bt'
+    }
   },
   {
     id: '5',
-    name: 'College of Natural Resources',
-    location: 'Lobesa',
-    type: 'College',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=250&fit=crop',
-    rating: 4.3,
-    fees: { min: 100000, max: 180000, currency: 'BTN' },
-    courses: ['Forestry', 'Agriculture', 'Environmental Science', 'Wildlife Biology', 'Animal Husbandry'],
-    tags: ['Sustainability Focus', 'Field Research', 'Environmental Excellence'],
-    description: 'Specializing in natural resource management, environmental conservation, and sustainable agriculture practices.',
-    established: 1992,
-    admissionDeadline: '2024-03-25',
-    eligibility: ['12th Grade Science', 'Environmental Awareness', 'Physical Fitness', 'Field Work Aptitude'],
-    contact: {
-      phone: '+975-2-584123',
-      email: 'info@cnr.edu.bt',
-      website: 'www.cnr.edu.bt'
+    name: 'Jigme Namgyel Engineering College',
+    location: 'Dewathang, Samdrup Jongkhar',
+    established: 2014,
+    type: 'Engineering College',
+    rating: 4.4,
+    image: 'https://www.jnec.edu.bt/images/main-campus.jpg',
+    description: 'Modern engineering college focusing on sustainable technology and innovation.',
+    courses: [
+      'Civil Engineering',
+      'Electrical Engineering',
+      'Mechanical Engineering',
+      'Electronics Engineering',
+      'Computer Engineering',
+      'Architecture'
+    ],
+    fees: {
+      min: 40000,
+      max: 80000,
+      currency: 'BTN'
     },
+    tags: ['Engineering', 'Innovation', 'Modern'],
     scholarships: [
-      { name: 'Green Bhutan Scholarship', amount: '60% tuition fee', criteria: 'Environmental conservation project portfolio' },
-      { name: 'Agriculture Development Grant', amount: 'Full coverage + equipment', criteria: 'Rural farming background' }
+      {
+        name: 'JNEC Innovation Scholarship',
+        amount: 'BTN 35,000',
+        criteria: 'Innovation projects and academic performance'
+      }
+    ],
+    admissionDeadline: 'July 20, 2024',
+    eligibility: [
+      'Class XII Science with minimum 70% marks',
+      'Strong foundation in Mathematics and Physics',
+      'Aptitude test required'
     ],
     careerOpportunities: [
-      'Forest Officer - Department of Forests',
-      'Agricultural Extension Officer - Rural Development',
-      'Environmental Consultant - Conservation Projects',
-      'Wildlife Biologist - Protected Area Management'
-    ]
+      'Design Engineer',
+      'Project Engineer',
+      'Technical Consultant',
+      'R&D Engineer',
+      'Construction Manager'
+    ],
+    contact: {
+      phone: '+975-7-365-142',
+      email: 'info@jnec.edu.bt',
+      website: 'www.jnec.edu.bt'
+    }
   },
   {
     id: '6',
-    name: 'Institute of Traditional Medicine',
-    location: 'Thimphu',
-    type: 'Institute',
-    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=250&fit=crop',
-    rating: 4.5,
-    fees: { min: 90000, max: 160000, currency: 'BTN' },
-    courses: ['Traditional Medicine', 'Herbal Studies', 'Acupuncture', 'Holistic Healing', 'Pharmacology'],
-    tags: ['Traditional Knowledge', 'Cultural Heritage', 'Healthcare Alternative'],
-    description: 'Preserving and advancing traditional Bhutanese medicine with integration of modern medical knowledge and research.',
-    established: 1988,
-    admissionDeadline: '2024-04-10',
-    eligibility: ['12th Grade', 'Interest in Traditional Medicine', 'Cultural Awareness', 'Basic Science Knowledge'],
-    contact: {
-      phone: '+975-2-323456',
-      email: 'admissions@itm.edu.bt',
-      website: 'www.itm.edu.bt'
+    name: 'Paro College of Education',
+    location: 'Paro',
+    established: 2003,
+    type: 'Education College',
+    rating: 4.3,
+    image: 'https://www.pce.edu.bt/images/college-building.jpg',
+    description: 'Premier teacher training institution preparing educators for Bhutan\'s education system.',
+    courses: [
+      'Bachelor of Education (Primary)',
+      'Bachelor of Education (Secondary)',
+      'Post Graduate Diploma in Education',
+      'Master of Education',
+      'Special Education',
+      'Early Childhood Education'
+    ],
+    fees: {
+      min: 15000,
+      max: 40000,
+      currency: 'BTN'
     },
+    tags: ['Education', 'Teacher Training', 'Pedagogy'],
     scholarships: [
-      { name: 'Traditional Medicine Preservation Grant', amount: 'BTN 80,000 annually', criteria: 'Research in traditional practices' },
-      { name: 'Rural Healthcare Scholarship', amount: 'Full tuition waiver', criteria: '3-year rural service commitment' }
+      {
+        name: 'Future Teachers Scholarship',
+        amount: 'BTN 20,000',
+        criteria: 'Commitment to rural teaching for 3 years'
+      }
+    ],
+    admissionDeadline: 'June 15, 2024',
+    eligibility: [
+      'Class XII with minimum 55% marks',
+      'Teaching aptitude and communication skills',
+      'Interview and group discussion'
     ],
     careerOpportunities: [
-      'Traditional Medicine Practitioner - Indigenous Healing',
-      'Herbal Medicine Specialist - Natural Remedies',
-      'Wellness Consultant - Holistic Health Centers',
-      'Research Associate - Traditional Medicine Studies'
-    ]
+      'Primary School Teacher',
+      'Secondary School Teacher',
+      'Educational Administrator',
+      'Curriculum Developer',
+      'Educational Consultant'
+    ],
+    contact: {
+      phone: '+975-8-271-456',
+      email: 'info@pce.edu.bt',
+      website: 'www.pce.edu.bt'
+    }
   },
   {
     id: '7',
@@ -460,74 +586,40 @@ export const colleges: College[] = [
 // Government scholarships available in Bhutan
 export const governmentScholarships = [
   {
-    name: 'Royal Government of Bhutan Scholarship',
-    amount: 'Full tuition + monthly stipend',
-    criteria: 'Top 1% national exam performers',
-    duration: 'Complete program duration',
-    coverage: 'Tuition, accommodation, stipend, medical'
+    name: 'His Majesty\'s Scholarship',
+    duration: '4 years',
+    coverage: 'Full tuition, accommodation, and stipend',
+    criteria: 'Outstanding academic performance and leadership potential'
   },
   {
-    name: 'Thimphu TechPark Scholarship',
-    amount: 'BTN 200,000 annually',
-    criteria: 'STEM excellence with innovation project',
+    name: 'Merit-based Scholarship',
     duration: '4 years',
-    coverage: 'Tuition fees and project funding'
+    coverage: 'Tuition fees and partial living expenses',
+    criteria: 'Top 5% of Class XII graduates'
+  },
+  {
+    name: 'Need-based Financial Aid',
+    duration: 'As required',
+    coverage: 'Partial to full tuition based on family income',
+    criteria: 'Annual family income below BTN 100,000'
   },
   {
     name: 'Rural Development Scholarship',
-    amount: 'Full sponsorship',
-    criteria: '5-year rural service commitment',
-    duration: 'Program duration + 5 years service',
-    coverage: 'All educational expenses'
+    duration: '4 years',
+    coverage: 'Full tuition with service commitment',
+    criteria: 'Students from remote areas committed to rural service'
   },
   {
-    name: 'Teacher Training Scholarship',
-    amount: 'Complete coverage + allowance',
-    criteria: 'Teaching commitment in underserved areas',
-    duration: 'Study period + 5 years teaching',
-    coverage: 'Education costs and living allowance'
-  },
-  {
-    name: 'Healthcare Professional Scholarship',
-    amount: 'Full medical education sponsorship',
-    criteria: '10-year government hospital service',
-    duration: 'Medical program + 10 years service',
-    coverage: 'All medical education expenses'
-  },
-  {
-    name: 'Cultural Preservation Grant',
-    amount: 'BTN 150,000 per year',
-    criteria: 'Research in Bhutanese culture and traditions',
-    duration: '3-4 years',
-    coverage: 'Research and education costs'
-  },
-  {
-    name: 'Environmental Conservation Scholarship',
-    amount: '80% tuition waiver',
-    criteria: 'Environmental science with conservation focus',
-    duration: 'Program duration',
-    coverage: 'Tuition and research expenses'
-  },
-  {
-    name: 'Border Area Development Scholarship',
-    amount: 'Full educational support',
-    criteria: 'Students from border regions with service commitment',
-    duration: 'Education + 3 years border service',
-    coverage: 'Complete educational expenses'
+    name: 'STEM Excellence Award',
+    duration: '4 years',
+    coverage: 'Full tuition and research funding',
+    criteria: 'Excellence in Science, Technology, Engineering, or Mathematics'
   },
   {
     name: 'Women in STEM Scholarship',
-    amount: 'BTN 175,000 annually',
-    criteria: 'Female students in science and technology',
     duration: '4 years',
-    coverage: 'Tuition and research support'
-  },
-  {
-    name: 'Digital Bhutan Initiative Scholarship',
-    amount: 'Full tech education sponsorship',
-    criteria: 'Excellence in IT with innovation potential',
-    duration: 'Program duration + 2 years service',
-    coverage: 'All technology education costs'
+    coverage: 'Full tuition and mentorship program',
+    criteria: 'Female students pursuing STEM fields'
   }
 ];
 
