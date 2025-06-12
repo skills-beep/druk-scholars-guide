@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { 
   MapPin, 
   Calendar, 
@@ -14,9 +15,14 @@ import {
   DollarSign,
   GraduationCap,
   Clock,
-  Award
+  Award,
+  BookOpen,
+  Users,
+  Target,
+  Building
 } from 'lucide-react';
 import { College } from '@/types/college';
+import { governmentScholarships } from '@/data/colleges';
 
 interface CollegeModalProps {
   college: College;
@@ -28,7 +34,7 @@ interface CollegeModalProps {
 const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps) => {
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold font-sora">
             {college.name}
@@ -57,126 +63,283 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
           </div>
 
           {/* Basic Information */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="flex items-center gap-2 text-muted-foreground">
               <MapPin className="h-5 w-5" />
               <span>{college.location}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Calendar className="h-5 w-5" />
-              <span>Established {college.established}</span>
+              <span>Est. {college.established}</span>
             </div>
             <div className="flex items-center gap-2 text-muted-foreground">
-              <GraduationCap className="h-5 w-5" />
+              <Building className="h-5 w-5" />
               <span>{college.type}</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <Clock className="h-5 w-5" />
+              <span>Deadline: {college.admissionDeadline}</span>
             </div>
           </div>
 
           <Separator />
 
-          {/* Description */}
-          <div>
-            <h3 className="text-lg font-semibold mb-2">About</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {college.description}
-            </p>
-          </div>
+          {/* Tabbed Content */}
+          <Tabs defaultValue="about" className="w-full">
+            <TabsList className="grid w-full grid-cols-5">
+              <TabsTrigger value="about">About</TabsTrigger>
+              <TabsTrigger value="courses">Courses</TabsTrigger>
+              <TabsTrigger value="admission">Admission</TabsTrigger>
+              <TabsTrigger value="scholarships">Scholarships</TabsTrigger>
+              <TabsTrigger value="careers">Careers</TabsTrigger>
+            </TabsList>
 
-          {/* Courses */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Courses Offered</h3>
-            <div className="flex flex-wrap gap-2">
-              {college.courses.map((course) => (
-                <Badge key={course} variant="outline">
-                  {course}
-                </Badge>
-              ))}
-            </div>
-          </div>
-
-          {/* Fees and Admission */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <DollarSign className="h-5 w-5" />
-                  Fees Structure
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="text-2xl font-bold">
-                    {college.fees.currency} {college.fees.min.toLocaleString()} - {college.fees.max.toLocaleString()}
+            <TabsContent value="about" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5" />
+                    About {college.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground leading-relaxed mb-4">
+                    {college.description}
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-semibold mb-2">Quick Facts</h4>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        <li>• Established in {college.established}</li>
+                        <li>• Located in {college.location}</li>
+                        <li>• Type: {college.type}</li>
+                        <li>• Rating: {college.rating}/5.0</li>
+                        <li>• {college.courses.length} Programs Offered</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Mission & Vision</h4>
+                      <p className="text-sm text-muted-foreground">
+                        Committed to providing quality education that aligns with Bhutan's Gross National Happiness philosophy, 
+                        fostering academic excellence, cultural preservation, and sustainable development.
+                      </p>
+                    </div>
                   </div>
-                  <div className="text-sm text-muted-foreground">Per year</div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </TabsContent>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="h-5 w-5" />
-                  Admission Details
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-2">
-                  <div className="font-semibold">Deadline: {college.admissionDeadline}</div>
-                  <div className="text-sm text-muted-foreground">
-                    <div className="font-medium mb-1">Eligibility:</div>
-                    <ul className="list-disc list-inside space-y-1">
-                      {college.eligibility.map((criteria, index) => (
-                        <li key={index}>{criteria}</li>
-                      ))}
-                    </ul>
+            <TabsContent value="courses" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <GraduationCap className="h-5 w-5" />
+                    Academic Programs
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                    {college.courses.map((course) => (
+                      <Card key={course} className="border-l-4 border-l-primary">
+                        <CardContent className="p-4">
+                          <h4 className="font-semibold">{course}</h4>
+                          <p className="text-sm text-muted-foreground mt-1">
+                            Comprehensive program with modern curriculum and practical training
+                          </p>
+                        </CardContent>
+                      </Card>
+                    ))}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
 
-          {/* Scholarships */}
-          {college.scholarships.length > 0 && (
-            <div>
-              <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
-                <Award className="h-5 w-5" />
-                Scholarships & Financial Aid
-              </h3>
-              <div className="space-y-3">
-                {college.scholarships.map((scholarship, index) => (
-                  <Card key={index}>
-                    <CardContent className="pt-4">
-                      <div className="flex justify-between items-start mb-2">
-                        <h4 className="font-semibold">{scholarship.name}</h4>
-                        <Badge variant="secondary">{scholarship.amount}</Badge>
+            <TabsContent value="admission" className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <DollarSign className="h-5 w-5" />
+                      Fee Structure
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="text-2xl font-bold">
+                        {college.fees.currency} {college.fees.min.toLocaleString()} - {college.fees.max.toLocaleString()}
                       </div>
-                      <p className="text-sm text-muted-foreground">{scholarship.criteria}</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                      <div className="text-sm text-muted-foreground">Annual tuition fees</div>
+                      <div className="bg-muted/50 p-3 rounded-lg">
+                        <p className="text-sm">
+                          <strong>Note:</strong> Fees may vary by program. Additional costs for accommodation, 
+                          meals, and study materials may apply.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Clock className="h-5 w-5" />
+                      Admission Requirements
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="font-semibold text-primary">
+                        Application Deadline: {college.admissionDeadline}
+                      </div>
+                      <div>
+                        <h4 className="font-medium mb-2">Eligibility Criteria:</h4>
+                        <ul className="space-y-1 text-sm">
+                          {college.eligibility.map((criteria, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <span className="text-primary">•</span>
+                              {criteria}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
-            </div>
-          )}
+            </TabsContent>
+
+            <TabsContent value="scholarships" className="space-y-4">
+              {/* College-specific scholarships */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="h-5 w-5" />
+                    {college.name} Scholarships
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {college.scholarships.map((scholarship, index) => (
+                      <Card key={index} className="border-l-4 border-l-green-500">
+                        <CardContent className="pt-4">
+                          <div className="flex justify-between items-start mb-2">
+                            <h4 className="font-semibold">{scholarship.name}</h4>
+                            <Badge variant="secondary" className="bg-green-100 text-green-800">
+                              {scholarship.amount}
+                            </Badge>
+                          </div>
+                          <p className="text-sm text-muted-foreground">{scholarship.criteria}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Government scholarships */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Award className="h-5 w-5" />
+                    Government of Bhutan Scholarships
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {governmentScholarships.slice(0, 6).map((scholarship, index) => (
+                      <Card key={index} className="border-l-4 border-l-blue-500">
+                        <CardContent className="pt-4">
+                          <div className="space-y-2">
+                            <div className="flex justify-between items-start">
+                              <h4 className="font-semibold text-sm">{scholarship.name}</h4>
+                              <Badge variant="outline" className="text-xs">
+                                {scholarship.duration}
+                              </Badge>
+                            </div>
+                            <p className="text-xs text-muted-foreground">{scholarship.criteria}</p>
+                            <div className="text-xs font-medium text-blue-600">
+                              Coverage: {scholarship.coverage}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                    <p className="text-sm text-blue-800">
+                      <strong>Apply through:</strong> Royal Civil Service Commission or respective ministry websites. 
+                      Early application recommended.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="careers" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Target className="h-5 w-5" />
+                    Career Opportunities
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <p className="text-muted-foreground">
+                      Graduates from {college.name} have excellent career prospects in both government and private sectors.
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {college.careerOpportunities.map((career, index) => (
+                        <div key={index} className="flex items-start gap-3 p-3 border rounded-lg">
+                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <div>
+                            <h4 className="font-medium">{career.split(' - ')[0]}</h4>
+                            {career.includes(' - ') && (
+                              <p className="text-sm text-muted-foreground">
+                                {career.split(' - ')[1]}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="bg-green-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-green-800 mb-2">Employment Support</h4>
+                      <ul className="text-sm text-green-700 space-y-1">
+                        <li>• Career counseling and guidance</li>
+                        <li>• Industry internship programs</li>
+                        <li>• Job placement assistance</li>
+                        <li>• Alumni networking opportunities</li>
+                      </ul>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
 
           {/* Contact Information */}
-          <div>
-            <h3 className="text-lg font-semibold mb-3">Contact Information</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="flex items-center gap-2">
-                <Phone className="h-5 w-5 text-muted-foreground" />
-                <span>{college.contact.phone}</span>
+          <Card>
+            <CardHeader>
+              <CardTitle>Contact Information</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-5 w-5 text-muted-foreground" />
+                  <span>{college.contact.phone}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="h-5 w-5 text-muted-foreground" />
+                  <span>{college.contact.email}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Globe className="h-5 w-5 text-muted-foreground" />
+                  <span>{college.contact.website}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Mail className="h-5 w-5 text-muted-foreground" />
-                <span>{college.contact.email}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Globe className="h-5 w-5 text-muted-foreground" />
-                <span>{college.contact.website}</span>
-              </div>
-            </div>
-          </div>
+            </CardContent>
+          </Card>
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4 border-t">

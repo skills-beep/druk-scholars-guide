@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { College, CollegeFilters } from '@/types/college';
 import CollegeCard from './CollegeCard';
 import CollegeModal from './CollegeModal';
+import CollegeComparison from './CollegeComparison';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { LayoutGrid, List, X } from 'lucide-react';
@@ -24,6 +25,7 @@ const CollegeGrid = ({
 }: CollegeGridProps) => {
   const [selectedCollege, setSelectedCollege] = useState<College | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
+  const [showComparison, setShowComparison] = useState(false);
 
   const filteredColleges = colleges.filter((college) => {
     const matchesSearch = !filters.search || 
@@ -106,7 +108,11 @@ const CollegeGrid = ({
                 </Badge>
               ))}
             </div>
-            <Button variant="secondary" size="sm">
+            <Button 
+              variant="secondary" 
+              size="sm"
+              onClick={() => setShowComparison(true)}
+            >
               View Comparison
             </Button>
           </div>
@@ -154,6 +160,14 @@ const CollegeGrid = ({
           onCompare={onCompare}
         />
       )}
+
+      {/* College Comparison Modal */}
+      <CollegeComparison
+        colleges={compareList}
+        isOpen={showComparison}
+        onClose={() => setShowComparison(false)}
+        onRemoveCollege={onRemoveFromCompare}
+      />
     </div>
   );
 };
