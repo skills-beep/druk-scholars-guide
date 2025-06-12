@@ -1,4 +1,44 @@
+
 import { College } from '@/types/college';
+
+export const governmentScholarships = [
+  {
+    name: "Government Merit Scholarship",
+    duration: "4 years",
+    criteria: "Academic excellence with minimum 80% in Class XII",
+    coverage: "Full tuition fees and monthly stipend"
+  },
+  {
+    name: "Need-based Financial Aid",
+    duration: "Annual",
+    criteria: "Family income below BTN 100,000 annually",
+    coverage: "Partial tuition fees and accommodation"
+  },
+  {
+    name: "Technical Education Scholarship",
+    duration: "4 years",
+    criteria: "Engineering and technical courses enrollment",
+    coverage: "Full tuition and equipment allowance"
+  },
+  {
+    name: "Rural Development Scholarship",
+    duration: "4 years",
+    criteria: "Students from rural areas with commitment to serve",
+    coverage: "Full education expenses and living allowance"
+  },
+  {
+    name: "Teacher Training Scholarship",
+    duration: "3-4 years",
+    criteria: "Education course enrollment with teaching commitment",
+    coverage: "Full tuition and training materials"
+  },
+  {
+    name: "Healthcare Professional Scholarship",
+    duration: "5-6 years",
+    criteria: "Medical and nursing program students",
+    coverage: "Complete education and clinical training costs"
+  }
+];
 
 export const colleges: College[] = [
   {
@@ -17,7 +57,10 @@ export const colleges: College[] = [
       currency: 'BTN'
     },
     tags: ['Public', 'Research', 'Comprehensive'],
-    scholarships: ['Government Merit Scholarship', 'Need-based Financial Aid'],
+    scholarships: [
+      { name: 'Government Merit Scholarship', amount: 'BTN 120,000/year', criteria: 'Academic excellence with minimum 80% in Class XII' },
+      { name: 'Need-based Financial Aid', amount: 'BTN 60,000/year', criteria: 'Family income below BTN 100,000 annually' }
+    ],
     facilities: ['Library', 'Laboratory', 'Sports Complex', 'Hostel'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '120 acres',
@@ -27,7 +70,26 @@ export const colleges: College[] = [
       undergraduate: ['Bachelor of Engineering', 'Bachelor of Business Administration', 'Bachelor of Science'],
       postgraduate: ['Master of Engineering', 'Master of Business Administration', 'Master of Science'],
       doctorate: ['PhD in Engineering', 'PhD in Sciences']
-    }
+    },
+    admissionDeadline: 'March 31, 2024',
+    eligibility: [
+      'Class XII completion with minimum 60% aggregate',
+      'Valid entrance examination score',
+      'Medical fitness certificate',
+      'Character certificate from school'
+    ],
+    contact: {
+      phone: '+975-2-336000',
+      email: 'info@rub.edu.bt',
+      website: 'www.rub.edu.bt'
+    },
+    careerOpportunities: [
+      'Government Civil Service',
+      'Private Sector Management',
+      'Research and Development',
+      'International Organizations',
+      'Entrepreneurship and Startups'
+    ]
   },
   {
     id: '2',
@@ -45,7 +107,10 @@ export const colleges: College[] = [
       currency: 'BTN'
     },
     tags: ['Engineering', 'Technology', 'Research'],
-    scholarships: ['Technical Education Scholarship', 'Engineering Excellence Award'],
+    scholarships: [
+      { name: 'Technical Education Scholarship', amount: 'BTN 140,000/year', criteria: 'Engineering and technical courses enrollment' },
+      { name: 'Engineering Excellence Award', amount: 'BTN 80,000/year', criteria: 'Top 10% academic performance in engineering' }
+    ],
     facilities: ['Advanced Labs', 'Workshop', 'Computer Center', 'Library'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '85 acres',
@@ -55,7 +120,26 @@ export const colleges: College[] = [
       undergraduate: ['Bachelor of Engineering in Civil', 'Bachelor of Engineering in Electrical', 'Bachelor of Engineering in Mechanical'],
       postgraduate: ['Master of Engineering', 'Master of Technology'],
       doctorate: []
-    }
+    },
+    admissionDeadline: 'April 15, 2024',
+    eligibility: [
+      'Class XII with Science stream (PCM)',
+      'Minimum 70% in Mathematics and Physics',
+      'Engineering entrance test qualification',
+      'English proficiency requirement'
+    ],
+    contact: {
+      phone: '+975-5-252423',
+      email: 'info@cst.edu.bt',
+      website: 'www.cst.edu.bt'
+    },
+    careerOpportunities: [
+      'Construction and Infrastructure',
+      'IT and Software Development',
+      'Manufacturing Industries',
+      'Government Technical Services',
+      'Consulting Engineering Firms'
+    ]
   },
   {
     id: '3',
@@ -73,7 +157,10 @@ export const colleges: College[] = [
       currency: 'BTN'
     },
     tags: ['Agriculture', 'Environment', 'Research'],
-    scholarships: ['Agricultural Development Scholarship', 'Rural Youth Scholarship'],
+    scholarships: [
+      { name: 'Agricultural Development Scholarship', amount: 'BTN 100,000/year', criteria: 'Rural students pursuing agriculture with service commitment' },
+      { name: 'Rural Youth Scholarship', amount: 'BTN 75,000/year', criteria: 'Students from farming families with academic merit' }
+    ],
     facilities: ['Research Farm', 'Greenhouse', 'Animal Farm', 'Forestry Lab'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '200 acres',
@@ -83,7 +170,26 @@ export const colleges: College[] = [
       undergraduate: ['Bachelor of Agriculture', 'Bachelor of Forestry', 'Bachelor of Animal Science'],
       postgraduate: ['Master of Agriculture', 'Master of Forestry'],
       doctorate: []
-    }
+    },
+    admissionDeadline: 'March 20, 2024',
+    eligibility: [
+      'Class XII completion (any stream)',
+      'Interest in agriculture and environment',
+      'Physical fitness for field work',
+      'Rural background preferred'
+    ],
+    contact: {
+      phone: '+975-2-584075',
+      email: 'cnr@rub.edu.bt',
+      website: 'www.cnr.edu.bt'
+    },
+    careerOpportunities: [
+      'Ministry of Agriculture',
+      'Forestry Department',
+      'Agricultural Extension Services',
+      'Research Institutes',
+      'Agribusiness and Farming'
+    ]
   },
   {
     id: '4',
@@ -101,7 +207,10 @@ export const colleges: College[] = [
       currency: 'BTN'
     },
     tags: ['Liberal Arts', 'Humanities', 'Sciences'],
-    scholarships: ['Academic Excellence Scholarship', 'Arts and Literature Grant'],
+    scholarships: [
+      { name: 'Academic Excellence Scholarship', amount: 'BTN 85,000/year', criteria: 'Top 5% students in liberal arts and sciences' },
+      { name: 'Arts and Literature Grant', amount: 'BTN 50,000/year', criteria: 'Outstanding performance in humanities subjects' }
+    ],
     facilities: ['Library', 'Science Labs', 'Art Studio', 'Auditorium'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '95 acres',
@@ -111,7 +220,26 @@ export const colleges: College[] = [
       undergraduate: ['Bachelor of Arts', 'Bachelor of Science', 'Bachelor of Commerce'],
       postgraduate: ['Master of Arts', 'Master of Science'],
       doctorate: []
-    }
+    },
+    admissionDeadline: 'April 5, 2024',
+    eligibility: [
+      'Class XII in relevant stream',
+      'Minimum 60% aggregate marks',
+      'Subject-specific requirements',
+      'Interview for some programs'
+    ],
+    contact: {
+      phone: '+975-4-741456',
+      email: 'sherubtse@rub.edu.bt',
+      website: 'www.sherubtse.edu.bt'
+    },
+    careerOpportunities: [
+      'Teaching and Education',
+      'Government Administrative Services',
+      'Media and Journalism',
+      'Research and Academia',
+      'Cultural and Heritage Organizations'
+    ]
   },
   {
     id: '5',
@@ -129,7 +257,10 @@ export const colleges: College[] = [
       currency: 'BTN'
     },
     tags: ['Engineering', 'Innovation', 'Modern'],
-    scholarships: ['Engineering Innovation Scholarship', 'Industry Partnership Grant'],
+    scholarships: [
+      { name: 'Engineering Innovation Scholarship', amount: 'BTN 150,000/year', criteria: 'Excellence in STEM subjects with innovation projects' },
+      { name: 'Industry Partnership Grant', amount: 'BTN 100,000/year', criteria: 'Students with industry internship commitments' }
+    ],
     facilities: ['Modern Labs', 'Innovation Center', 'Industry Hub', 'Digital Library'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '75 acres',
@@ -139,7 +270,26 @@ export const colleges: College[] = [
       undergraduate: ['Bachelor of Engineering in Electronics', 'Bachelor of Engineering in Computer', 'Bachelor of Engineering in Civil'],
       postgraduate: ['Master of Engineering'],
       doctorate: []
-    }
+    },
+    admissionDeadline: 'April 20, 2024',
+    eligibility: [
+      'Class XII Science with minimum 75%',
+      'Strong foundation in Mathematics and Physics',
+      'Engineering aptitude test',
+      'English language proficiency'
+    ],
+    contact: {
+      phone: '+975-7-365421',
+      email: 'jnec@rub.edu.bt',
+      website: 'www.jnec.edu.bt'
+    },
+    careerOpportunities: [
+      'Software Development',
+      'Electronics and Communication',
+      'Construction Engineering',
+      'Manufacturing and Design',
+      'Technology Startups'
+    ]
   },
   {
     id: '6',
@@ -157,7 +307,10 @@ export const colleges: College[] = [
       currency: 'BTN'
     },
     tags: ['Education', 'Teaching', 'Training'],
-    scholarships: ['Teacher Training Scholarship', 'Rural Education Grant'],
+    scholarships: [
+      { name: 'Teacher Training Scholarship', amount: 'BTN 70,000/year', criteria: 'Education course enrollment with teaching commitment' },
+      { name: 'Rural Education Grant', amount: 'BTN 45,000/year', criteria: 'Commitment to teach in rural schools for 5 years' }
+    ],
     facilities: ['Teaching Practice Schools', 'Education Resource Center', 'Psychology Lab'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '60 acres',
@@ -167,6 +320,25 @@ export const colleges: College[] = [
       undergraduate: ['Bachelor of Education Primary', 'Bachelor of Education Secondary'],
       postgraduate: ['Master of Education', 'Postgraduate Certificate in Education'],
       doctorate: []
-    }
+    },
+    admissionDeadline: 'March 15, 2024',
+    eligibility: [
+      'Class XII completion',
+      'Interest in teaching profession',
+      'Communication skills assessment',
+      'Teaching aptitude test'
+    ],
+    contact: {
+      phone: '+975-5-365123',
+      email: 'sce@rub.edu.bt',
+      website: 'www.sce.edu.bt'
+    },
+    careerOpportunities: [
+      'Primary School Teaching',
+      'Secondary School Teaching',
+      'Educational Administration',
+      'Curriculum Development',
+      'Educational Research'
+    ]
   }
 ];
