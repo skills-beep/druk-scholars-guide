@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Modern Design System */
 
 @layer base {
   :root {
@@ -93,6 +93,7 @@
 
   body {
     @apply bg-background text-foreground font-inter;
+    scroll-behavior: smooth;
   }
 }
 
@@ -109,11 +110,20 @@
     background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary)) 100%);
   }
 
-  .bg-grid-pattern {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
+  .interactive-card {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-xl cursor-pointer;
+  }
+
+  .smooth-hover {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .modern-card {
+    @apply bg-white rounded-3xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .gradient-button {
+    @apply bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white transition-all duration-300 hover:scale-105 hover:shadow-lg;
   }
 }
 
@@ -142,14 +152,6 @@
   .hover-glow:hover {
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
     transform: translateY(-2px);
-  }
-
-  .interactive-card {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl cursor-pointer;
-  }
-
-  .smooth-hover {
-    @apply transition-all duration-300 ease-in-out;
   }
 }
 
@@ -199,11 +201,6 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Smooth scrolling for the entire page */
-html {
-  scroll-behavior: smooth;
-}
-
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -220,4 +217,24 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary) / 0.8);
+}
+
+/* Modern focus styles */
+*:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, input, select, textarea {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Enhanced hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+.button-hover {
+  @apply transition-all duration-300 hover:scale-105 hover:shadow-lg;
 }
