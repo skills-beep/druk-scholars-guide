@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# 🎓 Druk Scholars Guide
 
-## Project info
+**Druk Scholars Guide** is a modern educational platform designed to help students in Bhutan discover scholarships, learning resources, and career guidance all in one place.
 
-**URL**: https://lovable.dev/projects/7d5d2a6e-58b6-488c-882f-d70cc2cb66ee
+## 🌐 Live Demo
 
-## How can I edit this code?
+[Visit the Website](https://druk-scholars-guide.vercel.app/)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🚀 Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7d5d2a6e-58b6-488c-882f-d70cc2cb66ee) and start prompting.
+- 🎓 List of scholarships available to Bhutanese students
+- 📚 Educational resources and career tips
+- 🔍 Search and filtering options
+- 🌙 Light/Dark mode support
+- ⚡ Built with performance and mobile-first design in mind
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🛠️ Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Frontend**: TypeScript, Tailwind CSS, HTML
+- **Bundler**: Vite
+- **Styling**: Tailwind CSS
+- **Linting**: ESLint
+- **Tooling**: Node.js, Bun,
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🧑‍💻 Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- [Node.js](https://nodejs.org/)
+- [Bun (optional)](https://bun.sh/)
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Setup
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/druk-scholars-guide.git
+
+# Navigate into the directory
+cd druk-scholars-guide
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-```
+📁 Folder Structure
+text
+Copy
+Edit
+druk-scholars-guide/
+├── public/                 # Static assets
+├── src/                    # Source code
+├── index.html              # Main HTML entry
+├── tailwind.config.ts      # Tailwind CSS config
+├── tsconfig.json           # TypeScript config
+├── vite.config.ts          # Vite config
+🙌 Contribution
+Feel free to fork and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
 
-**Edit a file directly in GitHub**
+👤 Author
+Bishal Sharma
+📫 bishalsharma153@gmail.com
+🌐 LinkedIn | GitHub
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7d5d2a6e-58b6-488c-882f-d70cc2cb66ee) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+📄 License
+This project is licensed under the MIT License.
