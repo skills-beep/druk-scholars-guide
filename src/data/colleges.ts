@@ -24,6 +24,13 @@ export const colleges: College[] = [
     scholarships: [
       { name: 'Merit Scholarship', amount: '50% tuition fee', criteria: 'Top 10% academic performance' },
       { name: 'Need-based Aid', amount: 'Up to 75% tuition fee', criteria: 'Family income below BTN 200,000' }
+    ],
+    careerOpportunities: [
+      'Civil Engineer - Infrastructure Development',
+      'Software Engineer - Digital Bhutan Initiative',
+      'Doctor - Healthcare System',
+      'Business Analyst - Tourism Industry',
+      'Research Scientist - Environmental Conservation'
     ]
   },
   {
@@ -47,6 +54,13 @@ export const colleges: College[] = [
     },
     scholarships: [
       { name: 'Tech Excellence Award', amount: 'BTN 100,000', criteria: 'Outstanding performance in STEM' }
+    ],
+    careerOpportunities: [
+      'Software Developer - E-governance Projects',
+      'IT Specialist - Banking & Finance',
+      'Electronics Engineer - Renewable Energy',
+      'Network Administrator - Telecommunications',
+      'Data Analyst - Government Ministries'
     ]
   },
   {
@@ -70,6 +84,13 @@ export const colleges: College[] = [
     },
     scholarships: [
       { name: 'Future Teachers Grant', amount: 'Full tuition coverage', criteria: 'Commitment to teach in rural areas' }
+    ],
+    careerOpportunities: [
+      'School Principal - Educational Leadership',
+      'Primary Teacher - Community Schools',
+      'Special Education Coordinator - Inclusive Education',
+      'Educational Consultant - Ministry of Education',
+      'Curriculum Developer - Educational Resources'
     ]
   },
   {
@@ -93,6 +114,13 @@ export const colleges: College[] = [
     },
     scholarships: [
       { name: 'Engineering Excellence Award', amount: 'BTN 150,000 per year', criteria: 'Top 5% in entrance exam' }
+    ],
+    careerOpportunities: [
+      'Civil Engineer - Hydroelectric Projects',
+      'Electrical Engineer - Power Grid Development',
+      'Architect - Sustainable Building Design',
+      'Mechanical Engineer - Manufacturing Industry',
+      'Project Manager - Infrastructure Development'
     ]
   },
   {
@@ -116,6 +144,13 @@ export const colleges: College[] = [
     },
     scholarships: [
       { name: 'Green Future Scholarship', amount: '40% tuition fee', criteria: 'Environmental project portfolio' }
+    ],
+    careerOpportunities: [
+      'Forest Officer - Department of Forests',
+      'Agricultural Extension Officer - Rural Development',
+      'Environmental Consultant - Conservation Projects',
+      'Wildlife Biologist - Protected Area Management',
+      'Climate Change Specialist - NCHM'
     ]
   },
   {
@@ -139,6 +174,76 @@ export const colleges: College[] = [
     },
     scholarships: [
       { name: 'Heritage Preservation Grant', amount: 'BTN 80,000', criteria: 'Commitment to traditional practices' }
+    ],
+    careerOpportunities: [
+      'Traditional Medicine Practitioner - Indigenous Healing',
+      'Herbal Medicine Specialist - Natural Remedies',
+      'Wellness Consultant - Holistic Health Centers',
+      'Research Associate - Traditional Medicine Studies',
+      'Health Educator - Community Wellness Programs'
+    ]
+  }
+];
+
+export const inDemandJobs = [
+  {
+    category: 'Technology & Digital',
+    jobs: [
+      'Software Engineer - Digital Bhutan Initiative',
+      'IT Specialist - E-governance',
+      'Data Analyst - Government Analytics',
+      'Cybersecurity Specialist - National Security',
+      'Web Developer - Tourism Promotion'
+    ]
+  },
+  {
+    category: 'Healthcare',
+    jobs: [
+      'Doctor - Rural Healthcare',
+      'Nurse - Community Health',
+      'Traditional Medicine Practitioner',
+      'Public Health Specialist',
+      'Mental Health Counselor'
+    ]
+  },
+  {
+    category: 'Engineering & Infrastructure',
+    jobs: [
+      'Civil Engineer - Hydroelectric Projects',
+      'Electrical Engineer - Power Grid',
+      'Environmental Engineer - Sustainability',
+      'Mechanical Engineer - Manufacturing',
+      'Architect - Green Buildings'
+    ]
+  },
+  {
+    category: 'Education & Training',
+    jobs: [
+      'School Teacher - Remote Areas',
+      'Vocational Trainer - Skills Development',
+      'Educational Administrator',
+      'Curriculum Developer',
+      'Adult Education Coordinator'
+    ]
+  },
+  {
+    category: 'Tourism & Hospitality',
+    jobs: [
+      'Tour Guide - Cultural Heritage',
+      'Hotel Manager - Sustainable Tourism',
+      'Tourism Marketing Specialist',
+      'Event Coordinator - Festivals',
+      'Eco-tourism Developer'
+    ]
+  },
+  {
+    category: 'Agriculture & Environment',
+    jobs: [
+      'Agricultural Extension Officer',
+      'Forest Officer - Conservation',
+      'Climate Change Specialist',
+      'Organic Farming Consultant',
+      'Wildlife Conservation Officer'
     ]
   }
 ];

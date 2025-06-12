@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FilterSidebar from '@/components/FilterSidebar';
 import CollegeGrid from '@/components/CollegeGrid';
+import Footer from '@/components/Footer';
 import { colleges } from '@/data/colleges';
 import { College, CollegeFilters } from '@/types/college';
 
@@ -95,6 +96,8 @@ const Index = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   );
 };

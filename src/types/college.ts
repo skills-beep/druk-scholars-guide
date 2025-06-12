@@ -27,6 +27,7 @@ export interface College {
     amount: string;
     criteria: string;
   }[];
+  careerOpportunities: string[];
 }
 
 export interface CollegeFilters {
