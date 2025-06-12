@@ -28,6 +28,16 @@ export interface College {
     criteria: string;
   }[];
   careerOpportunities: string[];
+  facilities: string[];
+  accreditation: string;
+  campusSize: string;
+  studentCount: number;
+  facultyCount: number;
+  programs: {
+    undergraduate: string[];
+    postgraduate: string[];
+    doctorate: string[];
+  };
 }
 
 export interface CollegeFilters {
