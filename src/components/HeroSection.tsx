@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -65,12 +64,6 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
         <div className="space-y-8 py-12">
           {/* Main Heading */}
           <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl px-6 py-3 rounded-full text-sm font-medium text-slate-700 dark:text-slate-300 shadow-xl border border-white/40 dark:border-gray-700/50 animate-fade-in">
-              <Sparkles className="h-4 w-4 text-blue-600" />
-              Discover Your Academic Future in Bhutan
-              <TrendingUp className="h-4 w-4 text-green-600" />
-            </div>
-            
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-sora text-white leading-tight animate-fade-in drop-shadow-2xl" style={{ animationDelay: '0.2s' }}>
               Find Your
               <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-lg">
