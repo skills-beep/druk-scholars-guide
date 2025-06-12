@@ -43,51 +43,51 @@ export const governmentScholarships = [
 export const colleges: College[] = [
   {
     id: '1',
-    name: 'Royal University of Bhutan',
+    name: 'Royal Thimphu College',
     location: 'Thimphu',
-    type: 'University',
-    image: 'https://www.rtc.bt/images/campus-aerial.jpg',
-    description: 'The premier university of Bhutan, offering comprehensive higher education programs across multiple disciplines.',
+    type: 'College',
+    image: '/lovable-uploads/239bcac2-4bdc-47f1-9803-41dfb3900118.png',
+    description: 'Premier private college in Bhutan offering comprehensive undergraduate and graduate programs in management, technology, and humanities.',
     rating: 4.7,
-    established: 2003,
-    courses: ['Computer Science', 'Business Administration', 'Environmental Science', 'Engineering'],
+    established: 2009,
+    courses: ['Business Administration', 'Information Technology', 'Management', 'Computer Science', 'Economics', 'English Language'],
     fees: {
-      min: 80000,
-      max: 150000,
+      min: 120000,
+      max: 200000,
       currency: 'BTN'
     },
-    tags: ['Public', 'Research', 'Comprehensive'],
+    tags: ['Private', 'Liberal Arts', 'Management'],
     scholarships: [
-      { name: 'Government Merit Scholarship', amount: 'BTN 120,000/year', criteria: 'Academic excellence with minimum 80% in Class XII' },
-      { name: 'Need-based Financial Aid', amount: 'BTN 60,000/year', criteria: 'Family income below BTN 100,000 annually' }
+      { name: 'Academic Excellence Scholarship', amount: 'BTN 150,000/year', criteria: 'Top 10% students with outstanding academic performance' },
+      { name: 'Need-based Financial Aid', amount: 'BTN 80,000/year', criteria: 'Students from low-income families with academic merit' }
     ],
-    facilities: ['Library', 'Laboratory', 'Sports Complex', 'Hostel'],
+    facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Auditorium'],
     accreditation: 'Royal Government of Bhutan',
-    campusSize: '120 acres',
-    studentCount: 15000,
-    facultyCount: 800,
+    campusSize: '45 acres',
+    studentCount: 2500,
+    facultyCount: 120,
     programs: {
-      undergraduate: ['Bachelor of Engineering', 'Bachelor of Business Administration', 'Bachelor of Science'],
-      postgraduate: ['Master of Engineering', 'Master of Business Administration', 'Master of Science'],
-      doctorate: ['PhD in Engineering', 'PhD in Sciences']
+      undergraduate: ['Bachelor of Business Administration', 'Bachelor of Information Technology', 'Bachelor of Arts in English'],
+      postgraduate: ['Master of Business Administration', 'Master of Information Technology'],
+      doctorate: []
     },
     admissionDeadline: 'March 31, 2024',
     eligibility: [
-      'Class XII completion with minimum 60% aggregate',
-      'Valid entrance examination score',
-      'Medical fitness certificate',
+      'Class XII completion with minimum 65% aggregate',
+      'English proficiency test',
+      'Interview and aptitude test',
       'Character certificate from school'
     ],
     contact: {
       phone: '+975-2-336000',
-      email: 'info@rub.edu.bt',
-      website: 'www.rub.edu.bt'
+      email: 'info@rtc.bt',
+      website: 'www.rtc.bt'
     },
     careerOpportunities: [
-      'Government Civil Service',
-      'Private Sector Management',
-      'Research and Development',
-      'International Organizations',
+      'Corporate Management',
+      'Information Technology',
+      'Banking and Finance',
+      'International Business',
       'Entrepreneurship and Startups'
     ]
   },
@@ -96,7 +96,7 @@ export const colleges: College[] = [
     name: 'College of Science and Technology',
     location: 'Phuentsholing',
     type: 'College',
-    image: 'https://www.cst.edu.bt/images/front-building.jpg',
+    image: '/lovable-uploads/880d7613-7292-46b9-bb3f-dc61fc9c5193.png',
     description: 'Leading engineering and technology college in Bhutan, known for innovation and research excellence.',
     rating: 4.6,
     established: 1974,
@@ -146,7 +146,7 @@ export const colleges: College[] = [
     name: 'College of Natural Resources',
     location: 'Lobesa',
     type: 'College',
-    image: 'https://images.unsplash.com/photo-1574263867128-a3d5c1b1deac?w=800&h=400&fit=crop&q=80',
+    image: '/lovable-uploads/ccaa2937-dd94-47e7-bcad-c9bbcee60b88.png',
     description: 'Specialized institution focusing on agriculture, forestry, and natural resource management.',
     rating: 4.4,
     established: 1992,
@@ -196,7 +196,7 @@ export const colleges: College[] = [
     name: 'Sherubtse College',
     location: 'Kanglung',
     type: 'College',
-    image: 'https://images.unsplash.com/photo-1590012314607-cda9d9b699ae?w=800&h=400&fit=crop&q=80',
+    image: '/lovable-uploads/5a7843b7-e744-4b66-b1ca-350f55efed17.png',
     description: 'Premier liberal arts college offering diverse academic programs in humanities and sciences.',
     rating: 4.5,
     established: 1983,
@@ -246,7 +246,7 @@ export const colleges: College[] = [
     name: 'Jigme Namgyel Engineering College',
     location: 'Dewathang',
     type: 'College',
-    image: 'https://www.cst.edu.bt/images/aerial-view.jpg',
+    image: '/lovable-uploads/e3c09321-8cc8-49d8-9611-48155075d8d1.png',
     description: 'Modern engineering college with state-of-the-art facilities and industry partnerships.',
     rating: 4.3,
     established: 2014,
@@ -296,7 +296,7 @@ export const colleges: College[] = [
     name: 'Samtse College of Education',
     location: 'Samtse',
     type: 'College',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&q=80',
+    image: '/lovable-uploads/4c745cc5-30f9-4445-a88b-89b5df5a261d.png',
     description: 'Leading teacher training institute preparing educators for Bhutan\'s educational system.',
     rating: 4.2,
     established: 1968,
