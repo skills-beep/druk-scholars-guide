@@ -44,22 +44,26 @@ const LoadingAnimation = () => {
 
         {/* Progress Bar */}
         <div className="w-64 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mt-6 overflow-hidden">
-          <div className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse" 
-               style={{ 
-                 animation: 'progress 2.5s ease-in-out forwards',
-                 width: '0%'
-               }}>
+          <div 
+            className="h-full bg-gradient-to-r from-blue-500 to-purple-600 rounded-full animate-pulse"
+            style={{ 
+              animation: 'progress 2.5s ease-in-out forwards',
+              width: '0%'
+            }}
+          >
           </div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes progress {
-          0% { width: 0%; }
-          50% { width: 70%; }
-          100% { width: 100%; }
-        }
-      `}</style>
+      <style dangerouslySetInnerHTML={{
+        __html: `
+          @keyframes progress {
+            0% { width: 0%; }
+            50% { width: 70%; }
+            100% { width: 100%; }
+          }
+        `
+      }} />
     </div>
   );
 };
