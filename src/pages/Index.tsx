@@ -4,6 +4,7 @@ import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import FilterSidebar from '@/components/FilterSidebar';
 import CollegeGrid from '@/components/CollegeGrid';
+import ScholarshipsSection from '@/components/ScholarshipsSection';
 import CareersSection from '@/components/CareersSection';
 import DeveloperSection from '@/components/DeveloperSection';
 import Footer from '@/components/Footer';
@@ -72,7 +73,7 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dark:bg-gray-900">
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
       <HeroSection onSearch={handleSearch} />
@@ -114,6 +115,7 @@ const Index = () => {
         </div>
       </main>
 
+      <ScholarshipsSection />
       <CareersSection />
       <DeveloperSection />
       <Footer />
