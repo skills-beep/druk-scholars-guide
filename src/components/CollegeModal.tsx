@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -28,7 +27,7 @@ interface CollegeModalProps {
   college: College;
   isOpen: boolean;
   onClose: () => void;
-  onCompare: (college: College) => void;
+  onCompare?: (college: College) => void;
 }
 
 const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps) => {
@@ -343,14 +342,16 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
 
           {/* Action Buttons */}
           <div className="flex gap-4 pt-4 border-t">
-            <Button 
-              variant="outline" 
-              className="flex-1"
-              onClick={() => onCompare(college)}
-            >
-              Add to Compare
-            </Button>
-            <Button className="flex-1">
+            {onCompare && (
+              <Button 
+                variant="outline" 
+                className="flex-1"
+                onClick={() => onCompare(college)}
+              >
+                Add to Compare
+              </Button>
+            )}
+            <Button className={onCompare ? "flex-1" : "w-full"}>
               Apply Now
             </Button>
           </div>

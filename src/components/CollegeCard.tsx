@@ -1,4 +1,3 @@
-
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
@@ -9,7 +8,7 @@ import DynamicRating from './DynamicRating';
 interface CollegeCardProps {
   college: College;
   onViewDetails: (college: College) => void;
-  onCompare: (college: College) => void;
+  onCompare?: (college: College) => void;
 }
 
 const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) => {
@@ -112,15 +111,17 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
       </CardContent>
 
       <CardFooter className="pt-4 flex gap-3">
+        {onCompare && (
+          <Button
+            variant="outline"
+            className="flex-1 hover:bg-slate-50 dark:hover:bg-gray-700 hover:border-slate-300 dark:hover:border-gray-600 border-slate-200 dark:border-gray-600 text-slate-700 dark:text-slate-200 font-medium transition-all duration-300 rounded-xl"
+            onClick={() => onCompare(college)}
+          >
+            Compare
+          </Button>
+        )}
         <Button
-          variant="outline"
-          className="flex-1 hover:bg-slate-50 dark:hover:bg-gray-700 hover:border-slate-300 dark:hover:border-gray-600 border-slate-200 dark:border-gray-600 text-slate-700 dark:text-slate-200 font-medium transition-all duration-300 rounded-xl"
-          onClick={() => onCompare(college)}
-        >
-          Compare
-        </Button>
-        <Button
-          className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          className={`${onCompare ? 'flex-1' : 'w-full'} bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg`}
           onClick={() => onViewDetails(college)}
         >
           View Details
