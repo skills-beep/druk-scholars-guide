@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -15,7 +16,6 @@ const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
   const [filterSidebarOpen, setFilterSidebarOpen] = useState(false);
-  const [compareList, setCompareList] = useState<College[]>([]);
   const [filters, setFilters] = useState<CollegeFilters>({
     search: '',
     location: [],
@@ -48,23 +48,6 @@ const Index = () => {
 
   const handleSearch = (query: string) => {
     setFilters({ ...filters, search: query });
-  };
-
-  const handleCompare = (college: College) => {
-    if (compareList.find(c => c.id === college.id)) {
-      return; // Already in compare list
-    }
-    
-    if (compareList.length >= 3) {
-      // Remove the first item if we have 3 items
-      setCompareList([...compareList.slice(1), college]);
-    } else {
-      setCompareList([...compareList, college]);
-    }
-  };
-
-  const handleRemoveFromCompare = (collegeId: string) => {
-    setCompareList(compareList.filter(c => c.id !== collegeId));
   };
 
   if (isLoading) {
@@ -106,9 +89,6 @@ const Index = () => {
             <CollegeGrid
               colleges={colleges}
               filters={filters}
-              compareList={compareList}
-              onCompare={handleCompare}
-              onRemoveFromCompare={handleRemoveFromCompare}
             />
           </div>
         </div>
