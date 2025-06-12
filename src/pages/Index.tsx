@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
@@ -115,9 +114,7 @@ const Index = () => {
         </div>
       </main>
 
-      <ScholarshipsSection />
       <CareersSection />
-      <DeveloperSection />
       <Footer />
     </div>
   );
