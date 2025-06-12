@@ -71,13 +71,9 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
               variant="ghost"
               size="icon"
               onClick={toggleDarkMode}
-              className="hidden sm:flex text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
-            
-            <Button variant="outline" className="hidden sm:flex">
-              Sign In
             </Button>
 
             {/* Mobile menu button */}
@@ -121,10 +117,7 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
                   </Link>
                 )
               ))}
-              <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-                <Button variant="outline" size="sm">
-                  Sign In
-                </Button>
+              <div className="flex items-center justify-center pt-4 border-t border-gray-200 dark:border-gray-700">
                 <Button
                   variant="ghost"
                   size="icon"

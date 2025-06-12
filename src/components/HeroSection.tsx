@@ -159,22 +159,6 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
             <p className="text-base lg:text-lg text-white/95 max-w-2xl mx-auto drop-shadow-xl">
               Join thousands of students who discovered their perfect academic match through our platform
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl border-white/50 dark:border-gray-600/50 text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-xl"
-              >
-                Browse Programs
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl border-white/50 dark:border-gray-600/50 text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-xl"
-              >
-                Compare Colleges
-              </Button>
-            </div>
           </div>
         </div>
       </div>
