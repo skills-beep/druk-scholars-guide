@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { College, CollegeFilters } from '@/types/college';
 import CollegeCard from './CollegeCard';
@@ -6,7 +5,7 @@ import CollegeModal from './CollegeModal';
 import CollegeComparison from './CollegeComparison';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { LayoutGrid, List, X } from 'lucide-react';
+import { LayoutGrid, List, X, TrendingUp } from 'lucide-react';
 
 interface CollegeGridProps {
   colleges: College[];
@@ -59,50 +58,70 @@ const CollegeGrid = ({
 
   return (
     <div className="space-y-6">
-      {/* Results Header */}
-      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-        <div>
-          <h2 className="text-2xl font-bold font-sora">
-            {filteredColleges.length} College{filteredColleges.length !== 1 ? 's' : ''} Found
-          </h2>
-          <p className="text-muted-foreground">
-            Discover the perfect institution for your academic journey
-          </p>
-        </div>
+      {/* Enhanced Results Header */}
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/20 dark:border-gray-700/50">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
+          <div className="space-y-2">
+            <div className="flex items-center gap-3">
+              <h2 className="text-3xl font-bold font-sora text-slate-900 dark:text-white">
+                {filteredColleges.length} College{filteredColleges.length !== 1 ? 's' : ''} Found
+              </h2>
+              <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border-0">
+                <TrendingUp className="h-3 w-3 mr-1" />
+                Live Results
+              </Badge>
+            </div>
+            <p className="text-slate-600 dark:text-slate-300 text-lg">
+              Discover exceptional educational opportunities in Bhutan
+            </p>
+          </div>
 
-        <div className="flex items-center gap-2">
-          <Button
-            variant={viewMode === 'grid' ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => setViewMode('grid')}
-          >
-            <LayoutGrid className="h-4 w-4" />
-          </Button>
-          <Button
-            variant={viewMode === 'list' ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => setViewMode('list')}
-          >
-            <List className="h-4 w-4" />
-          </Button>
+          <div className="flex items-center gap-3">
+            <span className="text-sm text-slate-600 dark:text-slate-300 font-medium">View:</span>
+            <div className="flex items-center bg-slate-100 dark:bg-gray-700 rounded-xl p-1">
+              <Button
+                variant={viewMode === 'grid' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setViewMode('grid')}
+                className={`rounded-lg transition-all duration-300 ${
+                  viewMode === 'grid' 
+                    ? 'bg-white dark:bg-gray-600 shadow-md scale-105' 
+                    : 'hover:bg-white/50 dark:hover:bg-gray-600/50'
+                }`}
+              >
+                <LayoutGrid className="h-4 w-4" />
+              </Button>
+              <Button
+                variant={viewMode === 'list' ? 'default' : 'ghost'}
+                size="sm"
+                onClick={() => setViewMode('list')}
+                className={`rounded-lg transition-all duration-300 ${
+                  viewMode === 'list' 
+                    ? 'bg-white dark:bg-gray-600 shadow-md scale-105' 
+                    : 'hover:bg-white/50 dark:hover:bg-gray-600/50'
+                }`}
+              >
+                <List className="h-4 w-4" />
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Compare Bar */}
+      {/* Enhanced Compare Bar */}
       {compareList.length > 0 && (
-        <div className="sticky top-20 z-20 bg-primary text-primary-foreground rounded-lg p-4 shadow-lg">
+        <div className="sticky top-20 z-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-4 shadow-xl backdrop-blur-lg animate-slide-in-right">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-semibold">Compare ({compareList.length}):</span>
+            <div className="flex items-center gap-3 flex-wrap">
+              <span className="font-bold text-lg">Compare ({compareList.length}/3):</span>
               {compareList.map((college) => (
                 <Badge
                   key={college.id}
-                  variant="secondary"
-                  className="bg-white/20 text-white hover:bg-white/30 flex items-center gap-1"
+                  className="bg-white/20 text-white hover:bg-white/30 flex items-center gap-2 px-3 py-1 transition-all duration-300 hover:scale-105"
                 >
                   {college.name}
                   <X 
-                    className="h-3 w-3 cursor-pointer" 
+                    className="h-3 w-3 cursor-pointer hover:text-red-200 transition-colors" 
                     onClick={() => onRemoveFromCompare(college.id)}
                   />
                 </Badge>
@@ -112,6 +131,7 @@ const CollegeGrid = ({
               variant="secondary" 
               size="sm"
               onClick={() => setShowComparison(true)}
+              className="bg-white/20 hover:bg-white/30 text-white border-0 transition-all duration-300 hover:scale-105"
             >
               View Comparison
             </Button>
@@ -119,20 +139,20 @@ const CollegeGrid = ({
         </div>
       )}
 
-      {/* Colleges Grid/List */}
+      {/* Enhanced Colleges Grid/List */}
       {filteredColleges.length === 0 ? (
-        <div className="text-center py-12">
-          <div className="text-6xl mb-4">🎓</div>
-          <h3 className="text-xl font-semibold mb-2">No colleges found</h3>
-          <p className="text-muted-foreground">
-            Try adjusting your filters or search criteria
+        <div className="text-center py-16 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl">
+          <div className="text-8xl mb-6">🎓</div>
+          <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">No colleges found</h3>
+          <p className="text-slate-600 dark:text-slate-300 text-lg">
+            Try adjusting your filters or search criteria to discover more options
           </p>
         </div>
       ) : (
         <div className={`
           ${viewMode === 'grid' 
-            ? 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6' 
-            : 'space-y-4'
+            ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6' 
+            : 'space-y-6'
           }
         `}>
           {filteredColleges.map((college, index) => (
@@ -151,7 +171,7 @@ const CollegeGrid = ({
         </div>
       )}
 
-      {/* College Modal */}
+      {/* Modals */}
       {selectedCollege && (
         <CollegeModal
           college={selectedCollege}
@@ -161,7 +181,6 @@ const CollegeGrid = ({
         />
       )}
 
-      {/* College Comparison Modal */}
       <CollegeComparison
         colleges={compareList}
         isOpen={showComparison}

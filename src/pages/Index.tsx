@@ -73,16 +73,16 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
       <HeroSection onSearch={handleSearch} />
       
       <main className="relative" id="colleges">
-        <div className="flex">
+        <div className="flex max-w-7xl mx-auto">
           {/* Filter Sidebar */}
-          <div className="hidden md:block w-80 shrink-0">
-            <div className="sticky top-20 h-[calc(100vh-5rem)]">
+          <div className="hidden lg:block w-80 shrink-0">
+            <div className="sticky top-20 h-[calc(100vh-5rem)] p-4">
               <FilterSidebar
                 filters={filters}
                 onFiltersChange={setFilters}
@@ -93,7 +93,7 @@ const Index = () => {
           </div>
 
           {/* Mobile Filter Sidebar */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <FilterSidebar
               filters={filters}
               onFiltersChange={setFilters}
@@ -103,7 +103,7 @@ const Index = () => {
           </div>
 
           {/* Main Content */}
-          <div className="flex-1 p-6 md:p-8">
+          <div className="flex-1 p-4 lg:p-6">
             <CollegeGrid
               colleges={colleges}
               filters={filters}
