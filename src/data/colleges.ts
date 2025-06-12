@@ -46,7 +46,7 @@ export const colleges: College[] = [
     name: 'Royal Thimphu College',
     location: 'Thimphu',
     type: 'College',
-    image: '/lovable-uploads/239bcac2-4bdc-47f1-9803-41dfb3900118.png',
+    image: '/lovable-uploads/072154cd-7fda-4258-abda-845af9aab121.png',
     description: 'Premier private college in Bhutan offering comprehensive undergraduate and graduate programs in management, technology, and humanities.',
     rating: 4.7,
     established: 2009,
@@ -196,7 +196,7 @@ export const colleges: College[] = [
     name: 'Sherubtse College',
     location: 'Kanglung',
     type: 'College',
-    image: '/lovable-uploads/5a7843b7-e744-4b66-b1ca-350f55efed17.png',
+    image: '/lovable-uploads/239bcac2-4bdc-47f1-9803-41dfb3900118.png',
     description: 'Premier liberal arts college offering diverse academic programs in humanities and sciences.',
     rating: 4.5,
     established: 1983,
@@ -246,7 +246,7 @@ export const colleges: College[] = [
     name: 'Jigme Namgyel Engineering College',
     location: 'Dewathang',
     type: 'College',
-    image: '/lovable-uploads/e3c09321-8cc8-49d8-9611-48155075d8d1.png',
+    image: '/lovable-uploads/5a7843b7-e744-4b66-b1ca-350f55efed17.png',
     description: 'Modern engineering college with state-of-the-art facilities and industry partnerships.',
     rating: 4.3,
     established: 2014,
@@ -296,7 +296,7 @@ export const colleges: College[] = [
     name: 'Samtse College of Education',
     location: 'Samtse',
     type: 'College',
-    image: '/lovable-uploads/4c745cc5-30f9-4445-a88b-89b5df5a261d.png',
+    image: '/lovable-uploads/e3c09321-8cc8-49d8-9611-48155075d8d1.png',
     description: 'Leading teacher training institute preparing educators for Bhutan\'s educational system.',
     rating: 4.2,
     established: 1968,
@@ -339,6 +339,206 @@ export const colleges: College[] = [
       'Educational Administration',
       'Curriculum Development',
       'Educational Research'
+    ]
+  },
+  {
+    id: '7',
+    name: 'Paro College of Education',
+    location: 'Paro',
+    type: 'College',
+    image: '/lovable-uploads/4c745cc5-30f9-4445-a88b-89b5df5a261d.png',
+    description: 'Premier teacher training college focusing on secondary education and educational leadership.',
+    rating: 4.3,
+    established: 1975,
+    courses: ['Secondary Education', 'Mathematics Education', 'Science Education', 'Language Education'],
+    fees: {
+      min: 55000,
+      max: 90000,
+      currency: 'BTN'
+    },
+    tags: ['Education', 'Secondary Teaching', 'Leadership'],
+    scholarships: [
+      { name: 'Secondary Education Scholarship', amount: 'BTN 75,000/year', criteria: 'Excellence in subject specialization' },
+      { name: 'Educational Leadership Grant', amount: 'BTN 60,000/year', criteria: 'Leadership potential in education sector' }
+    ],
+    facilities: ['Science Labs', 'Mathematics Lab', 'Language Lab', 'Teaching Practice Center'],
+    accreditation: 'Royal Government of Bhutan',
+    campusSize: '55 acres',
+    studentCount: 1600,
+    facultyCount: 85,
+    programs: {
+      undergraduate: ['Bachelor of Education Secondary', 'Bachelor of Education Mathematics', 'Bachelor of Education Science'],
+      postgraduate: ['Master of Education', 'Educational Leadership Program'],
+      doctorate: []
+    },
+    admissionDeadline: 'March 25, 2024',
+    eligibility: [
+      'Class XII with relevant subject background',
+      'Teaching aptitude assessment',
+      'Subject knowledge test',
+      'Interview and group discussion'
+    ],
+    contact: {
+      phone: '+975-8-271234',
+      email: 'pce@rub.edu.bt',
+      website: 'www.pce.edu.bt'
+    },
+    careerOpportunities: [
+      'Secondary School Teaching',
+      'Educational Management',
+      'Curriculum Development',
+      'Teacher Training',
+      'Educational Research'
+    ]
+  },
+  {
+    id: '8',
+    name: 'College of Language and Culture Studies',
+    location: 'Taktse',
+    type: 'College',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&q=80',
+    description: 'Specialized institution preserving and promoting Bhutanese language, culture, and traditional arts.',
+    rating: 4.1,
+    established: 2003,
+    courses: ['Dzongkha Studies', 'Buddhist Studies', 'Traditional Arts', 'Cultural Heritage'],
+    fees: {
+      min: 40000,
+      max: 75000,
+      currency: 'BTN'
+    },
+    tags: ['Language', 'Culture', 'Traditional Arts'],
+    scholarships: [
+      { name: 'Cultural Heritage Scholarship', amount: 'BTN 60,000/year', criteria: 'Excellence in Dzongkha and cultural studies' },
+      { name: 'Traditional Arts Grant', amount: 'BTN 45,000/year', criteria: 'Proficiency in traditional Bhutanese arts' }
+    ],
+    facilities: ['Cultural Museum', 'Traditional Arts Workshop', 'Language Lab', 'Library'],
+    accreditation: 'Royal Government of Bhutan',
+    campusSize: '40 acres',
+    studentCount: 800,
+    facultyCount: 45,
+    programs: {
+      undergraduate: ['Bachelor of Arts in Dzongkha', 'Bachelor of Buddhist Studies', 'Bachelor of Traditional Arts'],
+      postgraduate: ['Master of Arts in Dzongkha', 'Master of Buddhist Philosophy'],
+      doctorate: []
+    },
+    admissionDeadline: 'April 1, 2024',
+    eligibility: [
+      'Class XII completion',
+      'Proficiency in Dzongkha language',
+      'Interest in Bhutanese culture',
+      'Interview and cultural assessment'
+    ],
+    contact: {
+      phone: '+975-6-234567',
+      email: 'clcs@rub.edu.bt',
+      website: 'www.clcs.edu.bt'
+    },
+    careerOpportunities: [
+      'Cultural Preservation',
+      'Translation Services',
+      'Tourism and Cultural Guidance',
+      'Media and Broadcasting',
+      'Government Cultural Affairs'
+    ]
+  },
+  {
+    id: '9',
+    name: 'Gaeddu College of Business Studies',
+    location: 'Gedu',
+    type: 'College',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop&q=80',
+    description: 'Leading business education institution offering comprehensive programs in commerce and management.',
+    rating: 4.4,
+    established: 2001,
+    courses: ['Business Administration', 'Accounting', 'Economics', 'Finance', 'Marketing'],
+    fees: {
+      min: 80000,
+      max: 140000,
+      currency: 'BTN'
+    },
+    tags: ['Business', 'Commerce', 'Management'],
+    scholarships: [
+      { name: 'Business Excellence Scholarship', amount: 'BTN 120,000/year', criteria: 'Outstanding performance in commerce subjects' },
+      { name: 'Entrepreneurship Grant', amount: 'BTN 90,000/year', criteria: 'Innovative business ideas and leadership potential' }
+    ],
+    facilities: ['Business Lab', 'Computer Center', 'Conference Hall', 'Career Center'],
+    accreditation: 'Royal Government of Bhutan',
+    campusSize: '65 acres',
+    studentCount: 2200,
+    facultyCount: 110,
+    programs: {
+      undergraduate: ['Bachelor of Commerce', 'Bachelor of Business Administration', 'Bachelor of Economics'],
+      postgraduate: ['Master of Business Administration', 'Master of Commerce'],
+      doctorate: []
+    },
+    admissionDeadline: 'March 28, 2024',
+    eligibility: [
+      'Class XII completion (Commerce/Arts/Science)',
+      'Mathematics requirement for some programs',
+      'Entrance test and interview',
+      'English proficiency assessment'
+    ],
+    contact: {
+      phone: '+975-5-367890',
+      email: 'gcbs@rub.edu.bt',
+      website: 'www.gcbs.edu.bt'
+    },
+    careerOpportunities: [
+      'Corporate Management',
+      'Banking and Finance',
+      'Accounting and Auditing',
+      'Marketing and Sales',
+      'Entrepreneurship'
+    ]
+  },
+  {
+    id: '10',
+    name: 'Institute of Traditional Medicine',
+    location: 'Thimphu',
+    type: 'Institute',
+    image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop&q=80',
+    description: 'Specialized institute for traditional Bhutanese medicine (Sowa Rigpa) and alternative healing practices.',
+    rating: 4.0,
+    established: 1988,
+    courses: ['Traditional Medicine', 'Herbal Medicine', 'Acupuncture', 'Meditation Therapy'],
+    fees: {
+      min: 60000,
+      max: 100000,
+      currency: 'BTN'
+    },
+    tags: ['Traditional Medicine', 'Healthcare', 'Alternative Therapy'],
+    scholarships: [
+      { name: 'Traditional Medicine Scholarship', amount: 'BTN 80,000/year', criteria: 'Commitment to serve in rural healthcare' },
+      { name: 'Sowa Rigpa Excellence Award', amount: 'BTN 55,000/year', criteria: 'Outstanding performance in traditional medicine studies' }
+    ],
+    facilities: ['Herbal Garden', 'Traditional Medicine Lab', 'Clinic', 'Research Center'],
+    accreditation: 'Royal Government of Bhutan',
+    campusSize: '25 acres',
+    studentCount: 400,
+    facultyCount: 30,
+    programs: {
+      undergraduate: ['Bachelor of Traditional Medicine', 'Diploma in Sowa Rigpa'],
+      postgraduate: ['Master of Traditional Medicine'],
+      doctorate: []
+    },
+    admissionDeadline: 'March 10, 2024',
+    eligibility: [
+      'Class XII with Biology/Science background preferred',
+      'Interest in traditional healing practices',
+      'Physical and mental fitness assessment',
+      'Interview with traditional medicine practitioners'
+    ],
+    contact: {
+      phone: '+975-2-345678',
+      email: 'itm@health.gov.bt',
+      website: 'www.itm.gov.bt'
+    },
+    careerOpportunities: [
+      'Traditional Medicine Practice',
+      'Government Health Services',
+      'Research in Alternative Medicine',
+      'Community Healthcare',
+      'Wellness Centers'
     ]
   }
 ];
