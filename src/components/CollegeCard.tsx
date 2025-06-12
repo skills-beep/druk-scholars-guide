@@ -18,11 +18,12 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
       {/* Image with Overlay */}
       <div className="relative overflow-hidden h-48">
         <img
-          src={`https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&h=400&fit=crop&q=80`}
+          src={college.image}
           alt={college.name}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
+            // Fallback to a generic college image if the specific image fails to load
             target.src = `https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop&q=80`;
           }}
         />
