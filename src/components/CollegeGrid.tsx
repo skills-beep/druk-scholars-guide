@@ -1,30 +1,20 @@
+
 import { useState } from 'react';
 import { College, CollegeFilters } from '@/types/college';
 import CollegeCard from './CollegeCard';
 import CollegeModal from './CollegeModal';
-import CollegeComparison from './CollegeComparison';
-import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { LayoutGrid, List, X, TrendingUp } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { LayoutGrid, List, TrendingUp } from 'lucide-react';
 
 interface CollegeGridProps {
   colleges: College[];
   filters: CollegeFilters;
-  compareList: College[];
-  onCompare: (college: College) => void;
-  onRemoveFromCompare: (collegeId: string) => void;
 }
 
-const CollegeGrid = ({ 
-  colleges, 
-  filters, 
-  compareList, 
-  onCompare, 
-  onRemoveFromCompare 
-}: CollegeGridProps) => {
+const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
   const [selectedCollege, setSelectedCollege] = useState<College | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
-  const [showComparison, setShowComparison] = useState(false);
 
   const filteredColleges = colleges.filter((college) => {
     const matchesSearch = !filters.search || 
@@ -108,37 +98,6 @@ const CollegeGrid = ({
         </div>
       </div>
 
-      {/* Enhanced Compare Bar */}
-      {compareList.length > 0 && (
-        <div className="sticky top-20 z-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-2xl p-4 shadow-xl backdrop-blur-lg animate-slide-in-right">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 flex-wrap">
-              <span className="font-bold text-lg">Compare ({compareList.length}/3):</span>
-              {compareList.map((college) => (
-                <Badge
-                  key={college.id}
-                  className="bg-white/20 text-white hover:bg-white/30 flex items-center gap-2 px-3 py-1 transition-all duration-300 hover:scale-105"
-                >
-                  {college.name}
-                  <X 
-                    className="h-3 w-3 cursor-pointer hover:text-red-200 transition-colors" 
-                    onClick={() => onRemoveFromCompare(college.id)}
-                  />
-                </Badge>
-              ))}
-            </div>
-            <Button 
-              variant="secondary" 
-              size="sm"
-              onClick={() => setShowComparison(true)}
-              className="bg-white/20 hover:bg-white/30 text-white border-0 transition-all duration-300 hover:scale-105"
-            >
-              View Comparison
-            </Button>
-          </div>
-        </div>
-      )}
-
       {/* Enhanced Colleges Grid/List */}
       {filteredColleges.length === 0 ? (
         <div className="text-center py-16 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl">
@@ -164,29 +123,20 @@ const CollegeGrid = ({
               <CollegeCard
                 college={college}
                 onViewDetails={setSelectedCollege}
-                onCompare={onCompare}
               />
             </div>
           ))}
         </div>
       )}
 
-      {/* Modals */}
+      {/* Modal */}
       {selectedCollege && (
         <CollegeModal
           college={selectedCollege}
           isOpen={!!selectedCollege}
           onClose={() => setSelectedCollege(null)}
-          onCompare={onCompare}
         />
       )}
-
-      <CollegeComparison
-        colleges={compareList}
-        isOpen={showComparison}
-        onClose={() => setShowComparison(false)}
-        onRemoveCollege={onRemoveFromCompare}
-      />
     </div>
   );
 };
