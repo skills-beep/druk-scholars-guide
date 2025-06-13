@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Search, GraduationCap, BookOpen, Users, ArrowRight, Sparkles, Star, MapPin } from 'lucide-react';
@@ -10,26 +10,6 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onSearch }: HeroSectionProps) => {
   const [searchQuery, setSearchQuery] = useState('');
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  // Array of background images
-  const backgroundImages = [
-    '/lovable-uploads/4ff992ab-496d-4d88-bc68-2cc75a40661e.png', // Buddha statue silhouette
-    '/lovable-uploads/02acbdd7-bad8-4a97-9f8c-b8836214a9cb.png', // Traditional dance mask
-    '/lovable-uploads/294b0d4f-6b24-4136-8631-f72858b48637.png', // Thimphu cityscape
-    '/lovable-uploads/3723aa71-e99f-452d-ac66-b3d36b45cee5.png'  // Tiger's Nest monastery
-  ];
-
-  // Change background image every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        (prevIndex + 1) % backgroundImages.length
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [backgroundImages.length]);
 
   const handleSearch = () => {
     onSearch(searchQuery);
@@ -44,21 +24,27 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900">
-      {/* Dynamic Background Images with enhanced overlay */}
-      {backgroundImages.map((image, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
-            index === currentImageIndex ? 'opacity-70' : 'opacity-0'
-          }`}
-          style={{
-            backgroundImage: `url('${image}')`
-          }}
+      {/* Video Background */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-60"
         >
-          {/* Enhanced gradient overlay for better contrast */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-blue-900/40 to-purple-900/60"></div>
-        </div>
-      ))}
+          <source src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+          {/* Fallback to image if video doesn't load */}
+          <div
+            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            style={{
+              backgroundImage: `url('/lovable-uploads/4ff992ab-496d-4d88-bc68-2cc75a40661e.png')`
+            }}
+          ></div>
+        </video>
+        {/* Enhanced gradient overlay for better contrast */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-blue-900/40 to-purple-900/60"></div>
+      </div>
 
       {/* Floating elements for visual interest */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -193,23 +179,6 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
               <span className="text-lg font-medium">Serving students across Bhutan</span>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Enhanced image indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-        <div className="flex space-x-3">
-          {backgroundImages.map((_, index) => (
-            <button
-              key={index}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                index === currentImageIndex 
-                  ? 'bg-white shadow-lg scale-110' 
-                  : 'bg-white/50 hover:bg-white/75 hover:scale-105'
-              }`}
-              onClick={() => setCurrentImageIndex(index)}
-            />
-          ))}
         </div>
       </div>
     </section>
