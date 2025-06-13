@@ -1,7 +1,7 @@
 
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Mail, Code, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart } from 'lucide-react';
 
 const DeveloperSection = () => {
   return (
@@ -12,9 +12,13 @@ const DeveloperSection = () => {
             <div className="flex flex-col md:flex-row items-center gap-8">
               {/* Avatar */}
               <div className="relative group">
-                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 animate-pulse">
-                  <div className="w-full h-full rounded-full bg-white dark:bg-slate-800 flex items-center justify-center">
-                    <Code className="h-16 w-16 text-blue-600 dark:text-blue-400" />
+                <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-1 shadow-2xl">
+                  <div className="w-full h-full rounded-full overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/0b851ea9-2dcc-4353-acb9-e2d1f2a98381.png" 
+                      alt="Bishal Sharma"
+                      className="w-full h-full object-cover object-center"
+                    />
                   </div>
                 </div>
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-white dark:border-slate-800 animate-bounce">
