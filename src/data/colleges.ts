@@ -70,6 +70,34 @@ export const governmentScholarships = [
     },
     deadline: "After declaration of Class 12 results",
     applicationProcess: "Apply through DAHE after Class 12 results are declared"
+  },
+  {
+    name: "BOC – RUB Sports Scholarship",
+    duration: "3-4 years for UG, 2 years for diploma",
+    criteria: "Current national athletes (national team members) admitted to RUB-affiliated colleges",
+    coverage: "Full tuition + boarding for program duration",
+    provider: "Bhutan Olympic Committee (BOC) in partnership with RUB",
+    contact: {
+      phone: "Contact through BOC website",
+      email: "Contact through BOC or Paro College Office",
+      website: "bhutanolympiccommittee.org"
+    },
+    deadline: "July (e.g., July 5 in previous cycles)",
+    applicationProcess: "Scholarship forms available through BOC website or Paro College Office. Submit application form, athletic proof, transcripts, CID, medical certificate, letters of recommendation, CV, sports achievement declaration"
+  },
+  {
+    name: "Madanjeet Singh SAARC Forestry Scholarship",
+    duration: "2 years (Master's program)",
+    criteria: "SAARC citizens with BSc in Forestry/Life Sciences, ≥55% in each subject, ≥60% overall, age <45",
+    coverage: "Full tuition, round-trip airfare, monthly stipend (BTN 15,000), book grant (BTN 5,000), research grant (BTN 70,000), travel & establishment allowances",
+    provider: "UNESCO Madanjeet Singh Centre for SAARC Forestry Studies (UMCSAFS) at CNR",
+    contact: {
+      phone: "Contact CNR Focal Person",
+      email: "Contact SAF Bhutan representative",
+      website: "cnr.edu.bt"
+    },
+    deadline: "Mid-February each year",
+    applicationProcess: "Submit application form and research proposal to SAF offices in SAARC nations. National SAF office nominates one candidate per country to CNR"
   }
 ];
 
@@ -83,7 +111,7 @@ export const colleges: College[] = [
     description: 'Premier private college in Bhutan offering comprehensive undergraduate programs in business, nursing, environmental management, and humanities with both regular and continuing education options.',
     rating: 4.7,
     established: 2009,
-    courses: ['Business Administration', 'Nursing & Midwifery', 'Environmental Management', 'English Studies', 'Development Economics', 'Social Sciences', 'Anthropology', 'Communication Arts', 'Sports & Health Sciences'],
+    courses: ['Business Administration', 'Commerce', 'Nursing & Midwifery', 'Environmental Management', 'English Studies', 'Development Economics', 'Social Sciences', 'Anthropology', 'Communication Arts & Creative Media', 'Sports & Health Sciences'],
     fees: {
       min: 170000,
       max: 255000,
@@ -91,8 +119,8 @@ export const colleges: College[] = [
     },
     tags: ['Private', 'Liberal Arts', 'Management', 'Healthcare'],
     scholarships: [
-      { name: 'Academic Excellence Scholarship', amount: 'BTN 150,000/year', criteria: 'Top 10% students with outstanding academic performance' },
-      { name: 'Need-based Financial Aid', amount: 'BTN 80,000/year', criteria: 'Students from low-income families with academic merit' }
+      { name: 'Loden-RTC Need-Based Scholarship', amount: 'Full tuition + accommodation', criteria: 'Bhutanese students applying for undergraduate programs at RTC' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Auditorium', 'Nursing Labs', 'Environmental Science Labs'],
     accreditation: 'Royal Government of Bhutan',
@@ -101,16 +129,16 @@ export const colleges: College[] = [
     facultyCount: 100,
     programs: {
       undergraduate: [
-        'Bachelor of Business Administration (BBA)',
-        'Bachelor of Commerce (BCom)',
-        'Bachelor of Science in Nursing & Midwifery',
-        'Bachelor of Science in Environmental Management',
-        'Bachelor of Arts in English Studies',
-        'Bachelor of Arts in Development Economics',
-        'Bachelor of Arts in Social Sciences',
-        'Bachelor of Arts in Anthropology',
-        'Bachelor of Arts in Communication Arts & Creative Media',
-        'Bachelor of Sports & Health Sciences (BSHS)'
+        'Bachelor of Business Administration (BBA) - 4 years (Regular & Continuing Education)',
+        'Bachelor of Commerce (BCom) - 4 years (Regular & Continuing Education)',
+        'Bachelor of Science in Nursing & Midwifery - 4 years',
+        'Bachelor of Science in Environmental Management - 4 years',
+        'Bachelor of Arts in English Studies - 4 years',
+        'Bachelor of Arts in Development Economics - 4 years',
+        'Bachelor of Arts in Social Sciences - 4 years',
+        'Bachelor of Arts in Anthropology - 4 years',
+        'Bachelor of Arts in Communication Arts & Creative Media - 4 years',
+        'Bachelor of Sports & Health Sciences (BSHS) - 4 years'
       ],
       postgraduate: ['Master of Business Administration', 'Master of Development Economics'],
       doctorate: []
@@ -157,8 +185,8 @@ export const colleges: College[] = [
     },
     tags: ['Technology', 'IT', 'Innovation', 'Modern'],
     scholarships: [
-      { name: 'IT Excellence Scholarship', amount: 'BTN 80,000/year', criteria: 'Outstanding performance in computer science and mathematics' },
-      { name: 'Innovation Grant', amount: 'BTN 60,000/year', criteria: 'Students with innovative tech projects and coding skills' }
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' },
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' }
     ],
     facilities: ['Modern Computer Labs', 'AI Research Center', 'Blockchain Lab', 'Cybersecurity Lab', 'Digital Library', 'Hackathon Spaces', 'Outdoor Recreation Areas'],
     accreditation: 'Royal Government of Bhutan',
@@ -171,7 +199,7 @@ export const colleges: College[] = [
         'Bachelor of Science in Computer Science (Blockchain Development track)',
         'Bachelor of Science in Computer Science (Full-stack Development track)',
         'Bachelor of Science in Computer Science (Interactive Design & Development track)',
-        'Bachelor of Information & Communications Technology (BICT)'
+        'Bachelor of Information & Communications Technology (BICT) - 4 years'
       ],
       postgraduate: [],
       doctorate: []
@@ -217,8 +245,8 @@ export const colleges: College[] = [
     },
     tags: ['Engineering', 'Technology', 'Research'],
     scholarships: [
-      { name: 'Technical Education Scholarship', amount: 'BTN 140,000/year', criteria: 'Engineering and technical courses enrollment' },
-      { name: 'Engineering Excellence Award', amount: 'BTN 80,000/year', criteria: 'Top 10% academic performance in engineering' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Advanced Labs', 'Workshop', 'Computer Center', 'Library'],
     accreditation: 'Royal Government of Bhutan',
@@ -268,8 +296,8 @@ export const colleges: College[] = [
     },
     tags: ['Agriculture', 'Environment', 'Research'],
     scholarships: [
-      { name: 'Agricultural Development Scholarship', amount: 'BTN 100,000/year', criteria: 'Rural students pursuing agriculture with service commitment' },
-      { name: 'Rural Youth Scholarship', amount: 'BTN 75,000/year', criteria: 'Students from farming families with academic merit' }
+      { name: 'Madanjeet Singh SAARC Forestry Scholarship', amount: 'Full tuition + stipend + grants', criteria: 'SAARC citizens with BSc in Forestry/Life Sciences, for Master\'s program' },
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' }
     ],
     facilities: ['Research Farm', 'Greenhouse', 'Animal Farm', 'Forestry Lab'],
     accreditation: 'Royal Government of Bhutan',
@@ -278,7 +306,7 @@ export const colleges: College[] = [
     facultyCount: 120,
     programs: {
       undergraduate: ['Bachelor of Agriculture', 'Bachelor of Forestry', 'Bachelor of Animal Science'],
-      postgraduate: ['Master of Agriculture', 'Master of Forestry'],
+      postgraduate: ['Master of Agriculture', 'Master of Forestry', 'Master of Natural Resources Management', 'Master of Conservation Biology'],
       doctorate: []
     },
     admissionDeadline: 'March 20, 2024',
@@ -319,8 +347,8 @@ export const colleges: College[] = [
     },
     tags: ['Liberal Arts', 'Humanities', 'Sciences'],
     scholarships: [
-      { name: 'Academic Excellence Scholarship', amount: 'BTN 85,000/year', criteria: 'Top 5% students in liberal arts and sciences' },
-      { name: 'Arts and Literature Grant', amount: 'BTN 50,000/year', criteria: 'Outstanding performance in humanities subjects' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Library', 'Science Labs', 'Art Studio', 'Auditorium'],
     accreditation: 'Royal Government of Bhutan',
@@ -370,8 +398,8 @@ export const colleges: College[] = [
     },
     tags: ['Engineering', 'Innovation', 'Modern'],
     scholarships: [
-      { name: 'Engineering Innovation Scholarship', amount: 'BTN 150,000/year', criteria: 'Excellence in STEM subjects with innovation projects' },
-      { name: 'Industry Partnership Grant', amount: 'BTN 100,000/year', criteria: 'Students with industry internship commitments' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Modern Labs', 'Innovation Center', 'Industry Hub', 'Digital Library'],
     accreditation: 'Royal Government of Bhutan',
@@ -421,8 +449,8 @@ export const colleges: College[] = [
     },
     tags: ['Education', 'Teaching', 'Training'],
     scholarships: [
-      { name: 'Teacher Training Scholarship', amount: 'BTN 70,000/year', criteria: 'Education course enrollment with teaching commitment' },
-      { name: 'Rural Education Grant', amount: 'BTN 45,000/year', criteria: 'Commitment to teach in rural schools for 5 years' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Teaching Practice Schools', 'Education Resource Center', 'Psychology Lab'],
     accreditation: 'Royal Government of Bhutan',
@@ -464,18 +492,18 @@ export const colleges: College[] = [
     description: 'Premier teacher training college focusing on secondary education and educational leadership.',
     rating: 4.3,
     established: 1974,
-    courses: ['Secondary Education', 'Mathematics Education', 'Science Education', 'Educational Leadership'],
+    courses: ['Secondary Education', 'Mathematics Education', 'Science Education', 'Educational Leadership', 'Physical Education & Sports Coaching'],
     fees: {
       min: 55000,
       max: 90000,
       currency: 'BTN'
     },
-    tags: ['Education', 'Secondary Teaching', 'Leadership'],
+    tags: ['Education', 'Secondary Teaching', 'Leadership', 'Sports'],
     scholarships: [
-      { name: 'Secondary Education Scholarship', amount: 'BTN 75,000/year', criteria: 'Excellence in subject specialization' },
-      { name: 'Educational Leadership Grant', amount: 'BTN 60,000/year', criteria: 'Leadership potential in education sector' }
+      { name: 'BOC – RUB Sports Scholarship', amount: 'Full tuition + boarding', criteria: 'Current national athletes for Diploma in Physical Education & Sports Coaching' },
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' }
     ],
-    facilities: ['Science Labs', 'Mathematics Lab', 'Language Lab', 'Teaching Practice Center'],
+    facilities: ['Science Labs', 'Mathematics Lab', 'Language Lab', 'Teaching Practice Center', 'Sports Facilities'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '55 acres',
     studentCount: 1764,
@@ -523,8 +551,8 @@ export const colleges: College[] = [
     },
     tags: ['Language', 'Culture', 'Traditional Arts'],
     scholarships: [
-      { name: 'Cultural Heritage Scholarship', amount: 'BTN 60,000/year', criteria: 'Excellence in Dzongkha and cultural studies' },
-      { name: 'Traditional Arts Grant', amount: 'BTN 45,000/year', criteria: 'Proficiency in traditional Bhutanese arts' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Cultural Museum', 'Traditional Arts Workshop', 'Language Lab', 'Library'],
     accreditation: 'Royal Government of Bhutan',
@@ -574,8 +602,8 @@ export const colleges: College[] = [
     },
     tags: ['Business', 'Commerce', 'Management'],
     scholarships: [
-      { name: 'Business Excellence Scholarship', amount: 'BTN 120,000/year', criteria: 'Outstanding performance in commerce subjects' },
-      { name: 'Entrepreneurship Grant', amount: 'BTN 90,000/year', criteria: 'Innovative business ideas and leadership potential' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Business Lab', 'Computer Center', 'Conference Hall', 'Career Center'],
     accreditation: 'Royal Government of Bhutan',
@@ -625,8 +653,8 @@ export const colleges: College[] = [
     },
     tags: ['Traditional Medicine', 'Healthcare', 'Alternative Therapy'],
     scholarships: [
-      { name: 'Traditional Medicine Scholarship', amount: 'BTN 80,000/year', criteria: 'Commitment to serve in rural healthcare' },
-      { name: 'Sowa Rigpa Excellence Award', amount: 'BTN 55,000/year', criteria: 'Outstanding performance in traditional medicine studies' }
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
     ],
     facilities: ['Herbal Garden', 'Traditional Medicine Lab', 'Clinic', 'Research Center'],
     accreditation: 'Royal Government of Bhutan',
@@ -658,5 +686,59 @@ export const colleges: College[] = [
       'Wellness Centers'
     ],
     applyUrl: 'https://www.moh.gov.bt/'
+  },
+  {
+    id: '12',
+    name: 'Apollo Bhutan Institute of Nursing',
+    location: 'Thimphu',
+    type: 'Institute',
+    image: '/lovable-uploads/3f0e83af-7bc3-4c9e-afd4-6ca1aea9139b.png',
+    description: 'Bhutan\'s first FDI-backed nursing institute, launched in July 2019, offering specialized nursing education with modern facilities and clinical training.',
+    rating: 4.2,
+    established: 2019,
+    courses: ['General Nursing', 'Midwifery', 'Community Health Nursing', 'Critical Care Nursing'],
+    fees: {
+      min: 200000,
+      max: 300000,
+      currency: 'BTN'
+    },
+    tags: ['Nursing', 'Healthcare', 'Private', 'Modern'],
+    scholarships: [
+      { name: 'Loden + Apollo Institute of Nursing Scholarship', amount: 'Full tuition fees by Loden, clinical & lab fees waived by Apollo', criteria: 'Students applying for Diploma in General Nursing & Midwifery' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
+    ],
+    facilities: ['Modern Nursing Labs', 'Simulation Centers', 'Clinical Training Facilities', 'Digital Library', 'Student Hostel', 'Medical Equipment Labs'],
+    accreditation: 'Approved by Khesar Gyalpo University of Medical Sciences of Bhutan (KGUMSB) and Bhutan Medical & Health Council',
+    campusSize: '15 acres',
+    studentCount: 300,
+    facultyCount: 25,
+    programs: {
+      undergraduate: [],
+      postgraduate: [],
+      doctorate: [],
+      diploma: ['Diploma in General Nursing & Midwifery (3 years + 6-month internship)']
+    },
+    admissionDeadline: 'Check official website for current deadlines',
+    eligibility: [
+      'Class XII with Science background (Biology mandatory)',
+      'Minimum 60% aggregate marks',
+      'English proficiency test',
+      'Medical fitness certificate',
+      'Interview and aptitude test'
+    ],
+    contact: {
+      phone: 'Contact through ABIN office',
+      email: 'Check KGUMSB website',
+      website: 'apollobhutan.edu.bt'
+    },
+    careerOpportunities: [
+      'Hospital Nursing',
+      'Community Health Services',
+      'Maternal and Child Health',
+      'Critical Care Nursing',
+      'Public Health Programs',
+      'Healthcare Administration'
+    ],
+    applyUrl: 'https://apollobhutan.edu.bt'
   }
 ];
