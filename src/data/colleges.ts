@@ -44,16 +44,16 @@ export const colleges: College[] = [
   {
     id: '1',
     name: 'Royal Thimphu College',
-    location: 'Thimphu',
+    location: 'Ngabiphu, Thimphu',
     type: 'College',
     image: '/lovable-uploads/072154cd-7fda-4258-abda-845af9aab121.png',
     description: 'Premier private college in Bhutan offering comprehensive undergraduate and graduate programs in management, technology, and humanities.',
     rating: 4.7,
     established: 2009,
-    courses: ['Business Administration', 'Information Technology', 'Management', 'Computer Science', 'Economics', 'English Language'],
+    courses: ['Business Administration', 'Computer Applications', 'Environmental Management', 'English Studies', 'Development Economics', 'Psychology'],
     fees: {
-      min: 120000,
-      max: 200000,
+      min: 170000,
+      max: 255000,
       currency: 'BTN'
     },
     tags: ['Private', 'Liberal Arts', 'Management'],
@@ -64,11 +64,11 @@ export const colleges: College[] = [
     facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Auditorium'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '45 acres',
-    studentCount: 2500,
-    facultyCount: 120,
+    studentCount: 1800,
+    facultyCount: 100,
     programs: {
-      undergraduate: ['Bachelor of Business Administration', 'Bachelor of Information Technology', 'Bachelor of Arts in English'],
-      postgraduate: ['Master of Business Administration', 'Master of Information Technology'],
+      undergraduate: ['Bachelor of Business Administration', 'Bachelor of Computer Applications', 'Bachelor of Arts in English'],
+      postgraduate: ['Master of Business Administration', 'Master of Development Economics'],
       doctorate: []
     },
     admissionDeadline: 'March 31, 2024',
@@ -89,18 +89,19 @@ export const colleges: College[] = [
       'Banking and Finance',
       'International Business',
       'Entrepreneurship and Startups'
-    ]
+    ],
+    applyUrl: 'https://www.rtc.bt/'
   },
   {
     id: '2',
     name: 'College of Science and Technology',
-    location: 'Phuentsholing',
+    location: 'Rinchending, Phuentsholing',
     type: 'College',
     image: '/lovable-uploads/880d7613-7292-46b9-bb3f-dc61fc9c5193.png',
     description: 'Leading engineering and technology college in Bhutan, known for innovation and research excellence.',
     rating: 4.6,
-    established: 1974,
-    courses: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Information Technology'],
+    established: 2001,
+    courses: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Computer Science', 'Information Technology'],
     fees: {
       min: 90000,
       max: 160000,
@@ -144,13 +145,13 @@ export const colleges: College[] = [
   {
     id: '3',
     name: 'College of Natural Resources',
-    location: 'Lobesa',
+    location: 'Lobesa, Punakha',
     type: 'College',
     image: '/lovable-uploads/ccaa2937-dd94-47e7-bcad-c9bbcee60b88.png',
     description: 'Specialized institution focusing on agriculture, forestry, and natural resource management.',
     rating: 4.4,
     established: 1992,
-    courses: ['Agriculture', 'Forestry', 'Animal Science', 'Environmental Management'],
+    courses: ['Agriculture', 'Forestry', 'Animal Science', 'Environmental Science'],
     fees: {
       min: 70000,
       max: 120000,
@@ -194,13 +195,13 @@ export const colleges: College[] = [
   {
     id: '4',
     name: 'Sherubtse College',
-    location: 'Kanglung',
+    location: 'Kanglung, Trashigang',
     type: 'College',
     image: '/lovable-uploads/239bcac2-4bdc-47f1-9803-41dfb3900118.png',
     description: 'Premier liberal arts college offering diverse academic programs in humanities and sciences.',
     rating: 4.5,
-    established: 1983,
-    courses: ['English Literature', 'History', 'Geography', 'Mathematics', 'Physics', 'Chemistry'],
+    established: 1966,
+    courses: ['English Literature', 'History', 'Geography', 'Project Management', 'Data Science', 'Mathematics'],
     fees: {
       min: 60000,
       max: 100000,
@@ -244,16 +245,16 @@ export const colleges: College[] = [
   {
     id: '5',
     name: 'Jigme Namgyel Engineering College',
-    location: 'Dewathang',
+    location: 'Dewathang, Samdrup Jongkhar',
     type: 'College',
     image: '/lovable-uploads/5a7843b7-e744-4b66-b1ca-350f55efed17.png',
     description: 'Modern engineering college with state-of-the-art facilities and industry partnerships.',
     rating: 4.3,
-    established: 2014,
+    established: 1972,
     courses: ['Electronics & Communication', 'Computer Engineering', 'Civil Engineering', 'Mechanical Engineering'],
     fees: {
-      min: 95000,
-      max: 170000,
+      min: 80000,
+      max: 140000,
       currency: 'BTN'
     },
     tags: ['Engineering', 'Innovation', 'Modern'],
@@ -302,8 +303,8 @@ export const colleges: College[] = [
     established: 1968,
     courses: ['Primary Education', 'Secondary Education', 'Educational Psychology', 'Curriculum Development'],
     fees: {
-      min: 50000,
-      max: 85000,
+      min: 60000,
+      max: 100000,
       currency: 'BTN'
     },
     tags: ['Education', 'Teaching', 'Training'],
@@ -349,8 +350,8 @@ export const colleges: College[] = [
     image: '/lovable-uploads/bb671b00-066e-40d9-b057-2f1693a11928.png',
     description: 'Premier teacher training college focusing on secondary education and educational leadership.',
     rating: 4.3,
-    established: 1975,
-    courses: ['Secondary Education', 'Mathematics Education', 'Science Education', 'Language Education'],
+    established: 1974,
+    courses: ['Secondary Education', 'Mathematics Education', 'Science Education', 'Educational Leadership'],
     fees: {
       min: 55000,
       max: 90000,
@@ -364,7 +365,7 @@ export const colleges: College[] = [
     facilities: ['Science Labs', 'Mathematics Lab', 'Language Lab', 'Teaching Practice Center'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '55 acres',
-    studentCount: 1600,
+    studentCount: 1764,
     facultyCount: 85,
     programs: {
       undergraduate: ['Bachelor of Education Secondary', 'Bachelor of Education Mathematics', 'Bachelor of Education Science'],
@@ -394,16 +395,16 @@ export const colleges: College[] = [
   {
     id: '8',
     name: 'College of Language and Culture Studies',
-    location: 'Taktse',
+    location: 'Taktse, Trongsa',
     type: 'College',
     image: '/lovable-uploads/d60ffa49-67ca-4ccf-bc27-4d3e7c9f8e23.png',
     description: 'Specialized institution preserving and promoting Bhutanese language, culture, and traditional arts.',
     rating: 4.1,
     established: 2003,
-    courses: ['Dzongkha Studies', 'Buddhist Studies', 'Traditional Arts', 'Cultural Heritage'],
+    courses: ['Dzongkha Studies', 'Buddhist Studies', 'Traditional Arts', 'Linguistics'],
     fees: {
-      min: 40000,
-      max: 75000,
+      min: 60000,
+      max: 100000,
       currency: 'BTN'
     },
     tags: ['Language', 'Culture', 'Traditional Arts'],
@@ -444,13 +445,13 @@ export const colleges: College[] = [
   {
     id: '9',
     name: 'Gaeddu College of Business Studies',
-    location: 'Gedu',
+    location: 'Gedu, Chukha',
     type: 'College',
     image: '/lovable-uploads/1a0decb5-d9c1-49cd-ba71-692f02a30ef3.png',
     description: 'Leading business education institution offering comprehensive programs in commerce and management.',
     rating: 4.4,
     established: 2001,
-    courses: ['Business Administration', 'Accounting', 'Economics', 'Finance', 'Marketing'],
+    courses: ['Business Administration', 'Accounting', 'Economics', 'Marketing'],
     fees: {
       min: 80000,
       max: 140000,

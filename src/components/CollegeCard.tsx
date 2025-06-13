@@ -16,6 +16,7 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
   // Map college names to their official websites
   const getCollegeWebsite = (collegeName: string): string | null => {
     const websiteMap: { [key: string]: string } = {
+      'Royal Thimphu College': 'https://www.rtc.bt/',
       'Gaeddu College of Business Studies': 'http://www.gcbs.edu.bt',
       'Paro College of Education': 'http://www.pce.edu.bt',
       'Samtse College of Education': 'http://www.sce.edu.bt/index.php',
