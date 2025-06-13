@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const governmentScholarships = [
@@ -47,27 +46,38 @@ export const colleges: College[] = [
     location: 'Ngabiphu, Thimphu',
     type: 'College',
     image: '/lovable-uploads/072154cd-7fda-4258-abda-845af9aab121.png',
-    description: 'Premier private college in Bhutan offering comprehensive undergraduate and graduate programs in management, technology, and humanities.',
+    description: 'Premier private college in Bhutan offering comprehensive undergraduate programs in business, nursing, environmental management, and humanities with both regular and continuing education options.',
     rating: 4.7,
     established: 2009,
-    courses: ['Business Administration', 'Computer Applications', 'Environmental Management', 'English Studies', 'Development Economics', 'Psychology'],
+    courses: ['Business Administration', 'Nursing & Midwifery', 'Environmental Management', 'English Studies', 'Development Economics', 'Social Sciences', 'Anthropology', 'Communication Arts', 'Sports & Health Sciences'],
     fees: {
       min: 170000,
       max: 255000,
       currency: 'BTN'
     },
-    tags: ['Private', 'Liberal Arts', 'Management'],
+    tags: ['Private', 'Liberal Arts', 'Management', 'Healthcare'],
     scholarships: [
       { name: 'Academic Excellence Scholarship', amount: 'BTN 150,000/year', criteria: 'Top 10% students with outstanding academic performance' },
       { name: 'Need-based Financial Aid', amount: 'BTN 80,000/year', criteria: 'Students from low-income families with academic merit' }
     ],
-    facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Auditorium'],
+    facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Auditorium', 'Nursing Labs', 'Environmental Science Labs'],
     accreditation: 'Royal Government of Bhutan',
     campusSize: '45 acres',
     studentCount: 1800,
     facultyCount: 100,
     programs: {
-      undergraduate: ['Bachelor of Business Administration', 'Bachelor of Computer Applications', 'Bachelor of Arts in English'],
+      undergraduate: [
+        'Bachelor of Business Administration (BBA)',
+        'Bachelor of Commerce (BCom)',
+        'Bachelor of Science in Nursing & Midwifery',
+        'Bachelor of Science in Environmental Management',
+        'Bachelor of Arts in English Studies',
+        'Bachelor of Arts in Development Economics',
+        'Bachelor of Arts in Social Sciences',
+        'Bachelor of Arts in Anthropology',
+        'Bachelor of Arts in Communication Arts & Creative Media',
+        'Bachelor of Sports & Health Sciences (BSHS)'
+      ],
       postgraduate: ['Master of Business Administration', 'Master of Development Economics'],
       doctorate: []
     },
@@ -76,7 +86,8 @@ export const colleges: College[] = [
       'Class XII completion with minimum 65% aggregate',
       'English proficiency test',
       'Interview and aptitude test',
-      'Character certificate from school'
+      'Character certificate from school',
+      'Entrance tests apply for Sports & Health Sciences'
     ],
     contact: {
       phone: '+975-2-336000',
@@ -85,15 +96,78 @@ export const colleges: College[] = [
     },
     careerOpportunities: [
       'Corporate Management',
-      'Information Technology',
+      'Healthcare & Nursing',
+      'Environmental Consulting',
+      'Media & Communications',
       'Banking and Finance',
       'International Business',
+      'Sports & Fitness Industry',
       'Entrepreneurship and Startups'
     ],
     applyUrl: 'https://www.rtc.bt/'
   },
   {
     id: '2',
+    name: 'Gyalpozhing College of Information Technology',
+    location: 'Gyalpozhing, Mongar District',
+    type: 'College',
+    image: '/lovable-uploads/13fca3a1-74cc-4153-a50c-5ac8864cea0e.png',
+    description: 'Modern IT college established as a Centre of Excellence in Information Technology, offering specialized programs in computer science, AI, blockchain, and cybersecurity with a "Learning by Doing" approach.',
+    rating: 4.5,
+    established: 2017,
+    courses: ['Computer Science', 'AI & Data Science', 'Blockchain Development', 'Full-stack Development', 'Interactive Design', 'Information & Communications Technology', 'Cybersecurity'],
+    fees: {
+      min: 95000,
+      max: 98000,
+      currency: 'BTN'
+    },
+    tags: ['Technology', 'IT', 'Innovation', 'Modern'],
+    scholarships: [
+      { name: 'IT Excellence Scholarship', amount: 'BTN 80,000/year', criteria: 'Outstanding performance in computer science and mathematics' },
+      { name: 'Innovation Grant', amount: 'BTN 60,000/year', criteria: 'Students with innovative tech projects and coding skills' }
+    ],
+    facilities: ['Modern Computer Labs', 'AI Research Center', 'Blockchain Lab', 'Cybersecurity Lab', 'Digital Library', 'Hackathon Spaces', 'Outdoor Recreation Areas'],
+    accreditation: 'Royal Government of Bhutan',
+    campusSize: '54 acres',
+    studentCount: 800,
+    facultyCount: 45,
+    programs: {
+      undergraduate: [
+        'Bachelor of Science in Computer Science (AI & Data Science track)',
+        'Bachelor of Science in Computer Science (Blockchain Development track)',
+        'Bachelor of Science in Computer Science (Full-stack Development track)',
+        'Bachelor of Science in Computer Science (Interactive Design & Development track)',
+        'Bachelor of Information & Communications Technology (BICT)'
+      ],
+      postgraduate: [],
+      doctorate: []
+    },
+    admissionDeadline: 'March 15, 2024',
+    eligibility: [
+      'Class XII with Science/Mathematics background',
+      'Strong foundation in Mathematics and logical reasoning',
+      'Computer literacy assessment',
+      'Interview and programming aptitude test'
+    ],
+    contact: {
+      phone: '+975-4-744227',
+      email: 'info.gcit@rub.edu.bt',
+      website: 'www.gcit.edu.bt'
+    },
+    careerOpportunities: [
+      'Software Development',
+      'AI & Machine Learning Engineering',
+      'Blockchain Development',
+      'Cybersecurity Specialist',
+      'Full-stack Web Development',
+      'Data Science & Analytics',
+      'IT Consulting',
+      'Technology Startups'
+    ],
+    applyUrl: 'https://www.gcit.edu.bt/'
+  },
+  {
+    id: '3',
     name: 'College of Science and Technology',
     location: 'Rinchending, Phuentsholing',
     type: 'College',
@@ -140,10 +214,11 @@ export const colleges: College[] = [
       'Manufacturing Industries',
       'Government Technical Services',
       'Consulting Engineering Firms'
-    ]
+    ],
+    applyUrl: 'http://www.cst.edu.bt'
   },
   {
-    id: '3',
+    id: '4',
     name: 'College of Natural Resources',
     location: 'Lobesa, Punakha',
     type: 'College',
@@ -190,10 +265,11 @@ export const colleges: College[] = [
       'Agricultural Extension Services',
       'Research Institutes',
       'Agribusiness and Farming'
-    ]
+    ],
+    applyUrl: 'http://www.cnr.edu.bt'
   },
   {
-    id: '4',
+    id: '5',
     name: 'Sherubtse College',
     location: 'Kanglung, Trashigang',
     type: 'College',
@@ -240,10 +316,11 @@ export const colleges: College[] = [
       'Media and Journalism',
       'Research and Academia',
       'Cultural and Heritage Organizations'
-    ]
+    ],
+    applyUrl: 'https://www.sherubtse.edu.bt/'
   },
   {
-    id: '5',
+    id: '6',
     name: 'Jigme Namgyel Engineering College',
     location: 'Dewathang, Samdrup Jongkhar',
     type: 'College',
@@ -290,10 +367,11 @@ export const colleges: College[] = [
       'Construction Engineering',
       'Manufacturing and Design',
       'Technology Startups'
-    ]
+    ],
+    applyUrl: 'https://www.jnec.edu.bt/'
   },
   {
-    id: '6',
+    id: '7',
     name: 'Samtse College of Education',
     location: 'Samtse',
     type: 'College',
@@ -340,10 +418,11 @@ export const colleges: College[] = [
       'Educational Administration',
       'Curriculum Development',
       'Educational Research'
-    ]
+    ],
+    applyUrl: 'http://www.sce.edu.bt/index.php'
   },
   {
-    id: '7',
+    id: '8',
     name: 'Paro College of Education',
     location: 'Paro',
     type: 'College',
@@ -390,10 +469,11 @@ export const colleges: College[] = [
       'Curriculum Development',
       'Teacher Training',
       'Educational Research'
-    ]
+    ],
+    applyUrl: 'http://www.pce.edu.bt'
   },
   {
-    id: '8',
+    id: '9',
     name: 'College of Language and Culture Studies',
     location: 'Taktse, Trongsa',
     type: 'College',
@@ -440,10 +520,11 @@ export const colleges: College[] = [
       'Tourism and Cultural Guidance',
       'Media and Broadcasting',
       'Government Cultural Affairs'
-    ]
+    ],
+    applyUrl: 'http://www.clcs.edu.bt'
   },
   {
-    id: '9',
+    id: '10',
     name: 'Gaeddu College of Business Studies',
     location: 'Gedu, Chukha',
     type: 'College',
@@ -490,10 +571,11 @@ export const colleges: College[] = [
       'Accounting and Auditing',
       'Marketing and Sales',
       'Entrepreneurship'
-    ]
+    ],
+    applyUrl: 'http://www.gcbs.edu.bt'
   },
   {
-    id: '10',
+    id: '11',
     name: 'Institute of Traditional Medicine',
     location: 'Thimphu',
     type: 'Institute',
@@ -540,6 +622,7 @@ export const colleges: College[] = [
       'Research in Alternative Medicine',
       'Community Healthcare',
       'Wellness Centers'
-    ]
+    ],
+    applyUrl: 'https://www.moh.gov.bt/'
   }
 ];
