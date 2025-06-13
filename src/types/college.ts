@@ -41,3 +41,12 @@ export interface College {
   careerOpportunities: string[];
   applyUrl: string;
 }
+
+export interface CollegeFilters {
+  search: string;
+  location: string[];
+  courseType: string[];
+  feeRange: [number, number];
+  rating: number;
+  collegeType: string[];
+}
