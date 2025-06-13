@@ -1,7 +1,8 @@
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2 } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink } from 'lucide-react';
 import { College } from '@/types/college';
 import DynamicRating from './DynamicRating';
 
@@ -12,6 +13,32 @@ interface CollegeCardProps {
 }
 
 const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) => {
+  // Map college names to their official websites
+  const getCollegeWebsite = (collegeName: string): string | null => {
+    const websiteMap: { [key: string]: string } = {
+      'Gaeddu College of Business Studies': 'http://www.gcbs.edu.bt',
+      'Paro College of Education': 'http://www.pce.edu.bt',
+      'Samtse College of Education': 'http://www.sce.edu.bt/index.php',
+      'College of Natural Resources': 'http://www.cnr.edu.bt',
+      'College of Science and Technology': 'http://www.cst.edu.bt',
+      'Jigme Namgyel Engineering College': 'https://www.jnec.edu.bt/',
+      'College of Language and Culture Studies': 'http://www.clcs.edu.bt',
+      'Sherubtse College': 'https://www.sherubtse.edu.bt/',
+      'Institute of Traditional Medicine': 'https://www.moh.gov.bt/'
+    };
+    
+    return websiteMap[collegeName] || college.applyUrl || null;
+  };
+
+  const handleApplyNow = () => {
+    const website = getCollegeWebsite(college.name);
+    if (website) {
+      window.open(website, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const applyUrl = getCollegeWebsite(college.name);
+
   return (
     <Card className="group overflow-hidden bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 rounded-2xl">
       {/* Image with Overlay */}
@@ -120,13 +147,27 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
             Compare
           </Button>
         )}
-        <Button
-          className={`${onCompare ? 'flex-1' : 'w-full'} bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg`}
-          onClick={() => onViewDetails(college)}
-        >
-          View Details
-          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-        </Button>
+        
+        <div className={`${onCompare ? 'flex-1' : 'w-full'} flex gap-2`}>
+          {applyUrl && (
+            <Button
+              variant="outline"
+              className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              onClick={handleApplyNow}
+            >
+              Apply Now
+              <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </Button>
+          )}
+          
+          <Button
+            className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={() => onViewDetails(college)}
+          >
+            View Details
+            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+          </Button>
+        </div>
       </CardFooter>
     </Card>
   );

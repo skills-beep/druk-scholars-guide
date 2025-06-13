@@ -1,4 +1,3 @@
-
 export interface College {
   id: string;
   name: string;
@@ -38,6 +37,7 @@ export interface College {
     postgraduate: string[];
     doctorate: string[];
   };
+  applyUrl?: string; // New field for application URLs
 }
 
 export interface CollegeFilters {
