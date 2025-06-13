@@ -235,29 +235,32 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
                 </CardContent>
               </Card>
 
-              {/* Government scholarships */}
+              {/* External scholarships */}
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Award className="h-5 w-5" />
-                    Government of Bhutan Scholarships
+                    Available External Scholarships
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {governmentScholarships.slice(0, 6).map((scholarship, index) => (
+                  <div className="grid grid-cols-1 gap-4">
+                    {governmentScholarships.slice(0, 3).map((scholarship, index) => (
                       <Card key={index} className="border-l-4 border-l-blue-500">
                         <CardContent className="pt-4">
                           <div className="space-y-2">
                             <div className="flex justify-between items-start">
                               <h4 className="font-semibold text-sm">{scholarship.name}</h4>
                               <Badge variant="outline" className="text-xs">
-                                {scholarship.duration}
+                                {scholarship.provider.includes('Loden') ? 'Loden Foundation' : 'Government'}
                               </Badge>
                             </div>
                             <p className="text-xs text-muted-foreground">{scholarship.criteria}</p>
                             <div className="text-xs font-medium text-blue-600">
                               Coverage: {scholarship.coverage}
+                            </div>
+                            <div className="text-xs text-muted-foreground">
+                              <strong>Deadline:</strong> {scholarship.deadline}
                             </div>
                           </div>
                         </CardContent>
@@ -266,8 +269,7 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
                   </div>
                   <div className="mt-4 p-3 bg-blue-50 rounded-lg">
                     <p className="text-sm text-blue-800">
-                      <strong>Apply through:</strong> Royal Civil Service Commission or respective ministry websites. 
-                      Early application recommended.
+                      <strong>Apply through:</strong> Visit the scholarships page for complete details and application processes.
                     </p>
                   </div>
                 </CardContent>

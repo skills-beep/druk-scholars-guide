@@ -2,40 +2,74 @@ import { College } from '@/types/college';
 
 export const governmentScholarships = [
   {
-    name: "Government Merit Scholarship",
-    duration: "4 years",
-    criteria: "Academic excellence with minimum 80% in Class XII",
-    coverage: "Full tuition fees and monthly stipend"
+    name: "Loden-RTC Need-Based Scholarship",
+    duration: "Full program duration",
+    criteria: "Bhutanese students applying for undergraduate programs at RTC",
+    coverage: "Full tuition, hostel and food for entire program duration",
+    provider: "Loden Foundation + Royal Thimphu College",
+    contact: {
+      phone: "+975-2-351801 (Ext. 105/119)",
+      email: "info@rtc.bt",
+      website: "https://www.rtc.bt"
+    },
+    deadline: "April (e.g., April 29 in previous cycles)",
+    applicationProcess: "Apply to RTC online, screenshot confirmation email, fill Google Form (available on loden.org)"
   },
   {
-    name: "Need-based Financial Aid",
-    duration: "Annual",
-    criteria: "Family income below BTN 100,000 annually",
-    coverage: "Partial tuition fees and accommodation"
+    name: "Loden Post-School Youth Scholarship",
+    duration: "Until course completion",
+    criteria: "Bhutanese citizens from low-income backgrounds with admission to diploma or undergraduate program",
+    coverage: "Up to Nu. 300,000/year, renewable based on performance",
+    provider: "Loden Foundation",
+    contact: {
+      phone: "+975-2-337389 / 332006",
+      email: "info@loden.org",
+      website: "https://loden.org"
+    },
+    deadline: "During announcement cycle",
+    applicationProcess: "Apply online during announcement cycle via Loden website"
   },
   {
-    name: "Technical Education Scholarship",
-    duration: "4 years",
-    criteria: "Engineering and technical courses enrollment",
-    coverage: "Full tuition and equipment allowance"
+    name: "Loden Short-Term Education Loan",
+    duration: "12 months repayment",
+    criteria: "Bhutanese students pursuing any recognized course (in Bhutan or abroad)",
+    coverage: "Up to Nu. 300,000, interest-free with 2% service fee",
+    provider: "Loden Foundation",
+    contact: {
+      phone: "+975-2-337389",
+      email: "info@loden.org",
+      website: "https://loden.org"
+    },
+    deadline: "As needed for emergency expenses",
+    applicationProcess: "Contact Loden Foundation directly"
   },
   {
-    name: "Rural Development Scholarship",
-    duration: "4 years",
-    criteria: "Students from rural areas with commitment to serve",
-    coverage: "Full education expenses and living allowance"
+    name: "Loden + Apollo Institute of Nursing Scholarship",
+    duration: "Full program duration",
+    criteria: "Students applying for Diploma in General Nursing & Midwifery",
+    coverage: "Full tuition fees by Loden, clinical & lab fees waived by Apollo",
+    provider: "Loden Foundation + Apollo Bhutan Institute of Nursing",
+    contact: {
+      phone: "+975-2-337389",
+      email: "info@loden.org",
+      website: "https://loden.org, https://abin.edu.bt"
+    },
+    deadline: "During call period",
+    applicationProcess: "Via Loden online form during the call period"
   },
   {
-    name: "Teacher Training Scholarship",
-    duration: "3-4 years",
-    criteria: "Education course enrollment with teaching commitment",
-    coverage: "Full tuition and training materials"
-  },
-  {
-    name: "Healthcare Professional Scholarship",
-    duration: "5-6 years",
-    criteria: "Medical and nursing program students",
-    coverage: "Complete education and clinical training costs"
+    name: "DAHE Scholarships",
+    duration: "Full program duration",
+    criteria: "Class 12 toppers in Bhutan, based on merit + eligibility criteria",
+    coverage: "Full tuition + stipends for domestic & few regional scholarships (India, Sri Lanka)",
+    provider: "Department of Adult and Higher Education, MoESD",
+    contact: {
+      phone: "+975-2-335833",
+      email: "dahe@moesd.gov.bt",
+      website: "https://dahe.gov.bt"
+    },
+    deadline: "After declaration of Class 12 results",
+    applicationProcess: "Apply through DAHE after Class 12 results are declared"
   }
 ];
 
