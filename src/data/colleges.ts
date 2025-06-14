@@ -120,7 +120,7 @@ export const colleges: College[] = [
     name: 'Paro College of Education',
     location: 'Paro',
     type: 'Public College',
-    image: '/lovable-uploads/57688415-c22e-465c-b8a6-f015f834a4eb.png',
+    image: '/lovable-uploads/0cc696d9-2745-40a5-9001-6fbb7bff621d.png',
     description: 'Dedicated to excellence in teacher education, offering undergraduate and postgraduate programs with a focus on innovative teaching methodologies and holistic development.',
     rating: 4.0,
     established: 1975,
