@@ -62,7 +62,7 @@ export const colleges: College[] = [
     id: "2",
     name: "Gaeddu College of Business Studies",
     location: "Chukha",
-    image: "/lovable-uploads/c94e5199-f9f6-4b14-8ef3-d19491151ba2.png",
+    image: "/lovable-uploads/fc0fa3c4-9fb0-443e-9dff-158ec8d58fa2.png",
     description: "A premier business college under the Royal University of Bhutan, offering specialized programs in business and management.",
     established: 2008,
     type: "Public",
