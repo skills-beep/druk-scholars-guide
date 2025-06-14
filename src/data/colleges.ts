@@ -310,7 +310,7 @@ export const colleges: College[] = [
     name: 'College of Language and Culture Studies',
     location: 'Taktse, Trongsa',
     type: 'Public College',
-    image: '/lovable-uploads/e12278e2-b3ab-4795-ab82-e91a54ec4a43.png',
+    image: '/lovable-uploads/2f97789b-e9c7-4492-9f79-65c8d70cb99d.png',
     description: 'Dedicated to preserving and promoting Bhutanese language, culture, and traditions through comprehensive academic programs and research.',
     rating: 4.3,
     established: 1961,
