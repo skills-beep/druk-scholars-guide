@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -13,15 +14,6 @@ type Tool = 'overview' | 'calculator' | 'checklist' | 'contacts' | 'news';
 
 const PracticalTools = () => {
   const [selectedTool, setSelectedTool] = useState<Tool>('overview');
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (!darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
 
   const tools = [
     {
@@ -94,7 +86,7 @@ const PracticalTools = () => {
                   return (
                     <Card 
                       key={tool.id}
-                      className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer border-2 hover:border-blue-200 dark:hover:border-blue-700"
+                      className="group hover:shadow-xl transition-all duration-500 hover:-translate-y-2 cursor-pointer border-2 hover:border-blue-200 dark:hover:border-blue-700 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm"
                       onClick={() => setSelectedTool(tool.id)}
                     >
                       <CardHeader className="text-center">
@@ -121,7 +113,7 @@ const PracticalTools = () => {
               </div>
 
               {/* Benefits Section */}
-              <Card className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 border-0">
+              <Card className="bg-gradient-to-r from-blue-50/80 to-purple-50/80 dark:from-slate-800/80 dark:to-slate-700/80 border-0 backdrop-blur-sm">
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-center mb-8 text-slate-900 dark:text-white">
                     Why Use Our Practical Tools?
