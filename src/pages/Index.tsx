@@ -50,21 +50,36 @@ const Index = () => {
   };
 
   const handleCompareCollege = (college: College) => {
+    console.log('handleCompareCollege called with:', college.name);
+    console.log('Current compared colleges:', comparedColleges.length);
+    
     if (comparedColleges.length >= 3) {
+      console.log('Maximum 3 colleges reached');
       return; // Maximum 3 colleges for comparison
     }
     
     if (!comparedColleges.find(c => c.id === college.id)) {
-      setComparedColleges([...comparedColleges, college]);
+      const newComparedColleges = [...comparedColleges, college];
+      console.log('Adding college to comparison:', newComparedColleges.length);
+      setComparedColleges(newComparedColleges);
+    } else {
+      console.log('College already in comparison');
     }
   };
 
   const handleRemoveFromComparison = (collegeId: string) => {
+    console.log('Removing college from comparison:', collegeId);
     setComparedColleges(comparedColleges.filter(c => c.id !== collegeId));
   };
 
   const handleOpenComparison = () => {
+    console.log('Opening comparison modal with colleges:', comparedColleges.length);
     setShowComparison(true);
+  };
+
+  const handleClearComparison = () => {
+    console.log('Clearing all compared colleges');
+    setComparedColleges([]);
   };
 
   if (isLoading) {
@@ -100,17 +115,25 @@ const Index = () => {
                       <span className="font-medium">
                         {comparedColleges.length} college{comparedColleges.length !== 1 ? 's' : ''} selected for comparison
                       </span>
+                      <div className="flex gap-2">
+                        {comparedColleges.map((college) => (
+                          <span key={college.id} className="text-xs bg-blue-100 dark:bg-blue-900 px-2 py-1 rounded">
+                            {college.name.split(' ').slice(0, 2).join(' ')}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                     <div className="flex gap-2">
                       <Button
                         onClick={handleOpenComparison}
                         className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+                        disabled={comparedColleges.length === 0}
                       >
                         Compare Now
                       </Button>
                       <Button
                         variant="outline"
-                        onClick={() => setComparedColleges([])}
+                        onClick={handleClearComparison}
                       >
                         Clear All
                       </Button>

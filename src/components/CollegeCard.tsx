@@ -39,7 +39,12 @@ const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, ca
     }
   };
 
-  const handleCompare = () => {
+  const handleCompare = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('Compare button clicked for:', college.name);
+    console.log('isCompared:', isCompared, 'canCompare:', canCompare);
+    
     if (onCompare && !isCompared && canCompare) {
       onCompare(college);
     }
