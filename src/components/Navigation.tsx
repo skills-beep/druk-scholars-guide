@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Moon, Sun, Menu, X } from 'lucide-react';
@@ -16,6 +15,7 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
   const navItems = [
     { name: 'Colleges', href: '/' },
     { name: 'Scholarships', href: '/scholarships' },
+    { name: 'Tools', href: '/tools' },
     { name: 'About', href: '/about' },
   ];
 
