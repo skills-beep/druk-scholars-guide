@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -401,7 +400,7 @@ export const colleges: College[] = [
     id: "8",
     name: "College of Language and Culture Studies",
     location: "Taktse",
-    image: "/lovable-uploads/1923e1a4-da94-4116-b17f-139ee473366e.png",
+    image: "/lovable-uploads/5a6fdeeb-388b-47f0-b8ad-bcc411d903ea.png",
     description: "A unique college under the Royal University of Bhutan, dedicated to the preservation and promotion of Bhutanese language and culture.",
     established: 1961,
     type: "Public",
