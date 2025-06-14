@@ -231,7 +231,7 @@ export const colleges: College[] = [
     id: "5",
     name: "College of Natural Resources",
     location: "Lobeysa",
-    image: "/lovable-uploads/239bcac2-4bdc-47f1-9803-41dfb3900118.png",
+    image: "/lovable-uploads/08833c54-218f-493b-9296-8e34870b4daa.png",
     description: "A specialized college under the Royal University of Bhutan, dedicated to sustainable management of natural resources.",
     established: 1992,
     type: "Public",
