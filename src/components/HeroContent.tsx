@@ -26,7 +26,7 @@ const HeroContent = ({ onSearch }: HeroContentProps) => {
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div className="space-y-8 md:space-y-10">
         {/* Enhanced Main Heading */}
-        <div className="space-y-6">
+        <div className="space-y-8 pt-8 md:pt-12">
           <div className="inline-flex items-center px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in">
             <Sparkles className="w-3 h-3 text-yellow-400 mr-1.5" />
             <span className="text-white/90 text-xs sm:text-sm font-medium">Discover Excellence in Education</span>
