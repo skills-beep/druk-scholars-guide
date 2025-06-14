@@ -158,7 +158,7 @@ export const colleges: College[] = [
     name: 'Samtse College of Education',
     location: 'Samtse',
     type: 'Public College',
-    image: '/lovable-uploads/a215569b-492e-4d60-8b40-026e05401bae.png',
+    image: '/lovable-uploads/c6d4bf97-c459-451e-89fd-7e79bd965dbd.png',
     description: 'Focuses on preparing educators with a strong foundation in pedagogy and research, offering specialized programs in inclusive education and counseling.',
     rating: 3.9,
     established: 1968,
