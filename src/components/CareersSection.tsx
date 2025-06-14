@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { TrendingUp, Users, DollarSign, ChevronRight } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, ChevronRight, MapPin, GraduationCap } from 'lucide-react';
 import { inDemandCareers } from '@/data/careers';
 import { colleges } from '@/data/colleges';
 
@@ -13,6 +13,19 @@ const CareersSection = () => {
   const getCollegesByIds = (collegeIds: string[]) => {
     return colleges.filter(college => collegeIds.includes(college.id));
   };
+
+  // Calculate total jobs across all categories
+  const totalJobs = inDemandCareers.reduce((sum, category) => sum + category.jobs.length, 0);
+
+  // Calculate average growth rate
+  const averageGrowth = Math.round(
+    inDemandCareers.reduce((sum, category) => {
+      const categoryAvg = category.jobs.reduce((jobSum, job) => {
+        return jobSum + parseInt(job.growth.replace('%', '').replace('+', ''));
+      }, 0) / category.jobs.length;
+      return sum + categoryAvg;
+    }, 0) / inDemandCareers.length
+  );
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-900 dark:to-slate-800">
@@ -29,7 +42,7 @@ const CareersSection = () => {
           </p>
         </div>
 
-        {/* Stats Overview */}
+        {/* Enhanced Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="text-center hover:shadow-lg transition-all duration-300 hover-scale">
             <CardContent className="pt-6">
@@ -38,7 +51,7 @@ const CareersSection = () => {
                   <TrendingUp className="h-8 w-8 text-blue-600 dark:text-blue-400" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">75+</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{totalJobs}+</h3>
               <p className="text-slate-600 dark:text-slate-300">High-Demand Jobs</p>
             </CardContent>
           </Card>
@@ -50,7 +63,7 @@ const CareersSection = () => {
                   <Users className="h-8 w-8 text-green-600 dark:text-green-400" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">15+</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{inDemandCareers.length}+</h3>
               <p className="text-slate-600 dark:text-slate-300">Industry Sectors</p>
             </CardContent>
           </Card>
@@ -62,13 +75,13 @@ const CareersSection = () => {
                   <DollarSign className="h-8 w-8 text-yellow-600 dark:text-yellow-400" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">25%</h3>
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{averageGrowth}%</h3>
               <p className="text-slate-600 dark:text-slate-300">Average Growth Rate</p>
             </CardContent>
           </Card>
         </div>
 
-        {/* Career Categories Grid */}
+        {/* Career Categories Grid with Enhanced Job Display */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {inDemandCareers.map((category, index) => (
             <Card 
@@ -104,6 +117,30 @@ const CareersSection = () => {
                   />
                 </div>
 
+                {/* Job Preview - Show top 3 jobs when collapsed */}
+                {selectedCategory !== category.category && (
+                  <div className="space-y-2">
+                    <p className="text-xs font-medium text-slate-700 dark:text-slate-200 mb-2">
+                      Popular Roles:
+                    </p>
+                    <div className="space-y-1">
+                      {category.jobs.slice(0, 3).map((job, jobIndex) => (
+                        <div key={jobIndex} className="flex justify-between items-center text-xs">
+                          <span className="text-slate-600 dark:text-slate-300">{job.title}</span>
+                          <Badge variant="outline" className="text-xs text-green-600 border-green-600">
+                            {job.growth}
+                          </Badge>
+                        </div>
+                      ))}
+                    </div>
+                    {category.jobs.length > 3 && (
+                      <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
+                        +{category.jobs.length - 3} more roles...
+                      </p>
+                    )}
+                  </div>
+                )}
+
                 {/* Expanded Job Details */}
                 {selectedCategory === category.category && (
                   <div className="space-y-4 animate-fade-in">
@@ -122,18 +159,26 @@ const CareersSection = () => {
                         </p>
                         
                         <div className="space-y-2">
-                          <p className="text-xs font-medium text-slate-700 dark:text-slate-200">
+                          <p className="text-xs font-medium text-slate-700 dark:text-slate-200 flex items-center gap-1">
+                            <GraduationCap className="h-3 w-3" />
                             Available at:
                           </p>
-                          <div className="flex flex-wrap gap-1">
+                          <div className="space-y-1">
                             {getCollegesByIds(job.collegeIds).map((college) => (
-                              <Badge 
-                                key={college.id} 
-                                variant="secondary" 
-                                className="text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
-                              >
-                                {college.name}
-                              </Badge>
+                              <div key={college.id} className="flex items-center justify-between bg-white dark:bg-slate-700 p-2 rounded text-xs">
+                                <div className="flex items-center gap-2">
+                                  <span className="font-medium text-slate-900 dark:text-white">
+                                    {college.name}
+                                  </span>
+                                  <div className="flex items-center gap-1 text-slate-500">
+                                    <MapPin className="h-3 w-3" />
+                                    <span>{college.location}</span>
+                                  </div>
+                                </div>
+                                <Badge variant="secondary" className="text-xs">
+                                  {college.type}
+                                </Badge>
+                              </div>
                             ))}
                           </div>
                         </div>
@@ -144,6 +189,41 @@ const CareersSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Enhanced Summary Section */}
+        <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8">
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              Why Choose Bhutan for Your Career?
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                  100%
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Carbon Negative Country
+                </p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
+                  GNH
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Gross National Happiness Focus
+                </p>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                  71%
+                </div>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Forest Coverage
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Call to Action */}
