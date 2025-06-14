@@ -626,7 +626,7 @@ export const colleges: College[] = [
     id: "12",
     name: "Apollo Bhutan Institute of Nursing",
     location: "Thimphu",
-    image: "/lovable-uploads/7f89786e-7fc4-41b5-9258-b5723443e7b6.png",
+    image: "/lovable-uploads/4a97fc19-1607-4935-9f26-3a97596599b5.png",
     description: "Premier nursing education institute affiliated with Apollo Hospitals, offering world-class healthcare education with modern facilities and experienced faculty.",
     established: 2018,
     type: "Private",
