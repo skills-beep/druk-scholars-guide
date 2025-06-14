@@ -11,11 +11,12 @@ import LoadingAnimation from '@/components/LoadingAnimation';
 import { colleges } from '@/data/colleges';
 import { College, CollegeFilters } from '@/types/college';
 import { Button } from '@/components/ui/button';
-import { Compare } from 'lucide-react';
+import { GitCompare } from 'lucide-react';
 
 const Index = () => {
   const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [filterSidebarOpen, setFilterSidebarOpen] = useState(false);
   const [filters, setFilters] = useState<CollegeFilters>({
     search: '',
     location: [],
@@ -42,6 +43,10 @@ const Index = () => {
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
+  };
+
+  const handleSearch = (query: string) => {
+    setFilters(prev => ({ ...prev, search: query }));
   };
 
   const handleCompareCollege = (college: College) => {
@@ -71,13 +76,18 @@ const Index = () => {
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
       <main>
-        <HeroSection />
+        <HeroSection onSearch={handleSearch} />
         <StatsSection />
         
         <div className="container mx-auto px-4 py-16">
           <div className="flex flex-col lg:flex-row gap-8">
             <aside className="lg:w-80 shrink-0">
-              <FilterSidebar filters={filters} onFiltersChange={setFilters} />
+              <FilterSidebar 
+                filters={filters} 
+                onFiltersChange={setFilters}
+                isOpen={filterSidebarOpen}
+                onToggle={() => setFilterSidebarOpen(!filterSidebarOpen)}
+              />
             </aside>
             
             <div className="flex-1 space-y-6">
@@ -86,7 +96,7 @@ const Index = () => {
                 <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl p-4 shadow-lg border border-white/20 dark:border-gray-700/50">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <Compare className="h-5 w-5 text-blue-600" />
+                      <GitCompare className="h-5 w-5 text-blue-600" />
                       <span className="font-medium">
                         {comparedColleges.length} college{comparedColleges.length !== 1 ? 's' : ''} selected for comparison
                       </span>

@@ -1,8 +1,7 @@
-
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink, Compare, Check } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink, GitCompare, Check } from 'lucide-react';
 import { College } from '@/types/college';
 import DynamicRating from './DynamicRating';
 
@@ -174,7 +173,7 @@ const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, ca
               </>
             ) : (
               <>
-                <Compare className="h-4 w-4 mr-1" />
+                <GitCompare className="h-4 w-4 mr-1" />
                 Compare
               </>
             )}

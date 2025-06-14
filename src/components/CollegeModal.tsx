@@ -21,7 +21,7 @@ import {
   Building,
   Camera,
   Quote,
-  Compare,
+  GitCompare,
   Check
 } from 'lucide-react';
 import { College } from '@/types/college';
@@ -403,7 +403,7 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare, isCompared = false,
                   </>
                 ) : (
                   <>
-                    <Compare className="h-4 w-4 mr-2" />
+                    <GitCompare className="h-4 w-4 mr-2" />
                     Add to Compare
                   </>
                 )}
