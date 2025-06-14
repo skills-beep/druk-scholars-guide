@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { TrendingUp, Users, DollarSign, ChevronRight, MapPin, GraduationCap } from 'lucide-react';
+import { TrendingUp, Users, DollarSign, ChevronRight, MapPin, GraduationCap, Briefcase, Building, Globe } from 'lucide-react';
 import { inDemandCareers } from '@/data/careers';
 import { colleges } from '@/data/colleges';
 
@@ -203,35 +203,50 @@ const CareersSection = () => {
           ))}
         </div>
 
-        {/* Enhanced Summary Section */}
+        {/* Enhanced Job Market Insights Section */}
         <div className="mt-16 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
-              Why Choose Bhutan for Your Career?
+              Bhutan's Job Market Insights
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">
-                  100%
+              <div className="p-4 bg-white/70 dark:bg-slate-600/70 rounded-xl">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="p-2 bg-blue-100 dark:bg-blue-900 rounded-full">
+                    <Building className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  </div>
+                </div>
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">
+                  Growing
                 </div>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Carbon Negative Country
+                  Digital Economy Sector
                 </p>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-green-600 dark:text-green-400 mb-2">
-                  GNH
+              <div className="p-4 bg-white/70 dark:bg-slate-600/70 rounded-xl">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="p-2 bg-green-100 dark:bg-green-900 rounded-full">
+                    <Briefcase className="h-6 w-6 text-green-600 dark:text-green-400" />
+                  </div>
+                </div>
+                <div className="text-2xl font-bold text-green-600 dark:text-green-400 mb-2">
+                  85%+
                 </div>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Gross National Happiness Focus
+                  Youth Employment Target
                 </p>
               </div>
-              <div>
-                <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2">
-                  71%
+              <div className="p-4 bg-white/70 dark:bg-slate-600/70 rounded-xl">
+                <div className="flex items-center justify-center mb-3">
+                  <div className="p-2 bg-purple-100 dark:bg-purple-900 rounded-full">
+                    <Globe className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                  </div>
+                </div>
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">
+                  12th FYP
                 </div>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
-                  Forest Coverage
+                  Focus on Skills Development
                 </p>
               </div>
             </div>
