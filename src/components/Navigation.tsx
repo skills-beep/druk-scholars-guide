@@ -1,17 +1,13 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Moon, Sun, Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useDarkMode } from '@/contexts/DarkModeContext';
 
-interface NavigationProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
+const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   const navItems = [
     { name: 'Colleges', href: '/' },

@@ -11,7 +11,6 @@ import { colleges } from '@/data/colleges';
 import { College, CollegeFilters } from '@/types/college';
 
 const Index = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [filterSidebarOpen, setFilterSidebarOpen] = useState(false);
   const [filters, setFilters] = useState<CollegeFilters>({
@@ -31,18 +30,6 @@ const Index = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
   const handleSearch = (query: string) => {
     setFilters(prev => ({ ...prev, search: query }));
   };
@@ -53,7 +40,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
-      <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Navigation />
       
       <main>
         <HeroSection onSearch={handleSearch} />
