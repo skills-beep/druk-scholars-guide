@@ -1,3 +1,4 @@
+
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -685,7 +686,7 @@ export const colleges: College[] = [
     id: "13",
     name: "Khesar Gyalpo University of Medical Sciences of Bhutan",
     location: "Thimphu",
-    image: "/lovable-uploads/b765e7c5-40a2-4e65-bad0-104871f77b3d.png",
+    image: "/lovable-uploads/ddff382c-de06-42c9-a5ca-4be19c2fb21c.png",
     description: "Founded in 2013 and renamed in 2015 to honor the King of Bhutan. The first dedicated medical institution in Bhutan, comprising three faculties: Health Sciences, Traditional Medicine, and Postgraduate Medicine.",
     established: 2013,
     type: "Public",
