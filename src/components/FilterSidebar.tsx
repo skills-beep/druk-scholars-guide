@@ -193,12 +193,12 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
                 {openSections.degreeProgram ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
               </CollapsibleTrigger>
               <CollapsibleContent className="mt-2">
-                <Select value={filters.degreeProgram} onValueChange={(value) => onFiltersChange({ ...filters, degreeProgram: value })}>
+                <Select value={filters.degreeProgram} onValueChange={(value) => onFiltersChange({ ...filters, degreeProgram: value === 'all' ? '' : value })}>
                   <SelectTrigger className="rounded-xl">
                     <SelectValue placeholder="Select degree program" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Programs</SelectItem>
+                    <SelectItem value="all">All Programs</SelectItem>
                     {degreePrograms.map((program) => (
                       <SelectItem key={program} value={program}>{program}</SelectItem>
                     ))}
