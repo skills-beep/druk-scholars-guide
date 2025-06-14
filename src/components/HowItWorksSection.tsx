@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Search, Users, BookOpen, Award, CheckCircle, Star, ArrowRight, GraduationCap } from 'lucide-react';
+import { Search, Users, BookOpen, Award, CheckCircle, ArrowRight, GraduationCap } from 'lucide-react';
 
 const HowItWorksSection = () => {
   const steps = [
@@ -58,30 +58,6 @@ const HowItWorksSection = () => {
         "Partnership opportunities with institutions",
         "Professional development insights"
       ]
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Tenzin Norbu",
-      role: "Engineering Student",
-      college: "Royal University of Bhutan",
-      content: "EduBhutan helped me discover the perfect engineering program. The comparison tools made it easy to choose between different colleges, and I found a scholarship that covered 70% of my fees!",
-      rating: 5
-    },
-    {
-      name: "Pema Choden",
-      role: "Parent",
-      location: "Thimphu",
-      content: "As a parent, I was worried about my daughter's college choices. This platform gave us all the information we needed to make an informed decision. The cost calculator was especially helpful for our family budget.",
-      rating: 5
-    },
-    {
-      name: "Karma Wangchuk",
-      role: "High School Teacher",
-      location: "Punakha",
-      content: "I recommend EduBhutan to all my students. It's become an essential tool in our career counseling sessions. The detailed program information helps students align their interests with future opportunities.",
-      rating: 5
     }
   ];
 
@@ -165,48 +141,15 @@ const HowItWorksSection = () => {
           </div>
         </div>
 
-        {/* Success Stories */}
-        <div>
-          <h3 className="text-2xl font-bold text-center text-slate-900 dark:text-white mb-12">
-            Success Stories
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <blockquote className="text-slate-600 dark:text-slate-300 italic mb-4 leading-relaxed">
-                    "{testimonial.content}"
-                  </blockquote>
-                  <div className="border-t border-slate-200 dark:border-slate-700 pt-4">
-                    <div className="font-semibold text-slate-900 dark:text-white">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-sm text-slate-500 dark:text-slate-400">
-                      {testimonial.role}
-                      {testimonial.college && ` • ${testimonial.college}`}
-                      {testimonial.location && ` • ${testimonial.location}`}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Call to Action */}
-        <div className="text-center mt-16">
+        <div className="text-center">
           <Card className="bg-gradient-to-r from-blue-600 to-purple-600 border-0 shadow-2xl">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold text-white mb-4">
                 Ready to Start Your Journey?
               </h3>
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Join thousands of students who have found their perfect college match through EduBhutan
+                Join thousands of students who have found their perfect college match through DrukScholar
               </p>
               <Button 
                 size="lg" 
