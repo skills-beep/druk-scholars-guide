@@ -90,7 +90,7 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
       <RecentlyViewed onViewCollege={handleViewDetails} />
       
       <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-slate-800 dark:text-white">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">
           {sortedColleges.length} Colleges Found
         </h2>
       </div>
