@@ -1,19 +1,17 @@
+
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink, GitCompare, Check } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink } from 'lucide-react';
 import { College } from '@/types/college';
 import DynamicRating from './DynamicRating';
 
 interface CollegeCardProps {
   college: College;
   onViewDetails: (college: College) => void;
-  onCompare?: (college: College) => void;
-  isCompared?: boolean;
-  canCompare?: boolean;
 }
 
-const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, canCompare = true }: CollegeCardProps) => {
+const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
   // Map college names to their official websites
   const getCollegeWebsite = (collegeName: string): string | null => {
     const websiteMap: { [key: string]: string } = {
@@ -36,17 +34,6 @@ const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, ca
     const website = getCollegeWebsite(college.name);
     if (website) {
       window.open(website, '_blank', 'noopener,noreferrer');
-    }
-  };
-
-  const handleCompare = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    console.log('Compare button clicked for:', college.name);
-    console.log('isCompared:', isCompared, 'canCompare:', canCompare);
-    
-    if (onCompare && !isCompared && canCompare) {
-      onCompare(college);
     }
   };
 
@@ -81,16 +68,6 @@ const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, ca
             <DynamicRating rating={college.rating} size="sm" />
           </div>
         </div>
-
-        {/* Comparison Status */}
-        {isCompared && (
-          <div className="absolute bottom-4 right-4">
-            <Badge className="bg-green-500 text-white border-0 shadow-md">
-              <Check className="h-3 w-3 mr-1" />
-              Added to Compare
-            </Badge>
-          </div>
-        )}
       </div>
 
       <CardHeader className="pb-3 space-y-3">
@@ -160,51 +137,24 @@ const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, ca
       </CardContent>
 
       <CardFooter className="pt-4 flex gap-3">
-        {onCompare && (
+        {applyUrl && (
           <Button
-            variant={isCompared ? "default" : "outline"}
-            className={`flex-1 font-medium transition-all duration-300 rounded-xl ${
-              isCompared 
-                ? "bg-green-500 hover:bg-green-600 text-white border-0" 
-                : "hover:bg-slate-50 dark:hover:bg-gray-700 hover:border-slate-300 dark:hover:border-gray-600 border-slate-200 dark:border-gray-600 text-slate-700 dark:text-slate-200"
-            }`}
-            onClick={handleCompare}
-            disabled={isCompared || !canCompare}
+            variant="outline"
+            className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            onClick={handleApplyNow}
           >
-            {isCompared ? (
-              <>
-                <Check className="h-4 w-4 mr-1" />
-                Added
-              </>
-            ) : (
-              <>
-                <GitCompare className="h-4 w-4 mr-1" />
-                Compare
-              </>
-            )}
+            Apply Now
+            <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Button>
         )}
         
-        <div className={`${onCompare ? 'flex-1' : 'w-full'} flex gap-2`}>
-          {applyUrl && (
-            <Button
-              variant="outline"
-              className="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white border-0 font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
-              onClick={handleApplyNow}
-            >
-              Apply Now
-              <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          )}
-          
-          <Button
-            className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
-            onClick={() => onViewDetails(college)}
-          >
-            View Details
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Button>
-        </div>
+        <Button
+          className="flex-1 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg"
+          onClick={() => onViewDetails(college)}
+        >
+          View Details
+          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </Button>
       </CardFooter>
     </Card>
   );
