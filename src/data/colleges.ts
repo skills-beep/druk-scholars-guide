@@ -1,5 +1,4 @@
 
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -47,7 +46,18 @@ export const colleges: College[] = [
       email: "admissions@rtc.bt",
       website: "https://www.rtc.bt/"
     },
-    applyUrl: "https://www.rtc.bt/index.php/admissions/how-to-apply"
+    applyUrl: "https://www.rtc.bt/index.php/admissions/how-to-apply",
+    facilities: ["Library", "Computer Lab", "Sports Complex", "Cafeteria", "Hostel"],
+    accreditation: "Accredited by Royal University of Bhutan",
+    campusSize: "50 acres",
+    studentCount: 1200,
+    facultyCount: 85,
+    programs: {
+      undergraduate: ["B.A. in Development Economics", "B.A. in English", "B.Com", "B.Sc. in Environmental Science"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Government Service", "Private Sector", "NGOs", "Teaching", "Research"]
   },
   {
     id: "2",
@@ -93,7 +103,18 @@ export const colleges: College[] = [
       email: "info@gcbs.edu.bt",
       website: "http://www.gcbs.edu.bt"
     },
-    applyUrl: "http://www.gcbs.edu.bt/admission/"
+    applyUrl: "http://www.gcbs.edu.bt/admission/",
+    facilities: ["Business Lab", "Library", "Conference Hall", "Computer Center", "Hostel"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "75 acres",
+    studentCount: 800,
+    facultyCount: 65,
+    programs: {
+      undergraduate: ["BBA in Marketing", "BBA in Finance", "BBA in Human Resources", "B.Com"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Business Management", "Banking", "Marketing", "Finance", "Consulting"]
   },
   {
     id: "3",
@@ -138,7 +159,18 @@ export const colleges: College[] = [
       email: "info@pce.edu.bt",
       website: "http://www.pce.edu.bt"
     },
-    applyUrl: "http://www.pce.edu.bt/admission/"
+    applyUrl: "http://www.pce.edu.bt/admission/",
+    facilities: ["Teaching Practice School", "Library", "Computer Lab", "Science Lab", "Hostel"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "60 acres",
+    studentCount: 600,
+    facultyCount: 45,
+    programs: {
+      undergraduate: ["B.Ed. in Primary Education", "B.Ed. in Secondary Education"],
+      postgraduate: ["Post Graduate Diploma in Education"],
+      doctorate: []
+    },
+    careerOpportunities: ["Primary School Teacher", "Secondary School Teacher", "Educational Administration", "Curriculum Development"]
   },
   {
     id: "4",
@@ -183,7 +215,18 @@ export const colleges: College[] = [
       email: "info@sce.edu.bt",
       website: "http://www.sce.edu.bt"
     },
-    applyUrl: "http://www.sce.edu.bt/admission/"
+    applyUrl: "http://www.sce.edu.bt/admission/",
+    facilities: ["Teaching Practice School", "Library", "Language Lab", "Science Lab", "Cultural Center"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "45 acres",
+    studentCount: 500,
+    facultyCount: 40,
+    programs: {
+      undergraduate: ["B.Ed. in Primary Education", "B.Ed. in Dzongkha", "B.Ed. in Science"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Dzongkha Teacher", "Science Teacher", "Primary Teacher", "Cultural Preservation"]
   },
   {
     id: "5",
@@ -228,7 +271,18 @@ export const colleges: College[] = [
       email: "info@cnr.edu.bt",
       website: "http://www.cnr.edu.bt"
     },
-    applyUrl: "http://www.cnr.edu.bt/admission/"
+    applyUrl: "http://www.cnr.edu.bt/admission/",
+    facilities: ["Research Farm", "Veterinary Hospital", "Forestry Lab", "Greenhouse", "Library"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "200 acres",
+    studentCount: 400,
+    facultyCount: 35,
+    programs: {
+      undergraduate: ["B.Sc. in Agriculture", "B.Sc. in Animal Science", "B.Sc. in Forestry"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Agricultural Officer", "Forestry Officer", "Veterinarian", "Research Scientist", "Environmental Consultant"]
   },
   {
     id: "6",
@@ -274,7 +328,18 @@ export const colleges: College[] = [
       email: "info@cst.edu.bt",
       website: "http://www.cst.edu.bt"
     },
-    applyUrl: "http://www.cst.edu.bt/admission/"
+    applyUrl: "http://www.cst.edu.bt/admission/",
+    facilities: ["Engineering Workshops", "Computer Lab", "Electronics Lab", "Library", "Research Center"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "100 acres",
+    studentCount: 1000,
+    facultyCount: 75,
+    programs: {
+      undergraduate: ["B.Eng. in Civil Engineering", "B.Eng. in Electrical Engineering", "B.Eng. in Electronics and Communication Engineering", "B.Sc. in Computer Science"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Software Engineer", "Civil Engineer", "Electrical Engineer", "IT Consultant", "Project Manager"]
   },
   {
     id: "7",
@@ -319,7 +384,18 @@ export const colleges: College[] = [
       email: "info@jnec.edu.bt",
       website: "https://www.jnec.edu.bt/"
     },
-    applyUrl: "https://www.jnec.edu.bt/admission/"
+    applyUrl: "https://www.jnec.edu.bt/admission/",
+    facilities: ["Mechanical Workshop", "Electrical Lab", "Civil Engineering Lab", "Library", "Hostel"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "80 acres",
+    studentCount: 600,
+    facultyCount: 50,
+    programs: {
+      undergraduate: ["B.Eng. in Civil Engineering", "B.Eng. in Electrical Engineering", "B.Eng. in Mechanical Engineering"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Civil Engineer", "Electrical Engineer", "Mechanical Engineer", "Construction Manager", "Power Engineer"]
   },
   {
     id: "8",
@@ -364,7 +440,18 @@ export const colleges: College[] = [
       email: "info@clcs.edu.bt",
       website: "http://www.clcs.edu.bt"
     },
-    applyUrl: "http://www.clcs.edu.bt/admission/"
+    applyUrl: "http://www.clcs.edu.bt/admission/",
+    facilities: ["Cultural Archive", "Language Lab", "Library", "Traditional Arts Center", "Research Center"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "30 acres",
+    studentCount: 300,
+    facultyCount: 25,
+    programs: {
+      undergraduate: ["B.A. in Language and Culture", "B.A. in Dzongkha", "B.A. in History and Culture"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Cultural Preservation Officer", "Language Teacher", "Museum Curator", "Cultural Researcher", "Media Professional"]
   },
   {
     id: "9",
@@ -410,7 +497,18 @@ export const colleges: College[] = [
       email: "info@sherubtse.edu.bt",
       website: "https://www.sherubtse.edu.bt/"
     },
-    applyUrl: "https://www.sherubtse.edu.bt/admission/"
+    applyUrl: "https://www.sherubtse.edu.bt/admission/",
+    facilities: ["Central Library", "Science Labs", "Computer Center", "Sports Complex", "Hostels"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "120 acres",
+    studentCount: 1500,
+    facultyCount: 95,
+    programs: {
+      undergraduate: ["B.A. in English", "B.Sc. in Physics", "B.Com", "B.Sc. in Mathematics"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: ["Government Service", "Teaching", "Banking", "Research", "Private Sector"]
   },
   {
     id: "10",
@@ -454,7 +552,19 @@ export const colleges: College[] = [
       email: "info@itm.gov.bt",
       website: "https://www.moh.gov.bt/"
     },
-    applyUrl: "https://www.moh.gov.bt/"
+    applyUrl: "https://www.moh.gov.bt/",
+    facilities: ["Traditional Medicine Museum", "Herb Garden", "Research Lab", "Clinic", "Library"],
+    accreditation: "Ministry of Health, Bhutan",
+    campusSize: "15 acres",
+    studentCount: 150,
+    facultyCount: 20,
+    programs: {
+      undergraduate: [],
+      postgraduate: [],
+      doctorate: [],
+      diploma: ["Diploma in Traditional Medicine", "Certificate in Traditional Medicine"]
+    },
+    careerOpportunities: ["Traditional Medicine Practitioner", "Healthcare Provider", "Research in Traditional Medicine", "Hospital Service"]
   },
   {
     id: "11",
@@ -499,7 +609,19 @@ export const colleges: College[] = [
       email: "info@gcit.edu.bt",
       website: "http://www.gcit.edu.bt"
     },
-    applyUrl: "http://www.gcit.edu.bt/admission"
+    applyUrl: "http://www.gcit.edu.bt/admission",
+    facilities: ["Computer Labs", "Software Development Center", "Network Lab", "Library", "Innovation Hub"],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "40 acres",
+    studentCount: 500,
+    facultyCount: 35,
+    programs: {
+      undergraduate: ["B.Sc. in Information Technology", "B.Sc. in Computer Science"],
+      postgraduate: [],
+      doctorate: [],
+      diploma: ["Diploma in IT"]
+    },
+    careerOpportunities: ["Software Developer", "IT Consultant", "System Administrator", "Web Developer", "Database Administrator"]
   },
   {
     id: "12",
@@ -546,7 +668,19 @@ export const colleges: College[] = [
       email: "admissions@apollobhutan.edu.bt",
       website: "https://apollobhutan.edu.bt"
     },
-    applyUrl: "https://apollobhutan.edu.bt/admissions"
+    applyUrl: "https://apollobhutan.edu.bt/admissions",
+    facilities: ["Modern Simulation Labs", "Clinical Skills Lab", "Library", "Computer Lab", "Hospital Partnerships"],
+    accreditation: "Bhutan Medical and Health Council",
+    campusSize: "10 acres",
+    studentCount: 200,
+    facultyCount: 25,
+    programs: {
+      undergraduate: ["Bachelor of Science in Nursing", "Post Basic B.Sc. Nursing"],
+      postgraduate: [],
+      doctorate: [],
+      diploma: ["General Nursing and Midwifery", "Auxiliary Nurse Midwifery"]
+    },
+    careerOpportunities: ["Registered Nurse", "Hospital Administrator", "Clinical Specialist", "Community Health Nurse", "Healthcare Manager"]
   }
 ];
 
@@ -594,4 +728,3 @@ export const governmentScholarships = [
     }
   }
 ];
-
