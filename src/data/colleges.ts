@@ -1,3 +1,4 @@
+
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -569,7 +570,7 @@ export const colleges: College[] = [
     id: "11",
     name: "Gyalpozhing College of Information Technology",
     location: "Gyalpozhing",
-    image: "/lovable-uploads/294b0d4f-6b24-4136-8631-f72858b48637.png",
+    image: "/lovable-uploads/75ffb739-1e9e-476e-9dbb-2a3b8f759a5c.png",
     description: "Focuses on providing high-quality education in information technology and related fields.",
     established: 2010,
     type: "Public",
