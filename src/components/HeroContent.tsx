@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, ArrowRight, Sparkles, Star, MapPin } from 'lucide-react';
+import { Search, ArrowRight, Sparkles, Star, MapPin, Quote } from 'lucide-react';
 
 interface HeroContentProps {
   onSearch: (query: string) => void;
@@ -92,8 +92,22 @@ const HeroContent = ({ onSearch }: HeroContentProps) => {
           </div>
         </div>
 
-        {/* Enhanced CTA Section */}
-        <div className="space-y-4 animate-fade-in px-4" style={{ animationDelay: '1s' }}>
+        {/* Enhanced CTA Section with King's Quote */}
+        <div className="space-y-6 animate-fade-in px-4" style={{ animationDelay: '1s' }}>
+          {/* King's Quote */}
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="relative bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 border border-white/20">
+              <Quote className="absolute top-4 left-4 w-6 h-6 text-yellow-300 opacity-50" />
+              <blockquote className="text-lg sm:text-xl text-white/95 font-light italic leading-relaxed mb-4 pl-8">
+                "Education must be a priority for all nations. It is the foundation upon which we build our future and the key to unlocking human potential."
+              </blockquote>
+              <div className="text-right">
+                <p className="text-yellow-300 font-semibold">— His Majesty Jigme Khesar Namgyel Wangchuck</p>
+                <p className="text-white/70 text-sm">Fifth Druk Gyalpo of Bhutan</p>
+              </div>
+            </div>
+          </div>
+
           <div className="flex items-center justify-center space-x-2 text-yellow-300">
             <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
             <Star className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
