@@ -10,11 +10,9 @@ import { LayoutGrid, List, TrendingUp } from 'lucide-react';
 interface CollegeGridProps {
   colleges: College[];
   filters: CollegeFilters;
-  onCompareCollege?: (college: College) => void;
-  comparedColleges?: College[];
 }
 
-const CollegeGrid = ({ colleges, filters, onCompareCollege, comparedColleges = [] }: CollegeGridProps) => {
+const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
   const [selectedCollege, setSelectedCollege] = useState<College | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
@@ -50,35 +48,35 @@ const CollegeGrid = ({ colleges, filters, onCompareCollege, comparedColleges = [
 
   return (
     <div className="space-y-6">
-      {/* Enhanced Results Header */}
-      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/20 dark:border-gray-700/50">
+      {/* Enhanced Results Header with transitions */}
+      <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl rounded-2xl p-6 shadow-lg border border-white/20 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:scale-[1.01]">
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4">
           <div className="space-y-2">
             <div className="flex items-center gap-3">
-              <h2 className="text-3xl font-bold font-sora text-slate-900 dark:text-white">
+              <h2 className="text-3xl font-bold font-sora text-slate-900 dark:text-white transition-colors duration-300">
                 {filteredColleges.length} College{filteredColleges.length !== 1 ? 's' : ''} Found
               </h2>
-              <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border-0">
+              <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900/50 dark:text-blue-300 border-0 animate-pulse">
                 <TrendingUp className="h-3 w-3 mr-1" />
                 Live Results
               </Badge>
             </div>
-            <p className="text-slate-600 dark:text-slate-300 text-lg">
+            <p className="text-slate-600 dark:text-slate-300 text-lg transition-colors duration-300">
               Discover exceptional educational opportunities in Bhutan
             </p>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-sm text-slate-600 dark:text-slate-300 font-medium">View:</span>
-            <div className="flex items-center bg-slate-100 dark:bg-gray-700 rounded-xl p-1">
+            <span className="text-sm text-slate-600 dark:text-slate-300 font-medium transition-colors duration-300">View:</span>
+            <div className="flex items-center bg-slate-100 dark:bg-gray-700 rounded-xl p-1 transition-colors duration-300">
               <Button
                 variant={viewMode === 'grid' ? 'default' : 'ghost'}
                 size="sm"
                 onClick={() => setViewMode('grid')}
                 className={`rounded-lg transition-all duration-300 ${
                   viewMode === 'grid' 
-                    ? 'bg-white dark:bg-gray-600 shadow-md scale-105' 
-                    : 'hover:bg-white/50 dark:hover:bg-gray-600/50'
+                    ? 'bg-white dark:bg-gray-600 shadow-md scale-105 transform' 
+                    : 'hover:bg-white/50 dark:hover:bg-gray-600/50 hover:scale-105'
                 }`}
               >
                 <LayoutGrid className="h-4 w-4" />
@@ -89,8 +87,8 @@ const CollegeGrid = ({ colleges, filters, onCompareCollege, comparedColleges = [
                 onClick={() => setViewMode('list')}
                 className={`rounded-lg transition-all duration-300 ${
                   viewMode === 'list' 
-                    ? 'bg-white dark:bg-gray-600 shadow-md scale-105' 
-                    : 'hover:bg-white/50 dark:hover:bg-gray-600/50'
+                    ? 'bg-white dark:bg-gray-600 shadow-md scale-105 transform' 
+                    : 'hover:bg-white/50 dark:hover:bg-gray-600/50 hover:scale-105'
                 }`}
               >
                 <List className="h-4 w-4" />
@@ -100,17 +98,18 @@ const CollegeGrid = ({ colleges, filters, onCompareCollege, comparedColleges = [
         </div>
       </div>
 
-      {/* Enhanced Colleges Grid/List */}
+      {/* Enhanced Colleges Grid/List with smooth transitions */}
       {filteredColleges.length === 0 ? (
-        <div className="text-center py-16 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl">
-          <div className="text-8xl mb-6">🎓</div>
-          <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white">No colleges found</h3>
-          <p className="text-slate-600 dark:text-slate-300 text-lg">
+        <div className="text-center py-16 bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl rounded-2xl transition-all duration-500 animate-fade-in">
+          <div className="text-8xl mb-6 animate-bounce">🎓</div>
+          <h3 className="text-2xl font-bold mb-3 text-slate-900 dark:text-white transition-colors duration-300">No colleges found</h3>
+          <p className="text-slate-600 dark:text-slate-300 text-lg transition-colors duration-300">
             Try adjusting your filters or search criteria to discover more options
           </p>
         </div>
       ) : (
         <div className={`
+          transition-all duration-500 ease-out
           ${viewMode === 'grid' 
             ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6' 
             : 'space-y-6'
@@ -119,30 +118,24 @@ const CollegeGrid = ({ colleges, filters, onCompareCollege, comparedColleges = [
           {filteredColleges.map((college, index) => (
             <div
               key={college.id}
-              className="animate-fade-in"
+              className="animate-fade-in transition-all duration-300 hover:scale-[1.02]"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CollegeCard
                 college={college}
                 onViewDetails={setSelectedCollege}
-                onCompare={onCompareCollege}
-                isCompared={comparedColleges.some(c => c.id === college.id)}
-                canCompare={comparedColleges.length < 3}
               />
             </div>
           ))}
         </div>
       )}
 
-      {/* Modal */}
+      {/* Modal with transition */}
       {selectedCollege && (
         <CollegeModal
           college={selectedCollege}
           isOpen={!!selectedCollege}
           onClose={() => setSelectedCollege(null)}
-          onCompare={onCompareCollege}
-          isCompared={comparedColleges.some(c => c.id === selectedCollege.id)}
-          canCompare={comparedColleges.length < 3}
         />
       )}
     </div>
