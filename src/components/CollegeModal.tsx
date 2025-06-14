@@ -1,5 +1,4 @@
-
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
@@ -106,6 +105,9 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
           <DialogTitle className="text-2xl font-bold font-sora transition-colors duration-300">
             {college.name}
           </DialogTitle>
+          <DialogDescription className="text-muted-foreground">
+            Detailed information about {college.name} including programs, admission requirements, and facilities.
+          </DialogDescription>
         </DialogHeader>
 
         <div className="space-y-6">
