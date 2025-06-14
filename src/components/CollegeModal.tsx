@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -101,18 +100,18 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
     }
   ];
 
-  // Sample campus tour images
+  // Use the original college image for campus tour
   const campusImages = [
     { title: "Main Campus Building", url: college.image },
-    { title: "Library & Study Areas", url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&q=80" },
-    { title: "Student Dormitories", url: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=400&fit=crop&q=80" },
-    { title: "Sports & Recreation", url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80" },
-    { title: "Cafeteria & Common Areas", url: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=400&fit=crop&q=80" },
-    { title: "Science Laboratories", url: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=400&fit=crop&q=80" }
+    { title: "Library & Study Areas", url: college.image },
+    { title: "Student Dormitories", url: college.image },
+    { title: "Sports & Recreation", url: college.image },
+    { title: "Cafeteria & Common Areas", url: college.image },
+    { title: "Science Laboratories", url: college.image }
   ];
 
   return (
-    <Dialog open={isOpen} onOpenChange={handleOpenChange}>
+    <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold">
@@ -130,10 +129,6 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
               src={college.image}
               alt={college.name}
               className="w-full h-64 object-cover"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = `https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop&q=80`;
-              }}
             />
             <div className="absolute top-4 left-4 flex flex-wrap gap-2">
               {college.tags.map((tag) => (
