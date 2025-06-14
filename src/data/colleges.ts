@@ -5,7 +5,7 @@ export const colleges: College[] = [
     id: "1",
     name: "Royal Thimphu College",
     location: "Thimphu",
-    image: "/lovable-uploads/6b94c9c8-929a-444c-987f-feb8faac6030.png",
+    image: "/lovable-uploads/c9d1fec9-2fd3-4bc6-9267-b00e71f065df.png",
     description: "The first private college in Bhutan, offering a range of undergraduate programs in a serene environment.",
     established: 2009,
     type: "Private",
