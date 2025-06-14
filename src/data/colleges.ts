@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -681,6 +680,67 @@ export const colleges: College[] = [
       diploma: ["General Nursing and Midwifery", "Auxiliary Nurse Midwifery"]
     },
     careerOpportunities: ["Registered Nurse", "Hospital Administrator", "Clinical Specialist", "Community Health Nurse", "Healthcare Manager"]
+  },
+  {
+    id: "13",
+    name: "Khesar Gyalpo University of Medical Sciences of Bhutan",
+    location: "Thimphu",
+    image: "/lovable-uploads/b765e7c5-40a2-4e65-bad0-104871f77b3d.png",
+    description: "Founded in 2013 and renamed in 2015 to honor the King of Bhutan. The first dedicated medical institution in Bhutan, comprising three faculties: Health Sciences, Traditional Medicine, and Postgraduate Medicine.",
+    established: 2013,
+    type: "Public",
+    rating: 4.8,
+    fees: {
+      min: 200000,
+      max: 400000,
+      currency: "BTN"
+    },
+    courses: [
+      "MBBS",
+      "B.Sc. in Nursing",
+      "Bachelor of Traditional Medicine",
+      "Post Graduate Medicine",
+      "Diploma in Medical Laboratory Technology",
+      "Diploma in Pharmacy"
+    ],
+    tags: ["Medical University", "Healthcare", "Traditional Medicine", "Research", "Government Subsidized"],
+    admissionDeadline: "March 31, 2025",
+    eligibility: [
+      "Class XII passed with Science stream (Physics, Chemistry, Biology)",
+      "Minimum 75% aggregate marks for MBBS",
+      "Pass in NEET or KGUMSB Entrance Exam",
+      "Medical fitness certificate required"
+    ],
+    scholarships: [
+      {
+        name: "Royal Government Medical Scholarship",
+        amount: "Full tuition fee and stipend",
+        criteria: "Based on entrance exam performance and commitment to serve in Bhutan"
+      },
+      {
+        name: "KGUMSB Merit Scholarship",
+        amount: "Up to 75% tuition fee waiver",
+        criteria: "For academically outstanding students"
+      }
+    ],
+    contact: {
+      phone: "+975-2-322525",
+      email: "info@kgumsb.edu.bt",
+      website: "https://www.kgumsb.edu.bt"
+    },
+    applyUrl: "https://www.kgumsb.edu.bt/admissions",
+    facilities: ["Teaching Hospital", "Medical Simulation Center", "Research Laboratories", "Digital Library", "Traditional Medicine Museum"],
+    accreditation: "Medical Council of India Recognition, WHO Listed",
+    campusSize: "100 acres",
+    studentCount: 800,
+    facultyCount: 120,
+    programs: {
+      undergraduate: ["MBBS", "B.Sc. in Nursing", "Bachelor of Traditional Medicine"],
+      postgraduate: ["MD in Various Specialties", "MS in Surgery", "Post Graduate Diploma in Traditional Medicine"],
+      doctorate: ["PhD in Medical Sciences"],
+      diploma: ["Diploma in Medical Laboratory Technology", "Diploma in Pharmacy"]
+    },
+    careerOpportunities: ["Medical Doctor", "Specialist Physician", "Surgeon", "Traditional Medicine Practitioner", "Medical Researcher", "Healthcare Administrator"]
   }
 ];
 

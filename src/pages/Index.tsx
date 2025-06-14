@@ -17,7 +17,7 @@ const Index = () => {
     search: '',
     location: [],
     courseType: [],
-    feeRange: [0, 200000],
+    feeRange: [0, 500000], // Increased to include all colleges
     rating: 0,
     collegeType: [],
     accreditation: [],
