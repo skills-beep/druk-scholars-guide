@@ -29,6 +29,8 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
 
   // Filter colleges based on search criteria
   const filteredColleges = colleges.filter(college => {
+    console.log('Filtering college:', college.name, 'with filters:', filters);
+    
     const matchesSearch = filters.search === '' || 
       college.name.toLowerCase().includes(filters.search.toLowerCase()) ||
       college.location.toLowerCase().includes(filters.search.toLowerCase()) ||
@@ -40,7 +42,7 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
     const matchesCourseType = filters.courseType.length === 0 || 
       filters.courseType.some(type => college.courses.some(course => course.toLowerCase().includes(type.toLowerCase())));
 
-    const matchesFeeRange = college.fees.min <= filters.feeRange[1] && college.fees.max >= filters.feeRange[0];
+    const matchesFeeRange = college.fees && college.fees.min <= filters.feeRange[1] && college.fees.max >= filters.feeRange[0];
 
     const matchesRating = college.rating >= filters.rating;
 
@@ -48,14 +50,18 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
       filters.collegeType.includes(college.type);
 
     const matchesAccreditation = filters.accreditation.length === 0 || 
-      filters.accreditation.some(acc => college.accreditation?.includes(acc));
+      filters.accreditation.some(acc => college.accreditation && college.accreditation.includes(acc));
 
     const matchesDegreeProgram = filters.degreeProgram === '' || 
       college.courses.some(course => course.toLowerCase().includes(filters.degreeProgram.toLowerCase()));
 
-    return matchesSearch && matchesLocation && matchesCourseType && 
+    const result = matchesSearch && matchesLocation && matchesCourseType && 
            matchesFeeRange && matchesRating && matchesCollegeType && 
            matchesAccreditation && matchesDegreeProgram;
+    
+    console.log(`College ${college.name} - matches: search=${matchesSearch}, location=${matchesLocation}, courseType=${matchesCourseType}, feeRange=${matchesFeeRange}, rating=${matchesRating}, collegeType=${matchesCollegeType}, accreditation=${matchesAccreditation}, degreeProgram=${matchesDegreeProgram}, result=${result}`);
+    
+    return result;
   });
 
   // Sort colleges
@@ -76,7 +82,8 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
   console.log('CollegeGrid: Total colleges:', colleges.length);
   console.log('CollegeGrid: Filtered colleges:', filteredColleges.length);
   console.log('CollegeGrid: Sorted colleges:', sortedColleges.length);
-  console.log('CollegeGrid: First few colleges:', sortedColleges.slice(0, 3).map(c => c.name));
+  console.log('CollegeGrid: All college names:', colleges.map(c => c.name));
+  console.log('CollegeGrid: Filtered college names:', filteredColleges.map(c => c.name));
 
   return (
     <div id="colleges" className="space-y-6">
