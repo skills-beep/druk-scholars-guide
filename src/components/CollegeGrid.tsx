@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { College, CollegeFilters } from '@/types/college';
 import CollegeCard from './CollegeCard';
@@ -16,13 +15,14 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
   const { addToRecentlyViewed } = useRecentlyViewed();
 
   const handleViewDetails = (college: College) => {
-    console.log('View Details clicked for:', college.name);
+    console.log('CollegeGrid: View Details clicked for:', college.name);
+    console.log('CollegeGrid: Setting selectedCollege to:', college);
     setSelectedCollege(college);
     addToRecentlyViewed(college);
   };
 
   const handleCloseModal = () => {
-    console.log('Closing modal');
+    console.log('CollegeGrid: Closing modal');
     setSelectedCollege(null);
   };
 
@@ -60,12 +60,12 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
   // Sort colleges
   const sortedColleges = [...filteredColleges].sort((a, b) => {
     switch (filters.sortBy) {
-      case 'name':
+      case 'alphabetical':
         return a.name.localeCompare(b.name);
       case 'rating':
         return b.rating - a.rating;
-      case 'fees':
-        return a.fees.min - b.fees.min;
+      case 'newest':
+        return b.established - a.established;
       case 'popularity':
       default:
         return b.rating - a.rating; // Default to rating for popularity
