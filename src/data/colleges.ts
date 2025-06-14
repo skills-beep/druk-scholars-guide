@@ -348,7 +348,7 @@ export const colleges: College[] = [
     name: 'Sherubtse College',
     location: 'Kanglung, Trashigang',
     type: 'Public College',
-    image: '/lovable-uploads/5bc4af1a-50bd-415e-9501-2080f1d1fe72.png',
+    image: '/lovable-uploads/dd3c52f7-0bcb-40de-8091-6ac7fabc46b6.png',
     description: 'The oldest college in Bhutan, offering a wide range of programs in science, humanities, and social sciences, fostering critical thinking and academic excellence.',
     rating: 4.6,
     established: 1966,
