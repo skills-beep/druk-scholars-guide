@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -83,14 +84,14 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
 
           <Separator />
 
-          {/* Tabbed Content */}
+          {/* Tabbed Content with responsive layout */}
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="grid w-full grid-cols-5">
-              <TabsTrigger value="about">About</TabsTrigger>
-              <TabsTrigger value="courses">Courses</TabsTrigger>
-              <TabsTrigger value="admission">Admission</TabsTrigger>
-              <TabsTrigger value="scholarships">Scholarships</TabsTrigger>
-              <TabsTrigger value="careers">Careers</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 h-auto">
+              <TabsTrigger value="about" className="text-xs sm:text-sm px-2 py-2">About</TabsTrigger>
+              <TabsTrigger value="courses" className="text-xs sm:text-sm px-2 py-2">Courses</TabsTrigger>
+              <TabsTrigger value="admission" className="text-xs sm:text-sm px-2 py-2">Admission</TabsTrigger>
+              <TabsTrigger value="scholarships" className="text-xs sm:text-sm px-2 py-2">Scholarships</TabsTrigger>
+              <TabsTrigger value="careers" className="text-xs sm:text-sm px-2 py-2">Careers</TabsTrigger>
             </TabsList>
 
             <TabsContent value="about" className="space-y-4">
