@@ -13,21 +13,23 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Brand Section */}
             <div className="lg:col-span-1">
-              <h3 className="text-2xl font-bold font-sora text-yellow-300 mb-4">EduBhutan</h3>
+              <h3 className="text-2xl font-bold font-sora bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent mb-4">
+                DrukScholar
+              </h3>
               <p className="text-slate-300 mb-6 text-sm leading-relaxed">
                 Empowering Bhutanese students to discover their perfect educational path and build successful careers in the Land of the Thunder Dragon.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-slate-400 hover:text-yellow-300 transition-colors">
+                <a href="#" className="text-slate-400 hover:text-orange-400 transition-colors">
                   <Facebook className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-yellow-300 transition-colors">
+                <a href="#" className="text-slate-400 hover:text-orange-400 transition-colors">
                   <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-yellow-300 transition-colors">
+                <a href="#" className="text-slate-400 hover:text-orange-400 transition-colors">
                   <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-slate-400 hover:text-yellow-300 transition-colors">
+                <a href="#" className="text-slate-400 hover:text-orange-400 transition-colors">
                   <Youtube className="h-5 w-5" />
                 </a>
               </div>
@@ -37,11 +39,11 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
               <ul className="space-y-2">
-                <li><a href="#colleges" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Browse Colleges</a></li>
-                <li><a href="#scholarships" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Scholarships</a></li>
-                <li><a href="#compare" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Compare Institutions</a></li>
-                <li><a href="#about" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">About Us</a></li>
-                <li><a href="#careers" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Career Guidance</a></li>
+                <li><a href="#colleges" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Browse Colleges</a></li>
+                <li><a href="#scholarships" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Scholarships</a></li>
+                <li><a href="#compare" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Compare Institutions</a></li>
+                <li><a href="#about" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">About Us</a></li>
+                <li><a href="#careers" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Career Guidance</a></li>
               </ul>
             </div>
 
@@ -49,11 +51,11 @@ const Footer = () => {
             <div>
               <h4 className="text-lg font-semibold text-white mb-4">Resources</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Admission Guide</a></li>
-                <li><a href="#" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Study Tips</a></li>
-                <li><a href="#" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Financial Aid</a></li>
-                <li><a href="#" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">Student Blog</a></li>
-                <li><a href="#" className="text-slate-300 hover:text-yellow-300 transition-colors text-sm">FAQ</a></li>
+                <li><a href="#" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Admission Guide</a></li>
+                <li><a href="#" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Study Tips</a></li>
+                <li><a href="#" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Financial Aid</a></li>
+                <li><a href="#" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">Student Blog</a></li>
+                <li><a href="#" className="text-slate-300 hover:text-orange-400 transition-colors text-sm">FAQ</a></li>
               </ul>
             </div>
 
@@ -62,16 +64,16 @@ const Footer = () => {
               <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
               <div className="space-y-3">
                 <div className="flex items-center">
-                  <MapPin className="h-4 w-4 text-yellow-300 mr-3 flex-shrink-0" />
+                  <MapPin className="h-4 w-4 text-orange-400 mr-3 flex-shrink-0" />
                   <span className="text-slate-300 text-sm">Thimphu, Bhutan</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="h-4 w-4 text-yellow-300 mr-3 flex-shrink-0" />
+                  <Phone className="h-4 w-4 text-orange-400 mr-3 flex-shrink-0" />
                   <span className="text-slate-300 text-sm">+975-2-123456</span>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="h-4 w-4 text-yellow-300 mr-3 flex-shrink-0" />
-                  <span className="text-slate-300 text-sm">info@edubhutan.bt</span>
+                  <Mail className="h-4 w-4 text-orange-400 mr-3 flex-shrink-0" />
+                  <span className="text-slate-300 text-sm">info@drukscholar.bt</span>
                 </div>
               </div>
               
@@ -82,9 +84,9 @@ const Footer = () => {
                   <input
                     type="email"
                     placeholder="Your email"
-                    className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded-l-md text-sm text-white placeholder-slate-400 focus:outline-none focus:border-yellow-300"
+                    className="flex-1 px-3 py-2 bg-slate-700 border border-slate-600 rounded-l-md text-sm text-white placeholder-slate-400 focus:outline-none focus:border-orange-400"
                   />
-                  <button className="px-4 py-2 bg-yellow-500 text-slate-900 rounded-r-md hover:bg-yellow-400 transition-colors text-sm font-medium">
+                  <button className="px-4 py-2 bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-r-md hover:from-yellow-600 hover:to-orange-600 transition-all text-sm font-medium">
                     Subscribe
                   </button>
                 </div>
@@ -99,12 +101,12 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-slate-400 text-sm">
-              © {currentYear} EduBhutan. All rights reserved. Made with ❤️ for Bhutanese students.
+              © {currentYear} DrukScholar. All rights reserved. Made with ❤️ for Bhutanese students.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-slate-400 hover:text-yellow-300 text-sm transition-colors">Privacy Policy</a>
-              <a href="#" className="text-slate-400 hover:text-yellow-300 text-sm transition-colors">Terms of Service</a>
-              <a href="#" className="text-slate-400 hover:text-yellow-300 text-sm transition-colors">Cookie Policy</a>
+              <a href="#" className="text-slate-400 hover:text-orange-400 text-sm transition-colors">Privacy Policy</a>
+              <a href="#" className="text-slate-400 hover:text-orange-400 text-sm transition-colors">Terms of Service</a>
+              <a href="#" className="text-slate-400 hover:text-orange-400 text-sm transition-colors">Cookie Policy</a>
             </div>
           </div>
         </div>

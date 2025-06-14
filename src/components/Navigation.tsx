@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Moon, Sun, Menu, X } from 'lucide-react';
@@ -33,7 +34,9 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/">
-              <h1 className="text-2xl font-bold font-sora text-blue-600 dark:text-blue-400">EduBhutan</h1>
+              <h1 className="text-2xl font-bold font-sora bg-gradient-to-r from-yellow-500 to-orange-500 dark:from-yellow-400 dark:to-orange-400 bg-clip-text text-transparent">
+                DrukScholar
+              </h1>
             </Link>
           </div>
 
@@ -45,7 +48,7 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
                 to={item.href}
                 className={`transition-colors duration-200 font-medium ${
                   isActive(item.href)
-                    ? 'text-blue-600 dark:text-blue-400'
+                    ? 'text-orange-600 dark:text-orange-400'
                     : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                 }`}
               >
@@ -87,7 +90,7 @@ const Navigation = ({ darkMode, toggleDarkMode }: NavigationProps) => {
                   to={item.href}
                   className={`transition-colors duration-200 font-medium ${
                     isActive(item.href)
-                      ? 'text-blue-600 dark:text-blue-400'
+                      ? 'text-orange-600 dark:text-orange-400'
                       : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'
                   }`}
                   onClick={() => setMobileMenuOpen(false)}
