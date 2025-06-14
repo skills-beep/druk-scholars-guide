@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -120,7 +119,7 @@ export const colleges: College[] = [
     id: "3",
     name: "Paro College of Education",
     location: "Paro",
-    image: "/lovable-uploads/d8d18649-00ee-48ef-9703-c38cbc030ad6.png",
+    image: "/lovable-uploads/ef7f676a-0736-4970-acc8-05dea55f7d5e.png",
     description: "A leading teacher training college under the Royal University of Bhutan, dedicated to excellence in education.",
     established: 1975,
     type: "Public",
