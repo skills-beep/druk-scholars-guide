@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -16,11 +17,7 @@ import {
   Clock,
   Award,
   BookOpen,
-  Users,
-  Target,
   Building,
-  Camera,
-  Quote,
   ExternalLink
 } from 'lucide-react';
 import { College } from '@/types/college';
@@ -67,48 +64,6 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
       console.warn(`No website found for ${college.name}`);
     }
   };
-
-  const handleOpenChange = (open: boolean) => {
-    console.log('CollegeModal: Dialog open change:', open);
-    if (!open) {
-      onClose();
-    }
-  };
-
-  // Sample student reviews data
-  const studentReviews = [
-    {
-      name: "Tenzin Norbu",
-      program: "Computer Science",
-      year: "2023 Graduate",
-      rating: 4.5,
-      review: "Excellent faculty and modern facilities. The practical approach to learning really prepared me for the industry."
-    },
-    {
-      name: "Pema Lhamo",
-      program: "Environmental Science",
-      year: "Final Year",
-      rating: 4.8,
-      review: "Great research opportunities and supportive environment. The campus is beautiful and well-maintained."
-    },
-    {
-      name: "Karma Wangchuk",
-      program: "Business Administration",
-      year: "2022 Graduate",
-      rating: 4.3,
-      review: "Strong industry connections and internship programs. The career guidance was very helpful for job placement."
-    }
-  ];
-
-  // Use the original college image for campus tour
-  const campusImages = [
-    { title: "Main Campus Building", url: college.image },
-    { title: "Library & Study Areas", url: college.image },
-    { title: "Student Dormitories", url: college.image },
-    { title: "Sports & Recreation", url: college.image },
-    { title: "Cafeteria & Common Areas", url: college.image },
-    { title: "Science Laboratories", url: college.image }
-  ];
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
@@ -167,13 +122,11 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
 
           {/* Tabbed Content */}
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 h-auto">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 h-auto">
               <TabsTrigger value="about" className="text-xs sm:text-sm px-2 py-2">About</TabsTrigger>
               <TabsTrigger value="courses" className="text-xs sm:text-sm px-2 py-2">Courses</TabsTrigger>
               <TabsTrigger value="admission" className="text-xs sm:text-sm px-2 py-2">Admission</TabsTrigger>
               <TabsTrigger value="scholarships" className="text-xs sm:text-sm px-2 py-2">Scholarships</TabsTrigger>
-              <TabsTrigger value="tours" className="text-xs sm:text-sm px-2 py-2">Virtual Tour</TabsTrigger>
-              <TabsTrigger value="reviews" className="text-xs sm:text-sm px-2 py-2">Reviews</TabsTrigger>
             </TabsList>
 
             <TabsContent value="about" className="space-y-4">
@@ -313,86 +266,6 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                         </CardContent>
                       </Card>
                     ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="tours" className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Camera className="h-5 w-5" />
-                    Virtual Campus Tour
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {campusImages.map((image, index) => (
-                      <div key={index} className="relative group overflow-hidden rounded-lg">
-                        <img
-                          src={image.url}
-                          alt={image.title}
-                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-                        />
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                          <p className="text-white font-semibold text-center px-4">
-                            {image.title}
-                          </p>
-                        </div>
-                        <div className="absolute bottom-2 left-2 right-2">
-                          <Badge className="bg-white/90 text-gray-800 text-xs">
-                            {image.title}
-                          </Badge>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-                    <p className="text-sm text-blue-800">
-                      <strong>Schedule a Visit:</strong> Contact the admissions office to arrange an in-person campus tour 
-                      or request a virtual guided tour session.
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-
-            <TabsContent value="reviews" className="space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Quote className="h-5 w-5" />
-                    Student Reviews & Testimonials
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    {studentReviews.map((review, index) => (
-                      <Card key={index} className="border-l-4 border-l-blue-500">
-                        <CardContent className="pt-4">
-                          <div className="flex justify-between items-start mb-3">
-                            <div>
-                              <h4 className="font-semibold">{review.name}</h4>
-                              <p className="text-sm text-muted-foreground">
-                                {review.program} • {review.year}
-                              </p>
-                            </div>
-                            <div className="flex items-center gap-1">
-                              <Star className="h-4 w-4 text-yellow-500 fill-current" />
-                              <span className="text-sm font-semibold">{review.rating}</span>
-                            </div>
-                          </div>
-                          <p className="text-sm leading-relaxed">{review.review}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                  <div className="mt-4 p-4 bg-green-50 rounded-lg">
-                    <p className="text-sm text-green-800">
-                      <strong>Share Your Experience:</strong> Are you a current student or alumni? 
-                      Contact us to share your testimonial and help future students make informed decisions.
-                    </p>
                   </div>
                 </CardContent>
               </Card>
