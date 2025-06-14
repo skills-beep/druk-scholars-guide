@@ -41,16 +41,16 @@ const BackgroundSlider = () => {
         </div>
       ))}
 
-      {/* Enhanced image indicators */}
+      {/* Smaller image indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
-        <div className="flex space-x-3">
+        <div className="flex space-x-2">
           {backgroundImages.map((_, index) => (
             <button
               key={index}
-              className={`w-4 h-4 rounded-full transition-all duration-300 ${
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentImageIndex 
-                  ? 'bg-white shadow-lg scale-110' 
-                  : 'bg-white/50 hover:bg-white/75 hover:scale-105'
+                  ? 'bg-white shadow-md scale-125' 
+                  : 'bg-white/40 hover:bg-white/60 hover:scale-110'
               }`}
               onClick={() => setCurrentImageIndex(index)}
               aria-label={`Switch to background image ${index + 1}`}
