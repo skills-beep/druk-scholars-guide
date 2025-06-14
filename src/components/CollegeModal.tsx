@@ -1,4 +1,3 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -19,7 +18,11 @@ import {
   BookOpen,
   Users,
   Target,
-  Building
+  Building,
+  Camera,
+  Quote,
+  Compare,
+  Check
 } from 'lucide-react';
 import { College } from '@/types/college';
 import { governmentScholarships } from '@/data/colleges';
@@ -29,9 +32,52 @@ interface CollegeModalProps {
   isOpen: boolean;
   onClose: () => void;
   onCompare?: (college: College) => void;
+  isCompared?: boolean;
+  canCompare?: boolean;
 }
 
-const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps) => {
+const CollegeModal = ({ college, isOpen, onClose, onCompare, isCompared = false, canCompare = true }: CollegeModalProps) => {
+  const handleCompare = () => {
+    if (onCompare && !isCompared && canCompare) {
+      onCompare(college);
+    }
+  };
+
+  // Sample student reviews data
+  const studentReviews = [
+    {
+      name: "Tenzin Norbu",
+      program: "Computer Science",
+      year: "2023 Graduate",
+      rating: 4.5,
+      review: "Excellent faculty and modern facilities. The practical approach to learning really prepared me for the industry."
+    },
+    {
+      name: "Pema Lhamo",
+      program: "Environmental Science",
+      year: "Final Year",
+      rating: 4.8,
+      review: "Great research opportunities and supportive environment. The campus is beautiful and well-maintained."
+    },
+    {
+      name: "Karma Wangchuk",
+      program: "Business Administration",
+      year: "2022 Graduate",
+      rating: 4.3,
+      review: "Strong industry connections and internship programs. The career guidance was very helpful for job placement."
+    }
+  ];
+
+  // Sample campus tour images
+  const campusImages = [
+    { title: "Main Campus Building", url: college.image },
+    { title: "Library & Study Areas", url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop&q=80" },
+    { title: "Student Dormitories", url: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=800&h=400&fit=crop&q=80" },
+    { title: "Sports & Recreation", url: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&q=80" },
+    { title: "Cafeteria & Common Areas", url: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&h=400&fit=crop&q=80" },
+    { title: "Science Laboratories", url: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&h=400&fit=crop&q=80" }
+  ];
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
@@ -86,12 +132,13 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
 
           {/* Tabbed Content with responsive layout */}
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-5 h-auto">
+            <TabsList className="grid w-full grid-cols-2 md:grid-cols-6 h-auto">
               <TabsTrigger value="about" className="text-xs sm:text-sm px-2 py-2">About</TabsTrigger>
               <TabsTrigger value="courses" className="text-xs sm:text-sm px-2 py-2">Courses</TabsTrigger>
               <TabsTrigger value="admission" className="text-xs sm:text-sm px-2 py-2">Admission</TabsTrigger>
               <TabsTrigger value="scholarships" className="text-xs sm:text-sm px-2 py-2">Scholarships</TabsTrigger>
-              <TabsTrigger value="careers" className="text-xs sm:text-sm px-2 py-2">Careers</TabsTrigger>
+              <TabsTrigger value="tours" className="text-xs sm:text-sm px-2 py-2">Virtual Tour</TabsTrigger>
+              <TabsTrigger value="reviews" className="text-xs sm:text-sm px-2 py-2">Reviews</TabsTrigger>
             </TabsList>
 
             <TabsContent value="about" className="space-y-4">
@@ -209,7 +256,6 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
             </TabsContent>
 
             <TabsContent value="scholarships" className="space-y-4">
-              {/* College-specific scholarships */}
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -235,85 +281,83 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
                   </div>
                 </CardContent>
               </Card>
+            </TabsContent>
 
-              {/* External scholarships */}
+            <TabsContent value="tours" className="space-y-4">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Award className="h-5 w-5" />
-                    Available External Scholarships
+                    <Camera className="h-5 w-5" />
+                    Virtual Campus Tour
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 gap-4">
-                    {governmentScholarships.slice(0, 3).map((scholarship, index) => (
-                      <Card key={index} className="border-l-4 border-l-blue-500">
-                        <CardContent className="pt-4">
-                          <div className="space-y-2">
-                            <div className="flex justify-between items-start">
-                              <h4 className="font-semibold text-sm">{scholarship.name}</h4>
-                              <Badge variant="outline" className="text-xs">
-                                {scholarship.provider.includes('Loden') ? 'Loden Foundation' : 'Government'}
-                              </Badge>
-                            </div>
-                            <p className="text-xs text-muted-foreground">{scholarship.criteria}</p>
-                            <div className="text-xs font-medium text-blue-600">
-                              Coverage: {scholarship.coverage}
-                            </div>
-                            <div className="text-xs text-muted-foreground">
-                              <strong>Deadline:</strong> {scholarship.deadline}
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {campusImages.map((image, index) => (
+                      <div key={index} className="relative group overflow-hidden rounded-lg">
+                        <img
+                          src={image.url}
+                          alt={image.title}
+                          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                          <p className="text-white font-semibold text-center px-4">
+                            {image.title}
+                          </p>
+                        </div>
+                        <div className="absolute bottom-2 left-2 right-2">
+                          <Badge className="bg-white/90 text-gray-800 text-xs">
+                            {image.title}
+                          </Badge>
+                        </div>
+                      </div>
                     ))}
                   </div>
-                  <div className="mt-4 p-3 bg-blue-50 rounded-lg">
+                  <div className="mt-4 p-4 bg-blue-50 rounded-lg">
                     <p className="text-sm text-blue-800">
-                      <strong>Apply through:</strong> Visit the scholarships page for complete details and application processes.
+                      <strong>Schedule a Visit:</strong> Contact the admissions office to arrange an in-person campus tour 
+                      or request a virtual guided tour session.
                     </p>
                   </div>
                 </CardContent>
               </Card>
             </TabsContent>
 
-            <TabsContent value="careers" className="space-y-4">
+            <TabsContent value="reviews" className="space-y-4">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Target className="h-5 w-5" />
-                    Career Opportunities
+                    <Quote className="h-5 w-5" />
+                    Student Reviews & Testimonials
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <p className="text-muted-foreground">
-                      Graduates from {college.name} have excellent career prospects in both government and private sectors.
-                    </p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {college.careerOpportunities.map((career, index) => (
-                        <div key={index} className="flex items-start gap-3 p-3 border rounded-lg">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <div>
-                            <h4 className="font-medium">{career.split(' - ')[0]}</h4>
-                            {career.includes(' - ') && (
+                    {studentReviews.map((review, index) => (
+                      <Card key={index} className="border-l-4 border-l-blue-500">
+                        <CardContent className="pt-4">
+                          <div className="flex justify-between items-start mb-3">
+                            <div>
+                              <h4 className="font-semibold">{review.name}</h4>
                               <p className="text-sm text-muted-foreground">
-                                {career.split(' - ')[1]}
+                                {review.program} • {review.year}
                               </p>
-                            )}
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                              <span className="text-sm font-semibold">{review.rating}</span>
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="bg-green-50 p-4 rounded-lg">
-                      <h4 className="font-semibold text-green-800 mb-2">Employment Support</h4>
-                      <ul className="text-sm text-green-700 space-y-1">
-                        <li>• Career counseling and guidance</li>
-                        <li>• Industry internship programs</li>
-                        <li>• Job placement assistance</li>
-                        <li>• Alumni networking opportunities</li>
-                      </ul>
-                    </div>
+                          <p className="text-sm leading-relaxed">{review.review}</p>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                  <div className="mt-4 p-4 bg-green-50 rounded-lg">
+                    <p className="text-sm text-green-800">
+                      <strong>Share Your Experience:</strong> Are you a current student or alumni? 
+                      Contact us to share your testimonial and help future students make informed decisions.
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -347,11 +391,22 @@ const CollegeModal = ({ college, isOpen, onClose, onCompare }: CollegeModalProps
           <div className="flex gap-4 pt-4 border-t">
             {onCompare && (
               <Button 
-                variant="outline" 
-                className="flex-1"
-                onClick={() => onCompare(college)}
+                variant={isCompared ? "default" : "outline"}
+                className={`flex-1 ${isCompared ? "bg-green-500 hover:bg-green-600" : ""}`}
+                onClick={handleCompare}
+                disabled={isCompared || !canCompare}
               >
-                Add to Compare
+                {isCompared ? (
+                  <>
+                    <Check className="h-4 w-4 mr-2" />
+                    Added to Compare
+                  </>
+                ) : (
+                  <>
+                    <Compare className="h-4 w-4 mr-2" />
+                    Add to Compare
+                  </>
+                )}
               </Button>
             )}
             <Button className={onCompare ? "flex-1" : "w-full"}>

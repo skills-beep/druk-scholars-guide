@@ -2,7 +2,7 @@
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
-import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, Users, GraduationCap, Building2, ExternalLink, Compare, Check } from 'lucide-react';
 import { College } from '@/types/college';
 import DynamicRating from './DynamicRating';
 
@@ -10,9 +10,11 @@ interface CollegeCardProps {
   college: College;
   onViewDetails: (college: College) => void;
   onCompare?: (college: College) => void;
+  isCompared?: boolean;
+  canCompare?: boolean;
 }
 
-const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) => {
+const CollegeCard = ({ college, onViewDetails, onCompare, isCompared = false, canCompare = true }: CollegeCardProps) => {
   // Map college names to their official websites
   const getCollegeWebsite = (collegeName: string): string | null => {
     const websiteMap: { [key: string]: string } = {
@@ -38,6 +40,12 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
     }
   };
 
+  const handleCompare = () => {
+    if (onCompare && !isCompared && canCompare) {
+      onCompare(college);
+    }
+  };
+
   const applyUrl = getCollegeWebsite(college.name);
 
   return (
@@ -50,7 +58,6 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            // Fallback to a generic college image if the specific image fails to load
             target.src = `https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop&q=80`;
           }}
         />
@@ -70,6 +77,16 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
             <DynamicRating rating={college.rating} size="sm" />
           </div>
         </div>
+
+        {/* Comparison Status */}
+        {isCompared && (
+          <div className="absolute bottom-4 right-4">
+            <Badge className="bg-green-500 text-white border-0 shadow-md">
+              <Check className="h-3 w-3 mr-1" />
+              Added to Compare
+            </Badge>
+          </div>
+        )}
       </div>
 
       <CardHeader className="pb-3 space-y-3">
@@ -141,11 +158,26 @@ const CollegeCard = ({ college, onViewDetails, onCompare }: CollegeCardProps) =>
       <CardFooter className="pt-4 flex gap-3">
         {onCompare && (
           <Button
-            variant="outline"
-            className="flex-1 hover:bg-slate-50 dark:hover:bg-gray-700 hover:border-slate-300 dark:hover:border-gray-600 border-slate-200 dark:border-gray-600 text-slate-700 dark:text-slate-200 font-medium transition-all duration-300 rounded-xl"
-            onClick={() => onCompare(college)}
+            variant={isCompared ? "default" : "outline"}
+            className={`flex-1 font-medium transition-all duration-300 rounded-xl ${
+              isCompared 
+                ? "bg-green-500 hover:bg-green-600 text-white border-0" 
+                : "hover:bg-slate-50 dark:hover:bg-gray-700 hover:border-slate-300 dark:hover:border-gray-600 border-slate-200 dark:border-gray-600 text-slate-700 dark:text-slate-200"
+            }`}
+            onClick={handleCompare}
+            disabled={isCompared || !canCompare}
           >
-            Compare
+            {isCompared ? (
+              <>
+                <Check className="h-4 w-4 mr-1" />
+                Added
+              </>
+            ) : (
+              <>
+                <Compare className="h-4 w-4 mr-1" />
+                Compare
+              </>
+            )}
           </Button>
         )}
         

@@ -10,9 +10,11 @@ import { LayoutGrid, List, TrendingUp } from 'lucide-react';
 interface CollegeGridProps {
   colleges: College[];
   filters: CollegeFilters;
+  onCompareCollege?: (college: College) => void;
+  comparedColleges?: College[];
 }
 
-const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
+const CollegeGrid = ({ colleges, filters, onCompareCollege, comparedColleges = [] }: CollegeGridProps) => {
   const [selectedCollege, setSelectedCollege] = useState<College | null>(null);
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
 
@@ -123,6 +125,9 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
               <CollegeCard
                 college={college}
                 onViewDetails={setSelectedCollege}
+                onCompare={onCompareCollege}
+                isCompared={comparedColleges.some(c => c.id === college.id)}
+                canCompare={comparedColleges.length < 3}
               />
             </div>
           ))}
@@ -135,6 +140,9 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
           college={selectedCollege}
           isOpen={!!selectedCollege}
           onClose={() => setSelectedCollege(null)}
+          onCompare={onCompareCollege}
+          isCompared={comparedColleges.some(c => c.id === selectedCollege.id)}
+          canCompare={comparedColleges.length < 3}
         />
       )}
     </div>
