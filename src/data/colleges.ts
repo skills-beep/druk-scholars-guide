@@ -196,7 +196,7 @@ export const colleges: College[] = [
     name: 'College of Natural Resources',
     location: 'Lobeysa, Punakha',
     type: 'Public College',
-    image: '/lovable-uploads/d0a7bf41-d634-47a7-b02e-9d7edefd7588.png',
+    image: '/lovable-uploads/4f32198a-128f-4ab6-a8fc-0ee870d58832.png',
     description: 'Focuses on sustainable management of natural resources, offering programs in agriculture, forestry, and environmental science with hands-on field experience.',
     rating: 4.1,
     established: 1992,
