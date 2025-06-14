@@ -740,5 +740,79 @@ export const colleges: College[] = [
       'Healthcare Administration'
     ],
     applyUrl: 'https://apollobhutan.edu.bt'
+  },
+  {
+    id: '13',
+    name: 'Khesar Gyalpo University of Medical Sciences of Bhutan',
+    location: 'Menkhang Lam, Thimphu',
+    type: 'University',
+    image: '/lovable-uploads/009581c4-58fc-4287-8723-a2b25fb18f03.png',
+    description: 'Bhutan\'s pioneering and only medical university, established to achieve self-reliance in health workforce by training doctors, nurses, and traditional medicine practitioners locally, integrating modern and traditional medicine with compassionate care inspired by Gross National Happiness.',
+    rating: 4.8,
+    established: 2013,
+    courses: ['MBBS', 'MD Residency Programs', 'BSc Nursing', 'BSc Traditional Medicine', 'Diploma in Nursing', 'Certificate Programs in Health Sciences'],
+    fees: {
+      min: 100000,
+      max: 500000,
+      currency: 'BTN'
+    },
+    tags: ['Medical University', 'Healthcare', 'Traditional Medicine', 'Modern Medicine'],
+    scholarships: [
+      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
+      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' },
+      { name: 'Ministry of Health Scholarships', amount: 'Full tuition + stipend', criteria: 'Medical students committed to serve in government health services' }
+    ],
+    facilities: ['Medical Teaching Hospital', 'Traditional Medicine Labs', 'Modern Medical Equipment', 'Research Centers', 'Digital Library', 'Clinical Training Facilities', 'Simulation Labs'],
+    accreditation: 'Royal Government of Bhutan, Bhutan Medical & Health Council',
+    campusSize: '50 acres',
+    studentCount: 2171,
+    facultyCount: 181,
+    programs: {
+      undergraduate: [
+        'MBBS (Bachelor of Medicine, Bachelor of Surgery) - 6 years',
+        'BSc in Nursing - 4 years',
+        'BSc in Traditional Medicine (Drungtsho) - 4 years',
+        'BSc in Public Health - 4 years'
+      ],
+      postgraduate: [
+        'MD in Surgery - 4 years',
+        'MD in Pediatrics - 4 years', 
+        'MD in Emergency Medicine - 4 years',
+        'MD in Internal Medicine - 4 years',
+        'Master in Public Health - 2 years',
+        'Master in Traditional Medicine - 2 years'
+      ],
+      doctorate: ['PhD in Medical Sciences', 'PhD in Traditional Medicine'],
+      diploma: [
+        'Diploma in General Nursing & Midwifery - 3 years',
+        'Diploma in Traditional Medicine - 3 years',
+        'Diploma in Medical Laboratory Technology - 3 years'
+      ]
+    },
+    admissionDeadline: 'Check university website for current deadlines',
+    eligibility: [
+      'Class XII with Science background (PCB for medical programs)',
+      'Minimum 85% aggregate for MBBS program',
+      'Medical fitness certificate required',
+      'English proficiency test',
+      'Entrance examination and interview',
+      'Commitment to serve in Bhutan\'s healthcare system'
+    ],
+    contact: {
+      phone: '+975-2-328990/997',
+      email: 'info@kgumsb.edu.bt',
+      website: 'www.kgumsb.edu.bt'
+    },
+    careerOpportunities: [
+      'Medical Practice in Hospitals',
+      'Traditional Medicine Practice',
+      'Public Health Services',
+      'Medical Research',
+      'Healthcare Administration',
+      'Medical Education and Training',
+      'International Healthcare Organizations',
+      'Community Health Programs'
+    ],
+    applyUrl: 'https://www.kgumsb.edu.bt/'
   }
 ];
