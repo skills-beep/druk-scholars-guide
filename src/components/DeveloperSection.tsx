@@ -33,7 +33,7 @@ const DeveloperSection = () => {
                     Bishal Sharma
                   </h3>
                   <p className="text-lg text-blue-600 dark:text-blue-400 font-medium mb-3">
-                    Full Stack Developer
+                    Front End Developer
                   </p>
                   <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
                     Passionate about creating innovative educational platforms that empower students 
