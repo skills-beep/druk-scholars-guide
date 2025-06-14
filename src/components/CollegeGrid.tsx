@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { College, CollegeFilters } from '@/types/college';
 import CollegeCard from './CollegeCard';
@@ -72,8 +73,13 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
     }
   });
 
+  console.log('CollegeGrid: Total colleges:', colleges.length);
+  console.log('CollegeGrid: Filtered colleges:', filteredColleges.length);
+  console.log('CollegeGrid: Sorted colleges:', sortedColleges.length);
+  console.log('CollegeGrid: First few colleges:', sortedColleges.slice(0, 3).map(c => c.name));
+
   return (
-    <div className="space-y-6">
+    <div id="colleges" className="space-y-6">
       <RecentlyViewed onViewCollege={handleViewDetails} />
       
       <div className="flex justify-between items-center">
@@ -82,17 +88,17 @@ const CollegeGrid = ({ colleges, filters }: CollegeGridProps) => {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {sortedColleges.map((college) => (
-          <CollegeCard
-            key={college.id}
-            college={college}
-            onViewDetails={handleViewDetails}
-          />
-        ))}
-      </div>
-
-      {sortedColleges.length === 0 && (
+      {sortedColleges.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+          {sortedColleges.map((college) => (
+            <CollegeCard
+              key={college.id}
+              college={college}
+              onViewDetails={handleViewDetails}
+            />
+          ))}
+        </div>
+      ) : (
         <div className="text-center py-12">
           <p className="text-gray-500 dark:text-gray-400 text-lg">
             No colleges match your current filters. Try adjusting your search criteria.
