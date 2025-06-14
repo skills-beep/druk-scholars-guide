@@ -11,6 +11,7 @@ const CareersSection = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const getCollegesByIds = (collegeIds: string[]) => {
+    // Only return colleges that match the IDs in the collegeIds array
     return colleges.filter(college => collegeIds.includes(college.id));
   };
 
@@ -144,46 +145,57 @@ const CareersSection = () => {
                 {/* Expanded Job Details */}
                 {selectedCategory === category.category && (
                   <div className="space-y-4 animate-fade-in">
-                    {category.jobs.map((job, jobIndex) => (
-                      <div key={jobIndex} className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                        <div className="flex justify-between items-start mb-2">
-                          <h4 className="font-semibold text-slate-900 dark:text-white text-sm">
-                            {job.title}
-                          </h4>
-                          <Badge variant="outline" className="text-xs text-green-600 border-green-600">
-                            {job.growth}
-                          </Badge>
-                        </div>
-                        <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
-                          Salary: {job.salary} annually
-                        </p>
-                        
-                        <div className="space-y-2">
-                          <p className="text-xs font-medium text-slate-700 dark:text-slate-200 flex items-center gap-1">
-                            <GraduationCap className="h-3 w-3" />
-                            Available at:
+                    {category.jobs.map((job, jobIndex) => {
+                      // Get only colleges that offer this job's courses
+                      const relevantColleges = getCollegesByIds(job.collegeIds);
+                      
+                      return (
+                        <div key={jobIndex} className="p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                          <div className="flex justify-between items-start mb-2">
+                            <h4 className="font-semibold text-slate-900 dark:text-white text-sm">
+                              {job.title}
+                            </h4>
+                            <Badge variant="outline" className="text-xs text-green-600 border-green-600">
+                              {job.growth}
+                            </Badge>
+                          </div>
+                          <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
+                            Salary: {job.salary} annually
                           </p>
-                          <div className="space-y-1">
-                            {getCollegesByIds(job.collegeIds).map((college) => (
-                              <div key={college.id} className="flex items-center justify-between bg-white dark:bg-slate-700 p-2 rounded text-xs">
-                                <div className="flex items-center gap-2">
-                                  <span className="font-medium text-slate-900 dark:text-white">
-                                    {college.name}
-                                  </span>
-                                  <div className="flex items-center gap-1 text-slate-500">
-                                    <MapPin className="h-3 w-3" />
-                                    <span>{college.location}</span>
+                          
+                          <div className="space-y-2">
+                            <p className="text-xs font-medium text-slate-700 dark:text-slate-200 flex items-center gap-1">
+                              <GraduationCap className="h-3 w-3" />
+                              Available at:
+                            </p>
+                            {relevantColleges.length > 0 ? (
+                              <div className="space-y-1">
+                                {relevantColleges.map((college) => (
+                                  <div key={college.id} className="flex items-center justify-between bg-white dark:bg-slate-700 p-2 rounded text-xs">
+                                    <div className="flex items-center gap-2">
+                                      <span className="font-medium text-slate-900 dark:text-white">
+                                        {college.name}
+                                      </span>
+                                      <div className="flex items-center gap-1 text-slate-500">
+                                        <MapPin className="h-3 w-3" />
+                                        <span>{college.location}</span>
+                                      </div>
+                                    </div>
+                                    <Badge variant="secondary" className="text-xs">
+                                      {college.type}
+                                    </Badge>
                                   </div>
-                                </div>
-                                <Badge variant="secondary" className="text-xs">
-                                  {college.type}
-                                </Badge>
+                                ))}
                               </div>
-                            ))}
+                            ) : (
+                              <p className="text-xs text-slate-500 dark:text-slate-400">
+                                No colleges currently offering specific courses for this role.
+                              </p>
+                            )}
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 )}
               </CardContent>
