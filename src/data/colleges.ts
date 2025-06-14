@@ -272,7 +272,7 @@ export const colleges: College[] = [
     name: 'Jigme Namgyel Engineering College',
     location: 'Dewathang, Samdrup Jongkhar',
     type: 'Public College',
-    image: '/lovable-uploads/35430063-ea9a-4dd1-be56-49dc4dafabdc.png',
+    image: '/lovable-uploads/1923e1a4-da94-4116-b17f-139ee473366e.png',
     description: 'Provides specialized engineering education with a focus on practical skills and innovation, preparing graduates for leadership roles in technology and infrastructure development.',
     rating: 4.2,
     established: 1974,
