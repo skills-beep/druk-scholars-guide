@@ -418,6 +418,83 @@ export const colleges: College[] = [
     applyUrl: 'https://www.moh.gov.bt/',
     degreePrograms: ['Diploma in Traditional Medicine'],
     popularity: 70
+  },
+  {
+    id: 'apollo',
+    name: 'Apollo College',
+    location: 'Thimphu',
+    type: 'Private College',
+    image: '/lovable-uploads/7c59f299-7d28-46ae-a0f5-701c3ba0895e.png',
+    description: 'A leading private institution offering diverse academic programs with modern facilities and industry-aligned curriculum, focusing on holistic education and student development.',
+    rating: 4.1,
+    established: 2015,
+    courses: ['Business Management', 'Information Technology', 'Hospitality Management', 'Media Studies', 'English Literature'],
+    fees: { min: 100000, max: 150000, currency: 'BTN' },
+    tags: ['Private', 'Modern', 'Industry-Focused'],
+    scholarships: [
+      { name: 'Apollo Merit Scholarship', amount: '40% tuition fee', criteria: 'Academic excellence and leadership qualities' },
+      { name: 'Industry Partnership Grant', amount: '30% tuition fee', criteria: 'Students pursuing industry-relevant programs' }
+    ],
+    facilities: ['Modern Classrooms', 'Computer Labs', 'Library', 'Cafeteria', 'Sports Facilities'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '12 acres',
+    studentCount: 800,
+    facultyCount: 45,
+    programs: {
+      undergraduate: ['BBA', 'BIT', 'BA Hospitality Management', 'BA Media Studies'],
+      postgraduate: ['MBA'],
+      doctorate: []
+    },
+    admissionDeadline: 'April 15, 2024',
+    eligibility: ['Class 12 completion', 'Minimum 55% marks', 'English proficiency test'],
+    contact: {
+      phone: '+975-2-325678',
+      email: 'admissions@apollo.edu.bt',
+      website: 'https://www.apollo.edu.bt'
+    },
+    careerOpportunities: ['Business Management', 'IT Services', 'Hotel Management', 'Media & Communications'],
+    applyUrl: 'https://www.apollo.edu.bt',
+    degreePrograms: ['Bachelor of Business Administration', 'Bachelor of Information Technology', 'Bachelor of Arts in Hospitality Management'],
+    popularity: 83
+  },
+  {
+    id: 'kgumsb',
+    name: 'Khesar Gyalpo University of Medical Sciences of Bhutan',
+    location: 'Thimphu',
+    type: 'Public University',
+    image: '/lovable-uploads/751e9ff9-99d6-455b-879d-fbcb01a4a767.png',
+    description: 'The first and premier medical university in Bhutan, dedicated to advancing medical education, research, and healthcare services in the kingdom with state-of-the-art facilities and internationally recognized programs.',
+    rating: 4.7,
+    established: 2014,
+    courses: ['Medicine', 'Nursing', 'Pharmacy', 'Public Health', 'Medical Laboratory Technology'],
+    fees: { min: 80000, max: 200000, currency: 'BTN' },
+    tags: ['Public', 'Medical', 'University', 'Research'],
+    scholarships: [
+      { name: 'Royal Medical Scholarship', amount: 'Full tuition and stipend', criteria: 'Top medical students with commitment to serve in Bhutan' },
+      { name: 'Healthcare Excellence Award', amount: '75% tuition fee', criteria: 'Outstanding performance in medical sciences' },
+      { name: 'Rural Healthcare Scholarship', amount: '50% tuition fee', criteria: 'Commitment to serve in rural healthcare' }
+    ],
+    facilities: ['Medical Simulation Labs', 'Hospital Training Centers', 'Research Laboratories', 'Medical Library', 'Student Hostels', 'Clinical Skills Labs'],
+    accreditation: 'Medical Council of Bhutan, World Health Organization',
+    campusSize: '75 acres',
+    studentCount: 600,
+    facultyCount: 80,
+    programs: {
+      undergraduate: ['MBBS', 'BSc Nursing', 'Bachelor of Pharmacy', 'BSc Medical Laboratory Technology'],
+      postgraduate: ['MD', 'MS', 'MPH', 'MSc Nursing'],
+      doctorate: ['PhD Medical Sciences']
+    },
+    admissionDeadline: 'May 31, 2024',
+    eligibility: ['Class 12 with Science (Physics, Chemistry, Biology)', 'Minimum 75% marks', 'Medical entrance examination', 'Medical fitness certificate'],
+    contact: {
+      phone: '+975-2-351234',
+      email: 'admissions@kgumsb.edu.bt',
+      website: 'https://www.kgumsb.edu.bt'
+    },
+    careerOpportunities: ['Medical Doctor', 'Specialist Physician', 'Surgeon', 'Public Health Officer', 'Medical Researcher', 'Hospital Administrator'],
+    applyUrl: 'https://www.kgumsb.edu.bt',
+    degreePrograms: ['Bachelor of Medicine and Bachelor of Surgery (MBBS)', 'Bachelor of Science in Nursing', 'Bachelor of Pharmacy'],
+    popularity: 98
   }
 ];
 
