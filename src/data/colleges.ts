@@ -420,3 +420,62 @@ export const colleges: College[] = [
     popularity: 70
   }
 ];
+
+export const governmentScholarships = [
+  {
+    name: "Royal Government of Bhutan Scholarship",
+    provider: "Department of Adult and Higher Education (DAHE)",
+    coverage: "Full tuition fees, accommodation, and monthly stipend for undergraduate studies in Bhutan and abroad",
+    criteria: "Academic excellence (minimum 75% in Class 12), Bhutanese citizenship, financial need assessment",
+    duration: "Full degree duration (3-4 years)",
+    deadline: "June 30, 2024",
+    applicationProcess: "Apply through DAHE portal with academic transcripts, recommendation letters, and personal statement",
+    contact: {
+      phone: "+975-2-323762",
+      email: "dahe@education.gov.bt",
+      website: "https://www.education.gov.bt/"
+    }
+  },
+  {
+    name: "Loden Foundation Academic Excellence Scholarship",
+    provider: "Loden Foundation",
+    coverage: "Full tuition fees and living allowance for outstanding students pursuing higher education",
+    criteria: "Exceptional academic performance (top 10% of class), leadership qualities, community service",
+    duration: "Full degree duration",
+    deadline: "March 31, 2024",
+    applicationProcess: "Online application through Loden Foundation website with essays, transcripts, and interviews",
+    contact: {
+      phone: "+975-2-336922",
+      email: "scholarships@loden.org",
+      website: "https://www.loden.org/"
+    }
+  },
+  {
+    name: "Loden Foundation Need-Based Scholarship",
+    provider: "Loden Foundation",
+    coverage: "Partial to full tuition support based on financial need and academic merit",
+    criteria: "Financial hardship documentation, good academic standing (minimum 65%), Bhutanese citizenship",
+    duration: "Annual renewal based on performance",
+    deadline: "April 15, 2024",
+    applicationProcess: "Submit financial documentation, academic records, and personal statement through Loden portal",
+    contact: {
+      phone: "+975-2-336922",
+      email: "scholarships@loden.org",
+      website: "https://www.loden.org/"
+    }
+  },
+  {
+    name: "Technical and Vocational Education Scholarship",
+    provider: "Royal Government of Bhutan - Ministry of Education",
+    coverage: "Full tuition and training costs for technical and vocational programs",
+    criteria: "Class 12 completion, interest in technical fields, aptitude test performance",
+    duration: "1-3 years depending on program",
+    deadline: "May 15, 2024",
+    applicationProcess: "Apply through designated technical institutes with aptitude test and interview",
+    contact: {
+      phone: "+975-2-323762",
+      email: "tvet@education.gov.bt",
+      website: "https://www.education.gov.bt/"
+    }
+  }
+];
