@@ -14,11 +14,16 @@ const HeroSection = ({ onSearch }: HeroSectionProps) => {
       <BackgroundSlider />
       <FloatingElements />
       
-      <HeroContent onSearch={onSearch} />
-      
-      {/* Stats Section positioned at the bottom */}
-      <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
-        <StatsSection />
+      <div className="relative w-full z-10 flex flex-col items-center justify-between h-full py-12">
+        {/* Hero content positioned in the middle */}
+        <div className="flex-grow flex items-center justify-center w-full">
+          <HeroContent onSearch={onSearch} />
+        </div>
+        
+        {/* Stats section positioned at the bottom with proper spacing */}
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 mt-auto">
+          <StatsSection />
+        </div>
       </div>
     </section>
   );
