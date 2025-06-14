@@ -1,9 +1,10 @@
 
+
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
   {
-    id: 1,
+    id: "1",
     name: "Royal Thimphu College",
     location: "Thimphu",
     image: "https://www.rtc.bt/wp-content/uploads/2020/07/IMG_1853-1024x683.jpg",
@@ -49,7 +50,7 @@ export const colleges: College[] = [
     applyUrl: "https://www.rtc.bt/index.php/admissions/how-to-apply"
   },
   {
-    id: 2,
+    id: "2",
     name: "Gaeddu College of Business Studies",
     location: "Chukha",
     image: "https://www.gcbs.edu.bt/wp-content/uploads/2023/07/WhatsApp-Image-2023-07-05-at-11.19.14-AM-1024x683.jpeg",
@@ -95,7 +96,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.gcbs.edu.bt/admission/"
   },
   {
-    id: 3,
+    id: "3",
     name: "Paro College of Education",
     location: "Paro",
     image: "https://www.pce.edu.bt/wp-content/uploads/2023/08/IMG_3929-1024x683.jpg",
@@ -140,7 +141,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.pce.edu.bt/admission/"
   },
   {
-    id: 4,
+    id: "4",
     name: "Samtse College of Education",
     location: "Samtse",
     image: "https://www.sce.edu.bt/wp-content/uploads/2023/08/IMG_4189-1024x683.jpg",
@@ -185,7 +186,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.sce.edu.bt/admission/"
   },
   {
-    id: 5,
+    id: "5",
     name: "College of Natural Resources",
     location: "Lobeysa",
     image: "https://www.cnr.edu.bt/wp-content/uploads/2023/08/CNR-Admin-building-1024x683.jpg",
@@ -230,7 +231,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.cnr.edu.bt/admission/"
   },
   {
-    id: 6,
+    id: "6",
     name: "College of Science and Technology",
     location: "Rinchending",
     image: "https://www.cst.edu.bt/wp-content/uploads/2023/08/IMG_8898-1024x683.jpg",
@@ -276,7 +277,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.cst.edu.bt/admission/"
   },
   {
-    id: 7,
+    id: "7",
     name: "Jigme Namgyel Engineering College",
     location: "Dewathang",
     image: "https://www.jnec.edu.bt/wp-content/uploads/2023/08/IMG_9243-1024x683.jpg",
@@ -321,7 +322,7 @@ export const colleges: College[] = [
     applyUrl: "https://www.jnec.edu.bt/admission/"
   },
   {
-    id: 8,
+    id: "8",
     name: "College of Language and Culture Studies",
     location: "Taktse",
     image: "https://www.clcs.edu.bt/wp-content/uploads/2023/08/IMG_9524-1024x683.jpg",
@@ -366,7 +367,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.clcs.edu.bt/admission/"
   },
   {
-    id: 9,
+    id: "9",
     name: "Sherubtse College",
     location: "Kanglung",
     image: "https://www.sherubtse.edu.bt/wp-content/uploads/2023/08/IMG_9792-1024x683.jpg",
@@ -412,7 +413,7 @@ export const colleges: College[] = [
     applyUrl: "https://www.sherubtse.edu.bt/admission/"
   },
   {
-    id: 10,
+    id: "10",
     name: "Institute of Traditional Medicine",
     location: "Thimphu",
     image: "https://www.moh.gov.bt/wp-content/uploads/2017/03/IMG_20170324_113134.jpg",
@@ -456,7 +457,7 @@ export const colleges: College[] = [
     applyUrl: "https://www.moh.gov.bt/"
   },
   {
-    id: 11,
+    id: "11",
     name: "Gyalpozhing College of Information Technology",
     location: "Gyalpozhing",
     image: "https://www.gcit.edu.bt/wp-content/uploads/2023/08/GCIT-building-1024x683.jpg",
@@ -501,7 +502,7 @@ export const colleges: College[] = [
     applyUrl: "http://www.gcit.edu.bt/admission"
   },
   {
-    id: 12,
+    id: "12",
     name: "Apollo Bhutan Institute of Nursing",
     location: "Thimphu",
     image: "/lovable-uploads/7f89786e-7fc4-41b5-9258-b5723443e7b6.png",
@@ -593,3 +594,4 @@ export const governmentScholarships = [
     }
   }
 ];
+
