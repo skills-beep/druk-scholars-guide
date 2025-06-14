@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react';
 const BackgroundSlider = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Array of background images
+  // Array of background images - updated with new Bhutanese landmarks
   const backgroundImages = [
-    '/lovable-uploads/4ff992ab-496d-4d88-bc68-2cc75a40661e.png', // Buddha statue silhouette
-    '/lovable-uploads/02acbdd7-bad8-4a97-9f8c-b8836214a9cb.png', // Traditional dance mask
-    '/lovable-uploads/294b0d4f-6b24-4136-8631-f72858b48637.png', // Thimphu cityscape
-    '/lovable-uploads/3723aa71-e99f-452d-ac66-b3d36b45cee5.png'  // Tiger's Nest monastery
+    '/lovable-uploads/6b94c9c8-929a-444c-987f-feb8faac6030.png', // Traditional Bhutanese dzong with river reflection
+    '/lovable-uploads/c94e5199-f9f6-4b14-8ef3-d19491151ba2.png', // Punakha Dzong with mountains
+    '/lovable-uploads/d8d18649-00ee-48ef-9703-c38cbc030ad6.png', // Tiger's Nest monastery on cliff
+    '/lovable-uploads/dda7f772-be9d-442f-b557-22fe7bd2d311.png'  // Young Bhutanese monks
   ];
 
   // Change background image every 5 seconds
@@ -33,7 +33,9 @@ const BackgroundSlider = () => {
             index === currentImageIndex ? 'opacity-70' : 'opacity-0'
           }`}
           style={{
-            backgroundImage: `url('${image}')`
+            backgroundImage: `url('${image}')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center center'
           }}
         >
           {/* Enhanced gradient overlay for better contrast */}
@@ -41,7 +43,7 @@ const BackgroundSlider = () => {
         </div>
       ))}
 
-      {/* Smaller image indicators */}
+      {/* Image indicators */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
         <div className="flex space-x-2">
           {backgroundImages.map((_, index) => (
