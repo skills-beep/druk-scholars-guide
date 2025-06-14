@@ -234,7 +234,7 @@ export const colleges: College[] = [
     name: 'College of Science and Technology',
     location: 'Rinchending, Phuentsholing',
     type: 'Public College',
-    image: '/lovable-uploads/84ba2fd5-e993-40a1-82ea-58176e5ee3f2.png',
+    image: '/lovable-uploads/983d94f4-00b8-4fc7-87c4-0009a1895655.png',
     description: 'Offers a range of engineering and technology programs, focusing on innovation and practical skills to meet the demands of the modern industry.',
     rating: 4.4,
     established: 2001,
