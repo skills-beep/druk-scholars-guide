@@ -41,7 +41,7 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
   };
 
   return (
-    <Card className="group h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 rounded-2xl overflow-hidden">
+    <Card className="group h-full bg-white dark:bg-gray-900 backdrop-blur-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 rounded-2xl overflow-hidden">
       <div className="relative overflow-hidden">
         <img
           src={college.image}
@@ -54,22 +54,22 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
         />
         <div className="absolute top-4 left-4 flex flex-wrap gap-2">
           {college.tags.slice(0, 2).map((tag) => (
-            <Badge key={tag} variant="secondary" className="bg-white/95 backdrop-blur-sm text-xs">
+            <Badge key={tag} variant="secondary" className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm text-xs text-gray-800 dark:text-gray-200">
               {tag}
             </Badge>
           ))}
         </div>
-        <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
+        <div className="absolute top-4 right-4 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
           <Star className="h-3 w-3 text-yellow-500 fill-current" />
-          <span className="text-xs font-semibold">{college.rating}</span>
+          <span className="text-xs font-semibold text-gray-800 dark:text-gray-200">{college.rating}</span>
         </div>
       </div>
 
       <CardHeader className="pb-3">
-        <CardTitle className="text-lg font-bold text-slate-800 dark:text-white line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+        <CardTitle className="text-lg font-bold text-slate-800 dark:text-slate-100 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
           {college.name}
         </CardTitle>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
+        <div className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
           <div className="flex items-center gap-1">
             <MapPin className="h-4 w-4" />
             <span>{college.location}</span>
@@ -82,7 +82,7 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+        <p className="text-sm text-slate-600 dark:text-slate-400 line-clamp-3 leading-relaxed">
           {college.description}
         </p>
 
@@ -94,7 +94,7 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
             </span>
           </div>
           
-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
+          <div className="flex items-center gap-1 text-sm text-slate-600 dark:text-slate-400">
             <Clock className="h-4 w-4" />
             <span>Deadline: {college.admissionDeadline}</span>
           </div>
@@ -109,7 +109,7 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
               </Badge>
             ))}
             {college.courses.length > 3 && (
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="outline" className="text-xs bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600">
                 +{college.courses.length - 3} more
               </Badge>
             )}
@@ -127,7 +127,7 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
           <Button
             onClick={handleVisitWebsite}
             variant="outline"
-            className="border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300 hover:scale-105 rounded-xl"
+            className="border-slate-200 dark:border-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-all duration-300 hover:scale-105 rounded-xl"
           >
             <ExternalLink className="h-4 w-4" />
           </Button>
