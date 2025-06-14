@@ -1,3 +1,4 @@
+
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -344,7 +345,7 @@ export const colleges: College[] = [
     id: "7",
     name: "Jigme Namgyel Engineering College",
     location: "Dewathang",
-    image: "/lovable-uploads/880d7613-7292-46b9-bb3f-dc61fc9c5193.png",
+    image: "/lovable-uploads/4d80d096-8145-48cf-ac59-4ea8d2dbbfe3.png",
     description: "An esteemed engineering college under the Royal University of Bhutan, providing quality technical education.",
     established: 1974,
     type: "Public",
