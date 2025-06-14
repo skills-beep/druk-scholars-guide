@@ -386,7 +386,7 @@ export const colleges: College[] = [
     name: 'Institute of Traditional Medicine',
     location: 'Thimphu',
     type: 'Public College',
-    image: '/lovable-uploads/0c691c67-b90d-496c-9969-56075593069b.png',
+    image: '/lovable-uploads/b5b52df9-cd9a-4bea-804d-feff07faf2f4.png',
     description: 'Offers specialized programs in traditional Bhutanese medicine, focusing on herbal remedies, acupuncture, and holistic healthcare practices.',
     rating: 4.0,
     established: 1979,
