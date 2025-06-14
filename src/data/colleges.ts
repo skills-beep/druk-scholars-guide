@@ -44,7 +44,7 @@ export const colleges: College[] = [
     name: 'Gyalpozhing College of Information Technology',
     location: 'Gyalpozhing, Mongar District',
     type: 'Public College',
-    image: '/lovable-uploads/5585d4c4-48c6-4b24-8dbb-75e1882721dd.png',
+    image: '/lovable-uploads/107ea1f3-e036-4bdc-af34-72d9bdce78ed.png',
     description: 'Modern IT college established as a Centre of Excellence in Information Technology, offering specialized programs in computer science, software engineering, and blockchain technology.',
     rating: 4.3,
     established: 2001,
