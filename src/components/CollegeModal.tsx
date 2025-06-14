@@ -39,22 +39,26 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
       'Royal Thimphu College': 'https://www.rtc.bt/',
       'Gaeddu College of Business Studies': 'http://www.gcbs.edu.bt',
       'Paro College of Education': 'http://www.pce.edu.bt',
-      'Samtse College of Education': 'http://www.sce.edu.bt/index.php',
+      'Samtse College of Education': 'http://www.sce.edu.bt',
       'College of Natural Resources': 'http://www.cnr.edu.bt',
       'College of Science and Technology': 'http://www.cst.edu.bt',
       'Jigme Namgyel Engineering College': 'https://www.jnec.edu.bt/',
       'College of Language and Culture Studies': 'http://www.clcs.edu.bt',
       'Sherubtse College': 'https://www.sherubtse.edu.bt/',
-      'Institute of Traditional Medicine': 'https://www.moh.gov.bt/'
+      'Institute of Traditional Medicine': 'https://www.moh.gov.bt/',
+      'Gyalpozhing College of Information Technology': 'http://www.gcit.edu.bt'
     };
     
-    return websiteMap[collegeName] || college.applyUrl || null;
+    // First check the website map, then fallback to college.contact.website, then college.applyUrl
+    return websiteMap[collegeName] || college.contact?.website || college.applyUrl || null;
   };
 
   const handleApplyNow = () => {
     const website = getCollegeWebsite(college.name);
     if (website) {
       window.open(website, '_blank', 'noopener,noreferrer');
+    } else {
+      console.warn(`No website found for ${college.name}`);
     }
   };
 

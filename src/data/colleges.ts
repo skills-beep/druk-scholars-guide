@@ -1,818 +1,422 @@
 import { College } from '@/types/college';
 
-export const governmentScholarships = [
-  {
-    name: "Loden-RTC Need-Based Scholarship",
-    duration: "Full program duration",
-    criteria: "Bhutanese students applying for undergraduate programs at RTC",
-    coverage: "Full tuition, hostel and food for entire program duration",
-    provider: "Loden Foundation + Royal Thimphu College",
-    contact: {
-      phone: "+975-2-351801 (Ext. 105/119)",
-      email: "info@rtc.bt",
-      website: "https://www.rtc.bt"
-    },
-    deadline: "April (e.g., April 29 in previous cycles)",
-    applicationProcess: "Apply to RTC online, screenshot confirmation email, fill Google Form (available on loden.org)"
-  },
-  {
-    name: "Loden Post-School Youth Scholarship",
-    duration: "Until course completion",
-    criteria: "Bhutanese citizens from low-income backgrounds with admission to diploma or undergraduate program",
-    coverage: "Up to Nu. 300,000/year, renewable based on performance",
-    provider: "Loden Foundation",
-    contact: {
-      phone: "+975-2-337389 / 332006",
-      email: "info@loden.org",
-      website: "https://loden.org"
-    },
-    deadline: "During announcement cycle",
-    applicationProcess: "Apply online during announcement cycle via Loden website"
-  },
-  {
-    name: "Loden Short-Term Education Loan",
-    duration: "12 months repayment",
-    criteria: "Bhutanese students pursuing any recognized course (in Bhutan or abroad)",
-    coverage: "Up to Nu. 300,000, interest-free with 2% service fee",
-    provider: "Loden Foundation",
-    contact: {
-      phone: "+975-2-337389",
-      email: "info@loden.org",
-      website: "https://loden.org"
-    },
-    deadline: "As needed for emergency expenses",
-    applicationProcess: "Contact Loden Foundation directly"
-  },
-  {
-    name: "Loden + Apollo Institute of Nursing Scholarship",
-    duration: "Full program duration",
-    criteria: "Students applying for Diploma in General Nursing & Midwifery",
-    coverage: "Full tuition fees by Loden, clinical & lab fees waived by Apollo",
-    provider: "Loden Foundation + Apollo Bhutan Institute of Nursing",
-    contact: {
-      phone: "+975-2-337389",
-      email: "info@loden.org",
-      website: "https://loden.org, https://abin.edu.bt"
-    },
-    deadline: "During call period",
-    applicationProcess: "Via Loden online form during the call period"
-  },
-  {
-    name: "DAHE Scholarships",
-    duration: "Full program duration",
-    criteria: "Class 12 toppers in Bhutan, based on merit + eligibility criteria",
-    coverage: "Full tuition + stipends for domestic & few regional scholarships (India, Sri Lanka)",
-    provider: "Department of Adult and Higher Education, MoESD",
-    contact: {
-      phone: "+975-2-335833",
-      email: "dahe@moesd.gov.bt",
-      website: "https://dahe.gov.bt"
-    },
-    deadline: "After declaration of Class 12 results",
-    applicationProcess: "Apply through DAHE after Class 12 results are declared"
-  },
-  {
-    name: "BOC – RUB Sports Scholarship",
-    duration: "3-4 years for UG, 2 years for diploma",
-    criteria: "Current national athletes (national team members) admitted to RUB-affiliated colleges",
-    coverage: "Full tuition + boarding for program duration",
-    provider: "Bhutan Olympic Committee (BOC) in partnership with RUB",
-    contact: {
-      phone: "Contact through BOC website",
-      email: "Contact through BOC or Paro College Office",
-      website: "bhutanolympiccommittee.org"
-    },
-    deadline: "July (e.g., July 5 in previous cycles)",
-    applicationProcess: "Scholarship forms available through BOC website or Paro College Office. Submit application form, athletic proof, transcripts, CID, medical certificate, letters of recommendation, CV, sports achievement declaration"
-  },
-  {
-    name: "Madanjeet Singh SAARC Forestry Scholarship",
-    duration: "2 years (Master's program)",
-    criteria: "SAARC citizens with BSc in Forestry/Life Sciences, ≥55% in each subject, ≥60% overall, age <45",
-    coverage: "Full tuition, round-trip airfare, monthly stipend (BTN 15,000), book grant (BTN 5,000), research grant (BTN 70,000), travel & establishment allowances",
-    provider: "UNESCO Madanjeet Singh Centre for SAARC Forestry Studies (UMCSAFS) at CNR",
-    contact: {
-      phone: "Contact CNR Focal Person",
-      email: "Contact SAF Bhutan representative",
-      website: "cnr.edu.bt"
-    },
-    deadline: "Mid-February each year",
-    applicationProcess: "Submit application form and research proposal to SAF offices in SAARC nations. National SAF office nominates one candidate per country to CNR"
-  }
-];
-
 export const colleges: College[] = [
   {
-    id: '1',
+    id: 'rtc',
     name: 'Royal Thimphu College',
     location: 'Ngabiphu, Thimphu',
-    type: 'College',
-    image: '/lovable-uploads/072154cd-7fda-4258-abda-845af9aab121.png',
-    description: 'Premier private college in Bhutan offering comprehensive undergraduate programs in business, nursing, environmental management, and humanities with both regular and continuing education options.',
-    rating: 4.7,
+    type: 'Private College',
+    image: '/lovable-uploads/13fca3a1-74cc-4153-a50c-5ac8864cea0e.png',
+    description: 'Premier private college in Bhutan offering comprehensive undergraduate programs in business, nursing, environmental management, and humanities with modern facilities and experienced faculty.',
+    rating: 4.5,
     established: 2009,
-    courses: ['Business Administration', 'Commerce', 'Nursing & Midwifery', 'Environmental Management', 'English Studies', 'Development Economics', 'Social Sciences', 'Anthropology', 'Communication Arts & Creative Media', 'Sports & Health Sciences'],
-    fees: {
-      min: 170000,
-      max: 255000,
-      currency: 'BTN'
-    },
-    tags: ['Private', 'Liberal Arts', 'Management', 'Healthcare'],
+    courses: ['Business Administration', 'Environmental Management', 'Nursing', 'Information Technology', 'English Literature'],
+    fees: { min: 120000, max: 180000, currency: 'BTN' },
+    tags: ['Private', 'Undergraduate', 'Modern Campus'],
     scholarships: [
-      { name: 'Loden-RTC Need-Based Scholarship', amount: 'Full tuition + accommodation', criteria: 'Bhutanese students applying for undergraduate programs at RTC' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
+      { name: 'Merit Scholarship', amount: '50% tuition fee', criteria: 'Academic excellence with minimum 85% marks' },
+      { name: 'Need-based Aid', amount: '25% tuition fee', criteria: 'Financial need assessment and good academic standing' }
     ],
-    facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Auditorium', 'Nursing Labs', 'Environmental Science Labs'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '45 acres',
-    studentCount: 1800,
-    facultyCount: 100,
+    facilities: ['Modern Library', 'Computer Labs', 'Sports Complex', 'Cafeteria', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '15 acres',
+    studentCount: 1200,
+    facultyCount: 65,
     programs: {
-      undergraduate: [
-        'Bachelor of Business Administration (BBA) - 4 years (Regular & Continuing Education)',
-        'Bachelor of Commerce (BCom) - 4 years (Regular & Continuing Education)',
-        'Bachelor of Science in Nursing & Midwifery - 4 years',
-        'Bachelor of Science in Environmental Management - 4 years',
-        'Bachelor of Arts in English Studies - 4 years',
-        'Bachelor of Arts in Development Economics - 4 years',
-        'Bachelor of Arts in Social Sciences - 4 years',
-        'Bachelor of Arts in Anthropology - 4 years',
-        'Bachelor of Arts in Communication Arts & Creative Media - 4 years',
-        'Bachelor of Sports & Health Sciences (BSHS) - 4 years'
-      ],
-      postgraduate: ['Master of Business Administration', 'Master of Development Economics'],
+      undergraduate: ['BBA', 'BEN', 'BSc Environmental Management', 'BSc Nursing'],
+      postgraduate: ['MBA'],
       doctorate: []
     },
     admissionDeadline: 'March 31, 2024',
-    eligibility: [
-      'Class XII completion with minimum 65% aggregate',
-      'English proficiency test',
-      'Interview and aptitude test',
-      'Character certificate from school',
-      'Entrance tests apply for Sports & Health Sciences'
-    ],
+    eligibility: ['Class 12 completion', 'Minimum 60% marks', 'English proficiency'],
     contact: {
       phone: '+975-2-336000',
       email: 'info@rtc.bt',
-      website: 'www.rtc.bt'
+      website: 'https://www.rtc.bt/'
     },
-    careerOpportunities: [
-      'Corporate Management',
-      'Healthcare & Nursing',
-      'Environmental Consulting',
-      'Media & Communications',
-      'Banking and Finance',
-      'International Business',
-      'Sports & Fitness Industry',
-      'Entrepreneurship and Startups'
-    ],
-    applyUrl: 'https://www.rtc.bt/'
+    careerOpportunities: ['Business Management', 'Environmental Consulting', 'Healthcare', 'IT Services'],
+    applyUrl: 'https://www.rtc.bt/',
+    degreePrograms: ['Bachelor of Business Administration', 'Bachelor of Environmental Management', 'Bachelor of Science in Nursing'],
+    popularity: 95
   },
   {
-    id: '2',
+    id: 'gcit',
     name: 'Gyalpozhing College of Information Technology',
     location: 'Gyalpozhing, Mongar District',
-    type: 'College',
-    image: '/lovable-uploads/13fca3a1-74cc-4153-a50c-5ac8864cea0e.png',
-    description: 'Modern IT college established as a Centre of Excellence in Information Technology, offering specialized programs in computer science, AI, blockchain, and cybersecurity with a "Learning by Doing" approach.',
-    rating: 4.5,
-    established: 2017,
-    courses: ['Computer Science', 'AI & Data Science', 'Blockchain Development', 'Full-stack Development', 'Interactive Design', 'Information & Communications Technology', 'Cybersecurity'],
-    fees: {
-      min: 95000,
-      max: 98000,
-      currency: 'BTN'
-    },
-    tags: ['Technology', 'IT', 'Innovation', 'Modern'],
+    type: 'Public College',
+    image: '/lovable-uploads/3f0e83af-7bc3-4c9e-afd4-6ca1aea9139b.png',
+    description: 'Modern IT college established as a Centre of Excellence in Information Technology, offering specialized programs in computer science, software engineering, and blockchain technology.',
+    rating: 4.3,
+    established: 2001,
+    courses: ['Computer Science', 'Information Technology', 'Software Engineering', 'Electronics', 'Information Systems'],
+    fees: { min: 45000, max: 75000, currency: 'BTN' },
+    tags: ['Public', 'IT Focused', 'Research'],
     scholarships: [
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' },
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' }
+      { name: 'Government Scholarship', amount: 'Full tuition', criteria: 'Top performers in national exams' },
+      { name: 'IT Excellence Award', amount: '75% tuition fee', criteria: 'Outstanding performance in IT subjects' }
     ],
-    facilities: ['Modern Computer Labs', 'AI Research Center', 'Blockchain Lab', 'Cybersecurity Lab', 'Digital Library', 'Hackathon Spaces', 'Outdoor Recreation Areas'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '54 acres',
+    facilities: ['Advanced Computer Labs', 'Research Centers', 'Library', 'Sports Facilities'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '25 acres',
     studentCount: 800,
     facultyCount: 45,
     programs: {
-      undergraduate: [
-        'Bachelor of Science in Computer Science (AI & Data Science track)',
-        'Bachelor of Science in Computer Science (Blockchain Development track)',
-        'Bachelor of Science in Computer Science (Full-stack Development track)',
-        'Bachelor of Science in Computer Science (Interactive Design & Development track)',
-        'Bachelor of Information & Communications Technology (BICT) - 4 years'
-      ],
-      postgraduate: [],
+      undergraduate: ['BSc Computer Science', 'BSc Information Technology', 'BSc Electronics'],
+      postgraduate: ['MSc Computer Science'],
       doctorate: []
     },
-    admissionDeadline: 'March 15, 2024',
-    eligibility: [
-      'Class XII with Science/Mathematics background',
-      'Strong foundation in Mathematics and logical reasoning',
-      'Computer literacy assessment',
-      'Interview and programming aptitude test'
-    ],
+    admissionDeadline: 'February 28, 2024',
+    eligibility: ['Class 12 with Science/Commerce', 'Mathematics and English', 'Entrance examination'],
     contact: {
       phone: '+975-4-744227',
       email: 'info.gcit@rub.edu.bt',
-      website: 'www.gcit.edu.bt'
+      website: 'http://www.gcit.edu.bt'
     },
-    careerOpportunities: [
-      'Software Development',
-      'AI & Machine Learning Engineering',
-      'Blockchain Development',
-      'Cybersecurity Specialist',
-      'Full-stack Web Development',
-      'Data Science & Analytics',
-      'IT Consulting',
-      'Technology Startups'
-    ],
-    applyUrl: 'https://www.gcit.edu.bt/'
+    careerOpportunities: ['Software Development', 'IT Consulting', 'System Administration', 'Data Analysis'],
+    applyUrl: 'http://www.gcit.edu.bt',
+    degreePrograms: ['Bachelor of Science in Computer Science', 'Bachelor of Science in Information Technology'],
+    popularity: 88
   },
   {
-    id: '3',
-    name: 'College of Science and Technology',
-    location: 'Rinchending, Phuentsholing',
-    type: 'College',
-    image: '/lovable-uploads/880d7613-7292-46b9-bb3f-dc61fc9c5193.png',
-    description: 'Leading engineering and technology college in Bhutan, known for innovation and research excellence.',
-    rating: 4.6,
-    established: 2001,
-    courses: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Computer Science', 'Information Technology'],
-    fees: {
-      min: 90000,
-      max: 160000,
-      currency: 'BTN'
-    },
-    tags: ['Engineering', 'Technology', 'Research'],
-    scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
-    ],
-    facilities: ['Advanced Labs', 'Workshop', 'Computer Center', 'Library'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '85 acres',
-    studentCount: 3500,
-    facultyCount: 180,
-    programs: {
-      undergraduate: ['Bachelor of Engineering in Civil', 'Bachelor of Engineering in Electrical', 'Bachelor of Engineering in Mechanical'],
-      postgraduate: ['Master of Engineering', 'Master of Technology'],
-      doctorate: []
-    },
-    admissionDeadline: 'April 15, 2024',
-    eligibility: [
-      'Class XII with Science stream (PCM)',
-      'Minimum 70% in Mathematics and Physics',
-      'Engineering entrance test qualification',
-      'English proficiency requirement'
-    ],
-    contact: {
-      phone: '+975-5-252423',
-      email: 'info@cst.edu.bt',
-      website: 'www.cst.edu.bt'
-    },
-    careerOpportunities: [
-      'Construction and Infrastructure',
-      'IT and Software Development',
-      'Manufacturing Industries',
-      'Government Technical Services',
-      'Consulting Engineering Firms'
-    ],
-    applyUrl: 'http://www.cst.edu.bt'
-  },
-  {
-    id: '4',
-    name: 'College of Natural Resources',
-    location: 'Lobesa, Punakha',
-    type: 'College',
-    image: '/lovable-uploads/ccaa2937-dd94-47e7-bcad-c9bbcee60b88.png',
-    description: 'Specialized institution focusing on agriculture, forestry, and natural resource management.',
-    rating: 4.4,
-    established: 1992,
-    courses: ['Agriculture', 'Forestry', 'Animal Science', 'Environmental Science'],
-    fees: {
-      min: 70000,
-      max: 120000,
-      currency: 'BTN'
-    },
-    tags: ['Agriculture', 'Environment', 'Research'],
-    scholarships: [
-      { name: 'Madanjeet Singh SAARC Forestry Scholarship', amount: 'Full tuition + stipend + grants', criteria: 'SAARC citizens with BSc in Forestry/Life Sciences, for Master\'s program' },
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' }
-    ],
-    facilities: ['Research Farm', 'Greenhouse', 'Animal Farm', 'Forestry Lab'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '200 acres',
-    studentCount: 2800,
-    facultyCount: 120,
-    programs: {
-      undergraduate: ['Bachelor of Agriculture', 'Bachelor of Forestry', 'Bachelor of Animal Science'],
-      postgraduate: ['Master of Agriculture', 'Master of Forestry', 'Master of Natural Resources Management', 'Master of Conservation Biology'],
-      doctorate: []
-    },
-    admissionDeadline: 'March 20, 2024',
-    eligibility: [
-      'Class XII completion (any stream)',
-      'Interest in agriculture and environment',
-      'Physical fitness for field work',
-      'Rural background preferred'
-    ],
-    contact: {
-      phone: '+975-2-584075',
-      email: 'cnr@rub.edu.bt',
-      website: 'www.cnr.edu.bt'
-    },
-    careerOpportunities: [
-      'Ministry of Agriculture',
-      'Forestry Department',
-      'Agricultural Extension Services',
-      'Research Institutes',
-      'Agribusiness and Farming'
-    ],
-    applyUrl: 'http://www.cnr.edu.bt'
-  },
-  {
-    id: '5',
-    name: 'Sherubtse College',
-    location: 'Kanglung, Trashigang',
-    type: 'College',
-    image: '/lovable-uploads/239bcac2-4bdc-47f1-9803-41dfb3900118.png',
-    description: 'Premier liberal arts college offering diverse academic programs in humanities and sciences.',
-    rating: 4.5,
-    established: 1966,
-    courses: ['English Literature', 'History', 'Geography', 'Project Management', 'Data Science', 'Mathematics'],
-    fees: {
-      min: 60000,
-      max: 100000,
-      currency: 'BTN'
-    },
-    tags: ['Liberal Arts', 'Humanities', 'Sciences'],
-    scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
-    ],
-    facilities: ['Library', 'Science Labs', 'Art Studio', 'Auditorium'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '95 acres',
-    studentCount: 4200,
-    facultyCount: 200,
-    programs: {
-      undergraduate: ['Bachelor of Arts', 'Bachelor of Science', 'Bachelor of Commerce'],
-      postgraduate: ['Master of Arts', 'Master of Science'],
-      doctorate: []
-    },
-    admissionDeadline: 'April 5, 2024',
-    eligibility: [
-      'Class XII in relevant stream',
-      'Minimum 60% aggregate marks',
-      'Subject-specific requirements',
-      'Interview for some programs'
-    ],
-    contact: {
-      phone: '+975-4-741456',
-      email: 'sherubtse@rub.edu.bt',
-      website: 'www.sherubtse.edu.bt'
-    },
-    careerOpportunities: [
-      'Teaching and Education',
-      'Government Administrative Services',
-      'Media and Journalism',
-      'Research and Academia',
-      'Cultural and Heritage Organizations'
-    ],
-    applyUrl: 'https://www.sherubtse.edu.bt/'
-  },
-  {
-    id: '6',
-    name: 'Jigme Namgyel Engineering College',
-    location: 'Dewathang, Samdrup Jongkhar',
-    type: 'College',
-    image: '/lovable-uploads/5a7843b7-e744-4b66-b1ca-350f55efed17.png',
-    description: 'Modern engineering college with state-of-the-art facilities and industry partnerships.',
-    rating: 4.3,
-    established: 1972,
-    courses: ['Electronics & Communication', 'Computer Engineering', 'Civil Engineering', 'Mechanical Engineering'],
-    fees: {
-      min: 80000,
-      max: 140000,
-      currency: 'BTN'
-    },
-    tags: ['Engineering', 'Innovation', 'Modern'],
-    scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
-    ],
-    facilities: ['Modern Labs', 'Innovation Center', 'Industry Hub', 'Digital Library'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '75 acres',
-    studentCount: 2500,
-    facultyCount: 140,
-    programs: {
-      undergraduate: ['Bachelor of Engineering in Electronics', 'Bachelor of Engineering in Computer', 'Bachelor of Engineering in Civil'],
-      postgraduate: ['Master of Engineering'],
-      doctorate: []
-    },
-    admissionDeadline: 'April 20, 2024',
-    eligibility: [
-      'Class XII Science with minimum 75%',
-      'Strong foundation in Mathematics and Physics',
-      'Engineering aptitude test',
-      'English language proficiency'
-    ],
-    contact: {
-      phone: '+975-7-365421',
-      email: 'jnec@rub.edu.bt',
-      website: 'www.jnec.edu.bt'
-    },
-    careerOpportunities: [
-      'Software Development',
-      'Electronics and Communication',
-      'Construction Engineering',
-      'Manufacturing and Design',
-      'Technology Startups'
-    ],
-    applyUrl: 'https://www.jnec.edu.bt/'
-  },
-  {
-    id: '7',
-    name: 'Samtse College of Education',
-    location: 'Samtse',
-    type: 'College',
-    image: '/lovable-uploads/e3c09321-8cc8-49d8-9611-48155075d8d1.png',
-    description: 'Leading teacher training institute preparing educators for Bhutan\'s educational system.',
+    id: 'gcbs',
+    name: 'Gaeddu College of Business Studies',
+    location: 'Gedu, Chukha District',
+    type: 'Public College',
+    image: '/lovable-uploads/04933c7f-6541-45c7-9933-a5414c9c54d8.png',
+    description: 'Leading business college in Bhutan offering undergraduate and postgraduate programs in business administration, economics, and finance with a focus on ethical leadership and sustainable business practices.',
     rating: 4.2,
-    established: 1968,
-    courses: ['Primary Education', 'Secondary Education', 'Educational Psychology', 'Curriculum Development'],
-    fees: {
-      min: 60000,
-      max: 100000,
-      currency: 'BTN'
-    },
-    tags: ['Education', 'Teaching', 'Training'],
+    established: 2008,
+    courses: ['Business Administration', 'Economics', 'Finance', 'Marketing', 'Human Resources'],
+    fees: { min: 50000, max: 80000, currency: 'BTN' },
+    tags: ['Public', 'Business', 'Management'],
     scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
+      { name: 'Academic Excellence Scholarship', amount: '60% tuition fee', criteria: 'Top academic performers' },
+      { name: 'Bhutan Economic Forum Award', amount: '40% tuition fee', criteria: 'Business plan competition winners' }
     ],
-    facilities: ['Teaching Practice Schools', 'Education Resource Center', 'Psychology Lab'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '60 acres',
-    studentCount: 1800,
-    facultyCount: 95,
+    facilities: ['Business Labs', 'Case Study Library', 'Auditorium', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '20 acres',
+    studentCount: 950,
+    facultyCount: 50,
     programs: {
-      undergraduate: ['Bachelor of Education Primary', 'Bachelor of Education Secondary'],
-      postgraduate: ['Master of Education', 'Postgraduate Certificate in Education'],
+      undergraduate: ['BBA', 'BA Economics', 'BCom'],
+      postgraduate: ['MBA'],
       doctorate: []
     },
     admissionDeadline: 'March 15, 2024',
-    eligibility: [
-      'Class XII completion',
-      'Interest in teaching profession',
-      'Communication skills assessment',
-      'Teaching aptitude test'
-    ],
+    eligibility: ['Class 12 with Commerce/Arts', 'English and Mathematics', 'Interview'],
     contact: {
-      phone: '+975-5-365123',
-      email: 'sce@rub.edu.bt',
-      website: 'www.sce.edu.bt'
+      phone: '+975-5-376200',
+      email: 'info@gcbs.edu.bt',
+      website: 'http://www.gcbs.edu.bt'
     },
-    careerOpportunities: [
-      'Primary School Teaching',
-      'Secondary School Teaching',
-      'Educational Administration',
-      'Curriculum Development',
-      'Educational Research'
-    ],
-    applyUrl: 'http://www.sce.edu.bt/index.php'
+    careerOpportunities: ['Banking', 'Finance', 'Management Consulting', 'Entrepreneurship'],
+    applyUrl: 'http://www.gcbs.edu.bt',
+    degreePrograms: ['Bachelor of Business Administration', 'Bachelor of Arts in Economics'],
+    popularity: 82
   },
   {
-    id: '8',
+    id: 'pce',
     name: 'Paro College of Education',
     location: 'Paro',
-    type: 'College',
-    image: '/lovable-uploads/bb671b00-066e-40d9-b057-2f1693a11928.png',
-    description: 'Premier teacher training college focusing on secondary education and educational leadership.',
-    rating: 4.3,
-    established: 1974,
-    courses: ['Secondary Education', 'Mathematics Education', 'Science Education', 'Educational Leadership', 'Physical Education & Sports Coaching'],
-    fees: {
-      min: 55000,
-      max: 90000,
-      currency: 'BTN'
-    },
-    tags: ['Education', 'Secondary Teaching', 'Leadership', 'Sports'],
+    type: 'Public College',
+    image: '/lovable-uploads/6999935f-9344-493d-a951-449a53a9979a.png',
+    description: 'Dedicated to excellence in teacher education, offering undergraduate and postgraduate programs with a focus on innovative teaching methodologies and holistic development.',
+    rating: 4.0,
+    established: 1975,
+    courses: ['Primary Education', 'Secondary Education', 'Early Childhood Care', 'Educational Leadership'],
+    fees: { min: 35000, max: 60000, currency: 'BTN' },
+    tags: ['Public', 'Education', 'Teacher Training'],
     scholarships: [
-      { name: 'BOC – RUB Sports Scholarship', amount: 'Full tuition + boarding', criteria: 'Current national athletes for Diploma in Physical Education & Sports Coaching' },
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' }
+      { name: 'Teacher Training Scholarship', amount: 'Full tuition', criteria: 'Commitment to teaching in Bhutan' },
+      { name: 'Education Leadership Award', amount: '50% tuition fee', criteria: 'Leadership potential in education' }
     ],
-    facilities: ['Science Labs', 'Mathematics Lab', 'Language Lab', 'Teaching Practice Center', 'Sports Facilities'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '55 acres',
-    studentCount: 1764,
-    facultyCount: 85,
+    facilities: ['Education Labs', 'Research Library', 'Model Classrooms', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '30 acres',
+    studentCount: 700,
+    facultyCount: 40,
     programs: {
-      undergraduate: ['Bachelor of Education Secondary', 'Bachelor of Education Mathematics', 'Bachelor of Education Science'],
-      postgraduate: ['Master of Education', 'Educational Leadership Program'],
+      undergraduate: ['BEd Primary', 'BEd Secondary'],
+      postgraduate: ['MEd'],
       doctorate: []
     },
-    admissionDeadline: 'March 25, 2024',
-    eligibility: [
-      'Class XII with relevant subject background',
-      'Teaching aptitude assessment',
-      'Subject knowledge test',
-      'Interview and group discussion'
-    ],
+    admissionDeadline: 'February 20, 2024',
+    eligibility: ['Class 12 with good grades', 'Interest in teaching', 'Interview'],
     contact: {
-      phone: '+975-8-271234',
-      email: 'pce@rub.edu.bt',
-      website: 'www.pce.edu.bt'
+      phone: '+975-8-271475',
+      email: 'info@pce.edu.bt',
+      website: 'http://www.pce.edu.bt'
     },
-    careerOpportunities: [
-      'Secondary School Teaching',
-      'Educational Management',
-      'Curriculum Development',
-      'Teacher Training',
-      'Educational Research'
-    ],
-    applyUrl: 'http://www.pce.edu.bt'
+    careerOpportunities: ['Teaching', 'Educational Administration', 'Curriculum Development'],
+    applyUrl: 'http://www.pce.edu.bt',
+    degreePrograms: ['Bachelor of Education in Primary Education', 'Bachelor of Education in Secondary Education'],
+    popularity: 78
   },
   {
-    id: '9',
-    name: 'College of Language and Culture Studies',
-    location: 'Taktse, Trongsa',
-    type: 'College',
-    image: '/lovable-uploads/d60ffa49-67ca-4ccf-bc27-4d3e7c9f8e23.png',
-    description: 'Specialized institution preserving and promoting Bhutanese language, culture, and traditional arts.',
+    id: 'sce',
+    name: 'Samtse College of Education',
+    location: 'Samtse',
+    type: 'Public College',
+    image: '/lovable-uploads/09990995-956d-4041-9661-8a9309480f21.png',
+    description: 'Focuses on preparing educators with a strong foundation in pedagogy and research, offering specialized programs in inclusive education and counseling.',
+    rating: 3.9,
+    established: 1968,
+    courses: ['Inclusive Education', 'Counseling', 'Primary Teaching', 'Secondary Teaching'],
+    fees: { min: 30000, max: 55000, currency: 'BTN' },
+    tags: ['Public', 'Education', 'Specialized Programs'],
+    scholarships: [
+      { name: 'Inclusive Education Grant', amount: 'Full tuition', criteria: 'Commitment to inclusive practices' },
+      { name: 'Rural Education Support', amount: '60% tuition fee', criteria: 'Serving in rural schools' }
+    ],
+    facilities: ['Special Education Labs', 'Counseling Center', 'Research Facilities', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '28 acres',
+    studentCount: 650,
+    facultyCount: 38,
+    programs: {
+      undergraduate: ['BEd Inclusive Education', 'BEd Counseling'],
+      postgraduate: ['MEd'],
+      doctorate: []
+    },
+    admissionDeadline: 'February 25, 2024',
+    eligibility: ['Class 12 with relevant subjects', 'Interest in special education', 'Interview'],
+    contact: {
+      phone: '+975-17603044',
+      email: 'principal@sce.edu.bt',
+      website: 'http://www.sce.edu.bt'
+    },
+    careerOpportunities: ['Special Education Teacher', 'School Counselor', 'Educational Researcher'],
+    applyUrl: 'http://www.sce.edu.bt',
+    degreePrograms: ['Bachelor of Education in Inclusive Education', 'Bachelor of Education in Counseling'],
+    popularity: 75
+  },
+  {
+    id: 'cnr',
+    name: 'College of Natural Resources',
+    location: 'Lobeysa, Punakha',
+    type: 'Public College',
+    image: '/lovable-uploads/b4551a95-04a9-445e-b959-395934788f1d.png',
+    description: 'Focuses on sustainable management of natural resources, offering programs in agriculture, forestry, and environmental science with hands-on field experience.',
     rating: 4.1,
-    established: 2003,
-    courses: ['Dzongkha Studies', 'Buddhist Studies', 'Traditional Arts', 'Linguistics'],
-    fees: {
-      min: 60000,
-      max: 100000,
-      currency: 'BTN'
-    },
-    tags: ['Language', 'Culture', 'Traditional Arts'],
+    established: 1992,
+    courses: ['Agriculture', 'Forestry', 'Environmental Science', 'Animal Science'],
+    fees: { min: 40000, max: 70000, currency: 'BTN' },
+    tags: ['Public', 'Agriculture', 'Environment'],
     scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
+      { name: 'Sustainable Agriculture Grant', amount: 'Full tuition', criteria: 'Innovative farming practices' },
+      { name: 'Forest Conservation Award', amount: '50% tuition fee', criteria: 'Commitment to forest preservation' }
     ],
-    facilities: ['Cultural Museum', 'Traditional Arts Workshop', 'Language Lab', 'Library'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '40 acres',
-    studentCount: 800,
-    facultyCount: 45,
+    facilities: ['Agriculture Labs', 'Forestry Research Center', 'Environmental Monitoring Stations', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '35 acres',
+    studentCount: 600,
+    facultyCount: 35,
     programs: {
-      undergraduate: ['Bachelor of Arts in Dzongkha', 'Bachelor of Buddhist Studies', 'Bachelor of Traditional Arts'],
-      postgraduate: ['Master of Arts in Dzongkha', 'Master of Buddhist Philosophy'],
+      undergraduate: ['BSc Agriculture', 'BSc Forestry', 'BSc Environmental Science'],
+      postgraduate: ['MSc Sustainable Development'],
       doctorate: []
     },
-    admissionDeadline: 'April 1, 2024',
-    eligibility: [
-      'Class XII completion',
-      'Proficiency in Dzongkha language',
-      'Interest in Bhutanese culture',
-      'Interview and cultural assessment'
-    ],
+    admissionDeadline: 'March 5, 2024',
+    eligibility: ['Class 12 with Science', 'Interest in environment', 'Field work aptitude'],
     contact: {
-      phone: '+975-6-234567',
-      email: 'clcs@rub.edu.bt',
-      website: 'www.clcs.edu.bt'
+      phone: '+975-2-376252',
+      email: 'info@cnr.edu.bt',
+      website: 'http://www.cnr.edu.bt'
     },
-    careerOpportunities: [
-      'Cultural Preservation',
-      'Translation Services',
-      'Tourism and Cultural Guidance',
-      'Media and Broadcasting',
-      'Government Cultural Affairs'
-    ],
-    applyUrl: 'http://www.clcs.edu.bt'
+    careerOpportunities: ['Agricultural Management', 'Forestry Officer', 'Environmental Consultant'],
+    applyUrl: 'http://www.cnr.edu.bt',
+    degreePrograms: ['Bachelor of Science in Agriculture', 'Bachelor of Science in Forestry'],
+    popularity: 80
   },
   {
-    id: '10',
-    name: 'Gaeddu College of Business Studies',
-    location: 'Gedu, Chukha',
-    type: 'College',
-    image: '/lovable-uploads/1a0decb5-d9c1-49cd-ba71-692f02a30ef3.png',
-    description: 'Leading business education institution offering comprehensive programs in commerce and management.',
+    id: 'cst',
+    name: 'College of Science and Technology',
+    location: 'Rinchending, Phuentsholing',
+    type: 'Public College',
+    image: '/lovable-uploads/95921935-481d-4e17-8621-c042c679a54c.png',
+    description: 'Offers a range of engineering and technology programs, focusing on innovation and practical skills to meet the demands of the modern industry.',
     rating: 4.4,
     established: 2001,
-    courses: ['Business Administration', 'Accounting', 'Economics', 'Marketing'],
-    fees: {
-      min: 80000,
-      max: 140000,
-      currency: 'BTN'
-    },
-    tags: ['Business', 'Commerce', 'Management'],
+    courses: ['Civil Engineering', 'Electrical Engineering', 'Mechanical Engineering', 'Architecture'],
+    fees: { min: 55000, max: 90000, currency: 'BTN' },
+    tags: ['Public', 'Engineering', 'Technology'],
     scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
+      { name: 'Engineering Excellence Scholarship', amount: 'Full tuition', criteria: 'Top engineering students' },
+      { name: 'Innovation Grant', amount: '70% tuition fee', criteria: 'Innovative project proposals' }
     ],
-    facilities: ['Business Lab', 'Computer Center', 'Conference Hall', 'Career Center'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '65 acres',
-    studentCount: 2200,
-    facultyCount: 110,
+    facilities: ['Engineering Labs', 'Design Studios', 'Technology Workshops', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '40 acres',
+    studentCount: 850,
+    facultyCount: 48,
     programs: {
-      undergraduate: ['Bachelor of Commerce', 'Bachelor of Business Administration', 'Bachelor of Economics'],
-      postgraduate: ['Master of Business Administration', 'Master of Commerce'],
-      doctorate: []
-    },
-    admissionDeadline: 'March 28, 2024',
-    eligibility: [
-      'Class XII completion (Commerce/Arts/Science)',
-      'Mathematics requirement for some programs',
-      'Entrance test and interview',
-      'English proficiency assessment'
-    ],
-    contact: {
-      phone: '+975-5-367890',
-      email: 'gcbs@rub.edu.bt',
-      website: 'www.gcbs.edu.bt'
-    },
-    careerOpportunities: [
-      'Corporate Management',
-      'Banking and Finance',
-      'Accounting and Auditing',
-      'Marketing and Sales',
-      'Entrepreneurship'
-    ],
-    applyUrl: 'http://www.gcbs.edu.bt'
-  },
-  {
-    id: '11',
-    name: 'Institute of Traditional Medicine',
-    location: 'Thimphu',
-    type: 'Institute',
-    image: '/lovable-uploads/ca332d23-53f8-4e12-a921-723fdf365d75.png',
-    description: 'Specialized institute for traditional Bhutanese medicine (Sowa Rigpa) and alternative healing practices.',
-    rating: 4.0,
-    established: 1988,
-    courses: ['Traditional Medicine', 'Herbal Medicine', 'Acupuncture', 'Meditation Therapy'],
-    fees: {
-      min: 60000,
-      max: 100000,
-      currency: 'BTN'
-    },
-    tags: ['Traditional Medicine', 'Healthcare', 'Alternative Therapy'],
-    scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
-    ],
-    facilities: ['Herbal Garden', 'Traditional Medicine Lab', 'Clinic', 'Research Center'],
-    accreditation: 'Royal Government of Bhutan',
-    campusSize: '25 acres',
-    studentCount: 400,
-    facultyCount: 30,
-    programs: {
-      undergraduate: ['Bachelor of Traditional Medicine', 'Diploma in Sowa Rigpa'],
-      postgraduate: ['Master of Traditional Medicine'],
+      undergraduate: ['BEng Civil', 'BEng Electrical', 'BEng Mechanical', 'BArch'],
+      postgraduate: ['MEng'],
       doctorate: []
     },
     admissionDeadline: 'March 10, 2024',
-    eligibility: [
-      'Class XII with Biology/Science background preferred',
-      'Interest in traditional healing practices',
-      'Physical and mental fitness assessment',
-      'Interview with traditional medicine practitioners'
-    ],
+    eligibility: ['Class 12 with Science and Math', 'Engineering aptitude', 'Entrance exam'],
     contact: {
-      phone: '+975-2-345678',
-      email: 'itm@health.gov.bt',
-      website: 'www.itm.gov.bt'
+      phone: '+975-5-252177',
+      email: 'info@cst.edu.bt',
+      website: 'http://www.cst.edu.bt'
     },
-    careerOpportunities: [
-      'Traditional Medicine Practice',
-      'Government Health Services',
-      'Research in Alternative Medicine',
-      'Community Healthcare',
-      'Wellness Centers'
-    ],
-    applyUrl: 'https://www.moh.gov.bt/'
+    careerOpportunities: ['Civil Engineer', 'Electrical Engineer', 'Mechanical Engineer', 'Architect'],
+    applyUrl: 'http://www.cst.edu.bt',
+    degreePrograms: ['Bachelor of Engineering in Civil Engineering', 'Bachelor of Architecture'],
+    popularity: 89
   },
   {
-    id: '12',
-    name: 'Apollo Bhutan Institute of Nursing',
-    location: 'Thimphu',
-    type: 'Institute',
-    image: '/lovable-uploads/3f0e83af-7bc3-4c9e-afd4-6ca1aea9139b.png',
-    description: 'Bhutan\'s first FDI-backed nursing institute, launched in July 2019, offering specialized nursing education with modern facilities and clinical training.',
+    id: 'jnec',
+    name: 'Jigme Namgyel Engineering College',
+    location: 'Dewathang, Samdrup Jongkhar',
+    type: 'Public College',
+    image: '/lovable-uploads/6998959f-597a-4ffe-8efd-5797a92c4e3a.png',
+    description: 'Provides specialized engineering education with a focus on practical skills and innovation, preparing graduates for leadership roles in technology and infrastructure development.',
     rating: 4.2,
-    established: 2019,
-    courses: ['General Nursing', 'Midwifery', 'Community Health Nursing', 'Critical Care Nursing'],
-    fees: {
-      min: 200000,
-      max: 300000,
-      currency: 'BTN'
-    },
-    tags: ['Nursing', 'Healthcare', 'Private', 'Modern'],
+    established: 1974,
+    courses: ['Electrical Engineering', 'Mechanical Engineering', 'Civil Engineering', 'Surveying'],
+    fees: { min: 50000, max: 85000, currency: 'BTN' },
+    tags: ['Public', 'Engineering', 'Technical'],
     scholarships: [
-      { name: 'Loden + Apollo Institute of Nursing Scholarship', amount: 'Full tuition fees by Loden, clinical & lab fees waived by Apollo', criteria: 'Students applying for Diploma in General Nursing & Midwifery' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' }
+      { name: 'Technical Skills Scholarship', amount: 'Full tuition', criteria: 'Excellence in technical subjects' },
+      { name: 'Infrastructure Development Grant', amount: '65% tuition fee', criteria: 'Projects related to infrastructure' }
     ],
-    facilities: ['Modern Nursing Labs', 'Simulation Centers', 'Clinical Training Facilities', 'Digital Library', 'Student Hostel', 'Medical Equipment Labs'],
-    accreditation: 'Approved by Khesar Gyalpo University of Medical Sciences of Bhutan (KGUMSB) and Bhutan Medical & Health Council',
-    campusSize: '15 acres',
-    studentCount: 300,
+    facilities: ['Engineering Workshops', 'Surveying Labs', 'CAD Studios', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '45 acres',
+    studentCount: 750,
+    facultyCount: 42,
+    programs: {
+      undergraduate: ['BEng Electrical', 'BEng Mechanical', 'BEng Civil'],
+      postgraduate: ['MEng'],
+      doctorate: []
+    },
+    admissionDeadline: 'March 20, 2024',
+    eligibility: ['Class 12 with Science and Math', 'Technical aptitude', 'Entrance exam'],
+    contact: {
+      phone: '+975-7-260301',
+      email: 'info@jnec.edu.bt',
+      website: 'https://www.jnec.edu.bt/'
+    },
+    careerOpportunities: ['Electrical Engineer', 'Mechanical Engineer', 'Civil Engineer', 'Surveyor'],
+    applyUrl: 'https://www.jnec.edu.bt/',
+    degreePrograms: ['Bachelor of Engineering in Electrical Engineering', 'Bachelor of Engineering in Civil Engineering'],
+    popularity: 85
+  },
+  {
+    id: 'clcs',
+    name: 'College of Language and Culture Studies',
+    location: 'Taktse, Trongsa',
+    type: 'Public College',
+    image: '/lovable-uploads/4953c14b-6049-494d-b991-4944f9985699.png',
+    description: 'Dedicated to preserving and promoting Bhutanese language, culture, and traditions through comprehensive academic programs and research.',
+    rating: 4.3,
+    established: 1961,
+    courses: ['Dzongkha', 'Bhutanese Culture', 'History', 'Tourism'],
+    fees: { min: 38000, max: 65000, currency: 'BTN' },
+    tags: ['Public', 'Culture', 'Language'],
+    scholarships: [
+      { name: 'Cultural Preservation Scholarship', amount: 'Full tuition', criteria: 'Commitment to cultural heritage' },
+      { name: 'Language Proficiency Award', amount: '60% tuition fee', criteria: 'Excellence in Dzongkha' }
+    ],
+    facilities: ['Cultural Research Center', 'Language Labs', 'Museum', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '50 acres',
+    studentCount: 550,
+    facultyCount: 32,
+    programs: {
+      undergraduate: ['BA Dzongkha', 'BA Culture Studies'],
+      postgraduate: ['MA Culture Studies'],
+      doctorate: []
+    },
+    admissionDeadline: 'February 15, 2024',
+    eligibility: ['Class 12 with good grades', 'Interest in culture', 'Language proficiency'],
+    contact: {
+      phone: '+975-3-471240',
+      email: 'info@clcs.edu.bt',
+      website: 'http://www.clcs.edu.bt'
+    },
+    careerOpportunities: ['Cultural Officer', 'Historian', 'Tourism Expert', 'Linguist'],
+    applyUrl: 'http://www.clcs.edu.bt',
+    degreePrograms: ['Bachelor of Arts in Dzongkha', 'Bachelor of Arts in Culture Studies'],
+    popularity: 79
+  },
+  {
+    id: 'sherubtse',
+    name: 'Sherubtse College',
+    location: 'Kanglung, Trashigang',
+    type: 'Public College',
+    image: '/lovable-uploads/06547993-484c-494b-8199-c1a945e03961.png',
+    description: 'The oldest college in Bhutan, offering a wide range of programs in science, humanities, and social sciences, fostering critical thinking and academic excellence.',
+    rating: 4.6,
+    established: 1966,
+    courses: ['Physics', 'Chemistry', 'Mathematics', 'Economics', 'Political Science'],
+    fees: { min: 42000, max: 75000, currency: 'BTN' },
+    tags: ['Public', 'Science', 'Humanities'],
+    scholarships: [
+      { name: 'Academic Merit Scholarship', amount: 'Full tuition', criteria: 'Top academic performers' },
+      { name: 'Science Research Grant', amount: '60% tuition fee', criteria: 'Innovative research proposals' }
+    ],
+    facilities: ['Science Labs', 'Research Library', 'Social Science Data Center', 'Hostels'],
+    accreditation: 'Royal University of Bhutan',
+    campusSize: '60 acres',
+    studentCount: 900,
+    facultyCount: 52,
+    programs: {
+      undergraduate: ['BSc Physics', 'BSc Chemistry', 'BA Economics', 'BA Political Science'],
+      postgraduate: ['MSc Environmental Science'],
+      doctorate: []
+    },
+    admissionDeadline: 'February 28, 2024',
+    eligibility: ['Class 12 with relevant subjects', 'Academic excellence', 'Entrance exam'],
+    contact: {
+      phone: '+975-4-535203',
+      email: 'info@sherubtse.edu.bt',
+      website: 'https://www.sherubtse.edu.bt/'
+    },
+    careerOpportunities: ['Scientist', 'Economist', 'Political Analyst', 'Researcher'],
+    applyUrl: 'https://www.sherubtse.edu.bt/',
+    degreePrograms: ['Bachelor of Science in Physics', 'Bachelor of Arts in Economics'],
+    popularity: 92
+  },
+  {
+    id: 'itm',
+    name: 'Institute of Traditional Medicine',
+    location: 'Thimphu',
+    type: 'Public College',
+    image: '/lovable-uploads/0c691c67-b90d-496c-9969-56075593069b.png',
+    description: 'Offers specialized programs in traditional Bhutanese medicine, focusing on herbal remedies, acupuncture, and holistic healthcare practices.',
+    rating: 4.0,
+    established: 1979,
+    courses: ['Traditional Medicine', 'Herbal Medicine', 'Acupuncture', 'Holistic Healthcare'],
+    fees: { min: 35000, max: 60000, currency: 'BTN' },
+    tags: ['Public', 'Medicine', 'Traditional'],
+    scholarships: [
+      { name: 'Traditional Medicine Scholarship', amount: 'Full tuition', criteria: 'Commitment to traditional practices' },
+      { name: 'Herbal Research Grant', amount: '55% tuition fee', criteria: 'Innovative research in herbal medicine' }
+    ],
+    facilities: ['Herbal Garden', 'Acupuncture Clinic', 'Traditional Medicine Labs', 'Hostels'],
+    accreditation: 'Ministry of Health, Bhutan',
+    campusSize: '20 acres',
+    studentCount: 400,
     facultyCount: 25,
     programs: {
-      undergraduate: [],
+      undergraduate: ['Diploma in Traditional Medicine'],
       postgraduate: [],
-      doctorate: [],
-      diploma: ['Diploma in General Nursing & Midwifery (3 years + 6-month internship)']
+      doctorate: []
     },
-    admissionDeadline: 'Check official website for current deadlines',
-    eligibility: [
-      'Class XII with Science background (Biology mandatory)',
-      'Minimum 60% aggregate marks',
-      'English proficiency test',
-      'Medical fitness certificate',
-      'Interview and aptitude test'
-    ],
+    admissionDeadline: 'January 30, 2024',
+    eligibility: ['Class 12 with Science/Arts', 'Interest in medicine', 'Interview'],
     contact: {
-      phone: 'Contact through ABIN office',
-      email: 'Check KGUMSB website',
-      website: 'apollobhutan.edu.bt'
+      phone: '+975-2-322657',
+      email: 'info@itm.gov.bt',
+      website: 'https://www.moh.gov.bt/'
     },
-    careerOpportunities: [
-      'Hospital Nursing',
-      'Community Health Services',
-      'Maternal and Child Health',
-      'Critical Care Nursing',
-      'Public Health Programs',
-      'Healthcare Administration'
-    ],
-    applyUrl: 'https://apollobhutan.edu.bt'
-  },
-  {
-    id: '13',
-    name: 'Khesar Gyalpo University of Medical Sciences of Bhutan',
-    location: 'Menkhang Lam, Thimphu',
-    type: 'University',
-    image: '/lovable-uploads/009581c4-58fc-4287-8723-a2b25fb18f03.png',
-    description: 'Bhutan\'s pioneering and only medical university, established to achieve self-reliance in health workforce by training doctors, nurses, and traditional medicine practitioners locally, integrating modern and traditional medicine with compassionate care inspired by Gross National Happiness.',
-    rating: 4.8,
-    established: 2013,
-    courses: ['MBBS', 'MD Residency Programs', 'BSc Nursing', 'BSc Traditional Medicine', 'Diploma in Nursing', 'Certificate Programs in Health Sciences'],
-    fees: {
-      min: 100000,
-      max: 500000,
-      currency: 'BTN'
-    },
-    tags: ['Medical University', 'Healthcare', 'Traditional Medicine', 'Modern Medicine'],
-    scholarships: [
-      { name: 'DAHE Scholarships', amount: 'Full tuition + stipends', criteria: 'Class 12 toppers based on merit + eligibility criteria' },
-      { name: 'Loden Post-School Youth Scholarship', amount: 'Up to BTN 300,000/year', criteria: 'Low-income backgrounds with admission to diploma or undergraduate program' },
-      { name: 'Ministry of Health Scholarships', amount: 'Full tuition + stipend', criteria: 'Medical students committed to serve in government health services' }
-    ],
-    facilities: ['Medical Teaching Hospital', 'Traditional Medicine Labs', 'Modern Medical Equipment', 'Research Centers', 'Digital Library', 'Clinical Training Facilities', 'Simulation Labs'],
-    accreditation: 'Royal Government of Bhutan, Bhutan Medical & Health Council',
-    campusSize: '50 acres',
-    studentCount: 2171,
-    facultyCount: 181,
-    programs: {
-      undergraduate: [
-        'MBBS (Bachelor of Medicine, Bachelor of Surgery) - 6 years',
-        'BSc in Nursing - 4 years',
-        'BSc in Traditional Medicine (Drungtsho) - 4 years',
-        'BSc in Public Health - 4 years'
-      ],
-      postgraduate: [
-        'MD in Surgery - 4 years',
-        'MD in Pediatrics - 4 years', 
-        'MD in Emergency Medicine - 4 years',
-        'MD in Internal Medicine - 4 years',
-        'Master in Public Health - 2 years',
-        'Master in Traditional Medicine - 2 years'
-      ],
-      doctorate: ['PhD in Medical Sciences', 'PhD in Traditional Medicine'],
-      diploma: [
-        'Diploma in General Nursing & Midwifery - 3 years',
-        'Diploma in Traditional Medicine - 3 years',
-        'Diploma in Medical Laboratory Technology - 3 years'
-      ]
-    },
-    admissionDeadline: 'Check university website for current deadlines',
-    eligibility: [
-      'Class XII with Science background (PCB for medical programs)',
-      'Minimum 85% aggregate for MBBS program',
-      'Medical fitness certificate required',
-      'English proficiency test',
-      'Entrance examination and interview',
-      'Commitment to serve in Bhutan\'s healthcare system'
-    ],
-    contact: {
-      phone: '+975-2-328990/997',
-      email: 'info@kgumsb.edu.bt',
-      website: 'www.kgumsb.edu.bt'
-    },
-    careerOpportunities: [
-      'Medical Practice in Hospitals',
-      'Traditional Medicine Practice',
-      'Public Health Services',
-      'Medical Research',
-      'Healthcare Administration',
-      'Medical Education and Training',
-      'International Healthcare Organizations',
-      'Community Health Programs'
-    ],
-    applyUrl: 'https://www.kgumsb.edu.bt/'
+    careerOpportunities: ['Traditional Medicine Practitioner', 'Herbal Medicine Specialist', 'Acupuncturist'],
+    applyUrl: 'https://www.moh.gov.bt/',
+    degreePrograms: ['Diploma in Traditional Medicine'],
+    popularity: 70
   }
 ];
