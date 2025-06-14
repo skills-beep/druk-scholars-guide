@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -159,7 +158,7 @@ export const colleges: College[] = [
     name: 'Samtse College of Education',
     location: 'Samtse',
     type: 'Public College',
-    image: '/lovable-uploads/ab72a389-144f-46ff-9536-32012a5250a7.png',
+    image: '/lovable-uploads/a215569b-492e-4d60-8b40-026e05401bae.png',
     description: 'Focuses on preparing educators with a strong foundation in pedagogy and research, offering specialized programs in inclusive education and counseling.',
     rating: 3.9,
     established: 1968,
