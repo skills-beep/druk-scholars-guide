@@ -1,3 +1,4 @@
+
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -421,79 +422,81 @@ export const colleges: College[] = [
   },
   {
     id: 'apollo',
-    name: 'Apollo College',
-    location: 'Thimphu',
+    name: 'Apollo Bhutan Institute of Nursing',
+    location: 'White House Apartment Complex #1, Khachen Lam, Thimphu',
     type: 'Private College',
     image: '/lovable-uploads/7c59f299-7d28-46ae-a0f5-701c3ba0895e.png',
-    description: 'A leading private institution offering diverse academic programs with modern facilities and industry-aligned curriculum, focusing on holistic education and student development.',
+    description: 'Private nursing college focused on quality nursing education, combining modern technology and continuous improvement. Affiliated with KGUMSB for undergraduate nursing programs.',
     rating: 4.1,
     established: 2015,
-    courses: ['Business Management', 'Information Technology', 'Hospitality Management', 'Media Studies', 'English Literature'],
-    fees: { min: 100000, max: 150000, currency: 'BTN' },
-    tags: ['Private', 'Modern', 'Industry-Focused'],
+    courses: ['Nursing', 'Midwifery', 'General Nursing & Midwifery'],
+    fees: { min: 80000, max: 120000, currency: 'BTN' },
+    tags: ['Private', 'Nursing', 'Healthcare'],
     scholarships: [
-      { name: 'Apollo Merit Scholarship', amount: '40% tuition fee', criteria: 'Academic excellence and leadership qualities' },
-      { name: 'Industry Partnership Grant', amount: '30% tuition fee', criteria: 'Students pursuing industry-relevant programs' }
+      { name: 'Private Merit-based Aid', amount: 'Variable', criteria: 'Academic merit and performance' },
+      { name: 'Need-based Aid', amount: 'Variable', criteria: 'Financial need assessment' }
     ],
-    facilities: ['Modern Classrooms', 'Computer Labs', 'Library', 'Cafeteria', 'Sports Facilities'],
-    accreditation: 'Royal University of Bhutan',
-    campusSize: '12 acres',
-    studentCount: 800,
-    facultyCount: 45,
+    facilities: ['Modern Nursing Labs', 'Simulation Centers', 'Library', 'Clinical Training Areas'],
+    accreditation: 'Affiliated with KGUMSB',
+    campusSize: '5 acres',
+    studentCount: 300,
+    facultyCount: 25,
     programs: {
-      undergraduate: ['BBA', 'BIT', 'BA Hospitality Management', 'BA Media Studies'],
-      postgraduate: ['MBA'],
-      doctorate: []
+      undergraduate: ['BSc Nursing', 'BSc Midwifery'],
+      postgraduate: [],
+      doctorate: [],
+      diploma: ['General Nursing & Midwifery']
     },
-    admissionDeadline: 'April 15, 2024',
-    eligibility: ['Class 12 completion', 'Minimum 55% marks', 'English proficiency test'],
+    admissionDeadline: 'March 31, 2024',
+    eligibility: ['Class 12 from any stream (Science, Commerce, Arts)', 'Merit/ability test', 'KGUMSB criteria'],
     contact: {
-      phone: '+975-2-325678',
-      email: 'admissions@apollo.edu.bt',
-      website: 'https://www.apollo.edu.bt'
+      phone: '+975-2-33-55-11',
+      email: 'info@apollobhutan.edu.bt',
+      website: 'https://www.apollobhutan.edu.bt'
     },
-    careerOpportunities: ['Business Management', 'IT Services', 'Hotel Management', 'Media & Communications'],
-    applyUrl: 'https://www.apollo.edu.bt',
-    degreePrograms: ['Bachelor of Business Administration', 'Bachelor of Information Technology', 'Bachelor of Arts in Hospitality Management'],
-    popularity: 83
+    careerOpportunities: ['Registered Nurse', 'Midwife', 'Healthcare Administrator', 'Clinical Nurse Specialist'],
+    applyUrl: 'https://www.apollobhutan.edu.bt',
+    degreePrograms: ['Bachelor of Science in Nursing', 'Bachelor of Science in Midwifery'],
+    popularity: 78
   },
   {
     id: 'kgumsb',
     name: 'Khesar Gyalpo University of Medical Sciences of Bhutan',
     location: 'Thimphu',
-    type: 'Public University',
+    type: 'Public Medical University',
     image: '/lovable-uploads/751e9ff9-99d6-455b-879d-fbcb01a4a767.png',
-    description: 'The first and premier medical university in Bhutan, dedicated to advancing medical education, research, and healthcare services in the kingdom with state-of-the-art facilities and internationally recognized programs.',
-    rating: 4.7,
-    established: 2014,
-    courses: ['Medicine', 'Nursing', 'Pharmacy', 'Public Health', 'Medical Laboratory Technology'],
-    fees: { min: 80000, max: 200000, currency: 'BTN' },
-    tags: ['Public', 'Medical', 'University', 'Research'],
+    description: 'Founded in 2013 and renamed in 2015 to honor the King of Bhutan. The first dedicated medical institution in Bhutan, comprising three faculties: Health Sciences, Traditional Medicine, and Postgraduate Medicine.',
+    rating: 4.8,
+    established: 2013,
+    courses: ['Medicine (MBBS)', 'Public Health', 'Nursing', 'Midwifery', 'Clinical Psychology', 'Traditional Eastern Medicine', 'Dental Hygiene & Technology', 'Medical Technology', 'Pharmacy', 'Physiotherapy'],
+    fees: { min: 15000, max: 50000, currency: 'BTN' },
+    tags: ['Public', 'Medical University', 'Research', 'Government Subsidized'],
     scholarships: [
-      { name: 'Royal Medical Scholarship', amount: 'Full tuition and stipend', criteria: 'Top medical students with commitment to serve in Bhutan' },
-      { name: 'Healthcare Excellence Award', amount: '75% tuition fee', criteria: 'Outstanding performance in medical sciences' },
-      { name: 'Rural Healthcare Scholarship', amount: '50% tuition fee', criteria: 'Commitment to serve in rural healthcare' }
+      { name: 'Government Subsidized Tuition', amount: 'Significant subsidy', criteria: 'All eligible students receive subsidized education' },
+      { name: 'Traditional Medicine Awards', amount: 'Variable', criteria: 'Excellence in traditional medicine programs' },
+      { name: 'In-country Scholarships', amount: 'Full or partial', criteria: 'Select programs and academic merit' }
     ],
-    facilities: ['Medical Simulation Labs', 'Hospital Training Centers', 'Research Laboratories', 'Medical Library', 'Student Hostels', 'Clinical Skills Labs'],
-    accreditation: 'Medical Council of Bhutan, World Health Organization',
-    campusSize: '75 acres',
-    studentCount: 600,
-    facultyCount: 80,
+    facilities: ['Medical Simulation Labs', 'Hospital Training Centers', 'Research Laboratories', 'Medical Library', 'Student Hostels', 'Clinical Skills Labs', 'Royal Institute of Health Sciences', 'Institute of Traditional Medicine Services'],
+    accreditation: 'Medical Council of Bhutan, Royal Government of Bhutan',
+    campusSize: '100 acres',
+    studentCount: 800,
+    facultyCount: 120,
     programs: {
-      undergraduate: ['MBBS', 'BSc Nursing', 'Bachelor of Pharmacy', 'BSc Medical Laboratory Technology'],
-      postgraduate: ['MD', 'MS', 'MPH', 'MSc Nursing'],
-      doctorate: ['PhD Medical Sciences']
+      undergraduate: ['MBBS (5-year + 1-year internship)', 'BSc Public Health', 'BSc Nursing', 'BSc Midwifery', 'BA Clinical Psychology', 'Bachelor Traditional Eastern Medicine'],
+      postgraduate: ['MD Specialties', 'MPH', 'MSc Nursing'],
+      doctorate: ['MD Anaesthesiology', 'MD Surgery', 'MD Orthopaedics', 'MD Ophthalmology', 'MD Paediatrics', 'MD Obstetrics & Gynaecology', 'MD Medicine'],
+      diploma: ['Diploma Nursing', 'Diploma Community Health', 'Diploma Dental Hygiene & Tech', 'Diploma Medical Tech', 'Diploma Pharmacy', 'Diploma Physiotherapy', 'Diploma Traditional Medicine']
     },
-    admissionDeadline: 'May 31, 2024',
-    eligibility: ['Class 12 with Science (Physics, Chemistry, Biology)', 'Minimum 75% marks', 'Medical entrance examination', 'Medical fitness certificate'],
+    admissionDeadline: 'March 31, 2025',
+    eligibility: ['Class 12 completion with Science subjects', 'Selection based on Board results', 'MBBS: ~25 students intake', 'Merit-based selection'],
     contact: {
       phone: '+975-2-351234',
       email: 'admissions@kgumsb.edu.bt',
-      website: 'https://www.kgumsb.edu.bt'
+      website: 'https://www.ftm.edu.bt'
     },
-    careerOpportunities: ['Medical Doctor', 'Specialist Physician', 'Surgeon', 'Public Health Officer', 'Medical Researcher', 'Hospital Administrator'],
-    applyUrl: 'https://www.kgumsb.edu.bt',
-    degreePrograms: ['Bachelor of Medicine and Bachelor of Surgery (MBBS)', 'Bachelor of Science in Nursing', 'Bachelor of Pharmacy'],
+    careerOpportunities: ['Medical Doctor', 'Specialist Physician', 'Surgeon', 'Public Health Officer', 'Medical Researcher', 'Hospital Administrator', 'Traditional Medicine Practitioner', 'Clinical Psychologist'],
+    applyUrl: 'https://www.ftm.edu.bt',
+    degreePrograms: ['Bachelor of Medicine and Bachelor of Surgery (MBBS)', 'Bachelor of Science in Public Health', 'Bachelor of Science in Nursing', 'Bachelor of Arts in Clinical Psychology'],
     popularity: 98
   }
 ];
