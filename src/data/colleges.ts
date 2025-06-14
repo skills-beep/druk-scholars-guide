@@ -1,3 +1,4 @@
+
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -545,5 +546,50 @@ export const colleges: College[] = [
       website: "https://apollobhutan.edu.bt"
     },
     applyUrl: "https://apollobhutan.edu.bt/admissions"
+  }
+];
+
+export const governmentScholarships = [
+  {
+    name: "Royal Government of Bhutan Scholarship",
+    provider: "Department of Adult and Higher Education",
+    coverage: "Full tuition fees, accommodation, meals, and monthly stipend for undergraduate studies",
+    criteria: "Bhutanese nationals with excellent academic performance in Class XII",
+    duration: "3-4 years depending on program",
+    deadline: "Within 2 weeks of Class XII results announcement",
+    applicationProcess: "Apply through respective colleges or DAHE website",
+    contact: {
+      phone: "+975-2-323725",
+      email: "info@education.gov.bt",
+      website: "http://www.education.gov.bt"
+    }
+  },
+  {
+    name: "Loden Foundation Scholarship",
+    provider: "Loden Foundation",
+    coverage: "Partial to full tuition fee support based on financial need",
+    criteria: "Academically deserving students from economically disadvantaged families",
+    duration: "Throughout the program duration",
+    deadline: "Applications accepted year-round",
+    applicationProcess: "Apply online through Loden Foundation website with required documents",
+    contact: {
+      phone: "+975-2-336699",
+      email: "scholarships@loden.org",
+      website: "https://www.loden.org"
+    }
+  },
+  {
+    name: "Loden Foundation Merit Award",
+    provider: "Loden Foundation",
+    coverage: "Recognition awards and educational support for outstanding academic achievement",
+    criteria: "Students with exceptional academic performance and leadership potential",
+    duration: "One-time award with renewal possibilities",
+    deadline: "End of each academic year",
+    applicationProcess: "Nomination by educational institutions or self-application with academic transcripts",
+    contact: {
+      phone: "+975-2-336699",
+      email: "awards@loden.org", 
+      website: "https://www.loden.org"
+    }
   }
 ];
