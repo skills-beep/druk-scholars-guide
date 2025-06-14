@@ -5,6 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Phone, Mail, MapPin, Globe, Search, Building, GraduationCap, Award } from 'lucide-react';
+import { colleges } from '@/data/colleges';
 
 interface Contact {
   id: string;
@@ -23,45 +24,23 @@ const ContactDirectory = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedType, setSelectedType] = useState<string>('all');
 
-  const contacts: Contact[] = [
-    // Colleges
-    {
-      id: '1',
-      name: 'Admissions Office',
-      type: 'college',
-      organization: 'Royal University of Bhutan',
-      phone: '+975-2-351003',
-      email: 'admissions@rub.edu.bt',
-      website: 'https://www.rub.edu.bt',
-      address: 'Rinchending, Thimphu',
-      location: 'Thimphu',
-      description: 'Main admissions office for RUB constituent colleges'
-    },
-    {
-      id: '2',
-      name: 'Student Affairs',
-      type: 'college',
-      organization: 'Sherubtse College',
-      phone: '+975-4-351003',
-      email: 'studentaffairs@sherubtse.edu.bt',
-      website: 'https://www.sherubtse.edu.bt',
-      address: 'Kanglung, Trashigang',
-      location: 'Trashigang',
-      description: 'Student services and academic guidance'
-    },
-    {
-      id: '3',
-      name: 'Registrar Office',
-      type: 'college',
-      organization: 'College of Science and Technology',
-      phone: '+975-5-351003',
-      email: 'registrar@cst.edu.bt',
-      website: 'https://www.cst.edu.bt',
-      address: 'Rinchending, Thimphu',
-      location: 'Thimphu',
-      description: 'Academic records and course registration'
-    },
+  // Convert colleges data to contacts
+  const collegeContacts: Contact[] = colleges.map(college => ({
+    id: `college-${college.id}`,
+    name: college.name,
+    type: 'college' as const,
+    organization: college.name,
+    phone: college.contact.phone,
+    email: college.contact.email,
+    website: college.contact.website,
+    address: college.location,
+    location: college.location.split(',').pop()?.trim() || college.location,
+    description: college.description.length > 150 
+      ? college.description.substring(0, 150) + '...' 
+      : college.description
+  }));
 
+  const otherContacts: Contact[] = [
     // Scholarship Providers
     {
       id: '4',
@@ -147,7 +126,10 @@ const ContactDirectory = () => {
     }
   ];
 
-  const filteredContacts = contacts.filter(contact => {
+  // Combine all contacts
+  const allContacts: Contact[] = [...collegeContacts, ...otherContacts];
+
+  const filteredContacts = allContacts.filter(contact => {
     const matchesSearch = contact.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          contact.organization.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          contact.location.toLowerCase().includes(searchTerm.toLowerCase());
