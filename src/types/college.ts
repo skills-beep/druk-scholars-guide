@@ -40,6 +40,8 @@ export interface College {
   };
   careerOpportunities: string[];
   applyUrl: string;
+  degreePrograms?: string[];
+  popularity?: number;
 }
 
 export interface CollegeFilters {
@@ -49,4 +51,7 @@ export interface CollegeFilters {
   feeRange: [number, number];
   rating: number;
   collegeType: string[];
+  accreditation: string[];
+  degreeProgram: string;
+  sortBy: 'popularity' | 'newest' | 'alphabetical' | 'rating';
 }

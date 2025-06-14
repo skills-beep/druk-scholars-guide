@@ -20,7 +20,10 @@ const Index = () => {
     courseType: [],
     feeRange: [0, 200000],
     rating: 0,
-    collegeType: []
+    collegeType: [],
+    accreditation: [],
+    degreeProgram: '',
+    sortBy: 'popularity'
   });
 
   useEffect(() => {

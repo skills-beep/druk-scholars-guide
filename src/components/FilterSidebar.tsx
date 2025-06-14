@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -7,7 +8,8 @@ import { Slider } from '@/components/ui/slider';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { X, Filter, ChevronDown, ChevronUp, MapPin, Building2, GraduationCap, Star, Banknote, Search } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { X, Filter, ChevronDown, ChevronUp, MapPin, Building2, GraduationCap, Star, Banknote, Search, Award, BookOpen, ArrowUpDown } from 'lucide-react';
 import { CollegeFilters } from '@/types/college';
 
 interface FilterSidebarProps {
@@ -23,12 +25,27 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
     collegeType: true,
     courseType: true,
     fees: true,
-    rating: true
+    rating: true,
+    accreditation: true,
+    degreeProgram: true,
+    sorting: true
   });
 
   const locations = ['Thimphu', 'Paro', 'Phuntsholing', 'Dewathang', 'Lobesa'];
   const courseTypes = ['Engineering', 'Business', 'Medicine', 'Arts', 'Science', 'Education', 'Traditional Medicine'];
   const collegeTypes = ['University', 'College', 'Institute'];
+  const accreditations = ['Royal University of Bhutan', 'International Accreditation', 'National Board', 'Professional Bodies'];
+  const degreePrograms = [
+    'Bachelor of Engineering',
+    'Bachelor of Business Administration',
+    'Bachelor of Medicine',
+    'Bachelor of Arts',
+    'Bachelor of Science',
+    'Master of Engineering',
+    'Master of Business Administration',
+    'Diploma in Education',
+    'Certificate Programs'
+  ];
 
   const toggleSection = (section: keyof typeof openSections) => {
     setOpenSections(prev => ({ ...prev, [section]: !prev[section] }));
@@ -55,6 +72,13 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
     onFiltersChange({ ...filters, collegeType: newCollegeTypes });
   };
 
+  const handleAccreditationChange = (accreditation: string, checked: boolean) => {
+    const newAccreditations = checked 
+      ? [...filters.accreditation, accreditation]
+      : filters.accreditation.filter(a => a !== accreditation);
+    onFiltersChange({ ...filters, accreditation: newAccreditations });
+  };
+
   const clearFilters = () => {
     onFiltersChange({
       search: '',
@@ -62,7 +86,10 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
       courseType: [],
       feeRange: [0, 400000],
       rating: 0,
-      collegeType: []
+      collegeType: [],
+      accreditation: [],
+      degreeProgram: '',
+      sortBy: 'popularity'
     });
   };
 
@@ -89,7 +116,7 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
             <div className="flex items-center justify-between">
               <CardTitle className="flex items-center gap-2 text-slate-800 dark:text-white">
                 <Filter className="h-5 w-5 text-blue-600" />
-                Filters
+                Advanced Filters
               </CardTitle>
               <div className="flex gap-2">
                 <Button 
@@ -127,6 +154,91 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
                 className="rounded-xl border-slate-200 dark:border-gray-600 bg-white/50 dark:bg-gray-700/50 backdrop-blur-sm focus:bg-white dark:focus:bg-gray-700 transition-all"
               />
             </div>
+
+            <Separator className="bg-slate-200 dark:bg-gray-600" />
+
+            {/* Sorting */}
+            <Collapsible open={openSections.sorting} onOpenChange={() => toggleSection('sorting')}>
+              <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-gray-700/50 transition-colors">
+                <Label className="text-sm font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 cursor-pointer">
+                  <ArrowUpDown className="h-4 w-4 text-purple-600" />
+                  Sort By
+                </Label>
+                {openSections.sorting ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-2">
+                <Select value={filters.sortBy} onValueChange={(value) => onFiltersChange({ ...filters, sortBy: value as any })}>
+                  <SelectTrigger className="rounded-xl">
+                    <SelectValue placeholder="Choose sorting option" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="popularity">Most Popular</SelectItem>
+                    <SelectItem value="newest">Newest First</SelectItem>
+                    <SelectItem value="alphabetical">A-Z</SelectItem>
+                    <SelectItem value="rating">Highest Rated</SelectItem>
+                  </SelectContent>
+                </Select>
+              </CollapsibleContent>
+            </Collapsible>
+
+            <Separator className="bg-slate-200 dark:bg-gray-600" />
+
+            {/* Degree Program Search */}
+            <Collapsible open={openSections.degreeProgram} onOpenChange={() => toggleSection('degreeProgram')}>
+              <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-gray-700/50 transition-colors">
+                <Label className="text-sm font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 cursor-pointer">
+                  <BookOpen className="h-4 w-4 text-indigo-600" />
+                  Degree Program
+                </Label>
+                {openSections.degreeProgram ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-2">
+                <Select value={filters.degreeProgram} onValueChange={(value) => onFiltersChange({ ...filters, degreeProgram: value })}>
+                  <SelectTrigger className="rounded-xl">
+                    <SelectValue placeholder="Select degree program" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="">All Programs</SelectItem>
+                    {degreePrograms.map((program) => (
+                      <SelectItem key={program} value={program}>{program}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </CollapsibleContent>
+            </Collapsible>
+
+            <Separator className="bg-slate-200 dark:bg-gray-600" />
+
+            {/* Accreditation Filter */}
+            <Collapsible open={openSections.accreditation} onOpenChange={() => toggleSection('accreditation')}>
+              <CollapsibleTrigger className="flex items-center justify-between w-full p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-gray-700/50 transition-colors">
+                <Label className="text-sm font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2 cursor-pointer">
+                  <Award className="h-4 w-4 text-yellow-600" />
+                  Accreditation
+                </Label>
+                {openSections.accreditation ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+              </CollapsibleTrigger>
+              <CollapsibleContent className="space-y-2 mt-2">
+                {accreditations.map((accreditation) => (
+                  <div key={accreditation} className="flex items-center space-x-2 p-1">
+                    <Checkbox
+                      id={`accreditation-${accreditation}`}
+                      checked={filters.accreditation.includes(accreditation)}
+                      onCheckedChange={(checked) => 
+                        handleAccreditationChange(accreditation, checked as boolean)
+                      }
+                      className="border-slate-300 dark:border-gray-600"
+                    />
+                    <Label 
+                      htmlFor={`accreditation-${accreditation}`}
+                      className="text-sm font-normal cursor-pointer text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-white transition-colors"
+                    >
+                      {accreditation}
+                    </Label>
+                  </div>
+                ))}
+              </CollapsibleContent>
+            </Collapsible>
 
             <Separator className="bg-slate-200 dark:bg-gray-600" />
 
