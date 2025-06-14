@@ -94,9 +94,9 @@ const DeveloperSection = () => {
             {/* Quote */}
             <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
               <blockquote className="text-center italic text-slate-600 dark:text-slate-300">
-                "Education is the most powerful weapon which you can use to change the world." 
+                "You are the future of Bhutan. Dream big, work hard, and never forget your roots and values that make you who you are."
                 <cite className="block mt-2 text-sm font-semibold text-slate-500 dark:text-slate-400">
-                  - Nelson Mandela
+                  - His Majesty the King of Bhutan
                 </cite>
               </blockquote>
             </div>
