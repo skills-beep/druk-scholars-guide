@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Scholarships from "./pages/Scholarships";
 import About from "./pages/About";
+import PracticalTools from "./pages/PracticalTools";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/scholarships" element={<Scholarships />} />
           <Route path="/about" element={<About />} />
+          <Route path="/tools" element={<PracticalTools />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
