@@ -1,6 +1,7 @@
 
 import Navigation from '@/components/Navigation';
 import DeveloperSection from '@/components/DeveloperSection';
+import HowItWorksSection from '@/components/HowItWorksSection';
 import Footer from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
@@ -24,6 +25,7 @@ const About = () => {
       <Navigation darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
       <div className="pt-16">
+        <HowItWorksSection />
         <DeveloperSection />
       </div>
       
