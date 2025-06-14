@@ -57,7 +57,7 @@ const Index = () => {
               />
             </aside>
             
-            <div className="flex-1 space-y-6">
+            <div className="flex-1 space-y-6 bg-white/50 dark:bg-gray-800/50 rounded-xl p-6 backdrop-blur-sm">
               <CollegeGrid 
                 colleges={colleges} 
                 filters={filters}
