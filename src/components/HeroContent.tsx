@@ -27,19 +27,19 @@ const HeroContent = ({ onSearch }: HeroContentProps) => {
       <div className="space-y-8 md:space-y-10">
         {/* Enhanced Main Heading */}
         <div className="space-y-6">
-          <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in">
-            <Sparkles className="w-4 h-4 text-yellow-400 mr-2" />
-            <span className="text-white/90 text-sm font-medium">Discover Excellence in Education</span>
+          <div className="inline-flex items-center px-3 py-1.5 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 animate-fade-in">
+            <Sparkles className="w-3 h-3 text-yellow-400 mr-1.5" />
+            <span className="text-white/90 text-xs sm:text-sm font-medium">Discover Excellence in Education</span>
           </div>
           
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-sora text-white leading-[1.1] animate-fade-in drop-shadow-2xl mx-auto max-w-5xl" style={{ animationDelay: '0.2s' }}>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-sora text-white leading-[1.1] animate-fade-in drop-shadow-2xl mx-auto max-w-5xl" style={{ animationDelay: '0.2s' }}>
             Find Your
             <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent drop-shadow-lg">
               Perfect College
             </span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed animate-fade-in font-light px-4" style={{ animationDelay: '0.4s' }}>
+          <p className="text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto leading-relaxed animate-fade-in font-light px-4" style={{ animationDelay: '0.4s' }}>
             Explore exceptional educational opportunities and unlock your potential with 
             <span className="font-semibold text-yellow-300"> comprehensive college search</span> and comparison tools.
           </p>
