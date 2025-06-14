@@ -32,6 +32,8 @@ interface CollegeModalProps {
 }
 
 const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
+  console.log('CollegeModal: Rendering with isOpen:', isOpen, 'college:', college?.name);
+
   // Map college names to their official websites
   const getCollegeWebsite = (collegeName: string): string | null => {
     const websiteMap: { [key: string]: string } = {
@@ -48,17 +50,22 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
       'Gyalpozhing College of Information Technology': 'http://www.gcit.edu.bt'
     };
     
-    // First check the website map, then fallback to college.contact.website, then college.applyUrl
     return websiteMap[collegeName] || college.contact?.website || college.applyUrl || null;
   };
 
   const handleApplyNow = () => {
+    console.log('CollegeModal: Apply Now clicked for:', college.name);
     const website = getCollegeWebsite(college.name);
     if (website) {
       window.open(website, '_blank', 'noopener,noreferrer');
     } else {
       console.warn(`No website found for ${college.name}`);
     }
+  };
+
+  const handleClose = () => {
+    console.log('CollegeModal: Close button clicked');
+    onClose();
   };
 
   // Sample student reviews data
@@ -98,8 +105,13 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
 
   const applyUrl = getCollegeWebsite(college.name);
 
+  if (!college) {
+    console.log('CollegeModal: No college provided');
+    return null;
+  }
+
   return (
-    <Dialog open={isOpen} onOpenChange={onClose}>
+    <Dialog open={isOpen} onOpenChange={handleClose}>
       <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto animate-scale-in transition-all duration-300">
         <DialogHeader className="transition-all duration-300">
           <DialogTitle className="text-2xl font-bold font-sora transition-colors duration-300">
@@ -417,15 +429,13 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
 
           {/* Action Buttons with enhanced transitions */}
           <div className="flex gap-4 pt-4 border-t transition-colors duration-300">
-            {applyUrl && (
-              <Button
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
-                onClick={handleApplyNow}
-              >
-                Apply Now
-                <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110" />
-              </Button>
-            )}
+            <Button
+              className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium group rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg transform"
+              onClick={handleApplyNow}
+            >
+              Apply Now
+              <ExternalLink className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:scale-110" />
+            </Button>
           </div>
         </div>
       </DialogContent>
