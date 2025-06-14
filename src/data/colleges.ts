@@ -1,4 +1,3 @@
-
 import { College } from '@/types/college';
 
 export const colleges: College[] = [
@@ -457,7 +456,7 @@ export const colleges: College[] = [
     id: "9",
     name: "Sherubtse College",
     location: "Kanglung",
-    image: "/lovable-uploads/107ea1f3-e036-4bdc-af34-72d9bdce78ed.png",
+    image: "/lovable-uploads/dbcdba67-c464-430c-b498-418eea5f874e.png",
     description: "The oldest college in Bhutan, offering a wide range of undergraduate programs in arts, science, and commerce.",
     established: 1966,
     type: "Public",
