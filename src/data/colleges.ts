@@ -175,7 +175,7 @@ export const colleges: College[] = [
     id: "4",
     name: "Samtse College of Education",
     location: "Samtse",
-    image: "/lovable-uploads/dda7f772-be9d-442f-b557-22fe7bd2d311.png",
+    image: "/lovable-uploads/d90c8d9b-a5b0-473e-ad9d-5480e7f6743c.png",
     description: "A distinguished college of education under the Royal University of Bhutan, focusing on holistic teacher development.",
     established: 1968,
     type: "Public",
