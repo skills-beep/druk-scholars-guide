@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
@@ -504,60 +503,62 @@ const StudyTips = () => {
       
       <main className="pt-20">
         {/* Hero Section */}
-        <div className="container mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold font-sora bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+        <div className="container mx-auto px-4 py-8 md:py-16">
+          <div className="text-center mb-8 md:mb-12">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-sora bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
               Study Tips & Guides
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto px-4">
               Master your studies with proven techniques, exam strategies, and subject-specific guidance designed for Bhutanese students.
             </p>
           </div>
 
           {/* Navigation Tabs */}
           <Tabs value={activeSection} onValueChange={setActiveSection} className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="general">Study Techniques</TabsTrigger>
-              <TabsTrigger value="exams">Exam Strategies</TabsTrigger>
-              <TabsTrigger value="subjects">Subject Guides</TabsTrigger>
+            <TabsList className="grid w-full grid-cols-3 mb-6 md:mb-8">
+              <TabsTrigger value="general" className="text-xs md:text-sm">Study Techniques</TabsTrigger>
+              <TabsTrigger value="exams" className="text-xs md:text-sm">Exam Strategies</TabsTrigger>
+              <TabsTrigger value="subjects" className="text-xs md:text-sm">Subject Guides</TabsTrigger>
             </TabsList>
 
             {/* Study Techniques Tab */}
             <TabsContent value="general" className="space-y-6">
               {/* Enhanced Effectiveness Dashboard */}
-              <div className="grid lg:grid-cols-3 gap-6 mb-8">
+              <div className="grid lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8">
                 {/* Main Chart */}
                 <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-300">
-                  <CardHeader>
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="flex items-center gap-2">
-                        <Trophy className="h-5 w-5 text-yellow-500" />
+                  <CardHeader className="pb-2 md:pb-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                      <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+                        <Trophy className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
                         Study Technique Performance
                       </CardTitle>
-                      <div className="flex gap-2">
+                      <div className="flex gap-1 md:gap-2 flex-wrap">
                         <Button
                           variant={selectedMetric === 'effectiveness' ? 'default' : 'outline'}
                           size="sm"
                           onClick={() => setSelectedMetric('effectiveness')}
-                          className="text-xs"
+                          className="text-xs h-8"
                         >
                           <TrendingUp className="h-3 w-3 mr-1" />
-                          Effectiveness
+                          <span className="hidden sm:inline">Effectiveness</span>
+                          <span className="sm:hidden">Effect</span>
                         </Button>
                         <Button
                           variant={selectedMetric === 'retention' ? 'default' : 'outline'}
                           size="sm"
                           onClick={() => setSelectedMetric('retention')}
-                          className="text-xs"
+                          className="text-xs h-8"
                         >
                           <Brain className="h-3 w-3 mr-1" />
-                          Retention
+                          <span className="hidden sm:inline">Retention</span>
+                          <span className="sm:hidden">Ret</span>
                         </Button>
                         <Button
                           variant={selectedMetric === 'difficulty' ? 'default' : 'outline'}
                           size="sm"
                           onClick={() => setSelectedMetric('difficulty')}
-                          className="text-xs"
+                          className="text-xs h-8"
                         >
                           <Activity className="h-3 w-3 mr-1" />
                           Ease
@@ -565,7 +566,7 @@ const StudyTips = () => {
                       </div>
                     </div>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="pt-0">
                     <ChartContainer
                       config={{
                         value: {
@@ -575,27 +576,28 @@ const StudyTips = () => {
                           color: "hsl(var(--chart-1))",
                         },
                       }}
-                      className="h-[400px]"
+                      className="h-[300px] md:h-[400px]"
                     >
                       <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={getMetricData()} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
+                        <BarChart data={getMetricData()} margin={{ top: 20, right: 10, left: 10, bottom: 60 }}>
                           <XAxis 
                             dataKey="technique" 
                             angle={-45}
                             textAnchor="end"
                             height={80}
-                            fontSize={12}
+                            fontSize={10}
+                            interval={0}
                           />
-                          <YAxis />
+                          <YAxis fontSize={10} />
                           <ChartTooltip 
                             content={({ active, payload, label }) => {
                               if (active && payload && payload.length) {
                                 const data = payload[0].payload;
                                 return (
-                                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg border">
-                                    <h3 className="font-semibold text-lg mb-2">{label}</h3>
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{data.description}</p>
-                                    <div className="space-y-2">
+                                  <div className="bg-white dark:bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg border max-w-xs">
+                                    <h3 className="font-semibold text-sm md:text-lg mb-2">{label}</h3>
+                                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-3">{data.description}</p>
+                                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm">
                                       <div className="flex justify-between">
                                         <span>Effectiveness:</span>
                                         <span className="font-semibold">{data.effectiveness}%</span>
@@ -614,7 +616,7 @@ const StudyTips = () => {
                                           {[...Array(5)].map((_, i) => (
                                             <Star 
                                               key={i} 
-                                              className={`h-3 w-3 ${i < data.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+                                              className={`h-2 w-2 md:h-3 md:w-3 ${i < data.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
                                             />
                                           ))}
                                         </div>
@@ -644,47 +646,47 @@ const StudyTips = () => {
                 </Card>
 
                 {/* Quick Stats */}
-                <div className="space-y-4">
+                <div className="space-y-3 md:space-y-4">
                   <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-800">
-                    <CardContent className="p-6">
+                    <CardContent className="p-4 md:p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-blue-700 dark:text-blue-300">Top Performer</h3>
-                        <Trophy className="h-5 w-5 text-yellow-500" />
+                        <h3 className="font-semibold text-blue-700 dark:text-blue-300 text-sm md:text-base">Top Performer</h3>
+                        <Trophy className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
                       </div>
-                      <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">Active Recall</p>
-                      <p className="text-sm text-blue-600 dark:text-blue-400">92% effectiveness</p>
+                      <p className="text-lg md:text-2xl font-bold text-blue-900 dark:text-blue-100">Active Recall</p>
+                      <p className="text-xs md:text-sm text-blue-600 dark:text-blue-400">92% effectiveness</p>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800">
-                    <CardContent className="p-6">
+                    <CardContent className="p-4 md:p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-green-700 dark:text-green-300">Best Retention</h3>
-                        <Brain className="h-5 w-5 text-green-500" />
+                        <h3 className="font-semibold text-green-700 dark:text-green-300 text-sm md:text-base">Best Retention</h3>
+                        <Brain className="h-4 w-4 md:h-5 md:w-5 text-green-500" />
                       </div>
-                      <p className="text-2xl font-bold text-green-900 dark:text-green-100">Spaced Repetition</p>
-                      <p className="text-sm text-green-600 dark:text-green-400">95% retention rate</p>
+                      <p className="text-lg md:text-2xl font-bold text-green-900 dark:text-green-100">Spaced Repetition</p>
+                      <p className="text-xs md:text-sm text-green-600 dark:text-green-400">95% retention rate</p>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-gradient-to-br from-purple-50 to-violet-100 dark:from-purple-900/20 dark:to-violet-900/20 border-purple-200 dark:border-purple-800">
-                    <CardContent className="p-6">
+                    <CardContent className="p-4 md:p-6">
                       <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-purple-700 dark:text-purple-300">Easiest to Start</h3>
-                        <CheckCircle className="h-5 w-5 text-purple-500" />
+                        <h3 className="font-semibold text-purple-700 dark:text-purple-300 text-sm md:text-base">Easiest to Start</h3>
+                        <CheckCircle className="h-4 w-4 md:h-5 md:w-5 text-purple-500" />
                       </div>
-                      <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">Pomodoro</p>
-                      <p className="text-sm text-purple-600 dark:text-purple-400">Beginner friendly</p>
+                      <p className="text-lg md:text-2xl font-bold text-purple-900 dark:text-purple-100">Pomodoro</p>
+                      <p className="text-xs md:text-sm text-purple-600 dark:text-purple-400">Beginner friendly</p>
                     </CardContent>
                   </Card>
                 </div>
               </div>
 
               {/* Technique Comparison Radar Chart */}
-              <Card className="mb-8">
+              <Card className="mb-6 md:mb-8 hidden md:block">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <BarChart3 className="h-5 w-5 text-indigo-500" />
+                  <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+                    <BarChart3 className="h-4 w-4 md:h-5 md:w-5 text-indigo-500" />
                     Technique Comparison Overview
                   </CardTitle>
                 </CardHeader>
@@ -708,13 +710,13 @@ const StudyTips = () => {
                         color: "#ef4444",
                       },
                     }}
-                    className="h-[400px]"
+                    className="h-[300px] md:h-[400px]"
                   >
                     <ResponsiveContainer width="100%" height="100%">
                       <RadarChart data={radarData}>
                         <PolarGrid />
-                        <PolarAngleAxis dataKey="technique" />
-                        <PolarRadiusAxis angle={90} domain={[0, 100]} />
+                        <PolarAngleAxis dataKey="technique" fontSize={10} />
+                        <PolarRadiusAxis angle={90} domain={[0, 100]} fontSize={8} />
                         <Radar
                           name="Effectiveness"
                           dataKey="effectiveness"
@@ -743,18 +745,18 @@ const StudyTips = () => {
                       </RadarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
-                  <div className="flex flex-wrap justify-center gap-4 mt-4">
+                  <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-4">
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-blue-500"></div>
-                      <span className="text-sm">Effectiveness</span>
+                      <span className="text-xs md:text-sm">Effectiveness</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                      <span className="text-sm">Retention</span>
+                      <span className="text-xs md:text-sm">Retention</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                      <span className="text-sm">Ease of Use</span>
+                      <span className="text-xs md:text-sm">Ease of Use</span>
                     </div>
                   </div>
                 </CardContent>
@@ -767,36 +769,36 @@ const StudyTips = () => {
                     <CardHeader className="cursor-pointer" onClick={() => toggleTechnique(index)}>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                          <technique.icon className="h-6 w-6 text-blue-600" />
+                          <technique.icon className="h-5 w-5 md:h-6 md:w-6 text-blue-600" />
                           <div>
-                            <CardTitle className="text-lg">{technique.title}</CardTitle>
-                            <div className="flex gap-2 mt-2">
-                              <Badge variant="secondary">{technique.difficulty}</Badge>
-                              <Badge variant="outline">{technique.timeRequired}</Badge>
-                              <Badge className="bg-green-100 text-green-700">{technique.effectiveness}% effective</Badge>
+                            <CardTitle className="text-base md:text-lg">{technique.title}</CardTitle>
+                            <div className="flex flex-wrap gap-1 md:gap-2 mt-2">
+                              <Badge variant="secondary" className="text-xs">{technique.difficulty}</Badge>
+                              <Badge variant="outline" className="text-xs">{technique.timeRequired}</Badge>
+                              <Badge className="bg-green-100 text-green-700 text-xs">{technique.effectiveness}% effective</Badge>
                             </div>
                           </div>
                         </div>
-                        {expandedTechnique === index ? <ChevronUp /> : <ChevronDown />}
+                        {expandedTechnique === index ? <ChevronUp className="h-4 w-4 md:h-5 md:w-5" /> : <ChevronDown className="h-4 w-4 md:h-5 md:w-5" />}
                       </div>
                     </CardHeader>
                     
                     {expandedTechnique === index && (
-                      <CardContent className="space-y-6">
-                        <p className="text-gray-600 dark:text-gray-300">{technique.description}</p>
+                      <CardContent className="space-y-4 md:space-y-6">
+                        <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">{technique.description}</p>
                         
-                        <div className="grid md:grid-cols-2 gap-6">
+                        <div className="grid lg:grid-cols-2 gap-4 md:gap-6">
                           <div>
-                            <h4 className="font-semibold mb-2">How it works:</h4>
-                            <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                            <h4 className="font-semibold mb-2 text-sm md:text-base">How it works:</h4>
+                            <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-4">
                               {technique.detailedInfo.howItWorks}
                             </p>
                             
-                            <h4 className="font-semibold mb-2">Benefits:</h4>
+                            <h4 className="font-semibold mb-2 text-sm md:text-base">Benefits:</h4>
                             <ul className="space-y-1">
                               {technique.detailedInfo.benefits.map((benefit, i) => (
-                                <li key={i} className="flex items-center gap-2 text-sm">
-                                  <CheckCircle className="h-3 w-3 text-green-500" />
+                                <li key={i} className="flex items-center gap-2 text-xs md:text-sm">
+                                  <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
                                   {benefit}
                                 </li>
                               ))}
@@ -804,11 +806,11 @@ const StudyTips = () => {
                           </div>
                           
                           <div>
-                            <h4 className="font-semibold mb-2">Step-by-step process:</h4>
+                            <h4 className="font-semibold mb-2 text-sm md:text-base">Step-by-step process:</h4>
                             <ol className="space-y-1 mb-4">
                               {technique.detailedInfo.steps.map((step, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm">
-                                  <span className="bg-blue-100 text-blue-700 rounded-full w-5 h-5 flex items-center justify-center text-xs font-semibold">
+                                <li key={i} className="flex items-start gap-2 text-xs md:text-sm">
+                                  <span className="bg-blue-100 text-blue-700 rounded-full w-4 h-4 md:w-5 md:h-5 flex items-center justify-center text-xs font-semibold flex-shrink-0 mt-0.5">
                                     {i + 1}
                                   </span>
                                   {step}
@@ -816,11 +818,11 @@ const StudyTips = () => {
                               ))}
                             </ol>
                             
-                            <h4 className="font-semibold mb-2">Pro Tips:</h4>
+                            <h4 className="font-semibold mb-2 text-sm md:text-base">Pro Tips:</h4>
                             <ul className="space-y-1">
                               {technique.detailedInfo.tips.map((tip, i) => (
-                                <li key={i} className="flex items-center gap-2 text-sm">
-                                  <Star className="h-3 w-3 text-yellow-500" />
+                                <li key={i} className="flex items-center gap-2 text-xs md:text-sm">
+                                  <Star className="h-3 w-3 text-yellow-500 flex-shrink-0" />
                                   {tip}
                                 </li>
                               ))}
@@ -830,22 +832,22 @@ const StudyTips = () => {
 
                         {/* Special interactive elements for Pomodoro */}
                         {technique.title === "Pomodoro Technique" && (
-                          <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
-                            <h4 className="font-semibold mb-4">Interactive Pomodoro Timer</h4>
-                            <div className="flex items-center gap-4 mb-4">
-                              <div className="text-2xl font-mono">
+                          <div className="bg-blue-50 dark:bg-blue-900/20 p-3 md:p-4 rounded-lg">
+                            <h4 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Interactive Pomodoro Timer</h4>
+                            <div className="flex items-center gap-3 md:gap-4 mb-3 md:mb-4">
+                              <div className="text-xl md:text-2xl font-mono">
                                 {String(pomodoroTimer.minutes).padStart(2, '0')}:
                                 {String(pomodoroTimer.seconds).padStart(2, '0')}
                               </div>
-                              <Button size="sm" className="flex items-center gap-2">
-                                {pomodoroTimer.isRunning ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                              <Button size="sm" className="flex items-center gap-2 text-xs md:text-sm">
+                                {pomodoroTimer.isRunning ? <Pause className="h-3 w-3 md:h-4 md:w-4" /> : <Play className="h-3 w-3 md:h-4 md:w-4" />}
                                 {pomodoroTimer.isRunning ? 'Pause' : 'Start'}
                               </Button>
                             </div>
                             
                             <div className="grid md:grid-cols-2 gap-4">
                               <div>
-                                <h5 className="font-medium mb-2">Time Distribution</h5>
+                                <h5 className="font-medium mb-2 text-sm">Time Distribution</h5>
                                 <ChartContainer
                                   config={{
                                     value: {
@@ -853,7 +855,7 @@ const StudyTips = () => {
                                       color: "hsl(var(--chart-1))",
                                     },
                                   }}
-                                  className="h-[150px]"
+                                  className="h-[120px] md:h-[150px]"
                                 >
                                   <ResponsiveContainer width="100%" height="100%">
                                     <PieChart>
@@ -863,7 +865,7 @@ const StudyTips = () => {
                                         nameKey="name"
                                         cx="50%"
                                         cy="50%"
-                                        outerRadius={50}
+                                        outerRadius={40}
                                       >
                                         {pomodoroStatsData.map((entry, index) => (
                                           <Cell key={`cell-${index}`} fill={entry.color} />
@@ -876,9 +878,9 @@ const StudyTips = () => {
                               </div>
                               
                               <div>
-                                <h5 className="font-medium mb-2">Daily Goals</h5>
+                                <h5 className="font-medium mb-2 text-sm">Daily Goals</h5>
                                 <div className="space-y-2">
-                                  <div className="flex justify-between text-sm">
+                                  <div className="flex justify-between text-xs md:text-sm">
                                     <span>Pomodoros completed:</span>
                                     <span className="font-semibold">0/8</span>
                                   </div>
@@ -897,15 +899,15 @@ const StudyTips = () => {
               </div>
 
               {/* Quick Tips Section */}
-              <Card className="mt-8">
+              <Card className="mt-6 md:mt-8">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Star className="h-5 w-5 text-yellow-500" />
+                  <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
+                    <Star className="h-4 w-4 md:h-5 md:w-5 text-yellow-500" />
                     Quick Study Tips
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
                     {[
                       "Find your peak study hours",
                       "Eliminate distractions",
@@ -921,8 +923,8 @@ const StudyTips = () => {
                       "Use the 2-minute rule"
                     ].map((tip, index) => (
                       <div key={index} className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-500" />
-                        <span className="text-sm">{tip}</span>
+                        <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 flex-shrink-0" />
+                        <span className="text-xs md:text-sm">{tip}</span>
                       </div>
                     ))}
                   </div>
@@ -932,20 +934,20 @@ const StudyTips = () => {
 
             {/* Exam Strategies Tab */}
             <TabsContent value="exams" className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 {examStrategies.map((strategy, index) => (
                   <Card key={index} className="group hover:shadow-lg transition-all duration-300">
                     <CardHeader>
-                      <CardTitle className="text-lg">{strategy.title}</CardTitle>
+                      <CardTitle className="text-base md:text-lg">{strategy.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                      <p className="text-gray-600 dark:text-gray-300">{strategy.description}</p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">{strategy.description}</p>
                       <div className="space-y-2">
                         <h4 className="font-semibold text-sm">Key Points:</h4>
                         <ul className="space-y-1">
                           {strategy.tips.map((tip, tipIndex) => (
-                            <li key={tipIndex} className="flex items-center gap-2 text-sm">
-                              <CheckCircle className="h-3 w-3 text-green-500" />
+                            <li key={tipIndex} className="flex items-center gap-2 text-xs md:text-sm">
+                              <CheckCircle className="h-3 w-3 text-green-500 flex-shrink-0" />
                               {tip}
                             </li>
                           ))}
@@ -959,12 +961,12 @@ const StudyTips = () => {
 
             {/* Subject Guides Tab */}
             <TabsContent value="subjects" className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 md:gap-6">
                 {Object.entries(subjectGuides).map(([key, subject]) => (
                   <Card key={key} className="group hover:shadow-lg transition-all duration-300">
                     <CardHeader>
-                      <CardTitle className="flex items-center gap-3">
-                        <subject.icon className="h-6 w-6 text-purple-600" />
+                      <CardTitle className="flex items-center gap-3 text-base md:text-lg">
+                        <subject.icon className="h-5 w-5 md:h-6 md:w-6 text-purple-600" />
                         {subject.title}
                       </CardTitle>
                     </CardHeader>
@@ -972,8 +974,8 @@ const StudyTips = () => {
                       <ul className="space-y-2">
                         {subject.tips.map((tip, index) => (
                           <li key={index} className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4 text-green-500" />
-                            <span className="text-sm">{tip}</span>
+                            <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-green-500 flex-shrink-0" />
+                            <span className="text-xs md:text-sm">{tip}</span>
                           </li>
                         ))}
                       </ul>

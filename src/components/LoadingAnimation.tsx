@@ -39,7 +39,7 @@ const LoadingAnimation = () => {
         {/* Brand Name */}
         <div className="space-y-2">
           <h1 className="text-4xl font-bold font-sora text-slate-900 animate-fade-in">
-            EduBhutan
+            DrukScholar
           </h1>
           <p className="text-slate-600 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Discovering your academic journey
