@@ -86,6 +86,46 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
     return "Committed to holistic education.";
   };
 
+  // Generate default tags if none exist
+  const getDisplayTags = () => {
+    if (college.tags && college.tags.length > 0) {
+      return college.tags;
+    }
+    
+    // Generate default tags based on college type and programs
+    const defaultTags = [];
+    
+    if (college.type) {
+      defaultTags.push(college.type);
+    }
+    
+    if (college.courses && college.courses.length > 0) {
+      // Add a tag based on the main field of study
+      const firstCourse = college.courses[0].toLowerCase();
+      if (firstCourse.includes('engineering') || firstCourse.includes('technology')) {
+        defaultTags.push('Engineering');
+      } else if (firstCourse.includes('business') || firstCourse.includes('management')) {
+        defaultTags.push('Business');
+      } else if (firstCourse.includes('medical') || firstCourse.includes('health')) {
+        defaultTags.push('Medical');
+      } else if (firstCourse.includes('education')) {
+        defaultTags.push('Education');
+      } else if (firstCourse.includes('arts') || firstCourse.includes('culture')) {
+        defaultTags.push('Arts & Culture');
+      } else {
+        defaultTags.push('Higher Education');
+      }
+    }
+    
+    if (college.location) {
+      defaultTags.push(college.location);
+    }
+    
+    return defaultTags.slice(0, 3); // Limit to 3 tags
+  };
+
+  const displayTags = getDisplayTags();
+
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900">
@@ -111,8 +151,8 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
               }}
             />
             <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-              {college.tags?.map((tag) => (
-                <Badge key={tag} variant="secondary" className="bg-white/95 backdrop-blur-sm">
+              {displayTags.map((tag, index) => (
+                <Badge key={`${tag}-${index}`} variant="secondary" className="bg-white/95 backdrop-blur-sm text-gray-800 px-2 py-1 text-sm font-medium">
                   {tag}
                 </Badge>
               ))}
