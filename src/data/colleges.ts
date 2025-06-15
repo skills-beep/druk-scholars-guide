@@ -56,7 +56,14 @@ export const colleges: College[] = [
       postgraduate: [],
       doctorate: []
     },
-    careerOpportunities: ["Government Service", "Private Sector", "NGOs", "Teaching", "Research"]
+    careerOpportunities: ["Government Service", "Private Sector", "NGOs", "Teaching", "Research"],
+    vision: "To become an institution of academic excellence that challenges students to reach their full potential and become independent lifelong learners and well-rounded, responsible citizens",
+    mission: [
+      "Contribute to educational excellence via an internationalised learning environment",
+      "Foster personal and intellectual growth for purposeful lives and careers", 
+      "Build an institutional culture that supports individual development and service",
+      "Stimulate new ideas, knowledge, and practices that enrich lives and society"
+    ]
   },
   {
     id: "2",
@@ -225,7 +232,11 @@ export const colleges: College[] = [
       postgraduate: [],
       doctorate: []
     },
-    careerOpportunities: ["Dzongkha Teacher", "Science Teacher", "Primary Teacher", "Cultural Preservation"]
+    careerOpportunities: ["Dzongkha Teacher", "Science Teacher", "Primary Teacher", "Cultural Preservation"],
+    vision: "Higher learning infused with GNH values",
+    mission: [
+      "Focus on sustainable natural resource management through teaching, research, and community outreach under GNH principles"
+    ]
   },
   {
     id: "5",
@@ -281,7 +292,11 @@ export const colleges: College[] = [
       postgraduate: [],
       doctorate: []
     },
-    careerOpportunities: ["Agricultural Officer", "Forestry Officer", "Veterinarian", "Research Scientist", "Environmental Consultant"]
+    careerOpportunities: ["Agricultural Officer", "Forestry Officer", "Veterinarian", "Research Scientist", "Environmental Consultant"],
+    vision: "Higher learning infused with GNH values",
+    mission: [
+      "Focus on sustainable natural resource management through teaching, research, and community outreach under GNH principles"
+    ]
   },
   {
     id: "6",
@@ -338,7 +353,14 @@ export const colleges: College[] = [
       postgraduate: [],
       doctorate: []
     },
-    careerOpportunities: ["Software Engineer", "Civil Engineer", "Electrical Engineer", "IT Consultant", "Project Manager"]
+    careerOpportunities: ["Software Engineer", "Civil Engineer", "Electrical Engineer", "IT Consultant", "Project Manager"],
+    vision: "A centre of excellence in science and technology enriched with GNH values",
+    mission: [
+      "Offer internationally recognized science and tech programs",
+      "Conduct research and innovation meeting societal needs",
+      "Collaborate with stakeholders and deliver expert services",
+      "Provide community services aligned with GNH principles"
+    ]
   },
   {
     id: "7",
@@ -394,7 +416,13 @@ export const colleges: College[] = [
       postgraduate: [],
       doctorate: []
     },
-    careerOpportunities: ["Civil Engineer", "Electrical Engineer", "Mechanical Engineer", "Construction Manager", "Power Engineer"]
+    careerOpportunities: ["Civil Engineer", "Electrical Engineer", "Mechanical Engineer", "Construction Manager", "Power Engineer"],
+    vision: "A premier institute of applied engineering, management, and technology to develop highly competent and innovative technical personnel infused with GNH values",
+    mission: [
+      "Provide quality applied engineering education",
+      "Develop innovative technical personnel with GNH values",
+      "Conduct research and development in engineering and technology"
+    ]
   },
   {
     id: "8",
@@ -740,7 +768,15 @@ export const colleges: College[] = [
       doctorate: ["PhD in Medical Sciences"],
       diploma: ["Diploma in Medical Laboratory Technology", "Diploma in Pharmacy"]
     },
-    careerOpportunities: ["Medical Doctor", "Specialist Physician", "Surgeon", "Traditional Medicine Practitioner", "Medical Researcher", "Healthcare Administrator"]
+    careerOpportunities: ["Medical Doctor", "Specialist Physician", "Surgeon", "Traditional Medicine Practitioner", "Medical Researcher", "Healthcare Administrator"],
+    vision: {
+      undergraduate: "Create a learning environment that nurtures compassionate, competent, caring doctors who serve Bhutan and the region, engage in lifelong evidence-based practice aligned with GNH goals",
+      postgraduate: "To be a credible center of excellence in postgraduate medical education in the region"
+    },
+    mission: {
+      undergraduate: "Create a learning environment that nurtures compassionate, competent, caring doctors who serve Bhutan and the region, engage in lifelong evidence-based practice aligned with GNH goals",
+      postgraduate: "Conduct postgraduate medical education to train highly skilled, dedicated specialists who deliver optimal, humane healthcare tailored to Bhutan's evolving needs"
+    }
   },
   {
     id: 'norbuling-rigter-college',
@@ -836,7 +872,18 @@ export const colleges: College[] = [
       'Bachelor of Arts in Political Science & Sociology', 
       'Bachelor of Arts in Development Studies'
     ],
-    popularity: 85
+    popularity: 85,
+    vision: "In pursuit of international academic excellence, inspire research rooted in Bhutanese values to empower students as competent, innovative, and responsible global citizens",
+    mission: [
+      "Provide accessible quality education to international standards",
+      "Create innovative learning environments", 
+      "Offer relevant, globally competitive education and skills",
+      "Prepare GNH-aligned competent, innovative, and responsible citizens",
+      "Invest in research and innovation",
+      "Engage the public as part of CSR",
+      "Uphold Bhutanese values and character",
+      "Nurture each student's innate potential"
+    ]
   }
 ];
 

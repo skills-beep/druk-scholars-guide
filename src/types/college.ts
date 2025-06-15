@@ -3,23 +3,27 @@ export interface College {
   id: string;
   name: string;
   location: string;
-  type: string;
   image: string;
   description: string;
-  rating: number;
   established: number;
-  courses: string[];
+  type: "Public" | "Private";
+  rating: number;
   fees: {
     min: number;
     max: number;
     currency: string;
   };
+  courses: string[];
   tags: string[];
-  scholarships: Array<{
-    name: string;
-    amount: string;
-    criteria: string;
-  }>;
+  admissionDeadline: string;
+  eligibility: string[];
+  scholarships: Scholarship[];
+  contact: {
+    phone: string;
+    email: string;
+    website: string;
+  };
+  applyUrl: string;
   facilities: string[];
   accreditation: string;
   campusSize: string;
@@ -31,27 +35,21 @@ export interface College {
     doctorate: string[];
     diploma?: string[];
   };
-  admissionDeadline: string;
-  eligibility: string[];
-  contact: {
-    phone: string;
-    email: string;
-    website: string;
-  };
   careerOpportunities: string[];
-  applyUrl: string;
   degreePrograms?: string[];
   popularity?: number;
+  vision?: string | {
+    undergraduate?: string;
+    postgraduate?: string;
+  };
+  mission?: string[] | {
+    undergraduate?: string;
+    postgraduate?: string;
+  };
 }
 
-export interface CollegeFilters {
-  search: string;
-  location: string[];
-  courseType: string[];
-  feeRange: [number, number];
-  rating: number;
-  collegeType: string[];
-  accreditation: string[];
-  degreeProgram: string;
-  sortBy: 'popularity' | 'newest' | 'alphabetical' | 'rating';
+export interface Scholarship {
+  name: string;
+  amount: string;
+  criteria: string;
 }
