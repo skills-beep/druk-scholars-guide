@@ -741,6 +741,102 @@ export const colleges: College[] = [
       diploma: ["Diploma in Medical Laboratory Technology", "Diploma in Pharmacy"]
     },
     careerOpportunities: ["Medical Doctor", "Specialist Physician", "Surgeon", "Traditional Medicine Practitioner", "Medical Researcher", "Healthcare Administrator"]
+  },
+  {
+    id: 'norbuling-rigter-college',
+    name: 'Norbuling Rigter College',
+    location: 'Paro',
+    type: 'Private',
+    image: '/lovable-uploads/3b4a0f44-cbd5-4c53-bc2d-520eec8322f0.png',
+    description: 'Norbuling Rigter College (NRC) is one of Bhutan\'s premier private colleges, affiliated with the Royal University of Bhutan (RUB) since July 2017. Located in the serene Doteng valley in Paro, NRC is committed to providing quality higher education rooted in Bhutanese values and global competence.',
+    rating: 4.2,
+    established: 2017,
+    courses: [
+      'BBA (Business Administration)',
+      'BCom (Commerce)', 
+      'BA in English',
+      'BA in Dzongkha & English',
+      'BA in Political Science & Sociology',
+      'BA in Development Studies'
+    ],
+    fees: {
+      min: 73180,
+      max: 99421,
+      currency: 'Nu.'
+    },
+    tags: ['RUB Affiliated', 'Private College', 'Peaceful Campus', 'Cultural Values'],
+    scholarships: [
+      {
+        name: 'Merit-based Scholarship',
+        amount: 'Partial fee waiver',
+        criteria: 'Academic excellence and financial need assessment'
+      },
+      {
+        name: 'Need-based Financial Aid',
+        amount: 'Variable support',
+        criteria: 'Demonstrated financial need with good academic standing'
+      }
+    ],
+    facilities: [
+      'Modern Libraries',
+      'Computer Labs', 
+      'Free Campus Wi-Fi',
+      'Student Governance',
+      'Clubs and Societies',
+      'On-campus Cafeteria',
+      'Boarding Facilities',
+      'Research Centers'
+    ],
+    accreditation: 'Royal University of Bhutan (RUB)',
+    campusSize: '15 acres in Doteng valley',
+    studentCount: 800,
+    facultyCount: 50,
+    programs: {
+      undergraduate: [
+        'BBA (Business Administration)',
+        'BCom (Commerce)', 
+        'BA in English',
+        'BA in Dzongkha & English',
+        'BA in Political Science & Sociology',
+        'BA in Development Studies'
+      ],
+      postgraduate: [],
+      doctorate: [],
+      diploma: []
+    },
+    admissionDeadline: 'March-April (annually)',
+    eligibility: [
+      'BBA/BCom: Class XII pass with ≥40% in Math/Business Math & Dzongkha',
+      'BA Dzongkha & English: Pass Class XII with ≥50% in English & Dzongkha', 
+      'BA Political Science & Sociology: ≥50% in English, pass Dzongkha, ≥50% aggregate',
+      'BA Development Studies: Pass Class XII with ≥50% in English',
+      'BA English: ≥55% in English, pass Dzongkha'
+    ],
+    contact: {
+      phone: '+975 8 271 313',
+      email: 'info@nrc.bt',
+      website: 'https://www.nrc.bt'
+    },
+    careerOpportunities: [
+      'Banking and Finance',
+      'Government Services',
+      'Private Sector Management',
+      'Education and Training',
+      'Research and Development',
+      'Non-profit Organizations',
+      'Media and Communications',
+      'Tourism and Hospitality'
+    ],
+    applyUrl: 'https://admissions.nrc.bt',
+    degreePrograms: [
+      'Bachelor of Business Administration',
+      'Bachelor of Commerce',
+      'Bachelor of Arts in English',
+      'Bachelor of Arts in Dzongkha & English',
+      'Bachelor of Arts in Political Science & Sociology', 
+      'Bachelor of Arts in Development Studies'
+    ],
+    popularity: 85
   }
 ];
 
