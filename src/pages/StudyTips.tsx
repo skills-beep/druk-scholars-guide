@@ -29,30 +29,131 @@ import {
   Repeat,
   Eye,
   Zap,
-  Map
+  Map,
+  TrendingUp,
+  BarChart3,
+  Activity
 } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
-import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
 const StudyTips = () => {
   const [activeSection, setActiveSection] = useState('general');
   const [expandedTechnique, setExpandedTechnique] = useState<number | null>(null);
   const [pomodoroTimer, setPomodoroTimer] = useState({ minutes: 25, seconds: 0, isRunning: false });
+  const [selectedMetric, setSelectedMetric] = useState('effectiveness');
 
-  // Chart data for study technique effectiveness
+  // Enhanced chart data for study technique effectiveness
   const effectivenessData = [
-    { technique: 'Pomodoro', effectiveness: 85, color: '#3b82f6' },
-    { technique: 'Active Recall', effectiveness: 92, color: '#10b981' },
-    { technique: 'Spaced Rep', effectiveness: 88, color: '#f59e0b' },
-    { technique: 'Feynman', effectiveness: 90, color: '#8b5cf6' },
-    { technique: 'Mind Mapping', effectiveness: 82, color: '#ef4444' },
-    { technique: 'Cornell Notes', effectiveness: 86, color: '#06b6d4' }
+    { 
+      technique: 'Active Recall', 
+      effectiveness: 92, 
+      retention: 88, 
+      timeRequired: 30, 
+      difficulty: 3, 
+      color: '#10b981',
+      description: 'Testing yourself without looking at notes'
+    },
+    { 
+      technique: 'Feynman', 
+      effectiveness: 90, 
+      retention: 85, 
+      timeRequired: 45, 
+      difficulty: 4, 
+      color: '#8b5cf6',
+      description: 'Explaining concepts in simple terms'
+    },
+    { 
+      technique: 'Spaced Rep', 
+      effectiveness: 88, 
+      retention: 95, 
+      timeRequired: 20, 
+      difficulty: 2, 
+      color: '#f59e0b',
+      description: 'Reviewing at increasing intervals'
+    },
+    { 
+      technique: 'Dual Coding', 
+      effectiveness: 87, 
+      retention: 82, 
+      timeRequired: 35, 
+      difficulty: 3, 
+      color: '#06b6d4',
+      description: 'Combining visual and verbal learning'
+    },
+    { 
+      technique: 'Cornell Notes', 
+      effectiveness: 86, 
+      retention: 78, 
+      timeRequired: 25, 
+      difficulty: 2, 
+      color: '#ef4444',
+      description: 'Structured note-taking system'
+    },
+    { 
+      technique: 'Pomodoro', 
+      effectiveness: 85, 
+      retention: 75, 
+      timeRequired: 25, 
+      difficulty: 1, 
+      color: '#3b82f6',
+      description: 'Time-blocked focused study sessions'
+    },
+    { 
+      technique: 'Interleaved', 
+      effectiveness: 89, 
+      retention: 90, 
+      timeRequired: 60, 
+      difficulty: 4, 
+      color: '#f97316',
+      description: 'Mixing different topics in one session'
+    },
+    { 
+      technique: 'Mind Mapping', 
+      effectiveness: 82, 
+      retention: 80, 
+      timeRequired: 30, 
+      difficulty: 2, 
+      color: '#84cc16',
+      description: 'Visual representation of information'
+    },
+    { 
+      technique: 'Elaborative', 
+      effectiveness: 84, 
+      retention: 83, 
+      timeRequired: 40, 
+      difficulty: 3, 
+      color: '#ec4899',
+      description: 'Asking why and how questions'
+    }
   ];
+
+  // Radar chart data for comparing techniques
+  const radarData = effectivenessData.slice(0, 6).map(item => ({
+    technique: item.technique,
+    effectiveness: item.effectiveness,
+    retention: item.retention,
+    easeOfUse: 100 - (item.difficulty * 20),
+    timeEfficiency: 100 - item.timeRequired
+  }));
 
   const pomodoroStatsData = [
     { name: 'Focused Time', value: 75, color: '#10b981' },
     { name: 'Break Time', value: 25, color: '#f59e0b' }
   ];
+
+  const getMetricData = () => {
+    switch (selectedMetric) {
+      case 'retention':
+        return effectivenessData.map(item => ({ ...item, value: item.retention }));
+      case 'difficulty':
+        return effectivenessData.map(item => ({ ...item, value: 100 - (item.difficulty * 20) }));
+      case 'timeRequired':
+        return effectivenessData.map(item => ({ ...item, value: 100 - item.timeRequired }));
+      default:
+        return effectivenessData.map(item => ({ ...item, value: item.effectiveness }));
+    }
+  };
 
   const studyTechniques = [
     {
@@ -423,33 +524,239 @@ const StudyTips = () => {
 
             {/* Study Techniques Tab */}
             <TabsContent value="general" className="space-y-6">
-              {/* Effectiveness Chart */}
+              {/* Enhanced Effectiveness Dashboard */}
+              <div className="grid lg:grid-cols-3 gap-6 mb-8">
+                {/* Main Chart */}
+                <Card className="lg:col-span-2 group hover:shadow-xl transition-all duration-300">
+                  <CardHeader>
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="flex items-center gap-2">
+                        <Trophy className="h-5 w-5 text-yellow-500" />
+                        Study Technique Performance
+                      </CardTitle>
+                      <div className="flex gap-2">
+                        <Button
+                          variant={selectedMetric === 'effectiveness' ? 'default' : 'outline'}
+                          size="sm"
+                          onClick={() => setSelectedMetric('effectiveness')}
+                          className="text-xs"
+                        >
+                          <TrendingUp className="h-3 w-3 mr-1" />
+                          Effectiveness
+                        </Button>
+                        <Button
+                          variant={selectedMetric === 'retention' ? 'default' : 'outline'}
+                          size="sm"
+                          onClick={() => setSelectedMetric('retention')}
+                          className="text-xs"
+                        >
+                          <Brain className="h-3 w-3 mr-1" />
+                          Retention
+                        </Button>
+                        <Button
+                          variant={selectedMetric === 'difficulty' ? 'default' : 'outline'}
+                          size="sm"
+                          onClick={() => setSelectedMetric('difficulty')}
+                          className="text-xs"
+                        >
+                          <Activity className="h-3 w-3 mr-1" />
+                          Ease
+                        </Button>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <ChartContainer
+                      config={{
+                        value: {
+                          label: selectedMetric === 'effectiveness' ? "Effectiveness %" : 
+                                 selectedMetric === 'retention' ? "Retention %" : 
+                                 selectedMetric === 'difficulty' ? "Ease %" : "Time Efficiency %",
+                          color: "hsl(var(--chart-1))",
+                        },
+                      }}
+                      className="h-[400px]"
+                    >
+                      <ResponsiveContainer width="100%" height="100%">
+                        <BarChart data={getMetricData()} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
+                          <XAxis 
+                            dataKey="technique" 
+                            angle={-45}
+                            textAnchor="end"
+                            height={80}
+                            fontSize={12}
+                          />
+                          <YAxis />
+                          <ChartTooltip 
+                            content={({ active, payload, label }) => {
+                              if (active && payload && payload.length) {
+                                const data = payload[0].payload;
+                                return (
+                                  <div className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow-lg border">
+                                    <h3 className="font-semibold text-lg mb-2">{label}</h3>
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{data.description}</p>
+                                    <div className="space-y-2">
+                                      <div className="flex justify-between">
+                                        <span>Effectiveness:</span>
+                                        <span className="font-semibold">{data.effectiveness}%</span>
+                                      </div>
+                                      <div className="flex justify-between">
+                                        <span>Retention:</span>
+                                        <span className="font-semibold">{data.retention}%</span>
+                                      </div>
+                                      <div className="flex justify-between">
+                                        <span>Time Required:</span>
+                                        <span className="font-semibold">{data.timeRequired} min</span>
+                                      </div>
+                                      <div className="flex justify-between">
+                                        <span>Difficulty:</span>
+                                        <div className="flex">
+                                          {[...Array(5)].map((_, i) => (
+                                            <Star 
+                                              key={i} 
+                                              className={`h-3 w-3 ${i < data.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+                                            />
+                                          ))}
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
+                              }
+                              return null;
+                            }}
+                          />
+                          <Bar 
+                            dataKey="value" 
+                            radius={[4, 4, 0, 0]}
+                            fill="url(#colorGradient)"
+                          />
+                          <defs>
+                            <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                              <stop offset="0%" stopColor="#3b82f6" stopOpacity={1}/>
+                              <stop offset="100%" stopColor="#1d4ed8" stopOpacity={0.8}/>
+                            </linearGradient>
+                          </defs>
+                        </BarChart>
+                      </ResponsiveContainer>
+                    </ChartContainer>
+                  </CardContent>
+                </Card>
+
+                {/* Quick Stats */}
+                <div className="space-y-4">
+                  <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-blue-900/20 dark:to-indigo-900/20 border-blue-200 dark:border-blue-800">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-semibold text-blue-700 dark:text-blue-300">Top Performer</h3>
+                        <Trophy className="h-5 w-5 text-yellow-500" />
+                      </div>
+                      <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">Active Recall</p>
+                      <p className="text-sm text-blue-600 dark:text-blue-400">92% effectiveness</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-to-br from-green-50 to-emerald-100 dark:from-green-900/20 dark:to-emerald-900/20 border-green-200 dark:border-green-800">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-semibold text-green-700 dark:text-green-300">Best Retention</h3>
+                        <Brain className="h-5 w-5 text-green-500" />
+                      </div>
+                      <p className="text-2xl font-bold text-green-900 dark:text-green-100">Spaced Repetition</p>
+                      <p className="text-sm text-green-600 dark:text-green-400">95% retention rate</p>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-to-br from-purple-50 to-violet-100 dark:from-purple-900/20 dark:to-violet-900/20 border-purple-200 dark:border-purple-800">
+                    <CardContent className="p-6">
+                      <div className="flex items-center justify-between mb-2">
+                        <h3 className="font-semibold text-purple-700 dark:text-purple-300">Easiest to Start</h3>
+                        <CheckCircle className="h-5 w-5 text-purple-500" />
+                      </div>
+                      <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">Pomodoro</p>
+                      <p className="text-sm text-purple-600 dark:text-purple-400">Beginner friendly</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Technique Comparison Radar Chart */}
               <Card className="mb-8">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Trophy className="h-5 w-5 text-yellow-500" />
-                    Study Technique Effectiveness
+                    <BarChart3 className="h-5 w-5 text-indigo-500" />
+                    Technique Comparison Overview
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ChartContainer
                     config={{
                       effectiveness: {
-                        label: "Effectiveness %",
-                        color: "hsl(var(--chart-1))",
+                        label: "Effectiveness",
+                        color: "#3b82f6",
+                      },
+                      retention: {
+                        label: "Retention",
+                        color: "#10b981",
+                      },
+                      easeOfUse: {
+                        label: "Ease of Use",
+                        color: "#f59e0b",
+                      },
+                      timeEfficiency: {
+                        label: "Time Efficiency",
+                        color: "#ef4444",
                       },
                     }}
-                    className="h-[300px]"
+                    className="h-[400px]"
                   >
                     <ResponsiveContainer width="100%" height="100%">
-                      <BarChart data={effectivenessData}>
-                        <XAxis dataKey="technique" />
-                        <YAxis />
-                        <ChartTooltip content={<ChartTooltipContent />} />
-                        <Bar dataKey="effectiveness" fill="#3b82f6" />
-                      </BarChart>
+                      <RadarChart data={radarData}>
+                        <PolarGrid />
+                        <PolarAngleAxis dataKey="technique" />
+                        <PolarRadiusAxis angle={90} domain={[0, 100]} />
+                        <Radar
+                          name="Effectiveness"
+                          dataKey="effectiveness"
+                          stroke="#3b82f6"
+                          fill="#3b82f6"
+                          fillOpacity={0.1}
+                          strokeWidth={2}
+                        />
+                        <Radar
+                          name="Retention"
+                          dataKey="retention"
+                          stroke="#10b981"
+                          fill="#10b981"
+                          fillOpacity={0.1}
+                          strokeWidth={2}
+                        />
+                        <Radar
+                          name="Ease of Use"
+                          dataKey="easeOfUse"
+                          stroke="#f59e0b"
+                          fill="#f59e0b"
+                          fillOpacity={0.1}
+                          strokeWidth={2}
+                        />
+                        <ChartTooltip />
+                      </RadarChart>
                     </ResponsiveContainer>
                   </ChartContainer>
+                  <div className="flex flex-wrap justify-center gap-4 mt-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                      <span className="text-sm">Effectiveness</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                      <span className="text-sm">Retention</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                      <span className="text-sm">Ease of Use</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
