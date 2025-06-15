@@ -1,125 +1,172 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { GraduationCap, Calendar, FileText, Users, CheckCircle, Clock, AlertCircle, BookOpen } from 'lucide-react';
+import { GraduationCap, Calendar, FileText, Users, CheckCircle, Clock, AlertCircle, BookOpen, Globe, Building2 } from 'lucide-react';
 
 const AdmissionGuide = () => {
   const admissionSteps = [
     {
       step: 1,
-      title: "Class XII Completion",
-      description: "Complete Class XII from a recognized board (BHSEC, CBSE, ISC, etc.)",
-      timeline: "May-June",
-      requirements: ["Valid Class XII marksheet", "Character certificate", "Medical certificate"]
+      title: "Check Eligibility Criteria",
+      description: "Each college or university has its own minimum academic requirements",
+      timeline: "Before Application",
+      requirements: [
+        "Pass BHSEC/Class 12 or equivalent",
+        "Minimum percentage (usually 50-60% aggregate)",
+        "Subject-specific criteria (PCM for engineering, PCB for nursing)"
+      ]
     },
     {
       step: 2,
-      title: "Entrance Examinations",
-      description: "Appear for relevant entrance exams based on your chosen field",
-      timeline: "June-July",
-      requirements: ["BHUTAN SAT for general courses", "Specific entrance exams for professional courses", "Valid admit card"]
+      title: "Choose Institution Type",
+      description: "Select between Government colleges (RUB), Medical colleges (KGUMSB), or Private colleges",
+      timeline: "January-February",
+      requirements: ["Research different colleges", "Check specific course requirements", "Compare fee structures"]
     },
     {
       step: 3,
-      title: "Application Submission",
-      description: "Submit online/offline applications with required documents",
-      timeline: "July-August",
-      requirements: ["Completed application form", "Academic transcripts", "Entrance exam scores", "Application fee"]
+      title: "Apply Online through CAS",
+      description: "For RUB colleges, use the Centralized Admission System (CAS)",
+      timeline: "February-March",
+      requirements: [
+        "Visit RUB website",
+        "Register with CID/BHSEC index number",
+        "Upload documents & pay application fee (Nu.300-500)"
+      ]
     },
     {
       step: 4,
-      title: "Merit List & Selection",
-      description: "Wait for merit list publication and seat allocation",
-      timeline: "August-September",
-      requirements: ["Meet cutoff marks", "Choice filling for colleges", "Document verification"]
+      title: "Shortlisting & Selection",
+      description: "Merit-based ranking from BHSEC marks with possible entrance tests",
+      timeline: "April-May",
+      requirements: ["Meet cutoff marks", "Attend entrance test if required", "Wait for merit list"]
     },
     {
       step: 5,
       title: "Admission Confirmation",
-      description: "Complete admission formalities and fee payment",
-      timeline: "September",
-      requirements: ["Admission fee payment", "Original document submission", "Medical examination"]
+      description: "Complete admission formalities and document verification",
+      timeline: "May-June",
+      requirements: ["Pay admission fees", "Submit original documents", "Medical fitness certificate"]
     }
   ];
 
-  const collegeTypes = [
+  const institutionTypes = [
     {
-      type: "Royal University of Bhutan Colleges",
-      process: "Centralized admission through BHUTAN SAT",
-      eligibility: "Class XII with minimum 50% aggregate",
+      type: "Government Colleges under RUB",
+      description: "Royal University of Bhutan colleges with centralized admission",
+      process: "Apply through CAS portal (rub.edu.bt)",
+      examples: ["Sherubtse College", "CST (College of Science & Technology)", "Paro College of Education", "Gaeddu College of Business Studies"],
       icon: GraduationCap,
-      color: "bg-blue-100 text-blue-600"
+      color: "bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-400"
     },
     {
-      type: "Professional Colleges",
-      process: "Separate entrance examinations",
-      eligibility: "Specific subject requirements and minimum marks",
-      icon: BookOpen,
-      color: "bg-green-100 text-green-600"
+      type: "Health & Medical Colleges (KGUMSB)",
+      description: "Khesar Gyalpo University of Medical Sciences colleges",
+      process: "Separate application with entrance tests and interviews",
+      examples: ["Faculty of Nursing and Public Health", "KGUMSB Medical Programs"],
+      icon: Building2,
+      color: "bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400"
     },
     {
       type: "Private Colleges",
-      process: "Individual college-based admission",
-      eligibility: "Varies by institution",
+      description: "Independent institutions with individual admission processes",
+      process: "Apply directly to each college with separate requirements",
+      examples: ["Royal Thimphu College (RTC)", "Norbuling Rigter College", "Apollo Bhutan Institute of Nursing"],
       icon: Users,
-      color: "bg-purple-100 text-purple-600"
+      color: "bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-400"
     }
   ];
 
-  const importantDates = [
-    { event: "Class XII Results", period: "May-June" },
-    { event: "BHUTAN SAT Registration", period: "June" },
-    { event: "BHUTAN SAT Examination", period: "July" },
-    { event: "Application Period", period: "July-August" },
-    { event: "Merit List Publication", period: "August" },
-    { event: "Admission Process", period: "September" }
+  const timeline = [
+    { month: "January-February", activity: "BHSEC Results Declared", status: "preparation" },
+    { month: "February-March", activity: "Online Applications Open (RUB, etc)", status: "active" },
+    { month: "March-April", activity: "Application Deadline", status: "deadline" },
+    { month: "April-May", activity: "Shortlist & Admission Offers", status: "waiting" },
+    { month: "June", activity: "College Opens/Classes Begin", status: "start" }
+  ];
+
+  const casSteps = [
+    "Visit the CAS portal during admission window (Feb-Mar)",
+    "Register using your CID/BHSEC index number",
+    "Select college and course preferences",
+    "Upload required documents (Class 10 & 12 Mark Sheets, CID, passport photo)",
+    "Pay application fee (Nu.300 – Nu.500 typically)",
+    "You can choose multiple programs in order of preference"
   ];
 
   const requiredDocuments = [
     "Class XII Marksheet (Original & Photocopies)",
     "Class X Marksheet",
     "Character Certificate from School",
-    "Medical Certificate",
-    "Citizenship Identity Card",
+    "Medical Certificate/Fitness Certificate",
+    "Citizenship Identity Card (CID)",
     "Recent Passport Size Photographs",
-    "Entrance Exam Scorecard",
-    "Migration Certificate (if applicable)",
-    "Caste Certificate (if applicable)",
-    "Income Certificate (for scholarships)"
+    "Entrance Exam Scorecard (if applicable)",
+    "Migration Certificate (if applicable)"
   ];
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'preparation': return 'bg-gray-100 text-gray-600';
+      case 'active': return 'bg-green-100 text-green-600';
+      case 'deadline': return 'bg-red-100 text-red-600';
+      case 'waiting': return 'bg-blue-100 text-blue-600';
+      case 'start': return 'bg-purple-100 text-purple-600';
+      default: return 'bg-gray-100 text-gray-600';
+    }
+  };
 
   return (
     <div className="space-y-8">
       {/* Header */}
       <div className="text-center">
         <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
-          Admission Guide
+          General Admission Procedure After Class 12 in Bhutan (2025 Guide)
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-          Complete guide to college admission procedures in Bhutan
+          Complete step-by-step guide to college admission procedures in Bhutan
         </p>
       </div>
 
-      {/* College Types */}
+      {/* Institution Types */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <GraduationCap className="h-6 w-6 text-blue-600" />
-            Types of Colleges & Admission Processes
+            <Building2 className="h-6 w-6 text-blue-600" />
+            Types of Institutions in Bhutan
           </CardTitle>
+          <CardDescription>
+            Choose the right type of institution based on your career goals
+          </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {collegeTypes.map((college) => {
-              const IconComponent = college.icon;
+          <div className="space-y-6">
+            {institutionTypes.map((institution) => {
+              const IconComponent = institution.icon;
               return (
-                <div key={college.type} className="p-4 border rounded-lg">
-                  <div className={`p-3 rounded-full ${college.color} w-fit mb-3`}>
-                    <IconComponent className="h-6 w-6" />
+                <div key={institution.type} className="p-6 border rounded-lg">
+                  <div className="flex items-start gap-4">
+                    <div className={`p-3 rounded-full ${institution.color} flex-shrink-0`}>
+                      <IconComponent className="h-6 w-6" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-semibold text-lg mb-2">{institution.type}</h3>
+                      <p className="text-slate-600 dark:text-slate-300 mb-3">{institution.description}</p>
+                      <div className="mb-4">
+                        <Badge variant="outline" className="mb-2">{institution.process}</Badge>
+                      </div>
+                      <div>
+                        <h4 className="font-medium mb-2">Examples:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {institution.examples.map((example, index) => (
+                            <Badge key={index} variant="secondary" className="text-xs">
+                              {example}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="font-semibold mb-2">{college.type}</h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 mb-2">{college.process}</p>
-                  <Badge variant="secondary" className="text-xs">{college.eligibility}</Badge>
                 </div>
               );
             })}
@@ -127,16 +174,13 @@ const AdmissionGuide = () => {
         </CardContent>
       </Card>
 
-      {/* Admission Steps */}
+      {/* Step-by-Step Process */}
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <CheckCircle className="h-6 w-6 text-green-600" />
             Step-by-Step Admission Process
           </CardTitle>
-          <CardDescription>
-            Follow these steps for a smooth admission process
-          </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="space-y-6">
@@ -167,73 +211,105 @@ const AdmissionGuide = () => {
         </CardContent>
       </Card>
 
-      {/* Important Dates */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Calendar className="h-6 w-6 text-orange-600" />
-              Important Dates
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {importantDates.map((date, index) => (
-                <div key={index} className="flex justify-between items-center p-3 bg-slate-50 dark:bg-slate-800 rounded-lg">
-                  <span className="font-medium">{date.event}</span>
-                  <Badge variant="outline">{date.period}</Badge>
+      {/* CAS Application Process */}
+      <Card className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-700">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-blue-800 dark:text-blue-200">
+            <Globe className="h-6 w-6" />
+            Centralized Admission System (CAS) - RUB Colleges
+          </CardTitle>
+          <CardDescription className="text-blue-700 dark:text-blue-300">
+            Website: https://www.rub.edu.bt
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-3">
+            {casSteps.map((step, index) => (
+              <div key={index} className="flex items-start gap-3">
+                <div className="w-6 h-6 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">
+                  {index + 1}
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+                <span className="text-blue-800 dark:text-blue-200">{step}</span>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <FileText className="h-6 w-6 text-purple-600" />
-              Required Documents
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-2">
-              {requiredDocuments.map((doc, index) => (
-                <div key={index} className="flex items-start gap-2">
-                  <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm">{doc}</span>
+      {/* Timeline */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Calendar className="h-6 w-6 text-orange-600" />
+            Important Timeline (2025)
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="space-y-4">
+            {timeline.map((item, index) => (
+              <div key={index} className="flex justify-between items-center p-4 bg-slate-50 dark:bg-slate-800 rounded-lg">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span className="font-medium">{item.month}</span>
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-slate-600 dark:text-slate-300">{item.activity}</span>
+                  <Badge variant="secondary" className={getStatusColor(item.status)}>
+                    {item.status}
+                  </Badge>
+                </div>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
 
-      {/* Tips and Important Notes */}
+      {/* Required Documents */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <FileText className="h-6 w-6 text-purple-600" />
+            Required Documents Checklist
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {requiredDocuments.map((doc, index) => (
+              <div key={index} className="flex items-start gap-2">
+                <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
+                <span className="text-sm">{doc}</span>
+              </div>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Important Tips */}
       <Card className="bg-amber-50 dark:bg-amber-900/20 border-amber-200 dark:border-amber-700">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-amber-800 dark:text-amber-200">
             <AlertCircle className="h-6 w-6" />
-            Important Tips
+            Important Tips for Success
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <CardContent className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-semibold mb-2 text-amber-800 dark:text-amber-200">Before Application:</h4>
-              <ul className="space-y-1 text-sm text-amber-700 dark:text-amber-300">
-                <li>• Research colleges and their requirements thoroughly</li>
-                <li>• Prepare for entrance exams well in advance</li>
-                <li>• Keep all documents ready and verified</li>
-                <li>• Check eligibility criteria carefully</li>
+              <h4 className="font-semibold mb-3 text-amber-800 dark:text-amber-200">For RUB Colleges:</h4>
+              <ul className="space-y-2 text-sm text-amber-700 dark:text-amber-300">
+                <li>• You can choose multiple programs in order of preference</li>
+                <li>• Merit-based ranking from BHSEC marks is used</li>
+                <li>• Apply early during the admission window</li>
+                <li>• Keep application fee ready (Nu.300-500)</li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-2 text-amber-800 dark:text-amber-200">During Process:</h4>
-              <ul className="space-y-1 text-sm text-amber-700 dark:text-amber-300">
-                <li>• Submit applications before deadlines</li>
-                <li>• Keep multiple backup options</li>
-                <li>• Stay updated with official announcements</li>
-                <li>• Maintain original documents safely</li>
+              <h4 className="font-semibold mb-3 text-amber-800 dark:text-amber-200">For Medical/Private Colleges:</h4>
+              <ul className="space-y-2 text-sm text-amber-700 dark:text-amber-300">
+                <li>• Apply separately to each institution</li>
+                <li>• Prepare for entrance tests and interviews</li>
+                <li>• Check individual college websites for requirements</li>
+                <li>• Submit applications before individual deadlines</li>
               </ul>
             </div>
           </div>
@@ -243,10 +319,10 @@ const AdmissionGuide = () => {
       {/* Contact Information */}
       <Card>
         <CardHeader>
-          <CardTitle>Need Help?</CardTitle>
+          <CardTitle>Important Contact Information</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div>
               <h4 className="font-semibold mb-2">Royal University of Bhutan</h4>
               <p className="text-sm text-slate-600 dark:text-slate-300">
@@ -256,11 +332,18 @@ const AdmissionGuide = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-2">Ministry of Education</h4>
+              <h4 className="font-semibold mb-2">Royal Thimphu College</h4>
               <p className="text-sm text-slate-600 dark:text-slate-300">
-                📞 +975-2-326-725<br/>
-                📧 info@education.gov.bt<br/>
-                🌐 www.education.gov.bt
+                📞 +975-2-351-348<br/>
+                📧 info@rtc.bt<br/>
+                🌐 www.rtc.bt
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-2">Apollo Bhutan Institute</h4>
+              <p className="text-sm text-slate-600 dark:text-slate-300">
+                📞 Contact through website<br/>
+                🌐 apollobhutan.edu.bt
               </p>
             </div>
           </div>
