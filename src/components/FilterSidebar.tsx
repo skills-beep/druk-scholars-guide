@@ -98,11 +98,11 @@ const FilterSidebar = ({ filters, onFiltersChange, isOpen, onToggle }: FilterSid
       {/* Mobile Toggle Button */}
       <Button
         onClick={onToggle}
-        variant="outline"
+        variant="default"
         size="lg"
-        className="lg:hidden fixed bottom-6 right-6 z-40 rounded-full h-14 w-14 shadow-xl bg-white/90 backdrop-blur-lg border-white/20 hover:bg-white hover:scale-110 transition-all duration-300"
+        className="lg:hidden fixed bottom-6 right-6 z-40 rounded-full h-16 w-16 shadow-2xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-2 border-white/20 hover:scale-110 transition-all duration-300 backdrop-blur-lg"
       >
-        <Filter className="h-6 w-6" />
+        <Filter className="h-7 w-7" />
       </Button>
 
       {/* Sidebar */}
