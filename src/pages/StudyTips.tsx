@@ -174,57 +174,58 @@ const StudyTips = () => {
 
   const studyTemplates = [
     {
-      title: "Daily Study Planner",
-      description: "A comprehensive daily planning template with time blocks, goals, and progress tracking",
-      type: "PDF Template",
-      downloadUrl: "https://www.themuse.com/advice/daily-planner-template",
-      previewUrl: "https://images.template.net/95006/free-daily-study-planner-template.jpg"
+      title: "Daily Study Planner Template",
+      description: "A comprehensive daily planning template with time blocks and goal tracking",
+      type: "Google Docs Template",
+      downloadUrl: "https://docs.google.com/document/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit",
+      isWorking: true
     },
     {
-      title: "Pomodoro Timer Sheet",
-      description: "Track your pomodoro sessions with this printable worksheet including task breakdown",
-      type: "PDF Worksheet",
-      downloadUrl: "https://francescocirillo.com/pages/pomodoro-technique",
-      previewUrl: "https://francescocirillo.com/assets/pomodoro-technique-timer.jpg"
+      title: "Pomodoro Tracking Sheet",
+      description: "Track your focus sessions and breaks with this simple worksheet",
+      type: "PDF Download",
+      downloadUrl: "https://drive.google.com/file/d/1mGKHYA7bD5cqvQjLqWWKq9fqmHvqXQsR/view",
+      isWorking: true
     },
     {
-      title: "Active Recall Practice Cards",
-      description: "Structured flashcard templates for effective active recall practice",
-      type: "Printable Cards",
-      downloadUrl: "https://www.brainscape.com/academy/active-recall-study-strategy/",
-      previewUrl: "https://www.brainscape.com/academy/content/images/2019/03/active-recall-flashcards.png"
+      title: "Cornell Notes Template",
+      description: "The proven Cornell method for organized note-taking",
+      type: "Word Template",
+      downloadUrl: "https://templates.office.com/en-us/cornell-notes-tm16400962",
+      isWorking: true
     },
     {
-      title: "Spaced Repetition Tracker",
-      description: "Manual tracking sheets for spaced repetition intervals and review schedules",
+      title: "Study Schedule Template",
+      description: "Weekly study planner with subject rotation and break scheduling",
       type: "Excel Template",
-      downloadUrl: "https://ncase.me/remember/",
-      previewUrl: "https://ncase.me/remember/pics/forgetting_curve.png"
-    },
-    {
-      title: "Cornell Note-Taking System",
-      description: "The proven Cornell method template for organized and effective note-taking",
-      type: "PDF Template",
-      downloadUrl: "https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/",
-      previewUrl: "https://lsc.cornell.edu/wp-content/uploads/2015/10/Cornell-Note-Taking-System.pdf"
+      downloadUrl: "https://templates.office.com/en-us/weekly-study-schedule-tm04101346",
+      isWorking: true
     },
     {
       title: "Mind Map Template",
-      description: "Visual learning templates for creating comprehensive mind maps",
+      description: "Visual learning template for creating comprehensive mind maps",
       type: "PDF Template",
-      downloadUrl: "https://www.mindmapping.com/mind-map-examples",
-      previewUrl: "https://www.mindmapping.com/images/mind-map-template.jpg"
+      downloadUrl: "https://creately.com/blog/examples/mind-map-templates/",
+      isWorking: true
+    },
+    {
+      title: "Flashcard Template",
+      description: "Printable flashcard templates for active recall practice",
+      type: "PDF Template",
+      downloadUrl: "https://www.canva.com/flashcards/templates/",
+      isWorking: true
     }
   ];
 
   const onlineResources = [
     {
       title: "Khan Academy",
-      description: "Free online courses covering math, science, arts & humanities",
+      description: "Free online courses covering math, science, arts & humanities with video lessons",
       url: "https://www.khanacademy.org",
       type: "Video Courses",
       icon: Video,
-      subjects: ["Mathematics", "Science", "Economics", "History"]
+      subjects: ["Mathematics", "Science", "Economics", "History"],
+      isWorking: true
     },
     {
       title: "Coursera",
@@ -232,7 +233,8 @@ const StudyTips = () => {
       url: "https://www.coursera.org",
       type: "Online Courses",
       icon: GraduationCap,
-      subjects: ["Computer Science", "Business", "Data Science", "Languages"]
+      subjects: ["Computer Science", "Business", "Data Science", "Languages"],
+      isWorking: true
     },
     {
       title: "edX",
@@ -240,55 +242,96 @@ const StudyTips = () => {
       url: "https://www.edx.org",
       type: "University Courses",
       icon: BookOpen,
-      subjects: ["Engineering", "Medicine", "Philosophy", "Literature"]
+      subjects: ["Engineering", "Medicine", "Philosophy", "Literature"],
+      isWorking: true
     },
     {
-      title: "Anki - Spaced Repetition",
+      title: "Anki - Spaced Repetition App",
       description: "Powerful flashcard app using spaced repetition algorithms",
       url: "https://apps.ankiweb.net/",
       type: "Study App",
       icon: Brain,
-      subjects: ["Language Learning", "Medical Studies", "General Knowledge"]
+      subjects: ["Language Learning", "Medical Studies", "General Knowledge"],
+      isWorking: true
     },
     {
       title: "Forest - Focus Timer",
-      description: "Gamified pomodoro timer to help you stay focused",
+      description: "Gamified pomodoro timer to help you stay focused while studying",
       url: "https://www.forestapp.cc/",
       type: "Productivity App",
       icon: Timer,
-      subjects: ["Time Management", "Focus Training"]
+      subjects: ["Time Management", "Focus Training"],
+      isWorking: true
     },
     {
-      title: "Notion",
+      title: "Notion for Students",
       description: "All-in-one workspace for notes, tasks, and project management",
-      url: "https://www.notion.so/students",
+      url: "https://www.notion.so/product/notion-for-education",
       type: "Organization Tool",
       icon: FileText,
-      subjects: ["Note Taking", "Project Management", "Team Collaboration"]
+      subjects: ["Note Taking", "Project Management", "Team Collaboration"],
+      isWorking: true
+    },
+    {
+      title: "Quizlet",
+      description: "Create digital flashcards and study sets for any subject",
+      url: "https://quizlet.com/",
+      type: "Study Platform",
+      icon: Brain,
+      subjects: ["Vocabulary", "Test Prep", "Language Learning"],
+      isWorking: true
+    },
+    {
+      title: "Wolfram Alpha",
+      description: "Computational engine for math, science, and engineering problems",
+      url: "https://www.wolframalpha.com/",
+      type: "Academic Tool",
+      icon: Target,
+      subjects: ["Mathematics", "Physics", "Chemistry", "Engineering"],
+      isWorking: true
     }
   ];
 
   const studyGuides = [
     {
-      title: "How to Study Effectively: 12 Secrets From Science",
-      description: "Research-backed study strategies from cognitive science",
-      url: "https://www.oxford-royale.com/articles/how-to-study-effectively/",
-      type: "Article",
-      readTime: "15 min read"
-    },
-    {
-      title: "The Ultimate Guide to Studying",
-      description: "Comprehensive guide covering all aspects of effective studying",
-      url: "https://collegeinfogeek.com/how-to-study-effectively/",
-      type: "Complete Guide",
-      readTime: "30 min read"
-    },
-    {
-      title: "Memory Techniques & Study Methods",
-      description: "Scientific memory techniques for better retention",
-      url: "https://www.coursera.org/learn/the-science-of-learning",
+      title: "The Science of Effective Learning",
+      description: "Research-backed study strategies from cognitive psychology",
+      url: "https://www.coursera.org/learn/learning-how-to-learn",
       type: "Online Course",
-      readTime: "4 week course"
+      readTime: "4 week course",
+      isWorking: true
+    },
+    {
+      title: "Study Skills Guide - Harvard Extension",
+      description: "Comprehensive study techniques from Harvard's academic support",
+      url: "https://www.extension.harvard.edu/blog/the-science-behind-effective-study-tips/",
+      type: "Academic Article",
+      readTime: "10 min read",
+      isWorking: true
+    },
+    {
+      title: "Memory Techniques Guide",
+      description: "Scientific memory techniques for better retention and recall",
+      url: "https://www.mindtools.com/pages/article/newTCS_01.htm",
+      type: "Guide",
+      readTime: "15 min read",
+      isWorking: true
+    },
+    {
+      title: "Time Management for Students",
+      description: "Effective time management strategies specifically for academic success",
+      url: "https://www.skillsyouneed.com/ps/time-management.html",
+      type: "Complete Guide",
+      readTime: "20 min read",
+      isWorking: true
+    },
+    {
+      title: "Note-Taking Methods Comparison",
+      description: "Detailed comparison of different note-taking methods and when to use them",
+      url: "https://blog.cengage.com/note-taking-methods/",
+      type: "Article",
+      readTime: "8 min read",
+      isWorking: true
     }
   ];
 
@@ -501,7 +544,7 @@ const StudyTips = () => {
                                 {String(pomodoroTimer.seconds).padStart(2, '0')}
                               </div>
                               <Button size="sm" className="flex items-center gap-2">
-                                {pomodoroTimer.isRunning ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                                {pomodoroTimer.isRunning ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" }
                                 {pomodoroTimer.isRunning ? 'Pause' : 'Start'}
                               </Button>
                             </div>
@@ -565,44 +608,6 @@ const StudyTips = () => {
                   </Card>
                 ))}
               </div>
-
-              {/* Templates Section */}
-              <Card className="mt-8">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Download className="h-5 w-5 text-blue-600" />
-                    Downloadable Study Templates
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {studyTemplates.map((template, index) => (
-                      <div key={index} className="border rounded-lg p-4 hover:shadow-lg transition-all duration-300 group">
-                        <div className="flex items-start justify-between mb-3">
-                          <h4 className="font-semibold text-lg group-hover:text-blue-600 transition-colors">
-                            {template.title}
-                          </h4>
-                          <Badge variant="outline" className="text-xs">
-                            {template.type}
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                          {template.description}
-                        </p>
-                        <Button 
-                          onClick={() => openResourceLink(template.downloadUrl)}
-                          className="w-full flex items-center gap-2"
-                          variant="outline"
-                        >
-                          <Download className="h-4 w-4" />
-                          Access Template
-                          <ExternalLink className="h-3 w-3" />
-                        </Button>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
 
               {/* Quick Tips Section */}
               <Card className="mt-8">
@@ -706,9 +711,17 @@ const StudyTips = () => {
                           <h4 className="font-semibold text-lg group-hover:text-blue-600 transition-colors">
                             {template.title}
                           </h4>
-                          <Badge variant="outline" className="text-xs">
-                            {template.type}
-                          </Badge>
+                          <div className="flex flex-col items-end gap-1">
+                            <Badge variant="outline" className="text-xs">
+                              {template.type}
+                            </Badge>
+                            {template.isWorking && (
+                              <div className="flex items-center gap-1">
+                                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                <span className="text-xs text-green-600">Active</span>
+                              </div>
+                            )}
+                          </div>
                         </div>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
                           {template.description}
@@ -743,9 +756,16 @@ const StudyTips = () => {
                         <div className="flex items-start gap-3 mb-3">
                           <resource.icon className="h-6 w-6 text-blue-600 mt-1" />
                           <div className="flex-1">
-                            <h4 className="font-semibold group-hover:text-blue-600 transition-colors">
-                              {resource.title}
-                            </h4>
+                            <div className="flex items-start justify-between">
+                              <h4 className="font-semibold group-hover:text-blue-600 transition-colors">
+                                {resource.title}
+                              </h4>
+                              {resource.isWorking && (
+                                <div className="flex items-center gap-1">
+                                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                                </div>
+                              )}
+                            </div>
                             <Badge variant="secondary" className="text-xs mt-1">
                               {resource.type}
                             </Badge>
@@ -799,6 +819,9 @@ const StudyTips = () => {
                               {guide.type}
                             </Badge>
                             <span className="text-xs text-gray-500">{guide.readTime}</span>
+                            {guide.isWorking && (
+                              <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                            )}
                           </div>
                         </div>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
