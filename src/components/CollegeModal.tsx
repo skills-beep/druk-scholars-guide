@@ -1,10 +1,10 @@
-
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import DynamicRating from './DynamicRating';
 import { 
   MapPin, 
   Calendar, 
@@ -117,9 +117,8 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                 </Badge>
               ))}
             </div>
-            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1 flex items-center gap-1">
-              <Star className="h-4 w-4 text-yellow-500 fill-current" />
-              <span className="font-semibold">{college.rating}</span>
+            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1">
+              <DynamicRating rating={college.rating} size="md" showValue={true} />
             </div>
           </div>
 
@@ -173,7 +172,9 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                         <li>• Established in {college.established}</li>
                         <li>• Located in {college.location}</li>
                         <li>• Type: {college.type}</li>
-                        <li>• Rating: {college.rating}/5.0</li>
+                        <li className="flex items-center gap-1">
+                          • Rating: <DynamicRating rating={college.rating} size="sm" showValue={true} />
+                        </li>
                         <li>• {college.courses?.length || 0} Programs Offered</li>
                         {college.studentCount && <li>• {college.studentCount.toLocaleString()} Students</li>}
                         {college.facultyCount && <li>• {college.facultyCount} Faculty Members</li>}
