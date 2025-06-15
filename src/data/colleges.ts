@@ -779,6 +779,82 @@ export const colleges: College[] = [
     }
   },
   {
+    id: "14",
+    name: "Royal Institute of Tourism and Hospitality",
+    location: "Motithang, Thimphu",
+    image: "/lovable-uploads/d744c461-bf66-4df2-a026-da9a8ab31455.png",
+    description: "Bhutan's premier institute for tourism and hospitality education. As a constituent college of the Royal University of Bhutan, RITH provides hands-on, practical learning integrated with Bhutanese values and global tourism standards.",
+    established: 2010,
+    type: "Public",
+    rating: 4.3,
+    fees: {
+      min: 120000,
+      max: 200000,
+      currency: "BTN"
+    },
+    courses: [
+      "Bachelor of Tourism and Hospitality Management (BTHM)"
+    ],
+    tags: ["Tourism", "Hospitality", "RUB Constituent", "Public"],
+    admissionDeadline: "March 2024 (via RUB Admission Portal)",
+    eligibility: [
+      "Class XII passed with minimum 50% aggregate",
+      "English as compulsory subject",
+      "Pass in RUB Admission Test"
+    ],
+    scholarships: [
+      {
+        name: "RUB Tourism Scholarship",
+        amount: "Full tuition fee and stipend",
+        criteria: "Based on academic performance and commitment to tourism industry"
+      },
+      {
+        name: "RITH Merit Scholarship",
+        amount: "Up to 75% tuition fee waiver",
+        criteria: "Based on academic excellence and entrance exam performance"
+      }
+    ],
+    contact: {
+      phone: "+975-2-351348",
+      email: "info@rith.edu.bt",
+      website: "https://www.rith.edu.bt"
+    },
+    applyUrl: "https://www.rub.edu.bt/admissions",
+    facilities: [
+      "Live Training Hotel Setup",
+      "Fully Equipped Commercial Kitchens",
+      "Mock Front-Office Labs",
+      "Food & Beverage Service Training Areas",
+      "Housekeeping Training Rooms",
+      "Conference and Event Management Facilities"
+    ],
+    accreditation: "Royal University of Bhutan",
+    campusSize: "25 acres",
+    studentCount: 300,
+    facultyCount: 35,
+    programs: {
+      undergraduate: ["Bachelor of Tourism and Hospitality Management (BTHM)"],
+      postgraduate: [],
+      doctorate: []
+    },
+    careerOpportunities: [
+      "Hotel Management",
+      "Tourism Operations",
+      "Event Management",
+      "Restaurant Management",
+      "Travel Agency Operations",
+      "Tourism Policy and Planning",
+      "Sustainable Tourism Development"
+    ],
+    vision: "Aspiring to be the Regional Centre of Excellence in the World of Tourism and Hospitality",
+    mission: [
+      "Committed to offering international-standard education in tourism and hospitality",
+      "Fostering professionalism, innovation, and Bhutanese values",
+      "Supporting sustainable tourism and national development",
+      "Providing hands-on practical learning with industry partnerships"
+    ]
+  },
+  {
     id: 'norbuling-rigter-college',
     name: 'Norbuling Rigter College',
     location: 'Paro',
