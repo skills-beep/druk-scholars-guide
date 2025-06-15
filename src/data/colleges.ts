@@ -707,7 +707,15 @@ export const colleges: College[] = [
       doctorate: [],
       diploma: ["General Nursing and Midwifery", "Auxiliary Nurse Midwifery"]
     },
-    careerOpportunities: ["Registered Nurse", "Hospital Administrator", "Clinical Specialist", "Community Health Nurse", "Healthcare Manager"]
+    careerOpportunities: ["Registered Nurse", "Hospital Administrator", "Clinical Specialist", "Community Health Nurse", "Healthcare Manager"],
+    vision: "To be a leading institution in nursing education in the region, producing competent, compassionate, and caring nursing professionals who contribute to improving healthcare outcomes in Bhutan and beyond",
+    mission: [
+      "Provide excellence in nursing education through innovative teaching-learning methodologies",
+      "Develop skilled nursing professionals with strong clinical competencies and ethical values",
+      "Foster research and evidence-based practice in nursing",
+      "Collaborate with healthcare institutions to ensure quality patient care",
+      "Promote continuous professional development and lifelong learning among nursing professionals"
+    ]
   },
   {
     id: "13",
@@ -769,14 +777,15 @@ export const colleges: College[] = [
       diploma: ["Diploma in Medical Laboratory Technology", "Diploma in Pharmacy"]
     },
     careerOpportunities: ["Medical Doctor", "Specialist Physician", "Surgeon", "Traditional Medicine Practitioner", "Medical Researcher", "Healthcare Administrator"],
-    vision: {
-      undergraduate: "Create a learning environment that nurtures compassionate, competent, caring doctors who serve Bhutan and the region, engage in lifelong evidence-based practice aligned with GNH goals",
-      postgraduate: "To be a credible center of excellence in postgraduate medical education in the region"
-    },
-    mission: {
-      undergraduate: "Create a learning environment that nurtures compassionate, competent, caring doctors who serve Bhutan and the region, engage in lifelong evidence-based practice aligned with GNH goals",
-      postgraduate: "Conduct postgraduate medical education to train highly skilled, dedicated specialists who deliver optimal, humane healthcare tailored to Bhutan's evolving needs"
-    }
+    vision: "To be a premier center of excellence in medical education, research and healthcare delivery that produces competent, compassionate and ethical healthcare professionals committed to serving the health needs of Bhutan and the region",
+    mission: [
+      "Provide world-class medical education that integrates modern medicine with traditional healing practices",
+      "Conduct cutting-edge research to address health challenges relevant to Bhutan and the Himalayan region",
+      "Deliver compassionate and quality healthcare services through our teaching hospitals",
+      "Develop healthcare professionals who uphold the highest standards of medical ethics and professionalism",
+      "Contribute to health policy development and implementation in Bhutan",
+      "Foster international collaboration in medical education and research while preserving Bhutanese cultural values"
+    ]
   },
   {
     id: "14",
