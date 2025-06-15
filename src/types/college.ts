@@ -53,3 +53,15 @@ export interface Scholarship {
   amount: string;
   criteria: string;
 }
+
+export interface CollegeFilters {
+  search: string;
+  location: string[];
+  courseType: string[];
+  feeRange: [number, number];
+  rating: number;
+  collegeType: string[];
+  accreditation: string[];
+  degreeProgram: string;
+  sortBy: 'popularity' | 'alphabetical' | 'rating' | 'newest';
+}

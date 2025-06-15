@@ -49,7 +49,8 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
       'College of Language and Culture Studies': 'http://www.clcs.edu.bt',
       'Sherubtse College': 'https://www.sherubtse.edu.bt/',
       'Institute of Traditional Medicine': 'https://www.moh.gov.bt/',
-      'Gyalpozhing College of Information Technology': 'http://www.gcit.edu.bt'
+      'Gyalpozhing College of Information Technology': 'http://www.gcit.edu.bt',
+      'Norbuling Rigter College': 'https://www.nrc.bt'
     };
     
     return websiteMap[collegeName] || college.contact?.website || college.applyUrl || null;
@@ -63,6 +64,22 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
     } else {
       console.warn(`No website found for ${college.name}`);
     }
+  };
+
+  // Helper functions to handle vision and mission data
+  const getVisionText = () => {
+    if (!college.vision) return "Committed to providing quality education that aligns with Bhutan's Gross National Happiness philosophy.";
+    if (typeof college.vision === 'string') return college.vision;
+    return college.vision.undergraduate || college.vision.postgraduate || "Excellence in education with GNH values.";
+  };
+
+  const getMissionText = () => {
+    if (!college.mission) return "Fostering academic excellence, cultural preservation, and sustainable development.";
+    if (Array.isArray(college.mission)) return college.mission.join('. ');
+    if (typeof college.mission === 'object') {
+      return college.mission.undergraduate || college.mission.postgraduate || "Committed to holistic education.";
+    }
+    return college.mission;
   };
 
   return (
@@ -84,6 +101,10 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
               src={college.image}
               alt={college.name}
               className="w-full h-64 object-cover"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = `https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop&q=80`;
+              }}
             />
             <div className="absolute top-4 left-4 flex flex-wrap gap-2">
               {college.tags.map((tag) => (
@@ -150,14 +171,22 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                         <li>• Type: {college.type}</li>
                         <li>• Rating: {college.rating}/5.0</li>
                         <li>• {college.courses.length} Programs Offered</li>
+                        {college.studentCount && <li>• {college.studentCount.toLocaleString()} Students</li>}
+                        {college.facultyCount && <li>• {college.facultyCount} Faculty Members</li>}
                       </ul>
                     </div>
                     <div className="p-3 rounded-lg bg-slate-50 dark:bg-gray-800">
-                      <h4 className="font-semibold mb-2">Mission & Vision</h4>
-                      <p className="text-sm text-muted-foreground">
-                        Committed to providing quality education that aligns with Bhutan's Gross National Happiness philosophy, 
-                        fostering academic excellence, cultural preservation, and sustainable development.
-                      </p>
+                      <h4 className="font-semibold mb-2">Vision & Mission</h4>
+                      <div className="space-y-2 text-sm text-muted-foreground">
+                        <div>
+                          <strong className="text-primary">Vision:</strong>
+                          <p className="mt-1">{getVisionText()}</p>
+                        </div>
+                        <div>
+                          <strong className="text-primary">Mission:</strong>
+                          <p className="mt-1">{getMissionText()}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -248,24 +277,32 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Award className="h-5 w-5" />
-                    {college.name} Scholarships
+                    Available Scholarships
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    {college.scholarships.map((scholarship, index) => (
-                      <Card key={index} className="border-l-4 border-l-green-500">
-                        <CardContent className="pt-4">
-                          <div className="flex justify-between items-start mb-2">
-                            <h4 className="font-semibold">{scholarship.name}</h4>
-                            <Badge variant="secondary" className="bg-green-100 text-green-800">
-                              {scholarship.amount}
-                            </Badge>
-                          </div>
-                          <p className="text-sm text-muted-foreground">{scholarship.criteria}</p>
-                        </CardContent>
-                      </Card>
-                    ))}
+                    {college.scholarships && college.scholarships.length > 0 ? (
+                      college.scholarships.map((scholarship, index) => (
+                        <Card key={index} className="border-l-4 border-l-green-500">
+                          <CardContent className="pt-4">
+                            <div className="flex justify-between items-start mb-2">
+                              <h4 className="font-semibold">{scholarship.name}</h4>
+                              <Badge variant="secondary" className="bg-green-100 text-green-800">
+                                {scholarship.amount}
+                              </Badge>
+                            </div>
+                            <p className="text-sm text-muted-foreground">{scholarship.criteria}</p>
+                          </CardContent>
+                        </Card>
+                      ))
+                    ) : (
+                      <div className="text-center py-8">
+                        <p className="text-muted-foreground">
+                          No specific scholarship information available. Contact the college directly for scholarship opportunities.
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -289,7 +326,7 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-muted-foreground" />
-                  <span>{college.contact.website}</span>
+                  <span className="truncate">{college.contact.website}</span>
                 </div>
               </div>
             </CardContent>
