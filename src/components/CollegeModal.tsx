@@ -157,8 +157,11 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                 </Badge>
               ))}
             </div>
-            <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-full px-3 py-1">
-              <DynamicRating rating={college.rating} size="md" showValue={true} />
+            <div className="absolute top-4 right-4">
+              <div className="bg-white/95 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-2">
+                <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
+                <DynamicRating rating={college.rating} size="sm" showValue={true} />
+              </div>
             </div>
           </div>
 
