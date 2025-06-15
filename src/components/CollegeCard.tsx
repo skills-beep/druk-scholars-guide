@@ -2,8 +2,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, Star, Calendar, Clock, ExternalLink, Eye } from 'lucide-react';
+import { MapPin, Calendar, Clock, ExternalLink, Eye } from 'lucide-react';
 import { College } from '@/types/college';
+import DynamicRating from './DynamicRating';
 
 interface CollegeCardProps {
   college: College;
@@ -59,9 +60,8 @@ const CollegeCard = ({ college, onViewDetails }: CollegeCardProps) => {
             </Badge>
           ))}
         </div>
-        <div className="absolute top-4 right-4 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-full px-2 py-1 flex items-center gap-1">
-          <Star className="h-3 w-3 text-yellow-500 fill-current" />
-          <span className="text-xs font-semibold text-gray-800 dark:text-gray-200">{college.rating}</span>
+        <div className="absolute top-4 right-4 bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-full px-2 py-1">
+          <DynamicRating rating={college.rating} size="sm" showValue={true} />
         </div>
       </div>
 
