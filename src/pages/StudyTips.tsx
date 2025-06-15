@@ -567,81 +567,85 @@ const StudyTips = () => {
                     </div>
                   </CardHeader>
                   <CardContent className="pt-0">
-                    <ChartContainer
-                      config={{
-                        value: {
-                          label: selectedMetric === 'effectiveness' ? "Effectiveness %" : 
-                                 selectedMetric === 'retention' ? "Retention %" : 
-                                 selectedMetric === 'difficulty' ? "Ease %" : "Time Efficiency %",
-                          color: "hsl(var(--chart-1))",
-                        },
-                      }}
-                      className="h-[300px] md:h-[400px]"
-                    >
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={getMetricData()} margin={{ top: 20, right: 10, left: 10, bottom: 60 }}>
-                          <XAxis 
-                            dataKey="technique" 
-                            angle={-45}
-                            textAnchor="end"
-                            height={80}
-                            fontSize={10}
-                            interval={0}
-                          />
-                          <YAxis fontSize={10} />
-                          <ChartTooltip 
-                            content={({ active, payload, label }) => {
-                              if (active && payload && payload.length) {
-                                const data = payload[0].payload;
-                                return (
-                                  <div className="bg-white dark:bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg border max-w-xs">
-                                    <h3 className="font-semibold text-sm md:text-lg mb-2">{label}</h3>
-                                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-3">{data.description}</p>
-                                    <div className="space-y-1 md:space-y-2 text-xs md:text-sm">
-                                      <div className="flex justify-between">
-                                        <span>Effectiveness:</span>
-                                        <span className="font-semibold">{data.effectiveness}%</span>
-                                      </div>
-                                      <div className="flex justify-between">
-                                        <span>Retention:</span>
-                                        <span className="font-semibold">{data.retention}%</span>
-                                      </div>
-                                      <div className="flex justify-between">
-                                        <span>Time Required:</span>
-                                        <span className="font-semibold">{data.timeRequired} min</span>
-                                      </div>
-                                      <div className="flex justify-between">
-                                        <span>Difficulty:</span>
-                                        <div className="flex">
-                                          {[...Array(5)].map((_, i) => (
-                                            <Star 
-                                              key={i} 
-                                              className={`h-2 w-2 md:h-3 md:w-3 ${i < data.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
-                                            />
-                                          ))}
+                    <div className="w-full overflow-x-auto">
+                      <div className="min-w-[500px] h-[300px] md:h-[400px]">
+                        <ChartContainer
+                          config={{
+                            value: {
+                              label: selectedMetric === 'effectiveness' ? "Effectiveness %" : 
+                                     selectedMetric === 'retention' ? "Retention %" : 
+                                     selectedMetric === 'difficulty' ? "Ease %" : "Time Efficiency %",
+                              color: "hsl(var(--chart-1))",
+                            },
+                          }}
+                          className="w-full h-full"
+                        >
+                          <ResponsiveContainer width="100%" height="100%">
+                            <BarChart data={getMetricData()} margin={{ top: 20, right: 10, left: 10, bottom: 80 }}>
+                              <XAxis 
+                                dataKey="technique" 
+                                angle={-45}
+                                textAnchor="end"
+                                height={80}
+                                fontSize={10}
+                                interval={0}
+                              />
+                              <YAxis fontSize={10} />
+                              <ChartTooltip 
+                                content={({ active, payload, label }) => {
+                                  if (active && payload && payload.length) {
+                                    const data = payload[0].payload;
+                                    return (
+                                      <div className="bg-white dark:bg-gray-800 p-3 md:p-4 rounded-lg shadow-lg border max-w-xs">
+                                        <h3 className="font-semibold text-sm md:text-lg mb-2">{label}</h3>
+                                        <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-3">{data.description}</p>
+                                        <div className="space-y-1 md:space-y-2 text-xs md:text-sm">
+                                          <div className="flex justify-between">
+                                            <span>Effectiveness:</span>
+                                            <span className="font-semibold">{data.effectiveness}%</span>
+                                          </div>
+                                          <div className="flex justify-between">
+                                            <span>Retention:</span>
+                                            <span className="font-semibold">{data.retention}%</span>
+                                          </div>
+                                          <div className="flex justify-between">
+                                            <span>Time Required:</span>
+                                            <span className="font-semibold">{data.timeRequired} min</span>
+                                          </div>
+                                          <div className="flex justify-between">
+                                            <span>Difficulty:</span>
+                                            <div className="flex">
+                                              {[...Array(5)].map((_, i) => (
+                                                <Star 
+                                                  key={i} 
+                                                  className={`h-2 w-2 md:h-3 md:w-3 ${i < data.difficulty ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
+                                                />
+                                              ))}
+                                            </div>
+                                          </div>
                                         </div>
                                       </div>
-                                    </div>
-                                  </div>
-                                );
-                              }
-                              return null;
-                            }}
-                          />
-                          <Bar 
-                            dataKey="value" 
-                            radius={[4, 4, 0, 0]}
-                            fill="url(#colorGradient)"
-                          />
-                          <defs>
-                            <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
-                              <stop offset="0%" stopColor="#3b82f6" stopOpacity={1}/>
-                              <stop offset="100%" stopColor="#1d4ed8" stopOpacity={0.8}/>
-                            </linearGradient>
-                          </defs>
-                        </BarChart>
-                      </ResponsiveContainer>
-                    </ChartContainer>
+                                    );
+                                  }
+                                  return null;
+                                }}
+                              />
+                              <Bar 
+                                dataKey="value" 
+                                radius={[4, 4, 0, 0]}
+                                fill="url(#colorGradient)"
+                              />
+                              <defs>
+                                <linearGradient id="colorGradient" x1="0" y1="0" x2="0" y2="1">
+                                  <stop offset="0%" stopColor="#3b82f6" stopOpacity={1}/>
+                                  <stop offset="100%" stopColor="#1d4ed8" stopOpacity={0.8}/>
+                                </linearGradient>
+                              </defs>
+                            </BarChart>
+                          </ResponsiveContainer>
+                        </ChartContainer>
+                      </div>
+                    </div>
                   </CardContent>
                 </Card>
 
@@ -840,7 +844,8 @@ const StudyTips = () => {
                                 {String(pomodoroTimer.seconds).padStart(2, '0')}
                               </div>
                               <Button size="sm" className="flex items-center gap-2 text-xs md:text-sm">
-                                {pomodoroTimer.isRunning ? <Pause className="h-3 w-3 md:h-4 md:w-4" /> : <Play className="h-3 w-3 md:h-4 md:w-4" />}
+                                {pomodoroTimer.isRunning ? <Pause className="h-3 w-3 md:h-4 md:w-4" /> : <Play className="h-3 w-3 md:h-4 md:w-4" />
+                                }
                                 {pomodoroTimer.isRunning ? 'Pause' : 'Start'}
                               </Button>
                             </div>
