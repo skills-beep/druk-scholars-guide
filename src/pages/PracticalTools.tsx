@@ -2,28 +2,20 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calculator, FileText, Phone, Newspaper, ArrowLeft, BookOpen } from 'lucide-react';
+import { Calculator, FileText, Phone, Newspaper, ArrowLeft } from 'lucide-react';
 import CostCalculator from '@/components/CostCalculator';
 import DocumentChecklist from '@/components/DocumentChecklist';
 import ContactDirectory from '@/components/ContactDirectory';
 import NewsUpdates from '@/components/NewsUpdates';
-import AdmissionGuide from '@/components/AdmissionGuide';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
-type Tool = 'overview' | 'calculator' | 'checklist' | 'contacts' | 'news' | 'admission';
+type Tool = 'overview' | 'calculator' | 'checklist' | 'contacts' | 'news';
 
 const PracticalTools = () => {
   const [selectedTool, setSelectedTool] = useState<Tool>('overview');
 
   const tools = [
-    {
-      id: 'admission' as Tool,
-      title: 'Admission Guide',
-      description: 'Complete guide to college admission procedures and requirements in Bhutan',
-      icon: BookOpen,
-      color: 'bg-indigo-100 text-indigo-600 dark:bg-indigo-900 dark:text-indigo-400'
-    },
     {
       id: 'calculator' as Tool,
       title: 'Cost Calculator',
@@ -56,8 +48,6 @@ const PracticalTools = () => {
 
   const renderSelectedTool = () => {
     switch (selectedTool) {
-      case 'admission':
-        return <AdmissionGuide />;
       case 'calculator':
         return <CostCalculator />;
       case 'checklist':
