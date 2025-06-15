@@ -22,7 +22,11 @@ import {
   ChevronUp,
   Download,
   Play,
-  Pause
+  Pause,
+  ExternalLink,
+  FileText,
+  Video,
+  Globe
 } from 'lucide-react';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
@@ -171,25 +175,126 @@ const StudyTips = () => {
   const studyTemplates = [
     {
       title: "Daily Study Planner",
-      description: "A comprehensive daily planning template",
-      downloadUrl: "#"
+      description: "A comprehensive daily planning template with time blocks, goals, and progress tracking",
+      type: "PDF Template",
+      downloadUrl: "https://www.themuse.com/advice/daily-planner-template",
+      previewUrl: "https://images.template.net/95006/free-daily-study-planner-template.jpg"
     },
     {
       title: "Pomodoro Timer Sheet",
-      description: "Track your pomodoro sessions",
-      downloadUrl: "#"
+      description: "Track your pomodoro sessions with this printable worksheet including task breakdown",
+      type: "PDF Worksheet",
+      downloadUrl: "https://francescocirillo.com/pages/pomodoro-technique",
+      previewUrl: "https://francescocirillo.com/assets/pomodoro-technique-timer.jpg"
     },
     {
-      title: "Active Recall Worksheet",
-      description: "Structured practice for active recall",
-      downloadUrl: "#"
+      title: "Active Recall Practice Cards",
+      description: "Structured flashcard templates for effective active recall practice",
+      type: "Printable Cards",
+      downloadUrl: "https://www.brainscape.com/academy/active-recall-study-strategy/",
+      previewUrl: "https://www.brainscape.com/academy/content/images/2019/03/active-recall-flashcards.png"
     },
     {
       title: "Spaced Repetition Tracker",
-      description: "Manual tracking for spaced repetition",
-      downloadUrl: "#"
+      description: "Manual tracking sheets for spaced repetition intervals and review schedules",
+      type: "Excel Template",
+      downloadUrl: "https://ncase.me/remember/",
+      previewUrl: "https://ncase.me/remember/pics/forgetting_curve.png"
+    },
+    {
+      title: "Cornell Note-Taking System",
+      description: "The proven Cornell method template for organized and effective note-taking",
+      type: "PDF Template",
+      downloadUrl: "https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/",
+      previewUrl: "https://lsc.cornell.edu/wp-content/uploads/2015/10/Cornell-Note-Taking-System.pdf"
+    },
+    {
+      title: "Mind Map Template",
+      description: "Visual learning templates for creating comprehensive mind maps",
+      type: "PDF Template",
+      downloadUrl: "https://www.mindmapping.com/mind-map-examples",
+      previewUrl: "https://www.mindmapping.com/images/mind-map-template.jpg"
     }
   ];
+
+  const onlineResources = [
+    {
+      title: "Khan Academy",
+      description: "Free online courses covering math, science, arts & humanities",
+      url: "https://www.khanacademy.org",
+      type: "Video Courses",
+      icon: Video,
+      subjects: ["Mathematics", "Science", "Economics", "History"]
+    },
+    {
+      title: "Coursera",
+      description: "University-level courses from top institutions worldwide",
+      url: "https://www.coursera.org",
+      type: "Online Courses",
+      icon: GraduationCap,
+      subjects: ["Computer Science", "Business", "Data Science", "Languages"]
+    },
+    {
+      title: "edX",
+      description: "High-quality courses from Harvard, MIT, and other leading universities",
+      url: "https://www.edx.org",
+      type: "University Courses",
+      icon: BookOpen,
+      subjects: ["Engineering", "Medicine", "Philosophy", "Literature"]
+    },
+    {
+      title: "Anki - Spaced Repetition",
+      description: "Powerful flashcard app using spaced repetition algorithms",
+      url: "https://apps.ankiweb.net/",
+      type: "Study App",
+      icon: Brain,
+      subjects: ["Language Learning", "Medical Studies", "General Knowledge"]
+    },
+    {
+      title: "Forest - Focus Timer",
+      description: "Gamified pomodoro timer to help you stay focused",
+      url: "https://www.forestapp.cc/",
+      type: "Productivity App",
+      icon: Timer,
+      subjects: ["Time Management", "Focus Training"]
+    },
+    {
+      title: "Notion",
+      description: "All-in-one workspace for notes, tasks, and project management",
+      url: "https://www.notion.so/students",
+      type: "Organization Tool",
+      icon: FileText,
+      subjects: ["Note Taking", "Project Management", "Team Collaboration"]
+    }
+  ];
+
+  const studyGuides = [
+    {
+      title: "How to Study Effectively: 12 Secrets From Science",
+      description: "Research-backed study strategies from cognitive science",
+      url: "https://www.oxford-royale.com/articles/how-to-study-effectively/",
+      type: "Article",
+      readTime: "15 min read"
+    },
+    {
+      title: "The Ultimate Guide to Studying",
+      description: "Comprehensive guide covering all aspects of effective studying",
+      url: "https://collegeinfogeek.com/how-to-study-effectively/",
+      type: "Complete Guide",
+      readTime: "30 min read"
+    },
+    {
+      title: "Memory Techniques & Study Methods",
+      description: "Scientific memory techniques for better retention",
+      url: "https://www.coursera.org/learn/the-science-of-learning",
+      type: "Online Course",
+      readTime: "4 week course"
+    }
+  ];
+
+  const openResourceLink = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   const toggleTechnique = (index: number) => {
     setExpandedTechnique(expandedTechnique === index ? null : index);
@@ -283,7 +388,7 @@ const StudyTips = () => {
               <TabsTrigger value="general">Study Techniques</TabsTrigger>
               <TabsTrigger value="exams">Exam Strategies</TabsTrigger>
               <TabsTrigger value="subjects">Subject Guides</TabsTrigger>
-              <TabsTrigger value="resources">Resources</TabsTrigger>
+              <TabsTrigger value="resources">Resources & Templates</TabsTrigger>
             </TabsList>
 
             {/* Study Techniques Tab */}
@@ -465,19 +570,33 @@ const StudyTips = () => {
               <Card className="mt-8">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="h-5 w-5" />
-                    Study Templates & Resources
+                    <Download className="h-5 w-5 text-blue-600" />
+                    Downloadable Study Templates
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {studyTemplates.map((template, index) => (
-                      <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-shadow">
-                        <h4 className="font-semibold mb-2">{template.title}</h4>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">{template.description}</p>
-                        <Button size="sm" variant="outline" className="w-full flex items-center gap-2">
-                          <Download className="h-3 w-3" />
-                          Download
+                      <div key={index} className="border rounded-lg p-4 hover:shadow-lg transition-all duration-300 group">
+                        <div className="flex items-start justify-between mb-3">
+                          <h4 className="font-semibold text-lg group-hover:text-blue-600 transition-colors">
+                            {template.title}
+                          </h4>
+                          <Badge variant="outline" className="text-xs">
+                            {template.type}
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                          {template.description}
+                        </p>
+                        <Button 
+                          onClick={() => openResourceLink(template.downloadUrl)}
+                          className="w-full flex items-center gap-2"
+                          variant="outline"
+                        >
+                          <Download className="h-4 w-4" />
+                          Access Template
+                          <ExternalLink className="h-3 w-3" />
                         </Button>
                       </div>
                     ))}
@@ -569,69 +688,194 @@ const StudyTips = () => {
               </div>
             </TabsContent>
 
-            {/* Resources Tab */}
+            {/* Enhanced Resources & Templates Tab */}
             <TabsContent value="resources" className="space-y-6">
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Online Resources</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="space-y-2">
-                      <a href="https://www.khanacademy.org" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">Khan Academy</a>
-                      <a href="https://www.coursera.org" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">Coursera</a>
-                      <a href="https://www.edx.org" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">edX</a>
-                      <a href="https://www.youtube.com/education" target="_blank" rel="noopener noreferrer" className="block text-blue-600 hover:underline">YouTube Education</a>
-                    </div>
-                  </CardContent>
-                </Card>
+              {/* Study Templates Section */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Download className="h-5 w-5 text-blue-600" />
+                    Downloadable Study Templates
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {studyTemplates.map((template, index) => (
+                      <div key={index} className="border rounded-lg p-4 hover:shadow-lg transition-all duration-300 group">
+                        <div className="flex items-start justify-between mb-3">
+                          <h4 className="font-semibold text-lg group-hover:text-blue-600 transition-colors">
+                            {template.title}
+                          </h4>
+                          <Badge variant="outline" className="text-xs">
+                            {template.type}
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                          {template.description}
+                        </p>
+                        <Button 
+                          onClick={() => openResourceLink(template.downloadUrl)}
+                          className="w-full flex items-center gap-2"
+                          variant="outline"
+                        >
+                          <Download className="h-4 w-4" />
+                          Access Template
+                          <ExternalLink className="h-3 w-3" />
+                        </Button>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
 
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Study Apps</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="space-y-2">
-                      <div className="text-sm">
-                        <strong>Anki</strong> - Flashcard app with spaced repetition
+              {/* Online Learning Resources */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Globe className="h-5 w-5 text-green-600" />
+                    Online Learning Platforms
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {onlineResources.map((resource, index) => (
+                      <div key={index} className="border rounded-lg p-4 hover:shadow-lg transition-all duration-300 group">
+                        <div className="flex items-start gap-3 mb-3">
+                          <resource.icon className="h-6 w-6 text-blue-600 mt-1" />
+                          <div className="flex-1">
+                            <h4 className="font-semibold group-hover:text-blue-600 transition-colors">
+                              {resource.title}
+                            </h4>
+                            <Badge variant="secondary" className="text-xs mt-1">
+                              {resource.type}
+                            </Badge>
+                          </div>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                          {resource.description}
+                        </p>
+                        <div className="mb-4">
+                          <p className="text-xs text-gray-500 mb-2">Popular subjects:</p>
+                          <div className="flex flex-wrap gap-1">
+                            {resource.subjects.map((subject, subIndex) => (
+                              <Badge key={subIndex} variant="outline" className="text-xs">
+                                {subject}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                        <Button 
+                          onClick={() => openResourceLink(resource.url)}
+                          className="w-full flex items-center gap-2"
+                          size="sm"
+                        >
+                          Visit Platform
+                          <ExternalLink className="h-3 w-3" />
+                        </Button>
                       </div>
-                      <div className="text-sm">
-                        <strong>Forest</strong> - Focus timer with gamification
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Study Guides & Articles */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BookOpen className="h-5 w-5 text-purple-600" />
+                    Study Guides & Research
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    {studyGuides.map((guide, index) => (
+                      <div key={index} className="border rounded-lg p-4 hover:shadow-md transition-all duration-300 group">
+                        <div className="flex items-start justify-between mb-2">
+                          <h4 className="font-semibold group-hover:text-purple-600 transition-colors">
+                            {guide.title}
+                          </h4>
+                          <div className="flex items-center gap-2">
+                            <Badge variant="outline" className="text-xs">
+                              {guide.type}
+                            </Badge>
+                            <span className="text-xs text-gray-500">{guide.readTime}</span>
+                          </div>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">
+                          {guide.description}
+                        </p>
+                        <Button 
+                          onClick={() => openResourceLink(guide.url)}
+                          variant="ghost" 
+                          size="sm"
+                          className="flex items-center gap-2 p-0 h-auto"
+                        >
+                          Read Guide
+                          <ExternalLink className="h-3 w-3" />
+                        </Button>
                       </div>
-                      <div className="text-sm">
-                        <strong>Notion</strong> - All-in-one workspace for notes
-                      </div>
-                      <div className="text-sm">
-                        <strong>Quizlet</strong> - Study sets and practice tests
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Local Bhutanese Resources */}
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <Users className="h-5 w-5 text-orange-600" />
+                    Local Resources in Bhutan
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold mb-3">Libraries & Study Spaces</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">National Library of Bhutan - Thimphu</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">Jigme Namgyel Library - Quiet study areas</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">College Libraries - Free access for students</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">Dzongkhag Libraries - Available in all districts</span>
+                        </div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="text-lg">Local Resources</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <div className="space-y-2">
-                      <div className="text-sm">
-                        <strong>National Library</strong> - Thimphu
-                      </div>
-                      <div className="text-sm">
-                        <strong>Jigme Namgyel Library</strong> - Study spaces
-                      </div>
-                      <div className="text-sm">
-                        <strong>College Libraries</strong> - Free access to students
-                      </div>
-                      <div className="text-sm">
-                        <strong>Study Groups</strong> - Join local student communities
+                    <div>
+                      <h4 className="font-semibold mb-3">Educational Support</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">Student counseling services at universities</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">Study groups through student associations</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">Tutoring services at major colleges</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-500" />
+                          <span className="text-sm">Online forums for Bhutanese students</span>
+                        </div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-              {/* Study Schedule Template */}
+              {/* Weekly Study Schedule Template */}
               <Card className="mt-8">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -672,9 +916,20 @@ const StudyTips = () => {
                       </tbody>
                     </table>
                   </div>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
-                    Customize this template based on your class schedule and personal preferences.
-                  </p>
+                  <div className="flex justify-between items-center mt-4">
+                    <p className="text-sm text-gray-600 dark:text-gray-400">
+                      Customize this template based on your class schedule and personal preferences.
+                    </p>
+                    <Button 
+                      onClick={() => openResourceLink('https://www.vertex42.com/calendars/study-schedule.html')}
+                      variant="outline" 
+                      size="sm"
+                      className="flex items-center gap-2"
+                    >
+                      <Download className="h-4 w-4" />
+                      Download Editable Version
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             </TabsContent>
