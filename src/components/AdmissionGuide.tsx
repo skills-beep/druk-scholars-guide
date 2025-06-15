@@ -107,12 +107,12 @@ const AdmissionGuide = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'preparation': return 'bg-gray-100 text-gray-600';
-      case 'active': return 'bg-green-100 text-green-600';
-      case 'deadline': return 'bg-red-100 text-red-600';
-      case 'waiting': return 'bg-blue-100 text-blue-600';
-      case 'start': return 'bg-purple-100 text-purple-600';
-      default: return 'bg-gray-100 text-gray-600';
+      case 'preparation': return 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300';
+      case 'active': return 'bg-green-100 text-green-600 dark:bg-green-800 dark:text-green-300';
+      case 'deadline': return 'bg-red-100 text-red-600 dark:bg-red-800 dark:text-red-300';
+      case 'waiting': return 'bg-blue-100 text-blue-600 dark:bg-blue-800 dark:text-blue-300';
+      case 'start': return 'bg-purple-100 text-purple-600 dark:bg-purple-800 dark:text-purple-300';
+      default: return 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300';
     }
   };
 
