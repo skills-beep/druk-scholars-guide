@@ -686,80 +686,93 @@ const StudyTips = () => {
                 </div>
               </div>
 
-              {/* Technique Comparison Radar Chart */}
-              <Card className="mb-6 md:mb-8 hidden md:block">
+              {/* Technique Comparison Radar Chart - Mobile Optimized */}
+              <Card className="mb-6 md:mb-8">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg md:text-xl">
                     <BarChart3 className="h-4 w-4 md:h-5 md:w-5 text-indigo-500" />
                     Technique Comparison Overview
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <ChartContainer
-                    config={{
-                      effectiveness: {
-                        label: "Effectiveness",
-                        color: "#3b82f6",
-                      },
-                      retention: {
-                        label: "Retention",
-                        color: "#10b981",
-                      },
-                      easeOfUse: {
-                        label: "Ease of Use",
-                        color: "#f59e0b",
-                      },
-                      timeEfficiency: {
-                        label: "Time Efficiency",
-                        color: "#ef4444",
-                      },
-                    }}
-                    className="h-[300px] md:h-[400px]"
-                  >
-                    <ResponsiveContainer width="100%" height="100%">
-                      <RadarChart data={radarData}>
-                        <PolarGrid />
-                        <PolarAngleAxis dataKey="technique" fontSize={10} />
-                        <PolarRadiusAxis angle={90} domain={[0, 100]} fontSize={8} />
-                        <Radar
-                          name="Effectiveness"
-                          dataKey="effectiveness"
-                          stroke="#3b82f6"
-                          fill="#3b82f6"
-                          fillOpacity={0.1}
-                          strokeWidth={2}
-                        />
-                        <Radar
-                          name="Retention"
-                          dataKey="retention"
-                          stroke="#10b981"
-                          fill="#10b981"
-                          fillOpacity={0.1}
-                          strokeWidth={2}
-                        />
-                        <Radar
-                          name="Ease of Use"
-                          dataKey="easeOfUse"
-                          stroke="#f59e0b"
-                          fill="#f59e0b"
-                          fillOpacity={0.1}
-                          strokeWidth={2}
-                        />
-                        <ChartTooltip />
-                      </RadarChart>
-                    </ResponsiveContainer>
-                  </ChartContainer>
-                  <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-4">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                <CardContent className="p-2 md:p-6">
+                  <div className="w-full overflow-x-auto">
+                    <div className="min-w-[320px]">
+                      <ChartContainer
+                        config={{
+                          effectiveness: {
+                            label: "Effectiveness",
+                            color: "#3b82f6",
+                          },
+                          retention: {
+                            label: "Retention",
+                            color: "#10b981",
+                          },
+                          easeOfUse: {
+                            label: "Ease of Use",
+                            color: "#f59e0b",
+                          },
+                          timeEfficiency: {
+                            label: "Time Efficiency",
+                            color: "#ef4444",
+                          },
+                        }}
+                        className="h-[280px] sm:h-[350px] md:h-[400px] w-full"
+                      >
+                        <ResponsiveContainer width="100%" height="100%">
+                          <RadarChart data={radarData} margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
+                            <PolarGrid />
+                            <PolarAngleAxis 
+                              dataKey="technique" 
+                              fontSize={8}
+                              className="text-xs"
+                            />
+                            <PolarRadiusAxis 
+                              angle={90} 
+                              domain={[0, 100]} 
+                              fontSize={6}
+                              className="text-xs"
+                            />
+                            <Radar
+                              name="Effectiveness"
+                              dataKey="effectiveness"
+                              stroke="#3b82f6"
+                              fill="#3b82f6"
+                              fillOpacity={0.1}
+                              strokeWidth={2}
+                            />
+                            <Radar
+                              name="Retention"
+                              dataKey="retention"
+                              stroke="#10b981"
+                              fill="#10b981"
+                              fillOpacity={0.1}
+                              strokeWidth={2}
+                            />
+                            <Radar
+                              name="Ease of Use"
+                              dataKey="easeOfUse"
+                              stroke="#f59e0b"
+                              fill="#f59e0b"
+                              fillOpacity={0.1}
+                              strokeWidth={2}
+                            />
+                            <ChartTooltip />
+                          </RadarChart>
+                        </ResponsiveContainer>
+                      </ChartContainer>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-2 md:gap-4 mt-3 md:mt-4">
+                    <div className="flex items-center gap-1 md:gap-2">
+                      <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-blue-500"></div>
                       <span className="text-xs md:text-sm">Effectiveness</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div className="flex items-center gap-1 md:gap-2">
+                      <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-green-500"></div>
                       <span className="text-xs md:text-sm">Retention</span>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div className="flex items-center gap-1 md:gap-2">
+                      <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-yellow-500"></div>
                       <span className="text-xs md:text-sm">Ease of Use</span>
                     </div>
                   </div>
