@@ -1,10 +1,10 @@
+
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import StatsSection from '@/components/StatsSection';
 import FilterSidebar from '@/components/FilterSidebar';
 import CollegeGrid from '@/components/CollegeGrid';
-import CollegeRecommendations from '@/components/CollegeRecommendations';
 import Footer from '@/components/Footer';
 import LoadingAnimation from '@/components/LoadingAnimation';
 import { colleges } from '@/data/colleges';
@@ -58,15 +58,6 @@ const Index = () => {
             </aside>
             
             <div className="flex-1 space-y-6">
-              <CollegeRecommendations onViewCollege={(college) => {
-                console.log('Opening college details from recommendations:', college.name);
-                const collegeGrid = document.getElementById('colleges');
-                if (collegeGrid) {
-                  collegeGrid.scrollIntoView({ behavior: 'smooth' });
-                }
-                // You can add logic here to open the college modal directly
-              }} />
-              
               <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg border border-gray-200 dark:border-gray-700">
                 <CollegeGrid 
                   colleges={colleges} 
