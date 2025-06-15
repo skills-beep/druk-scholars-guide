@@ -1,3 +1,4 @@
+
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -158,9 +159,9 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
               ))}
             </div>
             <div className="absolute top-4 right-4">
-              <div className="bg-white/95 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-2">
+              <div className="bg-white/95 backdrop-blur-sm rounded-full px-3 py-2 flex items-center gap-2 shadow-sm">
                 <Star className="h-4 w-4 text-amber-400 fill-amber-400" />
-                <DynamicRating rating={college.rating} size="sm" showValue={true} />
+                <span className="text-sm font-semibold text-gray-800">{college.rating.toFixed(1)}</span>
               </div>
             </div>
           </div>
