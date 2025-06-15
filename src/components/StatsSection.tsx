@@ -10,7 +10,7 @@ const StatsSection = () => {
           <div className="w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/50 dark:to-blue-800/50 rounded-2xl flex items-center justify-center mb-6 lg:mb-8 group-hover:scale-110 transition-transform duration-300 mx-auto">
             <GraduationCap className="h-8 w-8 lg:h-10 lg:w-10 text-blue-600 dark:text-blue-400" />
           </div>
-          <div className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-3">13</div>
+          <div className="text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white mb-3">12</div>
           <div className="text-slate-600 dark:text-slate-300 font-semibold mb-2 text-lg">Colleges & Universities</div>
           <div className="text-sm text-slate-500 dark:text-slate-400">Comprehensive institutions</div>
         </div>
