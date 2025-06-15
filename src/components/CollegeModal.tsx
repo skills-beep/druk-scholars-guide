@@ -70,7 +70,10 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
   const getVisionText = () => {
     if (!college.vision) return "Committed to providing quality education that aligns with Bhutan's Gross National Happiness philosophy.";
     if (typeof college.vision === 'string') return college.vision;
-    return college.vision.undergraduate || college.vision.postgraduate || "Excellence in education with GNH values.";
+    if (typeof college.vision === 'object') {
+      return college.vision.undergraduate || college.vision.postgraduate || "Excellence in education with GNH values.";
+    }
+    return "Excellence in education with GNH values.";
   };
 
   const getMissionText = () => {
@@ -79,14 +82,15 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
     if (typeof college.mission === 'object') {
       return college.mission.undergraduate || college.mission.postgraduate || "Committed to holistic education.";
     }
-    return college.mission;
+    if (typeof college.mission === 'string') return college.mission;
+    return "Committed to holistic education.";
   };
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-5xl max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold">
+          <DialogTitle className="text-2xl font-bold text-gray-900 dark:text-white">
             {college.name}
           </DialogTitle>
           <DialogDescription className="text-muted-foreground">
@@ -107,7 +111,7 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
               }}
             />
             <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-              {college.tags.map((tag) => (
+              {college.tags?.map((tag) => (
                 <Badge key={tag} variant="secondary" className="bg-white/95 backdrop-blur-sm">
                   {tag}
                 </Badge>
@@ -170,7 +174,7 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                         <li>• Located in {college.location}</li>
                         <li>• Type: {college.type}</li>
                         <li>• Rating: {college.rating}/5.0</li>
-                        <li>• {college.courses.length} Programs Offered</li>
+                        <li>• {college.courses?.length || 0} Programs Offered</li>
                         {college.studentCount && <li>• {college.studentCount.toLocaleString()} Students</li>}
                         {college.facultyCount && <li>• {college.facultyCount} Faculty Members</li>}
                       </ul>
@@ -203,7 +207,7 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                    {college.courses.map((course, index) => (
+                    {college.courses?.map((course, index) => (
                       <Card key={course} className="border-l-4 border-l-primary">
                         <CardContent className="p-4">
                           <h4 className="font-semibold">{course}</h4>
@@ -212,7 +216,11 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                           </p>
                         </CardContent>
                       </Card>
-                    ))}
+                    )) || (
+                      <div className="text-center py-8 text-muted-foreground">
+                        No course information available
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -230,7 +238,7 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                   <CardContent>
                     <div className="space-y-3">
                       <div className="text-2xl font-bold">
-                        {college.fees.currency} {college.fees.min.toLocaleString()} - {college.fees.max.toLocaleString()}
+                        {college.fees?.currency || 'BTN'} {college.fees?.min?.toLocaleString() || 'N/A'} - {college.fees?.max?.toLocaleString() || 'N/A'}
                       </div>
                       <div className="text-sm text-muted-foreground">Annual tuition fees</div>
                       <div className="bg-muted/50 p-3 rounded-lg">
@@ -258,12 +266,14 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                       <div>
                         <h4 className="font-medium mb-2">Eligibility Criteria:</h4>
                         <ul className="space-y-1 text-sm">
-                          {college.eligibility.map((criteria, index) => (
+                          {college.eligibility?.map((criteria, index) => (
                             <li key={index} className="flex items-start gap-2">
                               <span className="text-primary">•</span>
                               {criteria}
                             </li>
-                          ))}
+                          )) || (
+                            <li className="text-muted-foreground">No eligibility criteria available</li>
+                          )}
                         </ul>
                       </div>
                     </div>
@@ -318,15 +328,15 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="flex items-center gap-2">
                   <Phone className="h-5 w-5 text-muted-foreground" />
-                  <span>{college.contact.phone}</span>
+                  <span>{college.contact?.phone || 'Not available'}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Mail className="h-5 w-5 text-muted-foreground" />
-                  <span>{college.contact.email}</span>
+                  <span>{college.contact?.email || 'Not available'}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Globe className="h-5 w-5 text-muted-foreground" />
-                  <span className="truncate">{college.contact.website}</span>
+                  <span className="truncate">{college.contact?.website || 'Not available'}</span>
                 </div>
               </div>
             </CardContent>
