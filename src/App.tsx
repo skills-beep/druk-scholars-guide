@@ -10,6 +10,7 @@ import Scholarships from "./pages/Scholarships";
 import About from "./pages/About";
 import PracticalTools from "./pages/PracticalTools";
 import StudyTips from "./pages/StudyTips";
+import CollegeUpdates from "./pages/CollegeUpdates";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/about" element={<About />} />
             <Route path="/tools" element={<PracticalTools />} />
             <Route path="/study-tips" element={<StudyTips />} />
+            <Route path="/updates" element={<CollegeUpdates />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
