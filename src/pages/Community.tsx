@@ -283,7 +283,7 @@ const Community = () => {
             <p className="text-lg text-muted-foreground mb-8">
               Please sign in to access community features like forums, study groups, and mentorship.
             </p>
-            <Button>Sign In</Button>
+            <Button onClick={() => window.location.href = '/auth'}>Sign In</Button>
           </div>
         </div>
         <Footer />
