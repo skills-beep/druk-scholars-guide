@@ -94,9 +94,7 @@ const Community = () => {
 
   // Load user profile
   useEffect(() => {
-    if (user) {
-      loadProfile();
-    }
+    loadProfile();
   }, [user]);
 
   // Load data
@@ -130,7 +128,10 @@ const Community = () => {
   }, []);
 
   const loadProfile = async () => {
-    if (!user) return;
+    if (!user) {
+      setIsLoading(false);
+      return;
+    }
     
     const { data, error } = await supabase
       .from('profiles')
