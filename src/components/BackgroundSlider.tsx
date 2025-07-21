@@ -9,7 +9,9 @@ const BackgroundSlider = () => {
     '/lovable-uploads/6b94c9c8-929a-444c-987f-feb8faac6030.png', // Traditional Bhutanese dzong with river reflection
     '/lovable-uploads/c94e5199-f9f6-4b14-8ef3-d19491151ba2.png', // Punakha Dzong with mountains
     '/lovable-uploads/d8d18649-00ee-48ef-9703-c38cbc030ad6.png', // Tiger's Nest monastery on cliff
-    '/lovable-uploads/dda7f772-be9d-442f-b557-22fe7bd2d311.png'  // Young Bhutanese monks
+    '/lovable-uploads/dda7f772-be9d-442f-b557-22fe7bd2d311.png', // Young Bhutanese monks
+    '/lovable-uploads/a2baa3bd-2f82-4341-b04b-eda29a741e5e.png', // Punakha Dzong with jacaranda trees
+    '/lovable-uploads/376b243a-4e36-4768-a09f-c9d4aebe0bf4.png'  // Valley landscape with rainbow
   ];
 
   // Change background image every 5 seconds
