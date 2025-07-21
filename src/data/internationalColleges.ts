@@ -704,6 +704,446 @@ export const internationalColleges: InternationalCollege[] = [
     popularPrograms: ["Engineering", "Computer Science", "Medicine", "Economics"],
     avgDuration: "4 years (UG), 2 years (MS)",
     applicationDeadline: "December 2024"
+  },
+
+  // THAILAND (Bangkok)
+  {
+    id: "int_13",
+    name: "Chulalongkorn University",
+    country: "Thailand",
+    location: "Bangkok, Thailand",
+    image: "/lovable-uploads/7f89786e-7fc4-41b5-9258-b5723443e7b6.png",
+    description: "Thailand's most prestigious university, offering world-class education with strong international programs.",
+    established: 1917,
+    type: "Public",
+    rating: 4.4,
+    programs: {
+      undergraduate: ["Bachelor in Engineering", "Bachelor in Business", "Bachelor in Medicine", "Bachelor in Arts"],
+      postgraduate: ["Master's programs", "MBA", "International programs"],
+      doctorate: ["PhD programs"]
+    },
+    specializations: ["Engineering", "Medicine", "Business", "International Studies", "Sciences"],
+    worldRanking: 208,
+    tuitionFees: {
+      min: 150000,
+      max: 350000,
+      currency: "THB"
+    },
+    livingCosts: {
+      min: 300000,
+      max: 500000,
+      currency: "THB"
+    },
+    scholarships: [
+      {
+        name: "Royal Golden Jubilee Scholarship",
+        amount: "Full tuition + stipend",
+        criteria: "Academic excellence for international students"
+      },
+      {
+        name: "CU International Scholarship",
+        amount: "Up to 50% tuition waiver",
+        criteria: "Merit-based for international students"
+      }
+    ],
+    admissionRequirements: [
+      "Class XII with good grades",
+      "English proficiency test",
+      "Program-specific requirements"
+    ],
+    languageRequirements: ["IELTS 6.0 minimum", "TOEFL 79 minimum"],
+    contact: {
+      email: "international@chula.ac.th",
+      website: "https://www.chula.ac.th/en/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["International Engineering", "International Business", "Medicine"],
+    avgDuration: "4 years (UG), 2 years (PG)",
+    applicationDeadline: "April 2025"
+  },
+  {
+    id: "int_14",
+    name: "Mahidol University",
+    country: "Thailand",
+    location: "Bangkok, Thailand",
+    image: "/lovable-uploads/84ba2fd5-e993-40a1-82ea-58176e5ee3f2.png",
+    description: "Leading medical and health sciences university in Thailand with strong international recognition.",
+    established: 1888,
+    type: "Public",
+    rating: 4.3,
+    programs: {
+      undergraduate: ["Medicine", "Health Sciences", "Engineering", "International Studies"],
+      postgraduate: ["Medical specializations", "Health Sciences", "International programs"],
+      doctorate: ["PhD in Medical Sciences"]
+    },
+    specializations: ["Medicine", "Health Sciences", "Pharmacy", "Engineering", "International Studies"],
+    worldRanking: 255,
+    tuitionFees: {
+      min: 200000,
+      max: 500000,
+      currency: "THB"
+    },
+    livingCosts: {
+      min: 350000,
+      max: 550000,
+      currency: "THB"
+    },
+    scholarships: [
+      {
+        name: "Mahidol International Scholarship",
+        amount: "Up to 100% tuition waiver",
+        criteria: "Academic excellence"
+      }
+    ],
+    admissionRequirements: [
+      "Strong academic background",
+      "English proficiency",
+      "Medical entrance exams for medical programs"
+    ],
+    languageRequirements: ["IELTS 6.5 minimum", "TOEFL 88 minimum"],
+    contact: {
+      email: "inter@mahidol.ac.th",
+      website: "https://mahidol.ac.th/en/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Medicine", "International Health Policy", "Pharmacy"],
+    avgDuration: "6 years (Medicine), 4 years (Other UG)",
+    applicationDeadline: "March 2025"
+  },
+
+  // GERMANY
+  {
+    id: "int_15",
+    name: "Technical University of Munich",
+    country: "Germany",
+    location: "Munich, Germany",
+    image: "/lovable-uploads/880d7613-7292-46b9-bb3f-dc61fc9c5193.png",
+    description: "One of Europe's top technical universities, renowned for engineering and technology programs.",
+    established: 1868,
+    type: "Public",
+    rating: 4.6,
+    programs: {
+      undergraduate: ["Bachelor in Engineering", "Bachelor in Natural Sciences", "Bachelor in Management"],
+      postgraduate: ["Master's programs", "MBA", "Research programs"],
+      doctorate: ["PhD in Engineering and Sciences"]
+    },
+    specializations: ["Engineering", "Computer Science", "Natural Sciences", "Management", "Medicine"],
+    worldRanking: 50,
+    tuitionFees: {
+      min: 0,
+      max: 3000,
+      currency: "EUR"
+    },
+    livingCosts: {
+      min: 10000,
+      max: 15000,
+      currency: "EUR"
+    },
+    scholarships: [
+      {
+        name: "DAAD Scholarship",
+        amount: "Monthly stipend + tuition coverage",
+        criteria: "Academic excellence for international students"
+      },
+      {
+        name: "TUM Graduate School Fellowships",
+        amount: "Full funding for PhD",
+        criteria: "Outstanding research potential"
+      }
+    ],
+    admissionRequirements: [
+      "Strong academic background",
+      "German or English proficiency",
+      "Program-specific requirements"
+    ],
+    languageRequirements: ["German C1 or English B2-C1 depending on program", "IELTS 6.5 or TOEFL 88"],
+    contact: {
+      email: "studium@tum.de",
+      website: "https://www.tum.de/en/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Mechanical Engineering", "Computer Science", "Electrical Engineering"],
+    avgDuration: "3 years (Bachelor), 2 years (Master)",
+    applicationDeadline: "March 2025"
+  },
+  {
+    id: "int_16",
+    name: "University of Heidelberg",
+    country: "Germany",
+    location: "Heidelberg, Germany",
+    image: "/lovable-uploads/94d00c17-1893-44d4-99be-b41cc6245b11.png",
+    description: "Germany's oldest university and one of Europe's most prestigious research institutions.",
+    established: 1386,
+    type: "Public",
+    rating: 4.5,
+    programs: {
+      undergraduate: ["Bachelor in Sciences", "Bachelor in Humanities", "Bachelor in Medicine"],
+      postgraduate: ["Master's programs", "Medical specializations"],
+      doctorate: ["PhD programs across disciplines"]
+    },
+    specializations: ["Medicine", "Natural Sciences", "Humanities", "Law", "Social Sciences"],
+    worldRanking: 64,
+    tuitionFees: {
+      min: 0,
+      max: 3000,
+      currency: "EUR"
+    },
+    livingCosts: {
+      min: 9000,
+      max: 14000,
+      currency: "EUR"
+    },
+    scholarships: [
+      {
+        name: "DAAD Scholarships",
+        amount: "Monthly allowance + tuition",
+        criteria: "Academic merit"
+      },
+      {
+        name: "Heidelberg Graduate School Scholarships",
+        amount: "Full PhD funding",
+        criteria: "Research excellence"
+      }
+    ],
+    admissionRequirements: [
+      "Excellent academic record",
+      "Language proficiency",
+      "Entrance exams for some programs"
+    ],
+    languageRequirements: ["German C1 for most programs", "English programs available with IELTS 6.5"],
+    contact: {
+      email: "international@uni-heidelberg.de",
+      website: "https://www.uni-heidelberg.de/en"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Medicine", "Natural Sciences", "Psychology"],
+    avgDuration: "3 years (Bachelor), 2 years (Master)",
+    applicationDeadline: "March 2025"
+  },
+
+  // More UK Universities
+  {
+    id: "int_17",
+    name: "Imperial College London",
+    country: "United Kingdom",
+    location: "London, UK",
+    image: "/lovable-uploads/a215569b-492e-4d60-8b40-026e05401bae.png",
+    description: "World-leading university specializing in science, engineering, medicine and business.",
+    established: 1907,
+    type: "Public",
+    rating: 4.7,
+    programs: {
+      undergraduate: ["Engineering", "Natural Sciences", "Medicine", "Computing"],
+      postgraduate: ["Master's programs", "MBA", "Research degrees"],
+      doctorate: ["PhD programs"]
+    },
+    specializations: ["Engineering", "Medicine", "Natural Sciences", "Computing", "Business"],
+    worldRanking: 9,
+    tuitionFees: {
+      min: 32000,
+      max: 45000,
+      currency: "GBP"
+    },
+    livingCosts: {
+      min: 15000,
+      max: 20000,
+      currency: "GBP"
+    },
+    scholarships: [
+      {
+        name: "Imperial College Scholarships",
+        amount: "Up to £25,000",
+        criteria: "Academic excellence"
+      },
+      {
+        name: "President's Scholarship",
+        amount: "Full tuition + stipend",
+        criteria: "Outstanding academic achievement"
+      }
+    ],
+    admissionRequirements: [
+      "Excellent A-levels or equivalent",
+      "Strong mathematics and science background",
+      "English proficiency"
+    ],
+    languageRequirements: ["IELTS 7.0 overall", "TOEFL 100 minimum"],
+    contact: {
+      email: "admissions@imperial.ac.uk",
+      website: "https://www.imperial.ac.uk/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Engineering", "Medicine", "Computing", "Natural Sciences"],
+    avgDuration: "3-4 years (UG), 1 year (PG)",
+    applicationDeadline: "October 2024"
+  },
+
+  // More US Universities
+  {
+    id: "int_18",
+    name: "Stanford University",
+    country: "United States",
+    location: "Stanford, CA, USA",
+    image: "/lovable-uploads/ab72a389-144f-46ff-9536-32012a5250a7.png",
+    description: "World-renowned private research university known for entrepreneurship and innovation.",
+    established: 1885,
+    type: "Private",
+    rating: 4.9,
+    programs: {
+      undergraduate: ["Engineering", "Computer Science", "Business", "Humanities"],
+      postgraduate: ["Master's programs", "MBA", "Professional degrees"],
+      doctorate: ["PhD programs"]
+    },
+    specializations: ["Computer Science", "Engineering", "Business", "Medicine", "Law"],
+    worldRanking: 5,
+    tuitionFees: {
+      min: 56000,
+      max: 60000,
+      currency: "USD"
+    },
+    livingCosts: {
+      min: 18000,
+      max: 25000,
+      currency: "USD"
+    },
+    scholarships: [
+      {
+        name: "Stanford Need-Based Aid",
+        amount: "Full tuition for families earning under $150k",
+        criteria: "Financial need"
+      },
+      {
+        name: "Knight-Hennessy Scholars",
+        amount: "Full funding for graduate studies",
+        criteria: "Leadership and academic excellence"
+      }
+    ],
+    admissionRequirements: [
+      "Exceptional academic record",
+      "SAT/ACT scores",
+      "Strong extracurricular activities",
+      "Essays and recommendations"
+    ],
+    languageRequirements: ["TOEFL 100 minimum", "IELTS 7.0 minimum"],
+    contact: {
+      email: "admission@stanford.edu",
+      website: "https://www.stanford.edu/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Computer Science", "Engineering", "Business", "Medicine"],
+    avgDuration: "4 years (UG), 1-2 years (MS)",
+    applicationDeadline: "January 2025"
+  },
+
+  // More Australian Universities
+  {
+    id: "int_19",
+    name: "University of Sydney",
+    country: "Australia",
+    location: "Sydney, Australia",
+    image: "/lovable-uploads/b5b52df9-cd9a-4bea-804d-feff07faf2f4.png",
+    description: "Australia's first university and one of the world's leading research institutions.",
+    established: 1850,
+    type: "Public",
+    rating: 4.4,
+    programs: {
+      undergraduate: ["Bachelor of Science", "Bachelor of Engineering", "Bachelor of Medicine", "Bachelor of Arts"],
+      postgraduate: ["Master's programs", "Professional degrees"],
+      doctorate: ["PhD programs"]
+    },
+    specializations: ["Medicine", "Engineering", "Business", "Law", "Arts"],
+    worldRanking: 41,
+    tuitionFees: {
+      min: 45000,
+      max: 50000,
+      currency: "AUD"
+    },
+    livingCosts: {
+      min: 21000,
+      max: 27000,
+      currency: "AUD"
+    },
+    scholarships: [
+      {
+        name: "Sydney Scholars Awards",
+        amount: "Up to AUD 10,000",
+        criteria: "Academic merit"
+      },
+      {
+        name: "International Student Scholarship",
+        amount: "Up to AUD 40,000",
+        criteria: "Outstanding academic achievement"
+      }
+    ],
+    admissionRequirements: [
+      "Strong academic background",
+      "English proficiency",
+      "Program-specific requirements"
+    ],
+    languageRequirements: ["IELTS 6.5 overall", "TOEFL 85 minimum"],
+    contact: {
+      email: "international.office@sydney.edu.au",
+      website: "https://www.sydney.edu.au/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Medicine", "Engineering", "Business", "Law"],
+    avgDuration: "3-4 years (UG), 1-2 years (PG)",
+    applicationDeadline: "January 2025"
+  },
+
+  // More Canadian Universities
+  {
+    id: "int_20",
+    name: "McGill University",
+    country: "Canada",
+    location: "Montreal, Canada",
+    image: "/lovable-uploads/b765e7c5-40a2-4e65-bad0-104871f77b3d.png",
+    description: "One of Canada's most prestigious universities with a strong international reputation.",
+    established: 1821,
+    type: "Public",
+    rating: 4.6,
+    programs: {
+      undergraduate: ["Bachelor of Science", "Bachelor of Engineering", "Bachelor of Arts", "Bachelor of Commerce"],
+      postgraduate: ["Master's programs", "MBA", "Professional degrees"],
+      doctorate: ["PhD programs"]
+    },
+    specializations: ["Medicine", "Engineering", "Business", "Law", "Sciences"],
+    worldRanking: 31,
+    tuitionFees: {
+      min: 50000,
+      max: 60000,
+      currency: "CAD"
+    },
+    livingCosts: {
+      min: 14000,
+      max: 18000,
+      currency: "CAD"
+    },
+    scholarships: [
+      {
+        name: "McGill Entrance Scholarships",
+        amount: "Up to CAD 12,000",
+        criteria: "Academic excellence"
+      },
+      {
+        name: "International Student Awards",
+        amount: "Up to CAD 10,000",
+        criteria: "Merit-based for international students"
+      }
+    ],
+    admissionRequirements: [
+      "Excellent academic record",
+      "English proficiency",
+      "Program-specific prerequisites"
+    ],
+    languageRequirements: ["IELTS 6.5 minimum", "TOEFL 90 minimum"],
+    contact: {
+      email: "admissions@mcgill.ca",
+      website: "https://www.mcgill.ca/"
+    },
+    recognizedByRGOB: true,
+    popularPrograms: ["Medicine", "Engineering", "Business", "Law"],
+    avgDuration: "3-4 years (UG), 1-2 years (PG)",
+    applicationDeadline: "January 2025"
   }
 ];
 
