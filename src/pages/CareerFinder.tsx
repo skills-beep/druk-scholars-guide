@@ -38,8 +38,8 @@ const CareerFinder = () => {
   const filteredCourses = courses.filter(course => {
     const matchesSearch = course.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       course.institution.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesLevel = !educationLevel || course.level === educationLevel;
-    const matchesType = !courseType || course.type === courseType;
+    const matchesLevel = !educationLevel || educationLevel === "all" || course.level === educationLevel;
+    const matchesType = !courseType || courseType === "all" || course.type === courseType;
     return matchesSearch && matchesLevel && matchesType;
   });
 
@@ -177,7 +177,7 @@ const CareerFinder = () => {
                     <SelectValue placeholder="Education Level" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Levels</SelectItem>
+                    <SelectItem value="all">All Levels</SelectItem>
                     <SelectItem value="Post-X">Post Class X</SelectItem>
                     <SelectItem value="Post-XII">Post Class XII</SelectItem>
                     <SelectItem value="Postgraduate">Postgraduate</SelectItem>
@@ -189,7 +189,7 @@ const CareerFinder = () => {
                     <SelectValue placeholder="Course Type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="">All Types</SelectItem>
+                    <SelectItem value="all">All Types</SelectItem>
                     <SelectItem value="Academic">Academic</SelectItem>
                     <SelectItem value="Vocational">Vocational/TVET</SelectItem>
                   </SelectContent>
