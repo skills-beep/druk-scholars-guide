@@ -433,7 +433,7 @@ export const internationalColleges: InternationalCollege[] = [
     name: "University of Oxford",
     country: "United Kingdom",
     location: "Oxford, UK",
-    image: "/lovable-uploads/57688415-c22e-465c-b8a6-f015f834a4eb.png",
+    image: "/lovable-uploads/002ac0cf-d75b-4e8b-9ebe-74fb379ac815.png",
     description: "One of the world's oldest and most prestigious universities, renowned for academic excellence.",
     established: 1096,
     type: "Public",
