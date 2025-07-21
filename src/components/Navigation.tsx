@@ -11,8 +11,9 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Colleges', href: '/' },
-    { name: 'Scholarships', href: '/scholarships' },
+    { name: 'College Directory', href: '/college-directory' },
     { name: 'Career Finder', href: '/career-finder' },
+    { name: 'Scholarships', href: '/scholarships' },
     { name: 'Community', href: '/community' },
     { name: 'Tools', href: '/tools' },
     { name: 'Study Tips', href: '/study-tips' },
