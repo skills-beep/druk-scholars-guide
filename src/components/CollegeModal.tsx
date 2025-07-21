@@ -280,12 +280,12 @@ const CollegeModal = ({ college, isOpen, onClose }: CollegeModalProps) => {
                       Fee Structure
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="text-2xl font-bold">
-                        {college.fees?.currency || 'BTN'} {college.fees?.min?.toLocaleString() || 'N/A'} - {college.fees?.max?.toLocaleString() || 'N/A'}
-                      </div>
-                      <div className="text-sm text-muted-foreground">Annual tuition fees</div>
+                   <CardContent>
+                     <div className="space-y-3">
+                       <div className="text-2xl font-bold">
+                         Nu. {college.fees?.min ? (college.country && college.country !== 'Bhutan' ? (college.fees.min * 80).toLocaleString() : college.fees.min.toLocaleString()) : 'N/A'} - {college.fees?.max ? (college.country && college.country !== 'Bhutan' ? (college.fees.max * 80).toLocaleString() : college.fees.max.toLocaleString()) : 'N/A'}
+                       </div>
+                       <div className="text-sm text-muted-foreground">Annual tuition fees (converted to Bhutanese Ngultrum)</div>
                       <div className="bg-muted/50 p-3 rounded-lg">
                         <p className="text-sm">
                           <strong>Note:</strong> Fees may vary by program. Additional costs for accommodation, 

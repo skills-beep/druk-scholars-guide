@@ -1,11 +1,12 @@
 
 import { useState, useEffect, useMemo } from 'react';
-import { Search, Filter, Globe, MapPin, GraduationCap, Star, Calendar, DollarSign, ToggleLeft, ToggleRight } from 'lucide-react';
+import { Search, Filter, Globe, MapPin, GraduationCap, Star, Calendar, DollarSign, ToggleLeft, ToggleRight, ExternalLink } from 'lucide-react';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import StatsSection from '@/components/StatsSection';
 import Footer from '@/components/Footer';
 import LoadingAnimation from '@/components/LoadingAnimation';
+import CollegeModal from '@/components/CollegeModal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -22,6 +23,8 @@ const Index = () => {
   const [selectedCountry, setSelectedCountry] = useState('all');
   const [selectedSpecialization, setSelectedSpecialization] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
+  const [selectedCollege, setSelectedCollege] = useState<College | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const countries = getCountries();
   const specializations = getAllSpecializations();
@@ -64,152 +67,198 @@ const Index = () => {
     });
   }, [searchTerm, selectedCountry, selectedSpecialization, selectedType]);
 
-  const BhutaneseCollegeCard = ({ college }: { college: College }) => (
-    <Card className="group hover:shadow-lg transition-all duration-300">
-      <div className="relative overflow-hidden rounded-t-lg">
-        <img 
-          src={college.image} 
-          alt={college.name}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute top-2 right-2">
-          <Badge variant={college.type === 'Public' ? 'default' : 'secondary'}>
-            {college.type}
-          </Badge>
-        </div>
-      </div>
-      
-      <CardHeader>
-        <CardTitle className="text-lg group-hover:text-primary transition-colors">
-          {college.name}
-        </CardTitle>
-        <div className="flex items-center text-sm text-muted-foreground gap-1">
-          <MapPin className="w-4 h-4" />
-          {college.location}
-        </div>
-      </CardHeader>
-      
-      <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground line-clamp-3">
-          {college.description}
-        </p>
-        
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{college.rating}</span>
-          </div>
-          <div className="text-sm text-muted-foreground">
-            Est. {college.established}
-          </div>
-        </div>
-        
-        <div className="space-y-2">
-          <div className="text-sm font-medium">Popular Programs:</div>
-          <div className="flex flex-wrap gap-1">
-            {college.courses.slice(0, 3).map((course, index) => (
-              <Badge key={index} variant="outline" className="text-xs">
-                {course}
-              </Badge>
-            ))}
-          </div>
-        </div>
-        
-        <div className="flex items-center justify-between text-sm">
-          <div className="flex items-center gap-1">
-            <DollarSign className="w-4 h-4" />
-            <span>{college.fees.min.toLocaleString()} - {college.fees.max.toLocaleString()} {college.fees.currency}</span>
-          </div>
-        </div>
-        
-        <Button 
-          className="w-full"
-          onClick={() => window.open(college.contact.website, '_blank')}
-        >
-          View Details
-        </Button>
-      </CardContent>
-    </Card>
-  );
+  const BhutaneseCollegeCard = ({ college }: { college: College }) => {
+    const handleViewDetails = () => {
+      setSelectedCollege(college);
+      setIsModalOpen(true);
+    };
 
-  const InternationalCollegeCard = ({ college }: { college: InternationalCollege }) => (
-    <Card className="group hover:shadow-lg transition-all duration-300">
-      <div className="relative overflow-hidden rounded-t-lg">
-        <img 
-          src={college.image} 
-          alt={college.name}
-          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        <div className="absolute top-2 right-2 flex gap-2">
-          <Badge variant={college.type === 'Public' ? 'default' : 'secondary'}>
-            {college.type}
-          </Badge>
-          <Badge className="bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
-            RGOB Recognized
-          </Badge>
-        </div>
-      </div>
-      
-      <CardHeader>
-        <CardTitle className="text-lg group-hover:text-primary transition-colors">
-          {college.name}
-        </CardTitle>
-        <div className="flex items-center text-sm text-muted-foreground gap-1">
-          <Globe className="w-4 h-4" />
-          {college.location}
-        </div>
-      </CardHeader>
-      
-      <CardContent className="space-y-4">
-        <p className="text-sm text-muted-foreground line-clamp-3">
-          {college.description}
-        </p>
-        
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-            <span className="text-sm font-medium">{college.rating}</span>
+    return (
+      <Card className="group hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden rounded-t-lg">
+          <img 
+            src={college.image} 
+            alt={college.name}
+            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute top-2 right-2">
+            <Badge variant={college.type === 'Public' ? 'default' : 'secondary'}>
+              {college.type}
+            </Badge>
           </div>
-          {college.worldRanking && (
-            <div className="text-sm text-muted-foreground">
-              World Rank: #{college.worldRanking}
+        </div>
+        
+        <CardHeader>
+          <CardTitle className="text-lg group-hover:text-primary transition-colors">
+            {college.name}
+          </CardTitle>
+          <div className="flex items-center text-sm text-muted-foreground gap-1">
+            <MapPin className="w-4 h-4" />
+            {college.location}
+          </div>
+        </CardHeader>
+        
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground line-clamp-3">
+            {college.description}
+          </p>
+          
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1">
+              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+              <span className="text-sm font-medium">{college.rating}</span>
             </div>
-          )}
-        </div>
-        
-        <div className="space-y-2">
-          <div className="text-sm font-medium">Specializations:</div>
-          <div className="flex flex-wrap gap-1">
-            {college.specializations.slice(0, 3).map((spec, index) => (
-              <Badge key={index} variant="outline" className="text-xs">
-                {spec}
-              </Badge>
-            ))}
+            <div className="text-sm text-muted-foreground">
+              Est. {college.established}
+            </div>
           </div>
-        </div>
-        
-        <div className="space-y-2">
+          
+          <div className="space-y-2">
+            <div className="text-sm font-medium">Popular Programs:</div>
+            <div className="flex flex-wrap gap-1">
+              {college.courses.slice(0, 3).map((course, index) => (
+                <Badge key={index} variant="outline" className="text-xs">
+                  {course}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center gap-1">
               <DollarSign className="w-4 h-4" />
-              <span>Tuition: {college.tuitionFees.min.toLocaleString()} - {college.tuitionFees.max.toLocaleString()} {college.tuitionFees.currency}</span>
+              <span>Nu. {college.fees.min.toLocaleString()} - {college.fees.max.toLocaleString()}</span>
             </div>
           </div>
-          <div className="flex items-center gap-1 text-sm text-muted-foreground">
-            <Calendar className="w-4 h-4" />
-            <span>Apply by: {college.applicationDeadline}</span>
+          
+          <Button 
+            className="w-full"
+            onClick={handleViewDetails}
+          >
+            View Details
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+        </CardContent>
+      </Card>
+    );
+  };
+
+  const InternationalCollegeCard = ({ college }: { college: InternationalCollege }) => {
+    const handleViewDetails = () => {
+      const collegeData: College = {
+        ...college,
+        courses: college.specializations,
+        tags: college.specializations,
+        admissionDeadline: college.applicationDeadline,
+        eligibility: [],
+        scholarships: [],
+        applyUrl: college.contact.website,
+        facilities: [],
+        accreditation: "RGOB Recognized",
+        campusSize: "Large",
+        studentCount: 10000,
+        facultyCount: 500,
+        programs: {
+          undergraduate: college.specializations,
+          postgraduate: college.specializations,
+          doctorate: college.specializations
+        },
+        careerOpportunities: [],
+        fees: {
+          min: college.tuitionFees.min * 80, // Convert to Nu
+          max: college.tuitionFees.max * 80,
+          currency: "Nu"
+        },
+        contact: {
+          phone: "Not available",
+          email: college.contact.email,
+          website: college.contact.website
+        }
+      };
+      setSelectedCollege(collegeData);
+      setIsModalOpen(true);
+    };
+
+    return (
+      <Card className="group hover:shadow-lg transition-all duration-300">
+        <div className="relative overflow-hidden rounded-t-lg">
+          <img 
+            src={college.image} 
+            alt={college.name}
+            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+          <div className="absolute top-2 right-2 flex gap-2">
+            <Badge variant={college.type === 'Public' ? 'default' : 'secondary'}>
+              {college.type}
+            </Badge>
+            <Badge className="bg-green-100 text-green-800 dark:bg-green-800 dark:text-green-100">
+              RGOB Recognized
+            </Badge>
           </div>
         </div>
         
-        <Button 
-          className="w-full"
-          onClick={() => window.open(college.contact.website, '_blank')}
-        >
-          View Details
-        </Button>
-      </CardContent>
-    </Card>
-  );
+        <CardHeader>
+          <CardTitle className="text-lg group-hover:text-primary transition-colors">
+            {college.name}
+          </CardTitle>
+          <div className="flex items-center text-sm text-muted-foreground gap-1">
+            <Globe className="w-4 h-4" />
+            {college.location}
+          </div>
+        </CardHeader>
+        
+        <CardContent className="space-y-4">
+          <p className="text-sm text-muted-foreground line-clamp-3">
+            {college.description}
+          </p>
+          
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-1">
+              <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+              <span className="text-sm font-medium">{college.rating}</span>
+            </div>
+            {college.worldRanking && (
+              <div className="text-sm text-muted-foreground">
+                World Rank: #{college.worldRanking}
+              </div>
+            )}
+          </div>
+          
+          <div className="space-y-2">
+            <div className="text-sm font-medium">Specializations:</div>
+            <div className="flex flex-wrap gap-1">
+              {college.specializations.slice(0, 3).map((spec, index) => (
+                <Badge key={index} variant="outline" className="text-xs">
+                  {spec}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center gap-1">
+                <DollarSign className="w-4 h-4" />
+                <span>Nu. {(college.tuitionFees.min * 80).toLocaleString()} - {(college.tuitionFees.max * 80).toLocaleString()}</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+              <Calendar className="w-4 h-4" />
+              <span>Apply by: {college.applicationDeadline}</span>
+            </div>
+          </div>
+          
+          <Button 
+            className="w-full"
+            onClick={handleViewDetails}
+          >
+            View Details
+            <ExternalLink className="ml-2 h-4 w-4" />
+          </Button>
+        </CardContent>
+      </Card>
+    );
+  };
 
   if (isLoading) {
     return <LoadingAnimation />;
@@ -403,6 +452,18 @@ const Index = () => {
       </main>
 
       <Footer />
+
+      {/* College Modal */}
+      {selectedCollege && (
+        <CollegeModal
+          college={selectedCollege}
+          isOpen={isModalOpen}
+          onClose={() => {
+            setIsModalOpen(false);
+            setSelectedCollege(null);
+          }}
+        />
+      )}
     </div>
   );
 };

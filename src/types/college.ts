@@ -3,6 +3,7 @@ export interface College {
   id: string;
   name: string;
   location: string;
+  country?: string;
   image: string;
   description: string;
   established: number;
