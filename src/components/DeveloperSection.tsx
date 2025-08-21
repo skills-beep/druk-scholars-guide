@@ -107,7 +107,7 @@ const DeveloperSection = () => {
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 p-1 shadow-2xl animate-pulse">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <img 
-                      src="/lovable-uploads/bce34e15-a058-41ba-abe5-42a341633512.png" 
+                      src="/lovable-uploads/adfa09cf-b4d1-491b-a774-41af69661809.png" 
                       alt="Bishal Sharma"
                       className="w-full h-full object-cover object-center"
                     />
@@ -140,30 +140,46 @@ const DeveloperSection = () => {
                     variant="outline"
                     size="lg"
                     className="group bg-white/10 hover:bg-blue-500 text-white border-white/30 hover:border-blue-500 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                    onClick={() => window.open('https://www.linkedin.com/in/bishal-sharma-12b7211b6/', '_blank')}
+                    asChild
                   >
-                    <Linkedin className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    LinkedIn
+                    <a 
+                      href="https://www.linkedin.com/in/bishal-sharma-12b7211b6/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+                      LinkedIn
+                    </a>
                   </Button>
                   
                   <Button
                     variant="outline"
                     size="lg"
                     className="group bg-white/10 hover:bg-gray-700 text-white border-white/30 hover:border-gray-700 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                    onClick={() => window.open('https://github.com/skills-beep', '_blank')}
+                    asChild
                   >
-                    <Github className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    GitHub
+                    <a 
+                      href="https://github.com/skills-beep" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+                      GitHub
+                    </a>
                   </Button>
                   
                   <Button
                     variant="outline"
                     size="lg"
                     className="group bg-white/10 hover:bg-red-500 text-white border-white/30 hover:border-red-500 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                    onClick={() => window.open('mailto:bishalsharma153@gmail.com', '_blank')}
+                    asChild
                   >
-                    <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                    Email
+                    <a 
+                      href="mailto:bishalsharma153@gmail.com"
+                    >
+                      <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+                      Email
+                    </a>
                   </Button>
                 </div>
 
