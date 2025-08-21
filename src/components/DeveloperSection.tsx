@@ -176,6 +176,8 @@ const DeveloperSection = () => {
                   >
                     <a 
                       href="mailto:bishalsharma153@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                       Email
