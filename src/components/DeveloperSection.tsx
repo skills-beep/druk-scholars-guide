@@ -136,53 +136,33 @@ const DeveloperSection = () => {
 
                 {/* Social Links */}
                 <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="group bg-white/10 hover:bg-blue-500 text-white border-white/30 hover:border-blue-500 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                    asChild
+                  <a
+                    href="https://www.linkedin.com/in/bishal-sharma-12b7211b6/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-md bg-white/10 hover:bg-blue-500 text-white border border-white/30 hover:border-blue-500 transition-all duration-300 backdrop-blur-sm min-h-[44px]"
                   >
-                    <a 
-                      href="https://www.linkedin.com/in/bishal-sharma-12b7211b6/" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Linkedin className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                      LinkedIn
-                    </a>
-                  </Button>
+                    <Linkedin className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+                    LinkedIn
+                  </a>
                   
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="group bg-white/10 hover:bg-gray-700 text-white border-white/30 hover:border-gray-700 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                    asChild
+                  <a
+                    href="https://github.com/skills-beep"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-md bg-white/10 hover:bg-gray-700 text-white border border-white/30 hover:border-gray-700 transition-all duration-300 backdrop-blur-sm min-h-[44px]"
                   >
-                    <a 
-                      href="https://github.com/skills-beep" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                      GitHub
-                    </a>
-                  </Button>
+                    <Github className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+                    GitHub
+                  </a>
                   
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="group bg-white/10 hover:bg-red-500 text-white border-white/30 hover:border-red-500 hover:text-white transition-all duration-300 backdrop-blur-sm"
-                    asChild
+                  <a
+                    href="mailto:bishalsharma153@gmail.com"
+                    className="group inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-md bg-white/10 hover:bg-red-500 text-white border border-white/30 hover:border-red-500 transition-all duration-300 backdrop-blur-sm min-h-[44px]"
                   >
-                    <a 
-                      href="mailto:bishalsharma153@gmail.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                      Email
-                    </a>
-                  </Button>
+                    <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
+                    Email
+                  </a>
                 </div>
 
                 {/* Tech Stack */}
