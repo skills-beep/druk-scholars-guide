@@ -377,7 +377,7 @@ export const internationalColleges: InternationalCollege[] = [
     name: "University of British Columbia",
     country: "Canada",
     location: "Vancouver, Canada",
-    image: "/lovable-uploads/5585d4c4-48c6-4b24-8dbb-75e1882721dd.png",
+    image: "/lovable-uploads/c1875548-30c5-4d18-8d37-9eb5e4cf6681.png",
     description: "One of Canada's top research universities with a beautiful campus and diverse programs.",
     established: 1908,
     type: "Public",
