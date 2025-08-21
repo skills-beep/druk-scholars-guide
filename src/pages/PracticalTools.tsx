@@ -2,15 +2,16 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calculator, FileText, Phone, Newspaper, ArrowLeft } from 'lucide-react';
+import { Calculator, FileText, Phone, Newspaper, ArrowLeft, BookOpen } from 'lucide-react';
 import CostCalculator from '@/components/CostCalculator';
 import DocumentChecklist from '@/components/DocumentChecklist';
 import ContactDirectory from '@/components/ContactDirectory';
 import NewsUpdates from '@/components/NewsUpdates';
+import IELTSGuide from '@/components/IELTSGuide';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 
-type Tool = 'overview' | 'calculator' | 'checklist' | 'contacts' | 'news';
+type Tool = 'overview' | 'calculator' | 'checklist' | 'contacts' | 'news' | 'ielts';
 
 const PracticalTools = () => {
   const [selectedTool, setSelectedTool] = useState<Tool>('overview');
@@ -29,6 +30,13 @@ const PracticalTools = () => {
       description: 'Track required documents for applications and scholarships',
       icon: FileText,
       color: 'bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-400'
+    },
+    {
+      id: 'ielts' as Tool,
+      title: 'IELTS Preparation Guide',
+      description: 'Comprehensive IELTS preparation guide with interactive tools and progress tracking',
+      icon: BookOpen,
+      color: 'bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-400'
     },
     {
       id: 'contacts' as Tool,
@@ -52,6 +60,8 @@ const PracticalTools = () => {
         return <CostCalculator />;
       case 'checklist':
         return <DocumentChecklist />;
+      case 'ielts':
+        return <IELTSGuide />;
       case 'contacts':
         return <ContactDirectory />;
       case 'news':
@@ -80,7 +90,7 @@ const PracticalTools = () => {
               </div>
 
               {/* Tools Grid */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
                 {tools.map((tool) => {
                   const IconComponent = tool.icon;
                   return (
