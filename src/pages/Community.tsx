@@ -280,12 +280,42 @@ const Community = () => {
   const sendMessage = async () => {
     if (!user || !newMessage.trim()) return;
 
+    // Get or create the default public chat room
+    let roomId = '00000000-0000-0000-0000-000000000001'; // Default public room
+    
+    // Check if the public room exists, create if it doesn't
+    const { data: existingRoom } = await supabase
+      .from('chat_rooms')
+      .select('id')
+      .eq('id', roomId)
+      .single();
+
+    if (!existingRoom) {
+      const { error: roomError } = await supabase
+        .from('chat_rooms')
+        .insert({
+          id: roomId,
+          name: 'General Discussion',
+          type: 'public'
+        });
+
+      if (roomError) {
+        console.error('Error creating chat room:', roomError);
+        toast({
+          title: "Error",
+          description: "Failed to initialize chat room",
+          variant: "destructive"
+        });
+        return;
+      }
+    }
+
     const { error } = await supabase
       .from('chat_messages')
       .insert({
         content: newMessage,
         sender_id: user.id,
-        room_id: '00000000-0000-0000-0000-000000000001' // Default public room
+        room_id: roomId
       });
 
     if (error) {
