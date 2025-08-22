@@ -407,7 +407,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      get_mentor_public_profiles: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          avatar_url: string
+          bio: string
+          college: string
+          full_name: string
+          id: string
+          is_available_for_mentorship: boolean
+          major: string
+          user_id: string
+          user_type: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

@@ -35,6 +35,18 @@ type Profile = {
   is_available_for_mentorship: boolean;
 };
 
+type MentorProfile = {
+  id: string;
+  user_id: string;
+  full_name: string;
+  avatar_url?: string;
+  bio?: string;
+  college?: string;
+  major?: string;
+  user_type: string;
+  is_available_for_mentorship: boolean;
+};
+
 type Forum = {
   id: string;
   title: string;
@@ -73,7 +85,7 @@ const Community = () => {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [forums, setForums] = useState<Forum[]>([]);
   const [studyGroups, setStudyGroups] = useState<StudyGroup[]>([]);
-  const [mentors, setMentors] = useState<Profile[]>([]);
+  const [mentors, setMentors] = useState<MentorProfile[]>([]);
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState("");
   const [isLoading, setIsLoading] = useState(true);
@@ -181,10 +193,7 @@ const Community = () => {
 
   const loadMentors = async () => {
     const { data, error } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('is_available_for_mentorship', true)
-      .eq('user_type', 'mentor');
+      .rpc('get_mentor_public_profiles');
 
     if (error) {
       console.error('Error loading mentors:', error);
