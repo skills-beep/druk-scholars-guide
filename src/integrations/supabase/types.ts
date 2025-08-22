@@ -421,6 +421,41 @@ export type Database = {
           user_type: string
         }[]
       }
+      get_mentorship_connection_profiles: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          avatar_url: string
+          bio: string
+          college: string
+          connection_type: string
+          full_name: string
+          id: string
+          major: string
+          user_id: string
+          user_type: string
+        }[]
+      }
+      get_public_profile_basic: {
+        Args: { profile_user_id: string }
+        Returns: {
+          avatar_url: string
+          full_name: string
+          id: string
+          user_id: string
+        }[]
+      }
+      get_study_group_member_profiles: {
+        Args: { group_id_param: string }
+        Returns: {
+          avatar_url: string
+          college: string
+          full_name: string
+          id: string
+          major: string
+          user_id: string
+          user_type: string
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never

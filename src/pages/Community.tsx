@@ -47,6 +47,13 @@ type MentorProfile = {
   is_available_for_mentorship: boolean;
 };
 
+type BasicProfile = {
+  id: string;
+  user_id: string;
+  full_name: string;
+  avatar_url?: string;
+};
+
 type Forum = {
   id: string;
   title: string;
@@ -54,7 +61,7 @@ type Forum = {
   category: string;
   created_by: string;
   created_at: string;
-  profiles: Profile;
+  profiles?: BasicProfile;
 };
 
 type StudyGroup = {
@@ -69,7 +76,7 @@ type StudyGroup = {
   is_virtual: boolean;
   created_by: string;
   created_at: string;
-  profiles: Profile;
+  profiles?: BasicProfile;
 };
 
 type ChatMessage = {
@@ -77,7 +84,7 @@ type ChatMessage = {
   content: string;
   sender_id: string;
   created_at: string;
-  profiles: Profile;
+  profiles?: BasicProfile;
 };
 
 const Community = () => {
@@ -160,35 +167,69 @@ const Community = () => {
   };
 
   const loadForums = async () => {
-    const { data, error } = await supabase
+    // Get forums without profile joins first
+    const { data: forumsData, error: forumsError } = await supabase
       .from('forums')
-      .select(`
-        *,
-        profiles (*)
-      `)
+      .select('*')
       .order('created_at', { ascending: false });
 
-    if (error) {
-      console.error('Error loading forums:', error);
-    } else {
-      setForums(data || []);
+    if (forumsError) {
+      console.error('Error loading forums:', forumsError);
+      return;
     }
+
+    // Get profile data for forum creators using the sanitized RPC
+    const forumsWithProfiles = await Promise.all(
+      (forumsData || []).map(async (forum) => {
+        const { data: profileData } = await supabase
+          .rpc('get_public_profile_basic', { profile_user_id: forum.created_by });
+        
+        return {
+          ...forum,
+          profiles: profileData?.[0] || { 
+            id: '',
+            user_id: forum.created_by,
+            full_name: 'Unknown User', 
+            avatar_url: null 
+          }
+        };
+      })
+    );
+
+    setForums(forumsWithProfiles);
   };
 
   const loadStudyGroups = async () => {
-    const { data, error } = await supabase
+    // Get study groups without profile joins first
+    const { data: groupsData, error: groupsError } = await supabase
       .from('study_groups')
-      .select(`
-        *,
-        profiles (*)
-      `)
+      .select('*')
       .order('created_at', { ascending: false });
 
-    if (error) {
-      console.error('Error loading study groups:', error);
-    } else {
-      setStudyGroups(data || []);
+    if (groupsError) {
+      console.error('Error loading study groups:', groupsError);
+      return;
     }
+
+    // Get profile data for group creators using the sanitized RPC
+    const groupsWithProfiles = await Promise.all(
+      (groupsData || []).map(async (group) => {
+        const { data: profileData } = await supabase
+          .rpc('get_public_profile_basic', { profile_user_id: group.created_by });
+        
+        return {
+          ...group,
+          profiles: profileData?.[0] || { 
+            id: '',
+            user_id: group.created_by,
+            full_name: 'Unknown User', 
+            avatar_url: null 
+          }
+        };
+      })
+    );
+
+    setStudyGroups(groupsWithProfiles);
   };
 
   const loadMentors = async () => {
@@ -203,20 +244,37 @@ const Community = () => {
   };
 
   const loadChatMessages = async () => {
-    const { data, error } = await supabase
+    // Get chat messages without profile joins first
+    const { data: messagesData, error: messagesError } = await supabase
       .from('chat_messages')
-      .select(`
-        *,
-        profiles (*)
-      `)
+      .select('*')
       .order('created_at', { ascending: true })
       .limit(50);
 
-    if (error) {
-      console.error('Error loading chat messages:', error);
-    } else {
-      setChatMessages(data || []);
+    if (messagesError) {
+      console.error('Error loading chat messages:', messagesError);
+      return;
     }
+
+    // Get profile data for message senders using the sanitized RPC
+    const messagesWithProfiles = await Promise.all(
+      (messagesData || []).map(async (message) => {
+        const { data: profileData } = await supabase
+          .rpc('get_public_profile_basic', { profile_user_id: message.sender_id });
+        
+        return {
+          ...message,
+          profiles: profileData?.[0] || { 
+            id: '',
+            user_id: message.sender_id,
+            full_name: 'Unknown User', 
+            avatar_url: null 
+          }
+        };
+      })
+    );
+
+    setChatMessages(messagesWithProfiles);
   };
 
   const sendMessage = async () => {
@@ -377,11 +435,11 @@ const Community = () => {
                       </div>
                       <Badge>{forum.category}</Badge>
                     </div>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <span>Created by {forum.profiles.full_name}</span>
-                      <span>•</span>
-                      <span>{new Date(forum.created_at).toLocaleDateString()}</span>
-                    </div>
+                     <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                       <span>Created by {forum.profiles?.full_name || 'Unknown User'}</span>
+                       <span>•</span>
+                       <span>{new Date(forum.created_at).toLocaleDateString()}</span>
+                     </div>
                   </CardHeader>
                 </Card>
               ))}
@@ -483,19 +541,19 @@ const Community = () => {
                   <div className="space-y-4">
                     {chatMessages.map((message) => (
                       <div key={message.id} className="flex items-start gap-3">
-                        <Avatar className="h-8 w-8">
-                          <AvatarImage src={message.profiles.avatar_url || undefined} />
-                          <AvatarFallback className="text-xs">
-                            {message.profiles.full_name.split(' ').map(n => n[0]).join('')}
-                          </AvatarFallback>
-                        </Avatar>
-                        <div className="flex-1">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="font-medium text-sm">{message.profiles.full_name}</span>
-                            <span className="text-xs text-muted-foreground">
-                              {new Date(message.created_at).toLocaleTimeString()}
-                            </span>
-                          </div>
+                         <Avatar className="h-8 w-8">
+                           <AvatarImage src={message.profiles?.avatar_url || undefined} />
+                           <AvatarFallback className="text-xs">
+                             {message.profiles?.full_name?.split(' ').map(n => n[0]).join('') || 'U'}
+                           </AvatarFallback>
+                         </Avatar>
+                         <div className="flex-1">
+                           <div className="flex items-center gap-2 mb-1">
+                             <span className="font-medium text-sm">{message.profiles?.full_name || 'Unknown User'}</span>
+                             <span className="text-xs text-muted-foreground">
+                               {new Date(message.created_at).toLocaleTimeString()}
+                             </span>
+                           </div>
                           <p className="text-sm">{message.content}</p>
                         </div>
                       </div>
