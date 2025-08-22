@@ -1014,5 +1014,173 @@ export const governmentScholarships = [
       email: "awards@loden.org", 
       website: "https://www.loden.org"
     }
+  },
+  {
+    name: "His Majesty's Scholarship Programme",
+    provider: "Royal Government of Bhutan",
+    coverage: "Full scholarship including tuition, accommodation, and living expenses for studies abroad",
+    criteria: "Outstanding Bhutanese students for undergraduate and postgraduate studies at top international universities",
+    duration: "Full program duration (3-6 years)",
+    deadline: "March 31st annually",
+    applicationProcess: "Apply through DAHE with academic transcripts, recommendation letters, and personal statement",
+    contact: {
+      phone: "+975-2-323725",
+      email: "scholarships@education.gov.bt",
+      website: "http://www.education.gov.bt"
+    }
+  },
+  {
+    name: "Bhutan Foundation Scholarship",
+    provider: "Bhutan Foundation",
+    coverage: "Full tuition support and partial living expenses for higher education",
+    criteria: "Academically excellent Bhutanese students from rural areas with financial constraints",
+    duration: "Throughout undergraduate program",
+    deadline: "June 30th annually",
+    applicationProcess: "Online application through Bhutan Foundation portal with financial documents",
+    contact: {
+      phone: "+975-2-322647",
+      email: "scholarships@bhutanfound.org",
+      website: "https://www.bhutanfound.org"
+    }
+  },
+  {
+    name: "Tarayana Foundation Education Grant",
+    provider: "Tarayana Foundation",
+    coverage: "Educational support ranging from BTN 50,000 to BTN 200,000 annually",
+    criteria: "Underprivileged Bhutanese students with good academic records",
+    duration: "Renewable annually based on performance",
+    deadline: "Rolling admissions throughout the year",
+    applicationProcess: "Submit application with income certificate and academic records to Tarayana offices",
+    contact: {
+      phone: "+975-2-336593",
+      email: "education@tarayanafoundation.org",
+      website: "https://www.tarayanafoundation.org"
+    }
+  },
+  {
+    name: "Druk Holding & Investments Scholarship",
+    provider: "Druk Holding & Investments",
+    coverage: "Full tuition fees and BTN 15,000 monthly stipend for technical and business programs",
+    criteria: "Bhutanese nationals pursuing engineering, business, or finance with minimum 70% in Class XII",
+    duration: "3-4 years for undergraduate programs",
+    deadline: "July 15th annually",
+    applicationProcess: "Apply through DHI website with academic transcripts and career statement",
+    contact: {
+      phone: "+975-2-323162",
+      email: "hr@dhi.bt",
+      website: "https://www.dhi.bt"
+    }
+  },
+  {
+    name: "Royal Insurance Corporation Scholarship",
+    provider: "Royal Insurance Corporation of Bhutan",
+    coverage: "Full tuition fees for insurance, finance, and business-related programs",
+    criteria: "Bhutanese students with strong academic background interested in insurance and finance sector",
+    duration: "Full program duration with bond service requirement",
+    deadline: "August 31st annually",
+    applicationProcess: "Apply through RICB with academic records and statement of purpose",
+    contact: {
+      phone: "+975-2-322149",
+      email: "scholarship@ricb.bt",
+      website: "https://www.ricb.bt"
+    }
+  },
+  {
+    name: "Bhutan Development Bank Scholarship",
+    provider: "Bhutan Development Bank",
+    coverage: "Full tuition and BTN 10,000 monthly allowance for banking and finance programs",
+    criteria: "Academically excellent Bhutanese students pursuing banking, finance, or economics",
+    duration: "Throughout undergraduate program with 3-year service bond",
+    deadline: "June 15th annually",
+    applicationProcess: "Online application through BDB website with required documents",
+    contact: {
+      phone: "+975-2-323632",
+      email: "scholarship@bdb.bt",
+      website: "https://www.bdb.bt"
+    }
+  },
+  {
+    name: "Loden Foundation Rural Scholarship",
+    provider: "Loden Foundation",
+    coverage: "Full tuition support plus BTN 5,000 monthly stipend for rural students",
+    criteria: "Students from rural areas of Bhutan with good academic performance and financial need",
+    duration: "Full program duration",
+    deadline: "Applications accepted year-round",
+    applicationProcess: "Apply through Loden website with village headman recommendation and income certificate",
+    contact: {
+      phone: "+975-2-336699",
+      email: "rural@loden.org",
+      website: "https://www.loden.org"
+    }
+  },
+  {
+    name: "Ministry of Health Scholarship",
+    provider: "Ministry of Health",
+    coverage: "Full scholarship for medical and health sciences programs in India and abroad",
+    criteria: "Bhutanese nationals with strong science background for MBBS, nursing, and allied health programs",
+    duration: "5-6 years for medical programs",
+    deadline: "May 31st annually",
+    applicationProcess: "Apply through Ministry of Health with medical entrance exam scores",
+    contact: {
+      phone: "+975-2-322602",
+      email: "scholarship@health.gov.bt",
+      website: "http://www.health.gov.bt"
+    }
+  },
+  {
+    name: "Jigme Namgyel Engineering College Merit Scholarship",
+    provider: "Ministry of Education and Jigme Namgyel Engineering College",
+    coverage: "50-100% tuition fee waiver based on academic merit",
+    criteria: "Top-performing Bhutanese students in Class XII science subjects",
+    duration: "4 years for engineering programs",
+    deadline: "Within 1 month of Class XII results",
+    applicationProcess: "Automatic consideration based on JNEC entrance exam performance",
+    contact: {
+      phone: "+975-5-365111",
+      email: "admissions@jnec.edu.bt",
+      website: "https://www.jnec.edu.bt"
+    }
+  },
+  {
+    name: "Australia Awards Scholarship for Bhutan",
+    provider: "Australian Government Department of Foreign Affairs and Trade",
+    coverage: "Full scholarship including tuition, living expenses, and airfares for studies in Australia",
+    criteria: "Bhutanese nationals for undergraduate and postgraduate studies at Australian universities",
+    duration: "2-4 years depending on program level",
+    deadline: "April 30th annually",
+    applicationProcess: "Apply through Australian Embassy in New Delhi with English proficiency scores",
+    contact: {
+      phone: "+91-11-4139-9900",
+      email: "info@australiaawards.org",
+      website: "https://www.australiaawards.gov.au"
+    }
+  },
+  {
+    name: "JICA Scholarship Program",
+    provider: "Japan International Cooperation Agency",
+    coverage: "Full scholarship for graduate studies in Japan including travel and living expenses",
+    criteria: "Bhutanese government officials and professionals for development-related studies",
+    duration: "1-2 years for master's programs",
+    deadline: "May applications open annually",
+    applicationProcess: "Apply through JICA Bhutan office with recommendation from current employer",
+    contact: {
+      phone: "+975-2-322162",
+      email: "bg_oso_rep@jica.go.jp",
+      website: "https://www.jica.go.jp/english/"
+    }
+  },
+  {
+    name: "Korean Government Scholarship Program (KGSP)",
+    provider: "Korean Government",
+    coverage: "Full tuition, living allowance, airfare, and Korean language training",
+    criteria: "Bhutanese nationals under 25 for undergraduate and under 40 for graduate programs",
+    duration: "4 years (UG) or 2-3 years (PG) plus 1 year Korean language course",
+    deadline: "March 31st annually",
+    applicationProcess: "Apply through Embassy of Korea in India or directly to Korean universities",
+    contact: {
+      phone: "+91-11-4200-7000",
+      email: "education@koreaembassy.org",
+      website: "https://www.studyinkorea.go.kr"
+    }
   }
 ];
