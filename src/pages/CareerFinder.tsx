@@ -186,59 +186,133 @@ const CareerFinder = () => {
               </CardContent>
             </Card>
 
-            {/* Success Stories Section */}
+            {/* Career Resources & Tools */}
             <Card className="mb-8">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Trophy className="h-5 w-5 text-primary" />
-                  Success Stories
+                  <Globe className="h-5 w-5 text-primary" />
+                  Career Resources & Tools
                 </CardTitle>
                 <CardDescription>
-                  Learn from professionals who built successful careers in Bhutan
+                  Essential resources and tools to help you plan and advance your career in Bhutan
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {[
-                    {
-                      name: "Tenzin Norbu",
-                      role: "Senior Software Engineer at DrukAir",
-                      education: "BTech CSE from RTC",
-                      story: "Started as a junior developer and worked up to lead digital transformation initiatives.",
-                      years: "5 years experience"
-                    },
-                    {
-                      name: "Pema Lhamo",
-                      role: "Environmental Consultant",
-                      education: "Masters in Environmental Science",
-                      story: "Combines traditional knowledge with modern conservation practices for sustainable development.",
-                      years: "8 years experience"
-                    },
-                    {
-                      name: "Karma Wangchuk",
-                      role: "Tourism Entrepreneur",
-                      education: "Tourism Management Certificate",
-                      story: "Built successful eco-tourism business showcasing Bhutan's culture to international visitors.",
-                      years: "10 years experience"
-                    }
-                  ].map((story, index) => (
-                    <div key={index} className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2 rounded-full bg-primary/10">
-                          <User className="h-4 w-4 text-primary" />
-                        </div>
-                        <div>
-                          <h4 className="font-semibold">{story.name}</h4>
-                          <p className="text-sm text-muted-foreground">{story.role}</p>
-                        </div>
+                  <div className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <BookOpen className="h-5 w-5 text-primary" />
                       </div>
-                      <p className="text-sm mb-3">{story.story}</p>
-                      <div className="space-y-1 text-xs text-muted-foreground">
-                        <p><span className="font-medium">Education:</span> {story.education}</p>
-                        <p><span className="font-medium">Experience:</span> {story.years}</p>
-                      </div>
+                      <h4 className="font-semibold">Skill Development Hub</h4>
                     </div>
-                  ))}
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Access online courses, certification programs, and skill-building resources
+                    </p>
+                    <div className="space-y-1 text-xs">
+                      <Badge variant="secondary" className="mr-1">Free Courses</Badge>
+                      <Badge variant="secondary" className="mr-1">Certifications</Badge>
+                      <Badge variant="secondary">Workshops</Badge>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                        <Users className="h-5 w-5 text-secondary" />
+                      </div>
+                      <h4 className="font-semibold">Mentorship Network</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Connect with experienced professionals and industry mentors
+                    </p>
+                    <div className="space-y-1 text-xs">
+                      <Badge variant="outline" className="mr-1">1-on-1 Mentoring</Badge>
+                      <Badge variant="outline" className="mr-1">Industry Experts</Badge>
+                      <Badge variant="outline">Career Guidance</Badge>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                        <Briefcase className="h-5 w-5 text-accent" />
+                      </div>
+                      <h4 className="font-semibold">Job Market Alerts</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Stay updated on new job openings and industry developments
+                    </p>
+                    <div className="space-y-1 text-xs">
+                      <Badge variant="default" className="mr-1">Job Alerts</Badge>
+                      <Badge variant="default" className="mr-1">Salary Updates</Badge>
+                      <Badge variant="default">Industry News</Badge>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                        <DollarSign className="h-5 w-5 text-primary" />
+                      </div>
+                      <h4 className="font-semibold">Scholarship Finder</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Discover funding opportunities for education and training programs
+                    </p>
+                    <div className="space-y-1 text-xs">
+                      <Badge variant="secondary" className="mr-1">Government Scholarships</Badge>
+                      <Badge variant="secondary">Private Funding</Badge>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-secondary/10 group-hover:bg-secondary/20 transition-colors">
+                        <Clock className="h-5 w-5 text-secondary" />
+                      </div>
+                      <h4 className="font-semibold">Career Events</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Attend career fairs, workshops, and networking events across Bhutan
+                    </p>
+                    <div className="space-y-1 text-xs">
+                      <Badge variant="outline" className="mr-1">Career Fairs</Badge>
+                      <Badge variant="outline" className="mr-1">Workshops</Badge>
+                      <Badge variant="outline">Networking</Badge>
+                    </div>
+                  </div>
+
+                  <div className="p-4 rounded-lg border border-border hover:shadow-lg transition-shadow cursor-pointer group">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-accent/10 group-hover:bg-accent/20 transition-colors">
+                        <Target className="h-5 w-5 text-accent" />
+                      </div>
+                      <h4 className="font-semibold">Resume Builder</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground mb-3">
+                      Create professional resumes tailored to Bhutanese job market
+                    </p>
+                    <div className="space-y-1 text-xs">
+                      <Badge variant="default" className="mr-1">Templates</Badge>
+                      <Badge variant="default" className="mr-1">AI Assistance</Badge>
+                      <Badge variant="default">Local Format</Badge>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-6 p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Star className="h-5 w-5 text-primary" />
+                    <h4 className="font-semibold">Featured Resource</h4>
+                  </div>
+                  <h5 className="font-medium mb-2">Bhutan Career Development Guide 2024</h5>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    A comprehensive guide covering everything from choosing the right career path to advancing in your chosen field.
+                  </p>
+                  <Button variant="outline" size="sm">
+                    Download Guide
+                  </Button>
                 </div>
               </CardContent>
             </Card>
